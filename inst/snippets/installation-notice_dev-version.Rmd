@@ -1,0 +1,9 @@
+To install the latest development version of `r glue::glue("**{getOption('usethis.description')$Package}**")`, run the following in R:
+
+`r paste0('\x60\x60\x60r
+if (!("remotes" %in% rownames(installed.packages()))) {
+  install.packages(pkgs = "remotes",
+                   repos = "https://cloud.r-project.org/")
+}
+', paste0('remotes::install_git(url = "', getOption('usethis.description')$URL, '.git")'), '
+\x60\x60\x60')`

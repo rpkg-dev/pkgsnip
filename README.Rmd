@@ -1,0 +1,36 @@
+---
+output: pal::gitlab_document
+---
+
+# `r paste0(desc::desc_get_field(key = "Package"), ": ", desc::desc_get_field(key = "Title", default = "<No \x60Title\x60 field set in DESCRIPTION!>"))`
+
+`r desc::desc_get_field(key = "Description", default = "<No \x60Description\x60 field set in DESCRIPTION!>")` See the [knitr documentation](https://yihui.org/knitr/options/#child-documents) for more information about this option.
+
+## Included Snippets
+
+Currently, the following snippets are included:
+
+```{r, echo = FALSE, results = "asis"}
+system.file("snippets/",
+            mustWork = TRUE,
+            package = desc::desc_get_field(key = "Package")) %>%
+  fs::dir_ls(recurse = TRUE,
+             type = "file") %>%
+  fs::path_file() %>%
+  paste0("- `", ., "`") %>%
+  pal::cat_lines()
+```
+
+## Installation
+```{r, install-snippet-dev, child = pkgsnippets::file("installation-notice_dev-version_gitlab.Rmd")}
+```
+
+## Development
+
+### Literate Programming
+```{r, literate-programming-snippet, child = pkgsnippets::file("literate-programming-notice.Rmd")}
+```
+
+### Coding Style
+```{r, coding-style-snippet, child = pkgsnippets::file("coding-style-notice.Rmd")}
+```

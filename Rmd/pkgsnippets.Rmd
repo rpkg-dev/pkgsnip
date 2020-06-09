@@ -1,0 +1,43 @@
+---
+editor_options:
+  chunk_output_type: console
+---
+
+# INTERNAL
+
+## Avoid `R CMD check` notes about undefined global objects used in magrittr pipes
+
+cf. <https://github.com/tidyverse/magrittr/issues/29#issuecomment-74313262>
+
+```{r}
+utils::globalVariables(names = c("."))
+```
+
+# Get snippet file
+
+```{r}
+#' Get snippet file path
+#'
+#' @param snippet The name of a snippet. Possible values include:
+#'   `r paste0("- ``", fs::path_file(fs::dir_ls(path = system.file("snippets/", mustWork = TRUE, package = "pkgsnippets"), recurse = TRUE, type = "file")), "``")`
+#'
+#' @return A path of type [fs_path][fs::path()].
+#' @export
+#'
+#' @examples
+#' pkgsnippets::file("coding-style-notice.Rmd")
+file <- function(snippet) {
+  
+  system.file("snippets/",
+              mustWork = TRUE,
+              package = utils::packageName()) %>%
+    fs::dir_ls(recurse = TRUE,
+               type = "file") %>%
+    fs::path_file() %>%
+    rlang::arg_match(arg = snippet) %>%
+    paste0("snippets/", .) %>%
+    system.file(mustWork = TRUE,
+                package = utils::packageName()) %>%
+    fs::path_real()
+}
+```

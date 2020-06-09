@@ -17,7 +17,7 @@ system.file("snippets/",
   fs::dir_ls(recurse = TRUE,
              type = "file") %>%
   fs::path_file() %>%
-  paste0("- `", ., "`") %>%
+  paste0("- [`", ., "`](inst/snippets/", ., ")") %>%
   pal::cat_lines()
 ```
 

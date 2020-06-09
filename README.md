@@ -6,10 +6,10 @@ pkgsnippets ships ready-to-go (R) Markdown snippets intended to be used as knitr
 
 Currently, the following snippets are included:
 
--   `coding-style-notice.Rmd`
--   `installation-notice_dev-version.Rmd`
--   `installation-notice_dev-version_gitlab.Rmd`
--   `literate-programming-notice.Rmd`
+-   [`coding-style-notice.Rmd`](inst/snippets/coding-style-notice.Rmd)
+-   [`installation-notice_dev-version.Rmd`](inst/snippets/installation-notice_dev-version.Rmd)
+-   [`installation-notice_dev-version_gitlab.Rmd`](inst/snippets/installation-notice_dev-version_gitlab.Rmd)
+-   [`literate-programming-notice.Rmd`](inst/snippets/literate-programming-notice.Rmd)
 
 ## Installation
 

@@ -12,8 +12,8 @@ utils::globalVariables(names = c("."))
 #' @export
 #'
 #' @examples
-#' pkgsnippets::file("coding-style-notice.Rmd")
-file <- function(snippet) {
+#' pkgsnippets::snippet_path("coding-style-notice.Rmd")
+snippet_path <- function(snippet) {
   
   system.file("snippets/",
               mustWork = TRUE,

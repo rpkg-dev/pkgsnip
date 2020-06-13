@@ -4,22 +4,30 @@
 \alias{snippet_path}
 \title{Get snippet file path}
 \usage{
-snippet_path(snippet)
+snippet_path(name = ls_snippets()$name)
 }
 \arguments{
-\item{snippet}{The name of a snippet. Possible values include:
+\item{name}{The name of a snippet. Possible values include:
 \itemize{
-\item \code{coding-style-notice.Rmd}
-\item \code{installation-notice_dev-version.Rmd}
-\item \code{installation-notice_dev-version_gitlab.Rmd}
-\item \code{literate-programming-notice.Rmd})`
+\item \code{"coding-style-notice.Rmd"}
+\item \code{"installation-notice_dev-version.Rmd"}
+\item \code{"installation-notice_dev-version_gitlab.Rmd"}
+\item \code{"literate-programming-notice.Rmd"})`
 }}
 }
 \value{
-A path of type \link[fs:path]{fs_path}.
+A \link[fs:fs_path]{path}.
 }
 \description{
-Get snippet file path
+This function gives the file path to an (R) Markdown snippet shipped with this package.
+}
+\details{
+The snippets can be used anywhere (R) Markdown input is supported. For example, you can use them as input to knitr's
+\href{https://yihui.org/knitr/options/#child-documents}{\code{child} document option}:\if{html}{\out{<div class="rmd">}}\preformatted{\{r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")\}
+}\if{html}{\out{</div>}}
+
+Or you can use them in roxygen2's \href{https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files}{\verb{@includeRmd} tag}:\if{html}{\out{<div class="rmd">}}\preformatted{#' @includeRmd `pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")`
+}\if{html}{\out{</div>}}
 }
 \examples{
 pkgsnippets::snippet_path("coding-style-notice.Rmd")

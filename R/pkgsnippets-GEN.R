@@ -70,7 +70,7 @@ snippet_path <- function(name = ls_snippets()$name) {
 #' roxygen_labels() %>%
 #'   dplyr::filter(type == "param") %$%
 #'   name %>%
-#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@param {.x} ", bt, 'r param_label("{.x}")', bt, " ", bt, bt, "\cr")) %>%
+#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@param {.x} ", bt, 'r pkgsnippets::param_label("{.x}")', bt, " ", bt, bt, "\cr")) %>%
 #'   pal::cat_lines()
 #' ```
 #'

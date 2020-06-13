@@ -8,7 +8,10 @@ Authors@R:
            email = "salim-b@pm.me",
            comment = c(ORCID = "0000-0002-5329-5987"))
 Description: pkgsnippets ships ready-to-go (R) Markdown
-    snippets and labels intended to be used in roxygen2 documentation or as knitr child documents.
+    snippets and labels intended to be used in roxygen2 documentation or
+    as knitr child documents. They are designed to reduce unnecessary
+    repetition and instead standardize R-package documentation wherever
+    possible.
 License: AGPL-3
 URL: https://gitlab.com/salim_b/r/pkgs/pkgsnippets
 BugReports: https://gitlab.com/salim_b/r/pkgs/pkgsnippets/issues

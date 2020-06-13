@@ -19,10 +19,10 @@ These are pre-defined labels intended to be used to document parameters using \l
 \details{
 The parameters can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code} as follows:
 
-\verb{#' @param start_date `r param_label("start_date")` }\cr
-\verb{#' @param end_date `r param_label("end_date")` }\cr
-\verb{#' @param use_cache `r param_label("use_cache")` }\cr
-\verb{#' @param cache_lifespan `r param_label("cache_lifespan")` }\cr
+\verb{#' @param start_date `r pkgsnippets::param_label("start_date")` }\cr
+\verb{#' @param end_date `r pkgsnippets::param_label("end_date")` }\cr
+\verb{#' @param use_cache `r pkgsnippets::param_label("use_cache")` }\cr
+\verb{#' @param cache_lifespan `r pkgsnippets::param_label("cache_lifespan")` }\cr
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
 }

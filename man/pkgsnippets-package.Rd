@@ -6,9 +6,8 @@
 \alias{pkgsnippets-package}
 \title{pkgsnippets: Provides Handy (R) Markdown Snippets for Package Authors}
 \description{
-pkgsnippets ships ready-to-go (R) Markdown snippets intended to be
-    used as knitr child documents. Use `pkgsnippets::file()` to get the path of
-    a snippet and feed it to knitr's `child` chunk option.
+pkgsnippets ships ready-to-go (R) Markdown
+    snippets and labels intended to be used in roxygen2 documentation or as knitr child documents.
 }
 \seealso{
 Useful links:

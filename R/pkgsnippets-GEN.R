@@ -197,7 +197,7 @@ roxygen_labels <- function(type = NULL) {
     "param", "end_date", "The end of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.",
     "param", "cache_lifespan", paste0("The duration after which cached results are refreshed (i.e. newly fetched). A valid ",
-                                      "[lubridate duration][lubridate::as.duration]. Defaults to 1 day (24 hours). Only relevant if `use_cache = TRUE`.")
+                                      "[lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.")
   ) %>%
     purrr::when(is.null(type) ~ .,
                 ~ dplyr::filter(.data = .,

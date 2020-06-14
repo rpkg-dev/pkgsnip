@@ -20,6 +20,7 @@ These are pre-defined labels intended to be used to document function return val
 The parameters can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code} as follows:
 
 \verb{#' @return `r pkgsnippets::return_label("data")` }\cr
+\verb{#' @return `r pkgsnippets::return_label("version_nr")` }\cr
 \verb{#' @return `r pkgsnippets::return_label("path")` }\cr
 }
 \seealso{

@@ -191,6 +191,7 @@ roxygen_labels <- function(type = NULL) {
   tibble::tribble(
     ~type, ~name, ~label,
     "return", "data", "A [tibble][tibble::tbl_df].",
+    "return", "version_nr", "A [numeric version][numeric_version()].",
     "return", "path", "A [path][fs::fs_path].",
     "param", "start_date", "The begin of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "end_date", "The end of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",

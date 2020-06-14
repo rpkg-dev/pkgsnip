@@ -21,6 +21,7 @@ argument.
 Currently, parameter labels with the following \code{types} and \code{names} are available:\tabular{ll}{
    \strong{type} \tab \strong{name} \cr
    \code{return} \tab \code{data} \cr
+   \code{return} \tab \code{version_nr} \cr
    \code{return} \tab \code{path} \cr
    \code{param} \tab \code{start_date} \cr
    \code{param} \tab \code{end_date} \cr

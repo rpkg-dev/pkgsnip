@@ -6,5 +6,5 @@ if (!("remotes" %in% rownames(installed.packages()))) {
                    repos = "https://cloud.r-project.org/")
 }
 
-remotes::install_git(url = "`r stringr::str_remove(string = {if (exists("pkg_metadata")) pkg_metadata[["URL"]][1] else emsg}, pattern = "^https?://.+?\\..+?/")`")
+remotes::install_gitlab(repo = "`r stringr::str_remove(string = {if (exists("pkg_metadata")) pkg_metadata[["URL"]][1] else emsg}, pattern = "^https?://.+?\\..+?/")`")
 ```

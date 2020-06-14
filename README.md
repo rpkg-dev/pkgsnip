@@ -1,25 +1,18 @@
----
-output: pal::gitlab_document
----
-
 # pkgsnippets: Provides Handy (R) Markdown Snippets for Package Authors
 
 pkgsnippets ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. They are designed to reduce unnecessary repetition and instead standardize R-package documentation wherever possible.
 
 ## (R) Markdown snippets
 
-The (R) Markdown snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to [knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
+The (R) Markdown snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to [knitr](https://yihui.org/knitr/)’s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
-````
-```{r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")}
-...
-```
-````
+    ```{r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")}
+    ...
+    ```
 
-Or you can use them in [roxygen2](https://roxygen2.r-lib.org/)'s
-[`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
+Or you can use them in [roxygen2](https://roxygen2.r-lib.org/)’s [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
-```rd
+``` rd
 #' @includeRmd `pkgsnippets::snippet_path("literate-programming-notice.Rmd")`
 ```
 
@@ -27,18 +20,18 @@ Or you can use them in [roxygen2](https://roxygen2.r-lib.org/)'s
 
 Currently, the following snippets are included:
 
-- [`coding-style-notice.Rmd`](inst/snippets/coding-style-notice.Rmd)
-- [`installation-notice_dev-version.Rmd`](inst/snippets/installation-notice_dev-version.Rmd)
-- [`installation-notice_dev-version_gitlab.Rmd`](inst/snippets/installation-notice_dev-version_gitlab.Rmd)
-- [`literate-programming-notice.Rmd`](inst/snippets/literate-programming-notice.Rmd)
+-   [`coding-style-notice.Rmd`](inst/snippets/coding-style-notice.Rmd)
+-   [`installation-notice_dev-version.Rmd`](inst/snippets/installation-notice_dev-version.Rmd)
+-   [`installation-notice_dev-version_gitlab.Rmd`](inst/snippets/installation-notice_dev-version_gitlab.Rmd)
+-   [`literate-programming-notice.Rmd`](inst/snippets/literate-programming-notice.Rmd)
 
 ## roxygen2 tag labels
 
 The [roxygen2](https://roxygen2.r-lib.org/) tag labels are specifically meant for [`@`-tag](https://roxygen2.r-lib.org/articles/rd.html)-based documentation using [dynamic R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1).
 
-Insert them in your functions using inline R code, e.g. as follows
+Insert them in your functions using inline R code, e.g. as follows
 
-```r
+``` r
 #' @param use_cache `r pkgsnippets::param_label("use_cache")`
 #' @param cache_lifespan `r pkgsnippets::param_label("cache_lifespan")`
 #' @return `r pkgsnippets::return_label("data")`
@@ -46,7 +39,7 @@ Insert them in your functions using inline R code, e.g. as follows
 
 which will result in
 
-```r
+``` r
 #' @param use_cache Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.
 #' @param cache_lifespan The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Defaults to 1 day (24 hours). Only relevant if `use_cache = TRUE`.
 #' @return A [tibble][tibble::tbl_df].
@@ -56,13 +49,13 @@ which will result in
 
 To install the latest development version of pkgsnippets, run the following in R:
 
-```r
+``` r
 if (!("remotes" %in% rownames(installed.packages()))) {
   install.packages(pkgs = "remotes",
                    repos = "https://cloud.r-project.org/")
 }
 
-remotes::install_git(url = "salim_b/r/pkgs/pkgsnippets")
+remotes::install_gitlab(repo = "salim_b/r/pkgs/pkgsnippets")
 ```
 
 ## Development
@@ -75,19 +68,19 @@ This package is written using a [literate programming](https://en.wikipedia.org/
 
 This package borrows a lot of the [Tidyverse](https://www.tidyverse.org/) design philosophies. The R code adheres to the principles specified in the [Tidyverse Design Guide](https://principles.tidyverse.org/) wherever possible and is formatted according to the [Tidyverse Style Guide](https://style.tidyverse.org/) (TSG) with the following exceptions:
 
-- Line width is limited to **160 characters**, double the [limit proposed by the TSG](https://style.tidyverse.org/syntax.html#long-lines) (80 characters is ridiculously little given today's high-resolution wide screen monitors).
+-   Line width is limited to **160 characters**, double the [limit proposed by the TSG](https://style.tidyverse.org/syntax.html#long-lines) (80 characters is ridiculously little given today’s high-resolution wide screen monitors).
 
-- Usage of [magrittr's compound assignment pipe-operator `%<>%`](https://magrittr.tidyverse.org/reference/compound.html) is desirable[^tsg-capipe].
+-   Usage of [magrittr’s compound assignment pipe-operator `%<>%`](https://magrittr.tidyverse.org/reference/compound.html) is desirable[^1].
 
-- Usage of [R's right-hand assignment operator `->`](https://rdrr.io/r/base/assignOps.html) is not allowed[^tsg-rightass].
+-   Usage of [R’s right-hand assignment operator `->`](https://rdrr.io/r/base/assignOps.html) is not allowed[^2].
 
 As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in the [lintr configuration file](https://github.com/jimhester/lintr#project-configuration) [`.lintr`](.lintr), so lintr can be used right away to check for formatting issues:
 
-```r
+``` r
 lintr::lint_dir(path = "Rmd/",
                 pattern = ".+\\.Rmd")
 ```
 
-[^tsg-capipe]: The TSG [explicitly instructs to avoid this operator](https://style.tidyverse.org/pipes.html#assignment-1) – presumably because it's relatively unknown and therefore might be confused with the forward pipe operator `%>%` when skimming code only briefly. I don't consider this to be an actual issue since there aren't many sensible usage patterns of `%>%` at the beginning of a pipe sequence inside a function – I can only think of creating side effects and relying on [R's implicit return of the last evaluated expression](https://rdrr.io/r/base/function.html). Therefore – and because I really like the `%<>%` operator – it's usage is welcome.
+[^1]: The TSG [explicitly instructs to avoid this operator](https://style.tidyverse.org/pipes.html#assignment-1) – presumably because it’s relatively unknown and therefore might be confused with the forward pipe operator `%>%` when skimming code only briefly. I don’t consider this to be an actual issue since there aren’t many sensible usage patterns of `%>%` at the beginning of a pipe sequence inside a function – I can only think of creating side effects and relying on [R’s implicit return of the last evaluated expression](https://rdrr.io/r/base/function.html). Therefore – and because I really like the `%<>%` operator – it’s usage is welcome.
 
-[^tsg-rightass]: The TSG [explicitly accepts `->` for assignments at the end of a pipe sequence](https://style.tidyverse.org/pipes.html#assignment-1) while Google's R Style Guide [considers this bad practice](https://google.github.io/styleguide/Rguide.html#right-hand-assignment) because it "makes it harder to see in code where an object is defined". I second the latter.
+[^2]: The TSG [explicitly accepts `->` for assignments at the end of a pipe sequence](https://style.tidyverse.org/pipes.html#assignment-1) while Google’s R Style Guide [considers this bad practice](https://google.github.io/styleguide/Rguide.html#right-hand-assignment) because it “makes it harder to see in code where an object is defined”. I second the latter.

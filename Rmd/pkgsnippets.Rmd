@@ -130,11 +130,12 @@ md_snippet <- function(name = md_snippets()$name) {
 #' md_snippets() %>%
 #'   dplyr::select(-label) %>%
 #'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
-#'   pal::pipe_table()
+#'   pal::pipe_table() %>%
+#'   cat()
 #' ```
 #'
-#' @return A [tibble][tibble::tbl_df].
-#' @family roxygen2label
+#' @return `r pkgsnippets::return_label("data")`
+#' @family mdsnips
 #' @export
 md_snippets <- function() {
   
@@ -234,7 +235,8 @@ return_label <- function(name = roxygen_labels(type = "return")$name) {
 #' roxygen_labels() %>%
 #'   dplyr::select(-label) %>%
 #'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
-#'   pal::pipe_table()
+#'   pal::pipe_table() %>%
+#'   cat()
 #' ```
 #'
 #' @param type The label type(s) to return. A character vector. Valid types include

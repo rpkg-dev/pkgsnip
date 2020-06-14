@@ -21,7 +21,7 @@ ls_snippets <- function() {
                type = "file") %>%
     tibble::tibble(path = .) %>%
     dplyr::mutate(name = fs::path_file(path),
-                  .before = 1)
+                  .before = 1L)
 }
 
 #' Get snippet file path
@@ -55,6 +55,49 @@ snippet_path <- function(name = ls_snippets()$name) {
     paste0("snippets/", .) %>%
     fs::path_package(package = pkg) %>%
     fs::path_real()
+}
+
+#' Get predefined Markdown snippet
+#'
+#' @param name The snippet name.
+#' @inherit param_label return
+#' @export
+md_snippet <- function(name = md_snippets()$name) {
+  
+  name <- rlang::arg_match(name)
+  
+  dplyr::filter(.data = md_snippets(),
+                name == !!name)$label
+  
+  
+}
+
+#' Get a table of all Markdown snippets included in this package
+#'
+#' This simply returns a [tibble][tibble::tbl_df] listing all Markdown snippets together with their `name` which can be provided as [md_snippet()]'s `name`
+#' argument.
+#'
+#' Currently, Markdown snippets with the following `names` are available:
+#'
+#'
+#' ```{r, echo = FALSE, results = "asis"}
+#' bt <- "`"
+#' md_snippets() %>%
+#'   dplyr::select(-label) %>%
+#'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
+#'   pal::pipe_table()
+#' ```
+#'
+#' @return A [tibble][tibble::tbl_df].
+#' @family roxygen2label
+#' @export
+md_snippets <- function() {
+  
+  tibble::tribble(
+    ~name, ~label,
+    "rstudio_addin_hint", paste0("This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/) allowing RStudio users ",
+                                 "to assign a custom shortcut to it.")
+  )
 }
 
 #' Get predefined parameter label
@@ -132,10 +175,7 @@ return_label <- function(name = roxygen_labels(type = "return")$name) {
 #' roxygen_labels() %>%
 #'   dplyr::select(-label) %>%
 #'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
-#'   magrittr::set_names(value = pander::pandoc.strong.return(names(.))) %>%
-#'   pander::pandoc.table(style = "rmarkdown",
-#'                        justify = "left",
-#'                        split.tables = Inf)
+#'   pal::pipe_table()
 #' ```
 #'
 #' @param type The label type(s) to return. A character vector. Valid types include

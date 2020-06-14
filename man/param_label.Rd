@@ -28,7 +28,6 @@ Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/r
 }
 \seealso{
 roxygen2 label functions
-\code{\link{md_snippets}()},
 \code{\link{return_label}()},
 \code{\link{roxygen_labels}()}
 }

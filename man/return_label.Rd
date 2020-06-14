@@ -24,7 +24,6 @@ The parameters can be inserted using \href{https://roxygen2.r-lib.org/articles/r
 }
 \seealso{
 roxygen2 label functions
-\code{\link{md_snippets}()},
 \code{\link{param_label}()},
 \code{\link{roxygen_labels}()}
 }

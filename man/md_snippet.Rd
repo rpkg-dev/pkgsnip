@@ -15,3 +15,8 @@ A character scalar.
 \description{
 Get predefined Markdown snippet
 }
+\seealso{
+Markdown snippet functions
+\code{\link{md_snippets}()}
+}
+\concept{mdsnips}

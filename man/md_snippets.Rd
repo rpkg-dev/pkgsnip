@@ -14,14 +14,13 @@ This simply returns a \link[tibble:tbl_df]{tibble} listing all Markdown snippets
 argument.
 }
 \details{
-Currently, Markdown snippets with the following \code{names} are available:
-
-\link{1} "\n\n| \strong{name}             |\n|:---------------------|\n| \code{rstudio_addin_hint} |\n\n"
+Currently, Markdown snippets with the following \code{names} are available:\tabular{l}{
+   \strong{name} \cr
+   \code{rstudio_addin_hint} \cr
+}
 }
 \seealso{
-roxygen2 label functions
-\code{\link{param_label}()},
-\code{\link{return_label}()},
-\code{\link{roxygen_labels}()}
+Markdown snippet functions
+\code{\link{md_snippet}()}
 }
-\concept{roxygen2label}
+\concept{mdsnips}

@@ -60,7 +60,8 @@ snippet_path <- function(name = ls_snippets()$name) {
 #' Get predefined Markdown snippet
 #'
 #' @param name The snippet name.
-#' @inherit param_label return
+#' @return A character scalar.
+#' @family mdsnips
 #' @export
 md_snippet <- function(name = md_snippets()$name) {
   
@@ -85,11 +86,12 @@ md_snippet <- function(name = md_snippets()$name) {
 #' md_snippets() %>%
 #'   dplyr::select(-label) %>%
 #'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
-#'   pal::pipe_table()
+#'   pal::pipe_table() %>%
+#'   cat()
 #' ```
 #'
-#' @return A [tibble][tibble::tbl_df].
-#' @family roxygen2label
+#' @return `r pkgsnippets::return_label("data")`
+#' @family mdsnips
 #' @export
 md_snippets <- function() {
   
@@ -175,7 +177,8 @@ return_label <- function(name = roxygen_labels(type = "return")$name) {
 #' roxygen_labels() %>%
 #'   dplyr::select(-label) %>%
 #'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
-#'   pal::pipe_table()
+#'   pal::pipe_table() %>%
+#'   cat()
 #' ```
 #'
 #' @param type The label type(s) to return. A character vector. Valid types include
@@ -188,7 +191,7 @@ roxygen_labels <- function(type = NULL) {
   tibble::tribble(
     ~type, ~name, ~label,
     "return", "data", "A [tibble][tibble::tbl_df].",
-    "return", "path", "A [path][fs::fs_path()].",
+    "return", "path", "A [path][fs::fs_path].",
     "param", "start_date", "The begin of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "end_date", "The end of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.",

@@ -18,13 +18,18 @@ This simply returns a \link[tibble:tbl_df]{tibble} listing all parameter labels 
 argument.
 }
 \details{
-Currently, parameter labels with the following \code{types} and \code{names} are available:
-
-\link{1} "\n\n| \strong{type} | \strong{name}         |\n|:---------|:-----------------|\n| \code{return} | \code{data}           |\n| \code{return} | \code{path}           |\n| \code{param}  | \code{start_date}     |\n| \code{param}  | \code{end_date}       |\n| \code{param}  | \code{use_cache}      |\n| \code{param}  | \code{cache_lifespan} |\n\n"
+Currently, parameter labels with the following \code{types} and \code{names} are available:\tabular{ll}{
+   \strong{type} \tab \strong{name} \cr
+   \code{return} \tab \code{data} \cr
+   \code{return} \tab \code{path} \cr
+   \code{param} \tab \code{start_date} \cr
+   \code{param} \tab \code{end_date} \cr
+   \code{param} \tab \code{use_cache} \cr
+   \code{param} \tab \code{cache_lifespan} \cr
+}
 }
 \seealso{
 roxygen2 label functions
-\code{\link{md_snippets}()},
 \code{\link{param_label}()},
 \code{\link{return_label}()}
 }

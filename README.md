@@ -10,10 +10,20 @@ The (R) Markdown snippets can be used anywhere [(R) Markdown](https://rmarkdown.
     ...
     ```
 
-Or you can use them in [roxygen2](https://roxygen2.r-lib.org/)’s [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
+When inserting snippets that require the name of the calling package like `"installation-notice_dev-version_gitlab.Rmd"`, you should either use `pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- desc::desc_get(desc::desc_fields())` to the environment passed to `devtools::build_rmd()`/`devtools::build_readme()`’s `...` argument.
+
+You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)’s [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
 ``` rd
 #' @includeRmd `pkgsnippets::snippet_path("literate-programming-notice.Rmd")`
+```
+
+For snippets that require the name of the calling package just assign `pkg_metadata` (once) before inserting the snippet, e.g. like this:
+
+``` rd
+#' 
+#'
+#' @includeRmd `pkgsnippets::snippet_path("installation-notice_dev-version.Rmd")`
 ```
 
 ### Included Snippets

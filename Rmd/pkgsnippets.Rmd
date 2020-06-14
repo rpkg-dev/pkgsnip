@@ -40,13 +40,25 @@ ls_snippets <- function() {
                type = "file") %>%
     tibble::tibble(path = .) %>%
     dplyr::mutate(name = fs::path_file(path),
-                  .before = 1)
+                  .before = 1L)
 }
 ```
 
 ## Get snippet file path
 
-TODO: Update the `@param name` doc as soon as [#1112](https://github.com/r-lib/roxygen2/issues/1112) is fixed!
+TODO:
+
+- Report child-document-working-dir problem to knitr: `r getwd()` in Rmd built with `pal::build_readme()` returns the path to `snippet_path()`-inserted knitr child document `/home/salim/.by_pkg_mngr/r/pkgsnippets/snippets/`! WTF?!
+  
+  The same `r getwd()` built with `devtools::build_readme()` gives nada.
+  
+  This has the consequence that DESCRIPTION file is not accessible via `desc::desc_get(desc::desc_fields())`.
+
+  See <https://stackoverflow.com/a/32012827/7196903> for Yihui explaining that child docs get their own working dir and how to set knitr's `root.dir` option.
+  But setting `knitr::opts_knit$set(root.dir = getwd())` in the parent `README.Rmd` does not change anything (and `devtools::build_rmd()` still outputs nada).
+  Neither did using a relative child path, i.e. `child = fs::path_rel(pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd"))`.
+
+- Update the `@param name` doc as soon as [#1112](https://github.com/r-lib/roxygen2/issues/1112) is fixed!
 
 ```{r}
 #' Get snippet file path

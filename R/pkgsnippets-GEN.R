@@ -183,7 +183,7 @@ return_label <- function(name = roxygen_labels(type = "return")$name) {
 #'
 #' @param type The label type(s) to return. A character vector. Valid types include
 #'   ``r unique(roxygen_labels()$type) %>% pal::prose_ls(wrap = "`")``.
-#' @return A [tibble][tibble::tbl_df].
+#' @return `r pkgsnippets::return_label("data")`
 #' @family roxygen2label
 #' @export
 roxygen_labels <- function(type = NULL) {

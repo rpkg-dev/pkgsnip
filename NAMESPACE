@@ -3,6 +3,8 @@
 export(ls_snippets)
 export(md_snippet)
 export(md_snippets)
+export(messages)
+export(msg)
 export(param_label)
 export(return_label)
 export(roxygen_labels)

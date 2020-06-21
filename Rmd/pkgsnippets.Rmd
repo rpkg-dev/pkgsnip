@@ -265,3 +265,75 @@ roxygen_labels <- function(type = NULL) {
                                 type %in% {{type}}))
 }
 ```
+
+# R messages
+
+## Get predefined R message
+
+```{r}
+#' Get predefined R message
+#'
+#' @param name The message name. See [messages()] for possible values.
+#' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [messages()] for an overview.
+#'
+#' @return A character scalar.
+#' @family rmsg
+#' @export
+#'
+#' @examples
+#' pkgsnippets::msg(name = "pkg_required",
+#'                  pkg = "some_pkg")
+msg <- function(name = messages()$name,
+                ...) {
+  
+  # ellipsis::check_dots_used()
+  name <- rlang::arg_match(name)
+  
+  glue::glue(... = ...,
+             dplyr::filter(.data = messages(),
+                           name == !!name)$message)
+}
+```
+
+## Get a table of all R messages included in this package
+
+```{r}
+#' Get a table of all R messages included in this package
+#'
+#' This simply returns a [tibble][tibble::tbl_df] listing all R messages together with their `name` which can be provided as [msg()]'s `name`
+#' argument.
+#'
+#' Currently, R messages with the following `names` and `arguments` are available:
+#'
+#'
+#' ```{r, echo = FALSE, results = "asis"}
+#' bt <- "`"
+#' messages() %>%
+#'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
+#'   add_args_col() %>%
+#'   dplyr::select(-message) %>%
+#'   pal::pipe_table() %>%
+#'   cat()
+#' ```
+#'
+#' @return `r pkgsnippets::return_label("data")`
+#' @family rmsg
+#' @export
+messages <- function() {
+  
+  tibble::tribble(
+    ~name, ~message,
+    "pkg_required", "To be able to use this function, the package '{pkg}' is required but it is not installed. Please install it and then try again."
+  )
+}
+
+add_args_col <- function(data) {
+  
+  dplyr::mutate(.data = data,
+                arguments =
+                  stringr::str_extract_all(string = message,
+                                           pattern = "(?<=\\{)[^\\}]+?(?=\\})") %>%
+                  pal::prose_ls(wrap = "`",
+                                last_separator = ", "))
+}
+```

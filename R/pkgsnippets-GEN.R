@@ -105,7 +105,7 @@ md_snippets <- function() {
 #' Get predefined parameter label
 #'
 #' These are pre-defined labels intended to be used to document parameters using [roxygen2][roxygen2::roxygen2]'s
-#' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tags.
+#' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
 #' The parameters can be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
@@ -115,11 +115,11 @@ md_snippets <- function() {
 #' roxygen_labels() %>%
 #'   dplyr::filter(type == "param") %$%
 #'   name %>%
-#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@param {.x} ", bt, 'r pkgsnippets::param_label("{.x}")', bt, " ", bt, bt, "\cr")) %>%
+#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@param {.x} ", bt, 'r pkgsnippets::param_label("{.x}")', bt, " ", bt, bt)) %>%
 #'   pal::cat_lines()
 #' ```
 #'
-#' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
+#' Note that the above only works in [roxygen2 7.1.0](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/) and above.
 #' 
 #' @param name The label name. See [roxygen_labels()] for possible values.
 #'
@@ -137,7 +137,7 @@ param_label <- function(name = roxygen_labels(type = "param")$name) {
 #' Get predefined return label
 #'
 #' These are pre-defined labels intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
-#' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tags.
+#' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
 #' The parameters can be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
@@ -147,7 +147,7 @@ param_label <- function(name = roxygen_labels(type = "param")$name) {
 #' roxygen_labels() %>%
 #'   dplyr::filter(type == "return") %$%
 #'   name %>%
-#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@return ", bt, 'r pkgsnippets::return_label("{.x}")', bt, " ", bt, bt, "\cr")) %>%
+#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@return ", bt, 'r pkgsnippets::return_label("{.x}")', bt, " ", bt, bt)) %>%
 #'   pal::cat_lines()
 #' ```
 #' 

@@ -11,10 +11,10 @@ roxygen_labels(type = NULL)
 \code{return} and \code{param})``.}
 }
 \value{
-A \link[tibble:tbl_df]{tibble}.
+A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df]{tibble} listing all parameter labels together with their \code{name} which can be provided as \code{\link[=param_label]{param_label()}}'s \code{name}
+This simply returns a \link[tibble:tbl_df-class]{tibble} listing all parameter labels together with their \code{name} which can be provided as \code{\link[=param_label]{param_label()}}'s \code{name}
 argument.
 }
 \details{

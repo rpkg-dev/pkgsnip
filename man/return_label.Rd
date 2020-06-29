@@ -13,15 +13,15 @@ return_label(name = roxygen_labels(type = "return")$name)
 A character scalar.
 }
 \description{
-These are pre-defined labels intended to be used to document function return values using \link[roxygen2:roxygen2]{roxygen2}'s
-\href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@return}} tags.
+These are pre-defined labels intended to be used to document function return values using \link[roxygen2:roxygen2-package]{roxygen2}'s
+\href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@return}} tag.
 }
 \details{
 The parameters can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code} as follows:
 
-\verb{#' @return `r pkgsnippets::return_label("data")` }\cr
-\verb{#' @return `r pkgsnippets::return_label("version_nr")` }\cr
-\verb{#' @return `r pkgsnippets::return_label("path")` }\cr
+\verb{#' @return `r pkgsnippets::return_label("data")` }
+\verb{#' @return `r pkgsnippets::return_label("version_nr")` }
+\verb{#' @return `r pkgsnippets::return_label("path")` }
 }
 \seealso{
 roxygen2 label functions

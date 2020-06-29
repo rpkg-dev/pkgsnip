@@ -7,10 +7,10 @@
 md_snippets()
 }
 \value{
-A \link[tibble:tbl_df]{tibble}.
+A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df]{tibble} listing all Markdown snippets together with their \code{name} which can be provided as \code{\link[=md_snippet]{md_snippet()}}'s \code{name}
+This simply returns a \link[tibble:tbl_df-class]{tibble} listing all Markdown snippets together with their \code{name} which can be provided as \code{\link[=md_snippet]{md_snippet()}}'s \code{name}
 argument.
 }
 \details{

@@ -23,10 +23,11 @@ This function gives the file path to an (R) Markdown snippet shipped with this p
 }
 \details{
 The snippets can be used anywhere (R) Markdown input is supported. For example, you can use them as input to knitr's
-\href{https://yihui.org/knitr/options/#child-documents}{\code{child} document option}:\if{html}{\out{<div class="rmd">}}\preformatted{\{r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")\}
+\href{https://yihui.org/knitr/options/#child-documents}{\code{child} document option}:\if{html}{\out{<div class="rmd">}}\preformatted{```\{r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")\}
+```
 }\if{html}{\out{</div>}}
 
-Or you can use them in roxygen2's \href{https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files}{\verb{@includeRmd} tag}:\if{html}{\out{<div class="rmd">}}\preformatted{#' @includeRmd `pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")`
+Or you can use them in roxygen2's \href{https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files}{\verb{@includeRmd} tag}:\if{html}{\out{<div class="r">}}\preformatted{#' @includeRmd `r pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")`
 }\if{html}{\out{</div>}}
 }
 \examples{

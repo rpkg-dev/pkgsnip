@@ -68,14 +68,15 @@ TODO:
 #' The snippets can be used anywhere (R) Markdown input is supported. For example, you can use them as input to knitr's
 #' [`child` document option](https://yihui.org/knitr/options/#child-documents):
 #'
-#' ```rmd
-#' {r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")}
+#' ````rmd
+#' ```{r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")}
 #' ```
+#' ````
 #'
 #' Or you can use them in roxygen2's [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 #'
-#' ```rmd
-#' #' @includeRmd `pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")`
+#' ```r
+#' #' @includeRmd `r pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")`
 #' ```
 #'
 #' @param name The name of a snippet. Possible values include:

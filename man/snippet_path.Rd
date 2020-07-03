@@ -12,7 +12,7 @@ snippet_path(name = ls_snippets()$name)
 \item \code{"coding-style-notice.Rmd"}
 \item \code{"installation-notice_dev-version.Rmd"}
 \item \code{"installation-notice_dev-version_gitlab.Rmd"}
-\item \code{"literate-programming-notice.Rmd"})`
+\item \code{"rmd-package-notice.Rmd"})`
 }}
 }
 \value{

@@ -4,28 +4,33 @@
 \alias{return_label}
 \title{Get predefined return label}
 \usage{
-return_label(name = roxygen_labels(type = "return")$name)
+return_label(name = roxy_labels(type = "return")$name)
 }
 \arguments{
-\item{name}{The label name. See \code{\link[=roxygen_labels]{roxygen_labels()}} for possible values.}
+\item{name}{The label name. See \code{\link[=roxy_labels]{roxy_labels()}} for possible values.}
 }
 \value{
-A character scalar.
+A character vector.
 }
 \description{
 These are pre-defined labels intended to be used to document function return values using \link[roxygen2:roxygen2-package]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@return}} tag.
 }
 \details{
-The parameters can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code} as follows:
+The following return labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code}
+as follows:
 
 \verb{#' @return `r pkgsnippets::return_label("data")` }
-\verb{#' @return `r pkgsnippets::return_label("version_nr")` }
 \verb{#' @return `r pkgsnippets::return_label("path")` }
+\verb{#' @return `r pkgsnippets::return_label("r_object")` }
+\verb{#' @return `r pkgsnippets::return_label("version_nr")` }
+
+Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
 }
 \seealso{
 roxygen2 label functions
 \code{\link{param_label}()},
-\code{\link{roxygen_labels}()}
+\code{\link{roxy_labels}()},
+\code{\link{roxy_label}()}
 }
 \concept{roxygen2label}

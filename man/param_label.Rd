@@ -4,31 +4,37 @@
 \alias{param_label}
 \title{Get predefined parameter label}
 \usage{
-param_label(name = roxygen_labels(type = "param")$name)
+param_label(name = roxy_labels(type = "param")$name)
 }
 \arguments{
-\item{name}{The label name. See \code{\link[=roxygen_labels]{roxygen_labels()}} for possible values.}
+\item{name}{The label name. See \code{\link[=roxy_labels]{roxy_labels()}} for possible values.}
 }
 \value{
-A character scalar.
+A character vector.
 }
 \description{
-These are pre-defined labels intended to be used to document parameters using \link[roxygen2:roxygen2-package]{roxygen2}'s
+These are pre-defined labels intended to be used to document function parameters using \link[roxygen2:roxygen2-package]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag.
 }
 \details{
-The parameters can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code} as follows:
+The following parameter labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code}
+as follows:
 
+\verb{#' @param data `r pkgsnippets::param_label("data")` }
+\verb{#' @param path `r pkgsnippets::param_label("path")` }
+\verb{#' @param r_object `r pkgsnippets::param_label("r_object")` }
+\verb{#' @param version_nr `r pkgsnippets::param_label("version_nr")` }
 \verb{#' @param start_date `r pkgsnippets::param_label("start_date")` }
 \verb{#' @param end_date `r pkgsnippets::param_label("end_date")` }
 \verb{#' @param use_cache `r pkgsnippets::param_label("use_cache")` }
 \verb{#' @param cache_lifespan `r pkgsnippets::param_label("cache_lifespan")` }
 
-Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0} and above.
+Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
 }
 \seealso{
 roxygen2 label functions
 \code{\link{return_label}()},
-\code{\link{roxygen_labels}()}
+\code{\link{roxy_labels}()},
+\code{\link{roxy_label}()}
 }
 \concept{roxygen2label}

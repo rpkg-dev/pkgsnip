@@ -8,9 +8,9 @@
 \description{
 pkgsnippets ships ready-to-go (R) Markdown
     snippets and labels intended to be used in roxygen2 documentation or
-    as knitr child documents. They are designed to reduce unnecessary
-    repetition and instead standardize R-package documentation wherever
-    possible.
+    as knitr child documents. Also included are some predefined R message
+    texts. All of them are designed to reduce unnecessary repetition and
+    instead standardize R-package documentation wherever possible.
 }
 \seealso{
 Useful links:

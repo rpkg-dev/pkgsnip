@@ -1,6 +1,6 @@
 Package: pkgsnippets
 Title: Provides Handy (R) Markdown Snippets for Package Authors
-Version: 0.0.9004
+Version: 0.0.9005
 Authors@R: 
     person(given = "Salim",
            family = "Brüggemann",
@@ -9,9 +9,9 @@ Authors@R:
            comment = c(ORCID = "0000-0002-5329-5987"))
 Description: pkgsnippets ships ready-to-go (R) Markdown
     snippets and labels intended to be used in roxygen2 documentation or
-    as knitr child documents. They are designed to reduce unnecessary
-    repetition and instead standardize R-package documentation wherever
-    possible.
+    as knitr child documents. Also included are some predefined R message
+    texts. All of them are designed to reduce unnecessary repetition and
+    instead standardize R-package documentation wherever possible.
 License: AGPL-3
 URL: https://gitlab.com/salim_b/r/pkgs/pkgsnippets
 BugReports: https://gitlab.com/salim_b/r/pkgs/pkgsnippets/issues
@@ -27,7 +27,8 @@ Imports:
 Suggests: 
     desc (>= 1.2.0),
     pal,
-    stringr (>= 1.4.0)
+    stringr (>= 1.4.0),
+    testthat
 Remotes:
     gitlab::salim_b/r/pkgs/pal
 Encoding: UTF-8

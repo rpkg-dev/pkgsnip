@@ -1,12 +1,12 @@
 # pkgsnippets: Provides Handy (R) Markdown Snippets for Package Authors
 
-pkgsnippets ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. They are designed to reduce unnecessary repetition and instead standardize R-package documentation wherever possible.
+pkgsnippets ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R message texts. All of them are designed to reduce unnecessary repetition and instead standardize R-package documentation wherever possible.
 
 ## (R) Markdown snippets
 
 The (R) Markdown snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to [knitr](https://yihui.org/knitr/)’s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
-    ```{r, child = pkgsnippets::snippet_path("installation-notice_dev-version_gitlab.Rmd")}
+    ```{r, child = pkgsnippets::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}
     ...
     ```
 
@@ -15,7 +15,7 @@ When inserting snippets that require the name of the calling package like `"inst
 You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)’s [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
 ``` rd
-#' @includeRmd `pkgsnippets::snippet_path("literate-programming-notice.Rmd")`
+#' @includeRmd `pkgsnippets::rmd_snippet_path("literate-programming-notice.Rmd")`
 ```
 
 For snippets that require the name of the calling package just assign `pkg_metadata` (once) before inserting the snippet, e.g. like this:
@@ -23,7 +23,7 @@ For snippets that require the name of the calling package just assign `pkg_metad
 ``` rd
 #' 
 #'
-#' @includeRmd `pkgsnippets::snippet_path("installation-notice_dev-version.Rmd")`
+#' @includeRmd `pkgsnippets::rmd_snippet_path("installation-notice_dev-version.Rmd")`
 ```
 
 ### Included Snippets

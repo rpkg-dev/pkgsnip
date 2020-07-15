@@ -242,7 +242,7 @@ roxy_labels <- function(type = NULL) {
                                 type %in% c({{type}}, NA)))
 }
 
-#' Get predefined R message
+#' Get predefined R condition message
 #'
 #' @param name The message name. See [messages()] for possible values.
 #' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [messages()] for an overview.
@@ -265,12 +265,12 @@ msg <- function(name = messages()$name,
                            name == !!name)$message)
 }
 
-#' Get a table of all R messages included in this package
+#' Get a table of all available R condition messages
 #'
-#' This simply returns a [tibble][tibble::tbl_df] listing all R messages together with their `name` which can be provided as [msg()]'s `name`
-#' argument.
+#' This simply returns a [tibble][tibble::tbl_df] listing all R condition messages included in this package, together with their `name` which can be provided
+#' as [msg()]'s `name` argument.
 #'
-#' Currently, R messages with the following `names` and `arguments` are available:
+#' Currently, R condition messages with the following `names` and `arguments` are available:
 #'
 #'
 #' ```{r, echo = FALSE, results = "asis"}

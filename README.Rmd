@@ -6,34 +6,35 @@ output: pal::gitlab_document
 
 `r pal::desc_value(key = "Description")`
 
-## (R) Markdown snippets
+## R Markdown file snippets
 
-The (R) Markdown snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to [knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
+The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input
+to [knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
-`r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnippets::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}\n...\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
+`r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnippets::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
 
 When inserting snippets that require the name of the calling package like `"installation-notice_dev-version_gitlab.Rmd"`, you should either use
 `pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- desc::desc_get(desc::desc_fields())` to the environment passed to
-`devtools::build_rmd()`/`devtools::build_readme()`'s `...` argument.
+[`devtools::build_rmd()`](https://devtools.r-lib.org/reference/build_rmd.html) or its `...` argument respectively.
 
 You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)'s
 [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
 ```rd
-#' @includeRmd `pkgsnippets::rmd_snippet_path("literate-programming-notice.Rmd")`
+#' @includeRmd `r '\x60r pkgsnippets::rmd_snippet_path("rmd-package-notice.Rmd")\x60'`
 ```
 
-For snippets that require the name of the calling package just assign `pkg_metadata` (once) before inserting the snippet, e.g. like this:
+For snippets that require the name of the calling package, just assign `pkg_metadata` (once) before inserting the snippet(s), e.g. like this:
 
 ```rd
-#' `r pkg_metadata <- desc::desc_get(desc::desc_fields())`
+#' `r "\x60r pkg_metadata <- desc::desc_get(desc::desc_fields())\x60"`
 #'
-#' @includeRmd `pkgsnippets::rmd_snippet_path("installation-notice_dev-version.Rmd")`
+#' @includeRmd `r '\x60r pkgsnippets::rmd_snippet_path("installation-notice_dev-version.Rmd")\x60'`
 ```
 
 ### Included Snippets
 
-Currently, the following snippets are included:
+Currently, the following R Markdown file snippets are included:
 
 ```{r, echo = FALSE, results = "asis"}
 library(magrittr)

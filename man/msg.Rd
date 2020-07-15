@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkgsnippets-GEN.R
 \name{msg}
 \alias{msg}
-\title{Get predefined R message}
+\title{Get predefined R condition message}
 \usage{
 msg(name = messages()$name, ...)
 }
@@ -15,7 +15,7 @@ msg(name = messages()$name, ...)
 A character scalar.
 }
 \description{
-Get predefined R message
+Get predefined R condition message
 }
 \examples{
 pkgsnippets::msg(name = "pkg_required",

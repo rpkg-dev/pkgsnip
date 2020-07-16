@@ -69,6 +69,37 @@ which will result in
 #' @return `r pkgsnippets::return_label("data")`
 ```
 
+## R condition messages
+
+These are meant to be used as message texts for base R's [`message()`](https://rdrr.io/r/base/message.html), [`warning()`](https://rdrr.io/r/base/warning.html)
+and [`stop()`](https://rdrr.io/r/base/stop.html) functions or
+[`rlang::inform()`, `rlang::warn()` and `rlang::abort()`](https://rlang.r-lib.org/reference/abort.html) from the tidyverse respectively.
+
+A message can be retrieved using `pkgsnippets::msg()`. For some of the messages, arguments need to be provided so they can be tailored to their specific
+purpose. For example, the `pkg_required` message requires the `pkg` argument:
+
+```r
+pkgsnippets::msg(name = "pkg_required",
+                 pkg = "some_pkg")
+```
+
+Which results in the following message text:
+
+````{r, echo = FALSE, comment = ""}
+pkgsnippets::msg(name = "pkg_required",
+                 pkg = "some_pkg")
+````
+
+Currently, the following R condition messages are included:
+
+```{r, echo = FALSE, results = "asis"}
+messages() %>%
+  dplyr::mutate(dplyr::across(.fns = ~ paste0("`", .x, "`"))) %>%
+  pkgsnippets:::add_args_col() %>%
+  pal::pipe_table() %>%
+  cat()
+```
+
 ## Installation
 ```{r, install-snippet-dev, child = pkgsnippets::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}
 ```

@@ -54,6 +54,27 @@ which will result in
 #' @return A [tibble][tibble::tbl_df].
 ```
 
+## R condition messages
+
+These are meant to be used as message texts for base R’s [`message()`](https://rdrr.io/r/base/message.html), [`warning()`](https://rdrr.io/r/base/warning.html) and [`stop()`](https://rdrr.io/r/base/stop.html) functions or [`rlang::inform()`, `rlang::warn()` and `rlang::abort()`](https://rlang.r-lib.org/reference/abort.html) from the tidyverse respectively.
+
+A message can be retrieved using `pkgsnippets::msg()`. For some of the messages, arguments need to be provided so they can be tailored to their specific purpose. For example, the `pkg_required` message requires the `pkg` argument:
+
+``` r
+pkgsnippets::msg(name = "pkg_required",
+                 pkg = "some_pkg")
+```
+
+Which results in the following message text:
+
+    To be able to use this function, the package 'some_pkg' is required but it is not installed. Please install it and then try again.
+
+Currently, the following R condition messages are included:
+
+| **name**       | **message**                                                                                                                       | **arguments** |
+|:---------------|:----------------------------------------------------------------------------------------------------------------------------------|:--------------|
+| `pkg_required` | `To be able to use this function, the package '{pkg}' is required but it is not installed. Please install it and then try again.` | `pkg`         |
+
 ## Installation
 
 To install the latest development version of pkgsnippets, run the following in R:

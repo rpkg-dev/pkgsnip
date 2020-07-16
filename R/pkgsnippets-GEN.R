@@ -276,7 +276,8 @@ msg <- function(name = messages()$name,
 #' ```{r, echo = FALSE, results = "asis"}
 #' bt <- "`"
 #' messages() %>%
-#'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
+#'   dplyr::mutate(dplyr::across(name,
+#'                               ~ paste0(bt, .x, bt))) %>%
 #'   add_args_col() %>%
 #'   dplyr::select(-message) %>%
 #'   pal::pipe_table() %>%

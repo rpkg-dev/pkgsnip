@@ -86,7 +86,6 @@ md_snippet <- function(name = md_snippets()$name) {
 #'
 #' Currently, Markdown snippets with the following `names` are available:
 #'
-#'
 #' ```{r, echo = FALSE, results = "asis"}
 #' bt <- "`"
 #' md_snippets() %>%
@@ -115,7 +114,6 @@ md_snippets <- function() {
 #'
 #' The labels can be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
-#'
 #' ```r
 #' #' @param start_date `r pkgsnippets::roxy_label("start_date", type = "param")`
 #' #' @return `r pkgsnippets::roxy_label("data", type = "return")`
@@ -143,12 +141,12 @@ roxy_label <- function(name = roxy_labels()$name) {
 #' The following parameter labels are available to be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
 #' as follows:
 #'
-#'
 #' ```{r, echo = FALSE, results = "asis"}
 #' bt <- "`"
 #' roxy_labels(type = "param") %$%
 #'   name %>%
 #'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@param {.x} ", bt, 'r pkgsnippets::param_label("{.x}")', bt, " ", bt, bt)) %>%
+#'   c("\n", .) %>%
 #'   pal::cat_lines()
 #' ```
 #'
@@ -176,12 +174,12 @@ param_label <- function(name = roxy_labels(type = "param")$name) {
 #' The following return labels are available to be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
 #' as follows:
 #'
-#'
 #' ```{r, echo = FALSE, results = "asis"}
 #' bt <- "`"
 #' roxy_labels(type = "return") %$%
 #'   name %>%
 #'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@return ", bt, 'r pkgsnippets::return_label("{.x}")', bt, " ", bt, bt)) %>%
+#'   c("\n", .) %>%
 #'   pal::cat_lines()
 #' ```
 #'
@@ -207,7 +205,6 @@ return_label <- function(name = roxy_labels(type = "return")$name) {
 #' the `name` argument of [param_label()] or [return_label()].
 #'
 #' Currently, parameter labels with the following `types` and `names` are available:
-#'
 #'
 #' ```{r, echo = FALSE, results = "asis"}
 #' bt <- "`"
@@ -271,7 +268,6 @@ msg <- function(name = messages()$name,
 #' as [msg()]'s `name` argument.
 #'
 #' Currently, R condition messages with the following `names` and `arguments` are available:
-#'
 #'
 #' ```{r, echo = FALSE, results = "asis"}
 #' bt <- "`"

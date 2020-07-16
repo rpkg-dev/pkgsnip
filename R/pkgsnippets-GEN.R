@@ -300,8 +300,11 @@ add_args_col <- function(data) {
                 arguments =
                   stringr::str_extract_all(string = message,
                                            pattern = "(?<=\\{)[^\\}]+?(?=\\})") %>%
-                  pal::prose_ls(wrap = "`",
-                                last_separator = ", "))
+                  purrr::map_chr(~ pal::prose_ls(.x,
+                                                 wrap = "`",
+                                                 last_separator = ", ") %>%
+                                   purrr::when(length(.) == 0L ~ "",
+                                               ~ .)))
 }
 
 #' Commonly used abbreviations in R code

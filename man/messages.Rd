@@ -17,7 +17,6 @@ as \code{\link[=msg]{msg()}}'s \code{name} argument.
 Currently, R condition messages with the following \code{names} and \code{arguments} are available:\tabular{ll}{
    \strong{name} \tab \strong{arguments} \cr
    \code{pkg_required} \tab \code{pkg} \cr
-   \code{pkg_2} \tab \code{pkg} \cr
 }
 }
 \seealso{

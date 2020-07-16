@@ -93,7 +93,7 @@ pkgsnippets::msg(name = "pkg_required",
 Currently, the following R condition messages are included:
 
 ```{r, echo = FALSE, results = "asis"}
-messages() %>%
+pkgsnippets::messages() %>%
   dplyr::mutate(dplyr::across(name,
                               ~ paste0("`", .x, "`"))) %>%
   pkgsnippets:::add_args_col() %>%

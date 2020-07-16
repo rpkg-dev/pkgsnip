@@ -71,7 +71,9 @@ Which results in the following message text:
 
 Currently, the following R condition messages are included:
 
-    ## Error in messages(): could not find function "messages"
+| **name**       | **message**                                                                                                                     | **arguments** |
+|:---------------|:--------------------------------------------------------------------------------------------------------------------------------|:--------------|
+| `pkg_required` | To be able to use this function, the package ‘{pkg}’ is required but it is not installed. Please install it and then try again. | `pkg`         |
 
 ## Installation
 

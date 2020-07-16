@@ -94,7 +94,8 @@ Currently, the following R condition messages are included:
 
 ```{r, echo = FALSE, results = "asis"}
 messages() %>%
-  dplyr::mutate(dplyr::across(.fns = ~ paste0("`", .x, "`"))) %>%
+  dplyr::mutate(dplyr::across(name,
+                              ~ paste0("`", .x, "`"))) %>%
   pkgsnippets:::add_args_col() %>%
   pal::pipe_table() %>%
   cat()
@@ -113,3 +114,5 @@ messages() %>%
 ### Coding style
 ```{r, coding-style-snippet, child = pkgsnippets::rmd_snippet_path("coding-style-notice.Rmd")}
 ```
+
+---

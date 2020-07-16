@@ -23,6 +23,7 @@ Currently, parameter labels with the following \code{types} and \code{names} are
    \code{NA} \tab \code{path} \cr
    \code{NA} \tab \code{r_object} \cr
    \code{NA} \tab \code{version_nr} \cr
+   \code{param} \tab \code{dyn_dots_support} \cr
    \code{param} \tab \code{start_date} \cr
    \code{param} \tab \code{end_date} \cr
    \code{param} \tab \code{use_cache} \cr

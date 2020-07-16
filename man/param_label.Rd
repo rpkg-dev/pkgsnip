@@ -24,6 +24,7 @@ as follows:
 \verb{#' @param path `r pkgsnippets::param_label("path")` }
 \verb{#' @param r_object `r pkgsnippets::param_label("r_object")` }
 \verb{#' @param version_nr `r pkgsnippets::param_label("version_nr")` }
+\verb{#' @param dyn_dots_support `r pkgsnippets::param_label("dyn_dots_support")` }
 \verb{#' @param start_date `r pkgsnippets::param_label("start_date")` }
 \verb{#' @param end_date `r pkgsnippets::param_label("end_date")` }
 \verb{#' @param use_cache `r pkgsnippets::param_label("use_cache")` }

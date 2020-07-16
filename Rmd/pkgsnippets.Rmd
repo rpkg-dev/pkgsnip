@@ -294,6 +294,7 @@ roxy_labels <- function(type = NULL) {
     NA, "path", "A [path][fs::fs_path].",
     NA, "r_object", "An \\R object.",
     NA, "version_nr", "A [numeric version][numeric_version()].",
+    "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
     "param", "start_date", "The begin of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "end_date", "The end of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.",

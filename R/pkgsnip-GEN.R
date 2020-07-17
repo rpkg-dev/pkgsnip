@@ -16,7 +16,7 @@ pkg <- utils::packageName()
 #' @return `pkgsnip::return_label("data")`
 #' @family rmdsnips
 #' @export
-ls_rmd_snippets <- function() {
+ls_rmd_snips <- function() {
   
   fs::path_package("snippets/",
                      package = pkg) %>%
@@ -36,26 +36,26 @@ ls_rmd_snippets <- function() {
 #' [`child` document option](https://yihui.org/knitr/options/#child-documents):
 #'
 #' ````rmd
-#' ```{r, child = pkgsnip::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}
+#' ```{r, child = pkgsnip::rmd_snip_path("installation-notice_dev-version_gitlab.Rmd")}
 #' ```
 #' ````
 #'
 #' Or you can use them in roxygen2's [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 #'
 #' ```r
-#' #' @includeRmd `r pkgsnip::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")`
+#' #' @includeRmd `r pkgsnip::rmd_snip_path("installation-notice_dev-version_gitlab.Rmd")`
 #' ```
 #'
 #' @param name The name of a snippet. Possible values include:
-#'   00`r paste0('- ``"', ls_rmd_snippets()$name, '"``')`
+#'   00`r paste0('- ``"', ls_rmd_snips()$name, '"``')`
 #'
 #' @return `r pkgsnip::return_label("path")`
 #' @family rmdsnips
 #' @export
 #'
 #' @examples
-#' pkgsnip::rmd_snippet_path("coding-style-notice.Rmd")
-rmd_snippet_path <- function(name = ls_rmd_snippets()$name) {
+#' pkgsnip::rmd_snip_path("coding-style-notice.Rmd")
+rmd_snip_path <- function(name = ls_rmd_snips()$name) {
   
   rlang::arg_match(name) %>%
     paste0("snippets/", .) %>%
@@ -70,11 +70,11 @@ rmd_snippet_path <- function(name = ls_rmd_snippets()$name) {
 #' @return A character scalar.
 #' @family mdsnips
 #' @export
-md_snippet <- function(name = md_snippets()$name) {
+md_snip <- function(name = md_snips()$name) {
   
   name <- rlang::arg_match(name)
   
-  dplyr::filter(.data = md_snippets(),
+  dplyr::filter(.data = md_snips(),
                 name == !!name)$label
   
   
@@ -82,14 +82,14 @@ md_snippet <- function(name = md_snippets()$name) {
 
 #' Get a table of all Markdown snippets included in this package
 #'
-#' This simply returns a [tibble][tibble::tbl_df] listing all Markdown snippets together with their `name` which can be provided as [md_snippet()]'s `name`
+#' This simply returns a [tibble][tibble::tbl_df] listing all Markdown snippets together with their `name` which can be provided as [md_snip()]'s `name`
 #' argument.
 #'
 #' Currently, Markdown snippets with the following `names` are available:
 #'
 #' ```{r, echo = FALSE, results = "asis"}
 #' bt <- "`"
-#' md_snippets() %>%
+#' md_snips() %>%
 #'   dplyr::select(-label) %>%
 #'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
 #'   pal::pipe_table() %>%
@@ -99,7 +99,7 @@ md_snippet <- function(name = md_snippets()$name) {
 #' @return `r pkgsnip::return_label("data")`
 #' @family mdsnips
 #' @export
-md_snippets <- function() {
+md_snips <- function() {
   
   tibble::tribble(
     ~name, ~label,

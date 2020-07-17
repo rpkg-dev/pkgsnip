@@ -21,7 +21,8 @@ ls_rmd_snippets <- function() {
   fs::path_package("snippets/",
                      package = pkg) %>%
     fs::dir_ls(recurse = TRUE,
-               type = "file") %>%
+               type = "file",
+               glob = "*.Rmd") %>%
     tibble::tibble(path = .) %>%
     dplyr::mutate(name = fs::path_file(path),
                   .before = 1L)

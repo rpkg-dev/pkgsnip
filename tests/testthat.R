@@ -1,4 +1,4 @@
 library(testthat)
-library(pkgsnippets)
+library(pkgsnip)
 
-test_check("pkgsnippets")
+test_check("pkgsnip")

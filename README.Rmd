@@ -11,7 +11,7 @@ output: pal::gitlab_document
 The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input
 to [knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
-`r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnippets::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
+`r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnip::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
 
 When inserting snippets that require the name of the calling package like `"installation-notice_dev-version_gitlab.Rmd"`, you should either use
 `pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- desc::desc_get(desc::desc_fields())` to the environment passed to
@@ -21,7 +21,7 @@ You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)'s
 [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
 ```rd
-#' @includeRmd `r '\x60r pkgsnippets::rmd_snippet_path("rmd-package-notice.Rmd")\x60'`
+#' @includeRmd `r '\x60r pkgsnip::rmd_snippet_path("rmd-package-notice.Rmd")\x60'`
 ```
 
 For snippets that require the name of the calling package, just assign `pkg_metadata` (once) before inserting the snippet(s), e.g. like this:
@@ -29,7 +29,7 @@ For snippets that require the name of the calling package, just assign `pkg_meta
 ```rd
 #' `r "\x60r pkg_metadata <- desc::desc_get(desc::desc_fields())\x60"`
 #'
-#' @includeRmd `r '\x60r pkgsnippets::rmd_snippet_path("installation-notice_dev-version.Rmd")\x60'`
+#' @includeRmd `r '\x60r pkgsnip::rmd_snippet_path("installation-notice_dev-version.Rmd")\x60'`
 ```
 
 ### Included Snippets
@@ -56,17 +56,17 @@ using [dynamic R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dy
 Insert them in your functions using inline R code, e.g. as follows
 
 ```r
-`r paste0("#' @param use_cache \U0060r pkgsnippets::param_label(\"use_cache\")\U0060")`
-`r paste0("#' @param cache_lifespan \U0060r pkgsnippets::param_label(\"cache_lifespan\")\U0060")`
-`r paste0("#' @return \U0060r pkgsnippets::return_label(\"data\")\U0060")`
+`r paste0("#' @param use_cache \U0060r pkgsnip::param_label(\"use_cache\")\U0060")`
+`r paste0("#' @param cache_lifespan \U0060r pkgsnip::param_label(\"cache_lifespan\")\U0060")`
+`r paste0("#' @return \U0060r pkgsnip::return_label(\"data\")\U0060")`
 ```
 
 which will result in
 
 ```r
-#' @param use_cache `r pkgsnippets::param_label("use_cache")`
-#' @param cache_lifespan `r pkgsnippets::param_label("cache_lifespan")`
-#' @return `r pkgsnippets::return_label("data")`
+#' @param use_cache `r pkgsnip::param_label("use_cache")`
+#' @param cache_lifespan `r pkgsnip::param_label("cache_lifespan")`
+#' @return `r pkgsnip::return_label("data")`
 ```
 
 ## R condition messages
@@ -75,44 +75,44 @@ These are meant to be used as message texts for base R's [`message()`](https://r
 and [`stop()`](https://rdrr.io/r/base/stop.html) functions or
 [`rlang::inform()`, `rlang::warn()` and `rlang::abort()`](https://rlang.r-lib.org/reference/abort.html) from the tidyverse respectively.
 
-A message can be retrieved using `pkgsnippets::msg()`. For some of the messages, arguments need to be provided so they can be tailored to their specific
+A message can be retrieved using `pkgsnip::msg()`. For some of the messages, arguments need to be provided so they can be tailored to their specific
 purpose. For example, the `pkg_required` message requires the `pkg` argument:
 
 ```r
-pkgsnippets::msg(name = "pkg_required",
-                 pkg = "some_pkg")
+pkgsnip::msg(name = "pkg_required",
+             pkg = "some_pkg")
 ```
 
 Which results in the following message text:
 
 ````{r, echo = FALSE, comment = ""}
-pkgsnippets::msg(name = "pkg_required",
-                 pkg = "some_pkg")
+pkgsnip::msg(name = "pkg_required",
+             pkg = "some_pkg")
 ````
 
 Currently, the following R condition messages are included:
 
 ```{r, echo = FALSE, results = "asis"}
-pkgsnippets::messages() %>%
+pkgsnip::messages() %>%
   dplyr::mutate(dplyr::across(name,
                               ~ paste0("`", .x, "`"))) %>%
-  pkgsnippets:::add_args_col() %>%
+  pkgsnip:::add_args_col() %>%
   pal::pipe_table() %>%
   cat()
 ```
 
 ## Installation
-```{r, install-snippet-dev, child = pkgsnippets::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}
+```{r, install-snippet-dev, child = pkgsnip::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}
 ```
 
 ## Development
 
 ### R Markdown format
-```{r, rmd-pkg-snippet, child = pkgsnippets::rmd_snippet_path("rmd-package-notice.Rmd")}
+```{r, rmd-pkg-snippet, child = pkgsnip::rmd_snippet_path("rmd-package-notice.Rmd")}
 ```
 
 ### Coding style
-```{r, coding-style-snippet, child = pkgsnippets::rmd_snippet_path("coding-style-notice.Rmd")}
+```{r, coding-style-snippet, child = pkgsnip::rmd_snippet_path("coding-style-notice.Rmd")}
 ```
 
 ---

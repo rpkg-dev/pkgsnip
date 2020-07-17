@@ -16,13 +16,12 @@ pkg <- utils::packageName()
 #' @return `pkgsnip::return_label("data")`
 #' @family rmdsnips
 #' @export
-ls_rmd_snips <- function() {
+ls_file_snips <- function() {
   
   fs::path_package("snippets/",
-                     package = pkg) %>%
+                   package = pkg) %>%
     fs::dir_ls(recurse = TRUE,
-               type = "file",
-               glob = "*.Rmd") %>%
+               type = "file") %>%
     tibble::tibble(path = .) %>%
     dplyr::mutate(name = fs::path_file(path),
                   .before = 1L)
@@ -36,26 +35,26 @@ ls_rmd_snips <- function() {
 #' [`child` document option](https://yihui.org/knitr/options/#child-documents):
 #'
 #' ````rmd
-#' ```{r, child = pkgsnip::rmd_snip_path("installation-notice_dev-version_gitlab.Rmd")}
+#' ```{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}
 #' ```
 #' ````
 #'
 #' Or you can use them in roxygen2's [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 #'
 #' ```r
-#' #' @includeRmd `r pkgsnip::rmd_snip_path("installation-notice_dev-version_gitlab.Rmd")`
+#' #' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")`
 #' ```
 #'
 #' @param name The name of a snippet. Possible values include:
-#'   00`r paste0('- ``"', ls_rmd_snips()$name, '"``')`
+#'   00`r paste0('- ``"', ls_file_snips()$name, '"``')`
 #'
 #' @return `r pkgsnip::return_label("path")`
 #' @family rmdsnips
 #' @export
 #'
 #' @examples
-#' pkgsnip::rmd_snip_path("coding-style-notice.Rmd")
-rmd_snip_path <- function(name = ls_rmd_snips()$name) {
+#' pkgsnip::snip_path("coding-style-notice.Rmd")
+snip_path <- function(name = ls_file_snips()$name) {
   
   rlang::arg_match(name) %>%
     paste0("snippets/", .) %>%

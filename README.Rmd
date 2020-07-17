@@ -11,7 +11,7 @@ output: pal::gitlab_document
 The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input
 to [knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
-`r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnip::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
+`r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
 
 When inserting snippets that require the name of the calling package like `"installation-notice_dev-version_gitlab.Rmd"`, you should either use
 `pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- desc::desc_get(desc::desc_fields())` to the environment passed to
@@ -21,7 +21,7 @@ You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)'s
 [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
 ```rd
-#' @includeRmd `r '\x60r pkgsnip::rmd_snippet_path("rmd-package-notice.Rmd")\x60'`
+#' @includeRmd `r '\x60r pkgsnip::snip_path("rmd-package-notice.Rmd")\x60'`
 ```
 
 For snippets that require the name of the calling package, just assign `pkg_metadata` (once) before inserting the snippet(s), e.g. like this:
@@ -29,7 +29,7 @@ For snippets that require the name of the calling package, just assign `pkg_meta
 ```rd
 #' `r "\x60r pkg_metadata <- desc::desc_get(desc::desc_fields())\x60"`
 #'
-#' @includeRmd `r '\x60r pkgsnip::rmd_snippet_path("installation-notice_dev-version.Rmd")\x60'`
+#' @includeRmd `r '\x60r pkgsnip::snip_path("installation-notice_dev-version.Rmd")\x60'`
 ```
 
 ### Included Snippets
@@ -102,17 +102,17 @@ pkgsnip::messages() %>%
 ```
 
 ## Installation
-```{r, install-snippet-dev, child = pkgsnip::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}
+```{r, install-snippet-dev, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}
 ```
 
 ## Development
 
 ### R Markdown format
-```{r, rmd-pkg-snippet, child = pkgsnip::rmd_snippet_path("rmd-package-notice.Rmd")}
+```{r, rmd-pkg-snippet, child = pkgsnip::snip_path("rmd-package-notice.Rmd")}
 ```
 
 ### Coding style
-```{r, coding-style-snippet, child = pkgsnip::rmd_snippet_path("coding-style-notice.Rmd")}
+```{r, coding-style-snippet, child = pkgsnip::snip_path("coding-style-notice.Rmd")}
 ```
 
 ---

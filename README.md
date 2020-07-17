@@ -6,7 +6,7 @@ pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used i
 
 The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to [knitr](https://yihui.org/knitr/)’s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
-    ```{r, child = pkgsnip::rmd_snippet_path("installation-notice_dev-version_gitlab.Rmd")}
+    ```{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}
     ```
 
 When inserting snippets that require the name of the calling package like `"installation-notice_dev-version_gitlab.Rmd"`, you should either use `pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- desc::desc_get(desc::desc_fields())` to the environment passed to [`devtools::build_rmd()`](https://devtools.r-lib.org/reference/build_rmd.html) or its `...` argument respectively.
@@ -14,7 +14,7 @@ When inserting snippets that require the name of the calling package like `"inst
 You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)’s [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
 ``` rd
-#' @includeRmd `r pkgsnip::rmd_snippet_path("rmd-package-notice.Rmd")`
+#' @includeRmd `r pkgsnip::snip_path("rmd-package-notice.Rmd")`
 ```
 
 For snippets that require the name of the calling package, just assign `pkg_metadata` (once) before inserting the snippet(s), e.g. like this:
@@ -22,7 +22,7 @@ For snippets that require the name of the calling package, just assign `pkg_meta
 ``` rd
 #' `r pkg_metadata <- desc::desc_get(desc::desc_fields())`
 #'
-#' @includeRmd `r pkgsnip::rmd_snippet_path("installation-notice_dev-version.Rmd")`
+#' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version.Rmd")`
 ```
 
 ### Included Snippets

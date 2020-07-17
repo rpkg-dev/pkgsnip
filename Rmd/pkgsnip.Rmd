@@ -25,6 +25,8 @@ pkg <- utils::packageName()
 
 # R Markdown file snippets
 
+For now, only R Markdown file snippets are included. But this can easily be extended to other file formats in the future. 
+
 ## List all available R Markdown file snippets
 
 ```{r}
@@ -35,13 +37,12 @@ pkg <- utils::packageName()
 #' @return `pkgsnip::return_label("data")`
 #' @family rmdsnips
 #' @export
-ls_rmd_snips <- function() {
+ls_file_snips <- function() {
   
   fs::path_package("snippets/",
-                     package = pkg) %>%
+                   package = pkg) %>%
     fs::dir_ls(recurse = TRUE,
-               type = "file",
-               glob = "*.Rmd") %>%
+               type = "file") %>%
     tibble::tibble(path = .) %>%
     dplyr::mutate(name = fs::path_file(path),
                   .before = 1L)
@@ -52,7 +53,7 @@ ls_rmd_snips <- function() {
 
 TODO:
 
-- Report child-document-working-dir problem to knitr: `r getwd()` in Rmd built with `pal::build_readme()` returns the path to `rmd_snip_path()`-inserted knitr
+- Report child-document-working-dir problem to knitr: `r getwd()` in Rmd built with `pal::build_readme()` returns the path to `snip_path()`-inserted knitr
   child document `/home/salim/.by_pkg_mngr/r/pkgsnip/snippets/`! WTF?!
   
   The same `r getwd()` built with `devtools::build_readme()` gives nada.
@@ -61,7 +62,7 @@ TODO:
 
   See <https://stackoverflow.com/a/32012827/7196903> for Yihui explaining that child docs get their own working dir and how to set knitr's `root.dir` option.
   But setting `knitr::opts_knit$set(root.dir = getwd())` in the parent `README.Rmd` does not change anything (and `devtools::build_rmd()` still outputs nada).
-  Neither did using a relative child path, i.e. `child = fs::path_rel(pkgsnip::rmd_snip_path("installation-notice_dev-version_gitlab.Rmd"))`.
+  Neither did using a relative child path, i.e. `child = fs::path_rel(pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd"))`.
 
 - Update the `@param name` doc as soon as [#1112](https://github.com/r-lib/roxygen2/issues/1112) is fixed!
 
@@ -74,26 +75,26 @@ TODO:
 #' [`child` document option](https://yihui.org/knitr/options/#child-documents):
 #'
 #' ````rmd
-#' ```{r, child = pkgsnip::rmd_snip_path("installation-notice_dev-version_gitlab.Rmd")}
+#' ```{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}
 #' ```
 #' ````
 #'
 #' Or you can use them in roxygen2's [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 #'
 #' ```r
-#' #' @includeRmd `r pkgsnip::rmd_snip_path("installation-notice_dev-version_gitlab.Rmd")`
+#' #' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")`
 #' ```
 #'
 #' @param name The name of a snippet. Possible values include:
-#'   00`r paste0('- ``"', ls_rmd_snips()$name, '"``')`
+#'   00`r paste0('- ``"', ls_file_snips()$name, '"``')`
 #'
 #' @return `r pkgsnip::return_label("path")`
 #' @family rmdsnips
 #' @export
 #'
 #' @examples
-#' pkgsnip::rmd_snip_path("coding-style-notice.Rmd")
-rmd_snip_path <- function(name = ls_rmd_snips()$name) {
+#' pkgsnip::snip_path("coding-style-notice.Rmd")
+snip_path <- function(name = ls_file_snips()$name) {
   
   rlang::arg_match(name) %>%
     paste0("snippets/", .) %>%

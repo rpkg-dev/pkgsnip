@@ -4,10 +4,12 @@
 \alias{param_label}
 \title{Get predefined parameter label}
 \usage{
-param_label(name = roxy_labels(type = "param")$name)
+param_label(name = roxy_labels(type = "param")$name, ...)
 }
 \arguments{
 \item{name}{The label name. See \code{\link[=roxy_labels]{roxy_labels()}} for possible values.}
+
+\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_labels]{roxy_labels()}} for an overview.}
 }
 \value{
 A character vector.
@@ -24,6 +26,7 @@ as follows:
 \verb{#' @param path `r pkgsnip::param_label("path")` }
 \verb{#' @param r_object `r pkgsnip::param_label("r_object")` }
 \verb{#' @param version_nr `r pkgsnip::param_label("version_nr")` }
+\verb{#' @param opt_max_cache_lifespan `r pkgsnip::param_label("opt_max_cache_lifespan")` }
 \verb{#' @param dyn_dots_support `r pkgsnip::param_label("dyn_dots_support")` }
 \verb{#' @param start_date `r pkgsnip::param_label("start_date")` }
 \verb{#' @param end_date `r pkgsnip::param_label("end_date")` }

@@ -4,10 +4,12 @@
 \alias{return_label}
 \title{Get predefined return label}
 \usage{
-return_label(name = roxy_labels(type = "return")$name)
+return_label(name = roxy_labels(type = "return")$name, ...)
 }
 \arguments{
 \item{name}{The label name. See \code{\link[=roxy_labels]{roxy_labels()}} for possible values.}
+
+\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_labels]{roxy_labels()}} for an overview.}
 }
 \value{
 A character vector.
@@ -24,6 +26,7 @@ as follows:
 \verb{#' @return `r pkgsnip::return_label("path")` }
 \verb{#' @return `r pkgsnip::return_label("r_object")` }
 \verb{#' @return `r pkgsnip::return_label("version_nr")` }
+\verb{#' @return `r pkgsnip::return_label("opt_max_cache_lifespan")` }
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
 }

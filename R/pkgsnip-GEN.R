@@ -9,6 +9,39 @@ utils::globalVariables(names = c(".",
 
 pkg <- utils::packageName()
 
+add_args_col <- function(data) {
+  
+  from_cols <- c("label", "message")
+  
+  from_col <-
+    colnames(data) %>%
+    match(from_cols) %>%
+    magrittr::extract(!is.na(.)) %>%
+    {from_cols[.]} %>%
+    purrr::when(length(.) == 0L ~ rlang::abort("No `from_col` could be determined!"),
+                length(.) > 1L ~ rlang::abort("Multiple `from_col` candidates found:", pal::prose_ls(.,
+                                                                                                     wrap = "`")),
+                ~ .)
+  
+  dplyr::mutate(.data = data,
+                arguments =
+                  stringr::str_extract_all(string = !!rlang::sym(from_col),
+                                           pattern = "(?<=\\{)[^\\}]+?(?=\\})") %>%
+                  purrr::map_chr(~ pal::prose_ls(.x,
+                                                 wrap = "`",
+                                                 last_separator = ", ") %>%
+                                   purrr::when(length(.) == 0L ~ "",
+                                               ~ .)))
+}
+
+backtickify_cols <- function(data,
+                             cols = tidyselect::any_of(c("type", "name", "path"))) {
+  
+  dplyr::mutate(.data = data,
+                dplyr::across({{cols}},
+                              ~ paste0("`", .x, "`")))
+}
+
 #' List all available R Markdown file snippets
 #' 
 #' This function lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.
@@ -87,10 +120,9 @@ md_snip <- function(name = md_snips()$name) {
 #' Currently, Markdown snippets with the following `names` are available:
 #'
 #' ```{r, echo = FALSE, results = "asis"}
-#' bt <- "`"
 #' md_snips() %>%
 #'   dplyr::select(-label) %>%
-#'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
+#'   backtickify_cols() %>%
 #'   pal::pipe_table() %>%
 #'   cat()
 #' ```
@@ -122,15 +154,26 @@ md_snips <- function() {
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #' 
 #' @param name The label name. See [roxy_labels()] for possible values.
+#' @param ... Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see [roxy_labels()] for an overview.
 #'
 #' @return A character vector.
 #' @keywords internal
 #' @family roxygen2label
 #' @export
-roxy_label <- function(name = roxy_labels()$name) {
+roxy_label <- function(name = roxy_labels()$name,
+                       type = c("any", "param", "return", NA_character_),
+                       ...) {
   
-  dplyr::filter(.data = roxy_labels(),
-                name == !!rlang::arg_match(name))$label
+  name <- rlang::arg_match(name)
+  
+  roxy_labels(type = type) %>%
+    dplyr::filter(name == !!name) %>%
+    # make sure labels of type `NA` come last
+    dplyr::arrange(type) %$%
+    label %>%
+    dplyr::first() %>%
+    glue::glue(.envir = NULL,
+               ... = ...)
 }
 
 #' Get predefined parameter label
@@ -157,13 +200,12 @@ roxy_label <- function(name = roxy_labels()$name) {
 #' @inherit roxy_label return
 #' @family roxygen2label
 #' @export
-param_label <- function(name = roxy_labels(type = "param")$name) {
+param_label <- function(name = roxy_labels(type = "param")$name,
+                        ...) {
   
-  dplyr::filter(.data = roxy_labels(type = "param"),
-                name == !!rlang::arg_match(name)) %>%
-    dplyr::arrange(type) %$%
-    label %>%
-    dplyr::first()
+  roxy_label(name = rlang::arg_match(name),
+             type = "param",
+             ... = ...)
 }
 
 #' Get predefined return label
@@ -190,13 +232,12 @@ param_label <- function(name = roxy_labels(type = "param")$name) {
 #' @inherit roxy_label return
 #' @family roxygen2label
 #' @export
-return_label <- function(name = roxy_labels(type = "return")$name) {
+return_label <- function(name = roxy_labels(type = "return")$name,
+                         ...) {
   
-  dplyr::filter(.data = roxy_labels(type = "return"),
-                name == !!rlang::arg_match(name)) %>%
-    dplyr::arrange(type) %$%
-    label %>%
-    dplyr::first()
+  roxy_label(name = rlang::arg_match(name),
+             type = "return",
+             ... = ...)
 }
 
 #' Get a table of all available roxygen2 tag labels
@@ -207,20 +248,22 @@ return_label <- function(name = roxy_labels(type = "return")$name) {
 #' Currently, parameter labels with the following `types` and `names` are available:
 #'
 #' ```{r, echo = FALSE, results = "asis"}
-#' bt <- "`"
 #' roxy_labels() %>%
+#'   add_args_col() %>%
 #'   dplyr::select(-label) %>%
-#'   dplyr::mutate(dplyr::across(.fns = ~ paste0(bt, .x, bt))) %>%
+#'   backtickify_cols() %>%
 #'   pal::pipe_table() %>%
 #'   cat()
 #' ```
 #'
-#' @param type The label type(s) to return. A character vector. Valid types include `"param"` and `"return"`.
+#' @param type The label type to return. A character scalar.
 #'
 #' @return `r pkgsnip::return_label("data")`
 #' @family roxygen2label
 #' @export
-roxy_labels <- function(type = NULL) {
+roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
+  
+  type <- rlang::arg_match(type)
   
   tibble::tribble(
     ~type, ~name, ~label,
@@ -228,6 +271,9 @@ roxy_labels <- function(type = NULL) {
     NA, "path", "A [path][fs::fs_path].",
     NA, "r_object", "An \\R object.",
     NA, "version_nr", "A [numeric version][numeric_version()].",
+    NA, "opt_max_cache_lifespan", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
+                                         "lifespan set by the [option][base::options()] `{pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` if ",
+                                         "unset)."),
     "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
     "param", "start_date", "The begin of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "end_date", "The end of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
@@ -235,15 +281,18 @@ roxy_labels <- function(type = NULL) {
     "param", "cache_lifespan", paste0("The duration after which cached results are refreshed (i.e. newly fetched). A valid ",
                                       "[lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.")
   ) %>%
-    purrr::when(is.null(type) ~ .,
+    purrr::when(type == "any" ~ .,
+                is.na(type) ~ dplyr::filter(.data = .,
+                                            is.na(type)),
                 ~ dplyr::filter(.data = .,
-                                type %in% c({{type}}, NA)))
+                                type %in% c(!!type, NA_character_)))
 }
 
 #' Get predefined R condition message
 #'
 #' @param name The message name. See [messages()] for possible values.
-#' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [messages()] for an overview.
+#' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [messages()] for an
+#'   overview.
 #'
 #' @return A character scalar.
 #' @family rmsg
@@ -271,12 +320,10 @@ msg <- function(name = messages()$name,
 #' Currently, R condition messages with the following `names` and `arguments` are available:
 #'
 #' ```{r, echo = FALSE, results = "asis"}
-#' bt <- "`"
 #' messages() %>%
-#'   dplyr::mutate(dplyr::across(name,
-#'                               ~ paste0(bt, .x, bt))) %>%
 #'   add_args_col() %>%
 #'   dplyr::select(-message) %>%
+#'   backtickify_cols() %>%
 #'   pal::pipe_table() %>%
 #'   cat()
 #' ```
@@ -290,19 +337,6 @@ messages <- function() {
     ~name, ~message,
     "pkg_required", "To be able to use this function, the package '{pkg}' is required but it is not installed. Please install it and then try again."
   )
-}
-
-add_args_col <- function(data) {
-  
-  dplyr::mutate(.data = data,
-                arguments =
-                  stringr::str_extract_all(string = message,
-                                           pattern = "(?<=\\{)[^\\}]+?(?=\\})") %>%
-                  purrr::map_chr(~ pal::prose_ls(.x,
-                                                 wrap = "`",
-                                                 last_separator = ", ") %>%
-                                   purrr::when(length(.) == 0L ~ "",
-                                               ~ .)))
 }
 
 #' Commonly used abbreviations in R code

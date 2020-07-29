@@ -4,10 +4,16 @@
 \alias{roxy_label}
 \title{Get predefined roxygen2 tag label}
 \usage{
-roxy_label(name = roxy_labels()$name)
+roxy_label(
+  name = roxy_labels()$name,
+  type = c("any", "param", "return", NA_character_),
+  ...
+)
 }
 \arguments{
 \item{name}{The label name. See \code{\link[=roxy_labels]{roxy_labels()}} for possible values.}
+
+\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_labels]{roxy_labels()}} for an overview.}
 }
 \value{
 A character vector.

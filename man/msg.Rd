@@ -9,7 +9,8 @@ msg(name = messages()$name, ...)
 \arguments{
 \item{name}{The message name. See \code{\link[=messages]{messages()}} for possible values.}
 
-\item{...}{Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see \code{\link[=messages]{messages()}} for an overview.}
+\item{...}{Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see \code{\link[=messages]{messages()}} for an
+overview.}
 }
 \value{
 A character scalar.

@@ -4,10 +4,10 @@
 \alias{roxy_labels}
 \title{Get a table of all available roxygen2 tag labels}
 \usage{
-roxy_labels(type = NULL)
+roxy_labels(type = c("any", "param", "return", NA_character_))
 }
 \arguments{
-\item{type}{The label type(s) to return. A character vector. Valid types include \code{"param"} and \code{"return"}.}
+\item{type}{The label type to return. A character scalar.}
 }
 \value{
 A \link[tibble:tbl_df-class]{tibble}.
@@ -17,17 +17,18 @@ This simply returns a \link[tibble:tbl_df-class]{tibble} listing all parameter l
 the \code{name} argument of \code{\link[=param_label]{param_label()}} or \code{\link[=return_label]{return_label()}}.
 }
 \details{
-Currently, parameter labels with the following \code{types} and \code{names} are available:\tabular{ll}{
-   \strong{type} \tab \strong{name} \cr
-   \code{NA} \tab \code{data} \cr
-   \code{NA} \tab \code{path} \cr
-   \code{NA} \tab \code{r_object} \cr
-   \code{NA} \tab \code{version_nr} \cr
-   \code{param} \tab \code{dyn_dots_support} \cr
-   \code{param} \tab \code{start_date} \cr
-   \code{param} \tab \code{end_date} \cr
-   \code{param} \tab \code{use_cache} \cr
-   \code{param} \tab \code{cache_lifespan} \cr
+Currently, parameter labels with the following \code{types} and \code{names} are available:\tabular{lll}{
+   \strong{type} \tab \strong{name} \tab \strong{arguments} \cr
+   \code{NA} \tab \code{data} \tab  \cr
+   \code{NA} \tab \code{path} \tab  \cr
+   \code{NA} \tab \code{r_object} \tab  \cr
+   \code{NA} \tab \code{version_nr} \tab  \cr
+   \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{param} \tab \code{dyn_dots_support} \tab  \cr
+   \code{param} \tab \code{start_date} \tab  \cr
+   \code{param} \tab \code{end_date} \tab  \cr
+   \code{param} \tab \code{use_cache} \tab  \cr
+   \code{param} \tab \code{cache_lifespan} \tab  \cr
 }
 }
 \seealso{

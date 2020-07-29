@@ -25,7 +25,7 @@ test_that("All roxygen2 tag labels are unique", {
 test_that("All common abbreviations are unique", {
 
   expect_false(abbreviations() %>%
-                 purrr::map(identity) %>%
+                 as.list() %>%
                  purrr::map_lgl(~ any(duplicated(.x))) %>%
                  any())
 })

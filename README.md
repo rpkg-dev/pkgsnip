@@ -2,7 +2,9 @@
 
 pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages. All of them are designed to reduce unnecessary repetition and instead standardize R-package documentation wherever possible.
 
-## R Markdown file snippets
+## Details
+
+### R Markdown file snippets
 
 The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to [knitr](https://yihui.org/knitr/)’s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
@@ -25,7 +27,7 @@ For snippets that require the name of the calling package, just assign `pkg_meta
 #' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version.Rmd")`
 ```
 
-### Included Snippets
+#### Included Snippets
 
 Currently, the following R Markdown file snippets are included:
 
@@ -34,7 +36,7 @@ Currently, the following R Markdown file snippets are included:
 -   [`installation-notice_dev-version_gitlab.Rmd`](inst/snippets/installation-notice_dev-version_gitlab.Rmd)
 -   [`rmd-package-notice.Rmd`](inst/snippets/rmd-package-notice.Rmd)
 
-## roxygen2 tag labels
+### roxygen2 tag labels
 
 The [roxygen2](https://roxygen2.r-lib.org/) tag labels are specifically meant for [`@`-tag](https://roxygen2.r-lib.org/articles/rd.html)-based documentation using [dynamic R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1).
 
@@ -54,7 +56,7 @@ which will result in
 #' @return A [tibble][tibble::tbl_df].
 ```
 
-## R condition messages
+### R condition messages
 
 These are meant to be used as message texts for base R’s [`message()`](https://rdrr.io/r/base/message.html), [`warning()`](https://rdrr.io/r/base/warning.html) and [`stop()`](https://rdrr.io/r/base/stop.html) functions or [`rlang::inform()`, `rlang::warn()` and `rlang::abort()`](https://rlang.r-lib.org/reference/abort.html) from the tidyverse respectively.
 
@@ -74,6 +76,84 @@ Currently, the following R condition messages are included:
 | **name**       | **message**                                                                                                                     | **arguments** |
 |:---------------|:--------------------------------------------------------------------------------------------------------------------------------|:--------------|
 | `pkg_required` | To be able to use this function, the package ‘{pkg}’ is required but it is not installed. Please install it and then try again. | `pkg`         |
+
+### Common abbreviations
+
+Finally, there’s a table included that lists an (opinionated) set of abbreviations commonly used when writing R code. It might come in handy as a reference, for example, to check availability when considering using some abbreviation in a function or argument name.
+
+The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows:
+
+| full_expression       | abbreviation |
+|:----------------------|:-------------|
+| absolute              | abs          |
+| argument              | arg          |
+| arguments             | args         |
+| bibliography          | bib          |
+| column                | col          |
+| columns               | cols         |
+| combination           | combo        |
+| combinations          | combos       |
+| condition             | cnd          |
+| conditions            | cnds         |
+| database              | db           |
+| difference            | diff         |
+| differences           | diffs        |
+| directory             | dir          |
+| directories           | dirs         |
+| distribution          | distro       |
+| distributions         | distros      |
+| document              | doc          |
+| documents             | docs         |
+| element               | el           |
+| exclude               | excl         |
+| factor                | fct          |
+| factors               | fcts         |
+| filesystem            | fs           |
+| function              | fn           |
+| functions             | fns          |
+| generate              | gen          |
+| identifier            | id           |
+| identifiers           | ids          |
+| include               | incl         |
+| index                 | i            |
+| indices/indexes       | ix           |
+| information           | info         |
+| initialization        | init         |
+| label                 | lbl          |
+| labels                | lbls         |
+| language              | lang         |
+| level                 | lvl          |
+| levels                | lvls         |
+| list                  | ls           |
+| Markdown              | md           |
+| message               | msg          |
+| messages              | msgs         |
+| modification          | mod          |
+| modifications         | mods         |
+| number                | nr           |
+| numbers               | nrs          |
+| number of             | n            |
+| object                | obj          |
+| objects               | objs         |
+| option                | opt          |
+| options               | opts         |
+| package               | pkg          |
+| packages              | pkgs         |
+| parameter             | param        |
+| parameters            | params       |
+| R Markdown            | rmd          |
+| reference             | ref          |
+| references            | refs         |
+| regular expression(s) | regex        |
+| relative              | rel          |
+| remove                | rm           |
+| roxy                  | roxygen2     |
+| separator             | sep          |
+| temporary             | temp         |
+| variable              | v            |
+| variables             | vx           |
+| vector                | vctr         |
+| vectors               | vctrs        |
 
 ## Installation
 

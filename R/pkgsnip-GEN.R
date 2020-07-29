@@ -324,6 +324,8 @@ abbreviations <- function() {
     "columns", "cols",
     "combination", "combo",
     "combinations", "combos",
+    "condition", "cnd",
+    "conditions", "cnds",
     "database", "db",
     "difference", "diff",
     "differences", "diffs",

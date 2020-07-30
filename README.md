@@ -1,6 +1,6 @@
 # pkgsnip: Provides Handy (R) Markdown Snippets for Package Authors
 
-pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages. All of them are designed to reduce unnecessary repetition and instead standardize R-package documentation wherever possible.
+pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages and a table of abbreviations commonly used in R code. All of them are designed to reduce unnecessary repetition and instead standardize R-package documentation wherever possible.
 
 ## Details
 
@@ -91,6 +91,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | bibliography          | bib          |
 | column                | col          |
 | columns               | cols         |
+| command               | cmd          |
+| commands              | cmds         |
 | combination           | combo        |
 | combinations          | combos       |
 | condition             | cnd          |
@@ -105,6 +107,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | document              | doc          |
 | documents             | docs         |
 | element               | el           |
+| environment           | env          |
+| environments          | envs         |
 | exclude               | excl         |
 | factor                | fct          |
 | factors               | fcts         |

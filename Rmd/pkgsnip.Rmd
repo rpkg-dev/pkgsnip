@@ -99,7 +99,7 @@ TODO:
   
   The same `r getwd()` built with `devtools::build_readme()` gives nada.
   
-  This has the consequence that DESCRIPTION file is not accessible via `desc::desc_get(desc::desc_fields())`.
+  This has the consequence that the DESCRIPTION file is not accessible via `desc::desc_get(desc::desc_fields())`.
 
   See <https://stackoverflow.com/a/32012827/7196903> for Yihui explaining that child docs get their own working dir and how to set knitr's `root.dir` option.
   But setting `knitr::opts_knit$set(root.dir = getwd())` in the parent `README.Rmd` does not change anything (and `devtools::build_rmd()` still outputs nada).
@@ -451,6 +451,8 @@ abbreviations <- function() {
     "bibliography", "bib",
     "column", "col",
     "columns", "cols",
+    "command", "cmd",
+    "commands", "cmds",
     "combination", "combo",
     "combinations", "combos",
     "condition", "cnd",
@@ -465,7 +467,11 @@ abbreviations <- function() {
     "document", "doc",
     "documents", "docs",
     "element", "el",
+    "environment", "env",
+    "environments", "envs",
     "exclude", "excl",
+    "expression", "expr",
+    "expressions", "exprs",
     "factor", "fct",
     "factors", "fcts",
     "filesystem", "fs",

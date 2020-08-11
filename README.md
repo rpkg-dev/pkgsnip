@@ -110,6 +110,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | environment           | env          |
 | environments          | envs         |
 | exclude               | excl         |
+| expression            | expr         |
+| expressions           | exprs        |
 | factor                | fct          |
 | factors               | fcts         |
 | filesystem            | fs           |

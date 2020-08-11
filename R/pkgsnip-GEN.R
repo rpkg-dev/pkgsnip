@@ -174,8 +174,8 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
                                          "lifespan set by the [option][base::options()] `{pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` if ",
                                          "unset)."),
     "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
-    "param", "start_date", "The begin of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
-    "param", "end_date", "The end of the period the data covers. A [date](base::Date) or a character scalar in the format `\"YYYY-MM-DD\"`.",
+    "param", "start_date", "The begin of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
+    "param", "end_date", "The end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.",
     "param", "cache_lifespan", paste0("The duration after which cached results are refreshed (i.e. newly fetched). A valid ",
                                       "[lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.")

@@ -102,12 +102,11 @@ snip_path <- function(name = ls_file_snips()$name) {
 #'
 #' Currently, Markdown snippets with the following `names` are available:
 #'
-#' ```{r, echo = FALSE, results = "asis"}
+#' ```{r, echo = FALSE}
 #' md_snips() %>%
 #'   dplyr::select(-label) %>%
 #'   backtickify_cols() %>%
-#'   pal::pipe_table() %>%
-#'   cat()
+#'   pal::pipe_table()
 #' ```
 #'
 #' @return `r pkgsnip::return_label("data")`
@@ -146,13 +145,12 @@ md_snip <- function(name = md_snips()$name) {
 #'
 #' Currently, parameter labels with the following `types` and `names` are available:
 #'
-#' ```{r, echo = FALSE, results = "asis"}
+#' ```{r, echo = FALSE}
 #' roxy_labels() %>%
 #'   add_args_col() %>%
 #'   dplyr::select(-label) %>%
 #'   backtickify_cols() %>%
-#'   pal::pipe_table() %>%
-#'   cat()
+#'   pal::pipe_table()
 #' ```
 #'
 #' @param type The label type to return. A character scalar.
@@ -295,13 +293,12 @@ return_label <- function(name = roxy_labels(type = "return")$name,
 #'
 #' Currently, R condition messages with the following `names` and `arguments` are available:
 #'
-#' ```{r, echo = FALSE, results = "asis"}
+#' ```{r, echo = FALSE}
 #' messages() %>%
 #'   add_args_col() %>%
 #'   dplyr::select(-message) %>%
 #'   backtickify_cols() %>%
-#'   pal::pipe_table() %>%
-#'   cat()
+#'   pal::pipe_table()
 #' ```
 #'
 #' @return `r pkgsnip::return_label("data")`

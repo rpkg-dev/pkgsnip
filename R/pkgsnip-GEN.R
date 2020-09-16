@@ -418,6 +418,8 @@ abbreviations <- function() {
     "roxy", "roxygen2",
     "separator", "sep",
     "temporary", "temp",
+    "value", "val",
+    "values", "vals",
     "variable", "v",
     "variables", "vx",
     "vector", "vctr",

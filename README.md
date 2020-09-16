@@ -156,6 +156,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | roxy                  | roxygen2     |
 | separator             | sep          |
 | temporary             | temp         |
+| value                 | val          |
+| values                | vals         |
 | variable              | v            |
 | variables             | vx           |
 | vector                | vctr         |

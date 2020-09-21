@@ -89,6 +89,7 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | argument              | arg          |
 | arguments             | args         |
 | bibliography          | bib          |
+| character             | chr          |
 | column                | col          |
 | columns               | cols         |
 | command               | cmd          |
@@ -98,6 +99,7 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | condition             | cnd          |
 | conditions            | cnds         |
 | database              | db           |
+| dataframe             | df           |
 | difference            | diff         |
 | differences           | diffs        |
 | directory             | dir          |
@@ -106,6 +108,7 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | distributions         | distros      |
 | document              | doc          |
 | documents             | docs         |
+| double                | dbl          |
 | element               | el           |
 | environment           | env          |
 | environments          | envs         |
@@ -125,12 +128,14 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | indices/indexes       | ix           |
 | information           | info         |
 | initialization        | init         |
+| integer               | int          |
 | label                 | lbl          |
 | labels                | lbls         |
 | language              | lang         |
 | level                 | lvl          |
 | levels                | lvls         |
 | list                  | ls           |
+| logical               | lgl          |
 | Markdown              | md           |
 | message               | msg          |
 | messages              | msgs         |

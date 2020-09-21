@@ -420,7 +420,7 @@ abbreviations <- function() {
     "regular expression(s)", "regex",
     "relative", "rel",
     "remove", "rm",
-    "roxy", "roxygen2",
+    "roxygen2", "roxy",
     "separator", "sep",
     "temporary", "temp",
     "value", "val",

@@ -23,7 +23,9 @@ utils::globalVariables(names = c(".",
 pkg <- utils::packageName()
 ```
 
-## Add argument column extracted from another column
+## Functions
+
+### Add argument column extracted from another column
 
 ```{r}
 add_args_col <- function(data) {
@@ -52,7 +54,7 @@ add_args_col <- function(data) {
 }
 ```
 
-## Wrap values of specified columns in backticks
+### Wrap values of specified columns in backticks
 
 ```{r}
 backtickify_cols <- function(data,

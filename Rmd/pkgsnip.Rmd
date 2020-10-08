@@ -68,7 +68,7 @@ backtickify_cols <- function(data,
 
 # R Markdown file snippets
 
-For now, only R Markdown file snippets are included. But this can easily be extended to other file formats in the future. 
+For now, only R Markdown file snippets are included. But this can easily be extended to other file formats in the future.
 
 ## List all available R Markdown file snippets
 
@@ -96,18 +96,15 @@ ls_file_snips <- function() {
 
 TODO:
 
-- Report child-document-working-dir problem to knitr: `r getwd()` in Rmd built with `pal::build_readme()` returns the path to `snip_path()`-inserted knitr
-  child document `/home/salim/.by_pkg_mngr/r/pkgsnip/snippets/`! WTF?!
-  
-  The same `r getwd()` built with `devtools::build_readme()` gives nada.
-  
-  This has the consequence that the DESCRIPTION file is not accessible via `desc::desc_get(desc::desc_fields())`.
+-   Report child-document-working-dir problem to knitr: `r getwd()` in Rmd built with `pal::build_readme()` returns the path to `snip_path()`-inserted knitr child document `/home/salim/.by_pkg_mngr/r/pkgsnip/snippets/`! WTF?!
 
-  See <https://stackoverflow.com/a/32012827/7196903> for Yihui explaining that child docs get their own working dir and how to set knitr's `root.dir` option.
-  But setting `knitr::opts_knit$set(root.dir = getwd())` in the parent `README.Rmd` does not change anything (and `devtools::build_rmd()` still outputs nada).
-  Neither did using a relative child path, i.e. `child = fs::path_rel(pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd"))`.
+    The same `r getwd()` built with `devtools::build_readme()` gives nada.
 
-- Update the `@param name` doc as soon as [#1112](https://github.com/r-lib/roxygen2/issues/1112) is fixed!
+    This has the consequence that the DESCRIPTION file is not accessible via `desc::desc_get(desc::desc_fields())`.
+
+    See <https://stackoverflow.com/a/32012827/7196903> for Yihui explaining that child docs get their own working dir and how to set knitr's `root.dir` option. But setting `knitr::opts_knit$set(root.dir = getwd())` in the parent `README.Rmd` does not change anything (and `devtools::build_rmd()` still outputs nada). Neither did using a relative child path, i.e. `child = fs::path_rel(pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd"))`.
+
+-   Update the `@param name` doc as soon as [\#1112](https://github.com/r-lib/roxygen2/issues/1112) is fixed!
 
 ```{r}
 #' Get R Markdown snippet file path
@@ -203,8 +200,7 @@ md_snip <- function(name = md_snips()$name) {
 
 ## Get a table of all available roxygen2 tag labels
 
-**Note:** The current `type` classification of the labels is subpar and it might be a good idea to overhaul it (e.g. use a list column to be able to assign
-multiple types per label).
+**Note:** The current `type` classification of the labels is subpar and it might be a good idea to overhaul it (e.g. use a list column to be able to assign multiple types per label).
 
 ```{r}
 #' Get a table of all available roxygen2 tag labels

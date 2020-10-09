@@ -99,6 +99,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | combinations          | combos       |
 | condition             | cnd          |
 | conditions            | cnds         |
+| configuration         | config       |
+| configurations        | configs      |
 | database              | db           |
 | dataframe             | df           |
 | difference            | diff         |

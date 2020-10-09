@@ -445,6 +445,7 @@ abbreviations <- function() {
     "arguments", "args",
     "bibliography", "bib",
     "character", "chr",
+    "characters", "chrs",
     "column", "col",
     "columns", "cols",
     "command", "cmd",
@@ -464,6 +465,7 @@ abbreviations <- function() {
     "document", "doc",
     "documents", "docs",
     "double", "dbl",
+    "doubles", "dbls",
     "element", "el",
     "environment", "env",
     "environments", "envs",
@@ -484,6 +486,7 @@ abbreviations <- function() {
     "information", "info",
     "initialization", "init",
     "integer", "int",
+    "integers", "ints",
     "label", "lbl",
     "labels", "lbls",
     "language", "lang",
@@ -491,6 +494,7 @@ abbreviations <- function() {
     "levels", "lvls",
     "list", "ls",
     "logical", "lgl",
+    "logicals", "lgls",
     "Markdown", "md",
     "message", "msg",
     "messages", "msgs",
@@ -525,3 +529,4 @@ abbreviations <- function() {
   )
 }
 ```
+

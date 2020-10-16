@@ -433,7 +433,7 @@ abbreviations <- function() {
     "separators", "seps",
     c("sequence", "sequential"), "seq",
     "sequences", "seqs",
-    "temporary", "temp",
+    "temporary", "tmp",
     "value", "val",
     "values", "vals",
     "variable", "v",

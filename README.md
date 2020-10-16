@@ -171,7 +171,7 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | separators                 | seps         |
 | sequence , sequential      | seq          |
 | sequences                  | seqs         |
-| temporary                  | temp         |
+| temporary                  | tmp          |
 | value                      | val          |
 | values                     | vals         |
 | variable                   | v            |

@@ -10,8 +10,8 @@ output: pal::gitlab_document
 
 ### R Markdown file snippets
 
-The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input
-to [knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
+The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to
+[knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
 
 `r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
 
@@ -104,8 +104,8 @@ pkgsnip::messages() %>%
 
 ### Common abbreviations
 
-Finally, there's a table included that lists an (opinionated) set of abbreviations commonly used when writing R code. It might come in handy as a reference,
-for example, to check availability when considering using some abbreviation in a function or argument name.
+Finally, there's a table included that lists an (opinionated) set of abbreviations commonly used when writing R code. It might come in handy as a reference, for
+example, to check availability when considering using some abbreviation in a function or argument name.
 
 The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows:
 
@@ -130,4 +130,4 @@ pkgsnip::abbreviations() %>% knitr::kable()
 ```{r, coding-style-snippet, child = pkgsnip::snip_path("coding-style-notice.Rmd")}
 ```
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------

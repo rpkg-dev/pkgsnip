@@ -83,7 +83,7 @@ Finally, there’s a table included that lists an (opinionated) set of abbreviat
 
 The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows:
 
-| full_expression            | abbreviation |
+| full_expressions           | abbreviation |
 |:---------------------------|:-------------|
 | absolute                   | abs          |
 | argument                   | arg          |

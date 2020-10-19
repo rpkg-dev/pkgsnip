@@ -443,7 +443,7 @@ msg <- function(name = messages()$name,
 abbreviations <- function() {
   
   tibble::tribble(
-    ~full_expression, ~abbreviation,
+    ~full_expressions, ~abbreviation,
     "absolute", "abs",
     "argument", "arg",
     "arguments", "args",

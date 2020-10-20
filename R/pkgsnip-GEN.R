@@ -328,7 +328,6 @@ messages <- function() {
 msg <- function(name = messages()$name,
                 ...) {
   
-  # ellipsis::check_dots_used()
   name <- rlang::arg_match(name)
   
   glue::glue(... = ...,

@@ -1,6 +1,6 @@
 Package: pkgsnip
 Title: Provides Handy (R) Markdown Snippets for Package Authors
-Version: 0.0.9013
+Version: 0.0.9014
 Authors@R: 
     person(given = "Salim",
            family = "Brüggemann",

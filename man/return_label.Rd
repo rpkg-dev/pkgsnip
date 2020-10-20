@@ -25,6 +25,7 @@ as follows:
 \verb{#' @return `r pkgsnip::return_label("data")` }
 \verb{#' @return `r pkgsnip::return_label("path")` }
 \verb{#' @return `r pkgsnip::return_label("r_object")` }
+\verb{#' @return `r pkgsnip::return_label("strict_list")` }
 \verb{#' @return `r pkgsnip::return_label("version_nr")` }
 \verb{#' @return `r pkgsnip::return_label("opt_max_cache_lifespan")` }
 

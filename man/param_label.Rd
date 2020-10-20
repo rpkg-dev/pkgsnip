@@ -25,6 +25,7 @@ as follows:
 \verb{#' @param data `r pkgsnip::param_label("data")` }
 \verb{#' @param path `r pkgsnip::param_label("path")` }
 \verb{#' @param r_object `r pkgsnip::param_label("r_object")` }
+\verb{#' @param strict_list `r pkgsnip::param_label("strict_list")` }
 \verb{#' @param version_nr `r pkgsnip::param_label("version_nr")` }
 \verb{#' @param opt_max_cache_lifespan `r pkgsnip::param_label("opt_max_cache_lifespan")` }
 \verb{#' @param dyn_dots_support `r pkgsnip::param_label("dyn_dots_support")` }

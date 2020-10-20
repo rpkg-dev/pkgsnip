@@ -22,6 +22,7 @@ Currently, parameter labels with the following \code{types} and \code{names} are
    \code{NA} \tab \code{data} \tab  \cr
    \code{NA} \tab \code{path} \tab  \cr
    \code{NA} \tab \code{r_object} \tab  \cr
+   \code{NA} \tab \code{strict_list} \tab  \cr
    \code{NA} \tab \code{version_nr} \tab  \cr
    \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
    \code{param} \tab \code{dyn_dots_support} \tab  \cr

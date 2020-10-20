@@ -17,7 +17,7 @@ add_args_col <- function(data) {
     colnames(data) %>%
     match(from_cols) %>%
     magrittr::extract(!is.na(.)) %>%
-    {from_cols[.]} %>%
+    {from_cols[.]} %>% # nolint
     purrr::when(length(.) == 0L ~ rlang::abort("No `from_col` could be determined!"),
                 length(.) > 1L ~ rlang::abort("Multiple `from_col` candidates found:", pal::prose_ls(.,
                                                                                                      wrap = "`")),

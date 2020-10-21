@@ -23,7 +23,10 @@ The following parameter labels are available to be inserted using \href{https://
 as follows:
 
 \verb{#' @param data `r pkgsnip::param_label("data")` }
+\verb{#' @param date `r pkgsnip::param_label("date")` }
+\verb{#' @param dates `r pkgsnip::param_label("dates")` }
 \verb{#' @param path `r pkgsnip::param_label("path")` }
+\verb{#' @param paths `r pkgsnip::param_label("paths")` }
 \verb{#' @param r_object `r pkgsnip::param_label("r_object")` }
 \verb{#' @param strict_list `r pkgsnip::param_label("strict_list")` }
 \verb{#' @param version_nr `r pkgsnip::param_label("version_nr")` }

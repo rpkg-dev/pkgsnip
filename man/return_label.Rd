@@ -23,7 +23,10 @@ The following return labels are available to be inserted using \href{https://rox
 as follows:
 
 \verb{#' @return `r pkgsnip::return_label("data")` }
+\verb{#' @return `r pkgsnip::return_label("date")` }
+\verb{#' @return `r pkgsnip::return_label("dates")` }
 \verb{#' @return `r pkgsnip::return_label("path")` }
+\verb{#' @return `r pkgsnip::return_label("paths")` }
 \verb{#' @return `r pkgsnip::return_label("r_object")` }
 \verb{#' @return `r pkgsnip::return_label("strict_list")` }
 \verb{#' @return `r pkgsnip::return_label("version_nr")` }

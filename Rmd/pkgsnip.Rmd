@@ -234,7 +234,10 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
   tibble::tribble(
     ~type, ~name, ~label,
     NA, "data", "A [tibble][tibble::tbl_df].",
+    NA, "date", "A [date][base::Date].",
+    NA, "dates", "A vector of [dates][base::Date].",
     NA, "path", "A [path][fs::fs_path].",
+    NA, "paths", "A vector of [paths][fs::fs_path].",
     NA, "r_object", "An \\R object.",
     NA, "strict_list", "A [strict list][xfun::strict_list()].",
     NA, "version_nr", "A [numeric version][numeric_version()].",

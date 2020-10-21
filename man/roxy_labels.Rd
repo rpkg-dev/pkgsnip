@@ -20,7 +20,10 @@ the \code{name} argument of \code{\link[=param_label]{param_label()}} or \code{\
 Currently, parameter labels with the following \code{types} and \code{names} are available:\tabular{lll}{
    \strong{type} \tab \strong{name} \tab \strong{arguments} \cr
    \code{NA} \tab \code{data} \tab  \cr
+   \code{NA} \tab \code{date} \tab  \cr
+   \code{NA} \tab \code{dates} \tab  \cr
    \code{NA} \tab \code{path} \tab  \cr
+   \code{NA} \tab \code{paths} \tab  \cr
    \code{NA} \tab \code{r_object} \tab  \cr
    \code{NA} \tab \code{strict_list} \tab  \cr
    \code{NA} \tab \code{version_nr} \tab  \cr

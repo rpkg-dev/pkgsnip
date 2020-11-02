@@ -368,6 +368,8 @@ abbreviations <- function() {
     "configurations", "configs",
     "database", "db",
     "dataframe", "df",
+    "dependency", "dep",
+    "dependencies", "deps",
     "difference", "diff",
     "differences", "diffs",
     "directory", "dir",

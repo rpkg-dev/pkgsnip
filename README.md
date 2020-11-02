@@ -103,6 +103,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | configurations             | configs      |
 | database                   | db           |
 | dataframe                  | df           |
+| dependency                 | dep          |
+| dependencies               | deps         |
 | difference                 | diff         |
 | differences                | diffs        |
 | directory                  | dir          |

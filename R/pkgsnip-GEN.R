@@ -194,7 +194,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
 #' These are pre-defined labels intended to be used to document functions using [roxygen2][roxygen2::roxygen2]
 #' [tags](https://roxygen2.r-lib.org/articles/rd.html#functions).
 #'
-#' The labels can be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#' The labels can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
 #' #' @param start_date `r pkgsnip::roxy_label("start_date", type = "param")`
@@ -231,7 +231,7 @@ roxy_label <- function(name = roxy_labels()$name,
 #' These are pre-defined labels intended to be used to document function parameters using [roxygen2][roxygen2::roxygen2]'s
 #' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
-#' The following parameter labels are available to be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
+#' The following parameter labels are available to be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
 #' as follows:
 #'
 #' ```{r, echo = FALSE, results = "asis"}
@@ -263,7 +263,7 @@ param_label <- function(name = roxy_labels(type = "param")$name,
 #' These are pre-defined labels intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
 #' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
-#' The following return labels are available to be inserted using [inline R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
+#' The following return labels are available to be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
 #' as follows:
 #'
 #' ```{r, echo = FALSE, results = "asis"}
@@ -290,12 +290,12 @@ return_label <- function(name = roxy_labels(type = "return")$name,
              ... = ...)
 }
 
-#' Get a table of all available R condition messages
+#' Get a table of all available \R condition messages
 #'
-#' This simply returns a [tibble][tibble::tbl_df] listing all R condition messages included in this package, together with their `name` which can be provided
+#' This simply returns a [tibble][tibble::tbl_df] listing all \R condition messages included in this package, together with their `name` which can be provided
 #' as [msg()]'s `name` argument.
 #'
-#' Currently, R condition messages with the following `names` and `arguments` are available:
+#' Currently, \R condition messages with the following `names` and `arguments` are available:
 #'
 #' ```{r, echo = FALSE}
 #' messages() %>%
@@ -316,7 +316,7 @@ messages <- function() {
   )
 }
 
-#' Get predefined R condition message
+#' Get predefined \R condition message
 #'
 #' @param name The message name. See [messages()] for possible values.
 #' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [messages()] for an
@@ -339,9 +339,9 @@ msg <- function(name = messages()$name,
                            name == !!name)$message)
 }
 
-#' Commonly used abbreviations in R code
+#' Commonly used abbreviations in \R code
 #' 
-#' This simply returns a [tibble][tibble::tbl_df] listing an opinionated set of abbreviations commonly used when writing R code. It can be used as a reference,
+#' This simply returns a [tibble][tibble::tbl_df] listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference,
 #' for example, to check availability when considering using a new abbreviation in a function or argument name.
 #' 
 #' @return `r pkgsnip::return_label("data")`

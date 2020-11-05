@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{abbreviations}
 \alias{abbreviations}
-\title{Commonly used abbreviations in R code}
+\title{Commonly used abbreviations in \R code}
 \usage{
 abbreviations()
 }
@@ -10,6 +10,6 @@ abbreviations()
 A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing R code. It can be used as a reference,
+This simply returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference,
 for example, to check availability when considering using a new abbreviation in a function or argument name.
 }

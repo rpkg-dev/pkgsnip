@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{messages}
 \alias{messages}
-\title{Get a table of all available R condition messages}
+\title{Get a table of all available \R condition messages}
 \usage{
 messages()
 }
@@ -10,11 +10,11 @@ messages()
 A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df-class]{tibble} listing all R condition messages included in this package, together with their \code{name} which can be provided
+This simply returns a \link[tibble:tbl_df-class]{tibble} listing all \R condition messages included in this package, together with their \code{name} which can be provided
 as \code{\link[=msg]{msg()}}'s \code{name} argument.
 }
 \details{
-Currently, R condition messages with the following \code{names} and \code{arguments} are available:\tabular{ll}{
+Currently, \R condition messages with the following \code{names} and \code{arguments} are available:\tabular{ll}{
    \strong{name} \tab \strong{arguments} \cr
    \code{pkg_required} \tab \code{pkg} \cr
 }

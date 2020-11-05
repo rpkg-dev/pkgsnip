@@ -23,7 +23,7 @@ These are pre-defined labels intended to be used to document functions using \li
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{tags}.
 }
 \details{
-The labels can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code} as follows:\if{html}{\out{<div class="r">}}\preformatted{#' @param start_date `r pkgsnip::roxy_label("start_date", type = "param")`
+The labels can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:\if{html}{\out{<div class="r">}}\preformatted{#' @param start_date `r pkgsnip::roxy_label("start_date", type = "param")`
 #' @return `r pkgsnip::roxy_label("data", type = "return")`
 }\if{html}{\out{</div>}}
 

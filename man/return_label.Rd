@@ -19,7 +19,7 @@ These are pre-defined labels intended to be used to document function return val
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@return}} tag.
 }
 \details{
-The following return labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code}
+The following return labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code}
 as follows:
 
 \verb{#' @return `r pkgsnip::return_label("data")` }

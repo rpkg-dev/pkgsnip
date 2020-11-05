@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{msg}
 \alias{msg}
-\title{Get predefined R condition message}
+\title{Get predefined \R condition message}
 \usage{
 msg(name = messages()$name, ...)
 }
@@ -16,7 +16,7 @@ overview.}
 A character scalar.
 }
 \description{
-Get predefined R condition message
+Get predefined \R condition message
 }
 \examples{
 pkgsnip::msg(name = "pkg_required",

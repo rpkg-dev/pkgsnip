@@ -19,7 +19,7 @@ These are pre-defined labels intended to be used to document function parameters
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag.
 }
 \details{
-The following parameter labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline R code}
+The following parameter labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code}
 as follows:
 
 \verb{#' @param data `r pkgsnip::param_label("data")` }

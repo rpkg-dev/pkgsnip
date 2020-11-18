@@ -346,6 +346,12 @@ msg <- function(name = messages()$name,
 #' 
 #' @return `r pkgsnip::return_label("data")`
 #' @export
+#'
+#' @examples
+#' # expand the abbreviations tibble to long format
+#' tidyr::unnest_longer(data = pkgsnip::abbreviations(),
+#'                      col = full_expressions,
+#'                      values_to = "full_expression")
 abbreviations <- function() {
   
   tibble::tribble(

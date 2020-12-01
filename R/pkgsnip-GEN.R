@@ -425,6 +425,8 @@ abbreviations <- function() {
     "number", "nr",
     "numbers", "nrs",
     "number of", "n",
+    "numeric", "num",
+    "numerics", "nums",
     "object", "obj",
     "objects", "objs",
     "option", "opt",

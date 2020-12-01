@@ -154,6 +154,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | number                     | nr           |
 | numbers                    | nrs          |
 | number of                  | n            |
+| numeric                    | num          |
+| numerics                   | nums         |
 | object                     | obj          |
 | objects                    | objs         |
 | option                     | opt          |

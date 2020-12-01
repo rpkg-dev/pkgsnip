@@ -446,6 +446,8 @@ abbreviations <- function() {
     "separators", "seps",
     c("sequence", "sequential"), "seq",
     "sequences", "seqs",
+    "string", "str",
+    "strings", "strs",
     "temporary", "tmp",
     "value", "val",
     "values", "vals",

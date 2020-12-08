@@ -359,6 +359,8 @@ abbreviations <- function() {
     "absolute", "abs",
     "argument", "arg",
     "arguments", "args",
+    "attribute", "attr",
+    "attributes", "attrs",
     "bibliography", "bib",
     "character", "chr",
     "characters", "chrs",

@@ -88,6 +88,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | absolute                   | abs          |
 | argument                   | arg          |
 | arguments                  | args         |
+| attribute                  | attr         |
+| attributes                 | attrs        |
 | bibliography               | bib          |
 | character                  | chr          |
 | characters                 | chrs         |

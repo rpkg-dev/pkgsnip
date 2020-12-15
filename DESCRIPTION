@@ -13,7 +13,7 @@ Description: pkgsnip ships ready-to-go (R) Markdown
     condition messages and a table of abbreviations commonly used in R
     code. All of them are designed to reduce unnecessary repetition and
     standardize R-package documentation wherever possible.
-License: AGPL-3
+License: AGPL (>= 3)
 URL: https://gitlab.com/salim_b/r/pkgs/pkgsnip
 BugReports: https://gitlab.com/salim_b/r/pkgs/pkgsnip/issues
 Imports: 

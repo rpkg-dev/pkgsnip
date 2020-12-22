@@ -35,6 +35,6 @@ pkgpurl::lint_rmd()
     side effects and relying on [R's implicit return of the last evaluated expression](https://rdrr.io/r/base/function.html). Therefore -- and because I really
     like the `%<>%` operator -- it's usage is welcome.
 
-[^code-style-n-2]: The TSG [explicitly accepts `->` for assignments at the end of a pipe sequence](https://style.tidyverse.org/pipes.html#assignment-1) while
+[^code-style-n-2]: The TSG [explicitly accepts `->` for assignments at the end of a pipe sequence](https://style.tidyverse.org/pipes.html#assignment-2) while
     Google's R Style Guide [considers this bad practice](https://google.github.io/styleguide/Rguide.html#right-hand-assignment) because it "makes it harder to
     see in code where an object is defined". I second the latter.

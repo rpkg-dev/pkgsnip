@@ -344,15 +344,11 @@ msg <- function(name = messages()$name,
 #' This simply returns a [tibble][tibble::tbl_df] listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference,
 #' for example, to check availability when considering using a new abbreviation in a function or argument name.
 #' 
+#' @param expand Whether to expand the full expression column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will be
+#'   returned, meaning the values in column `abbreviation` will be unique.
 #' @return `r pkgsnip::return_label("data")`
 #' @export
-#'
-#' @examples
-#' # expand the abbreviations tibble to long format
-#' tidyr::unnest_longer(data = pkgsnip::abbreviations(),
-#'                      col = full_expressions,
-#'                      values_to = "full_expression")
-abbreviations <- function() {
+abbreviations <- function(expand = FALSE) {
   
   tibble::tribble(
     ~full_expressions, ~abbreviation,
@@ -457,5 +453,9 @@ abbreviations <- function() {
     "variables", "vx",
     "vector", "vctr",
     "vectors", "vctrs"
-  )
+  ) %>%
+    purrr::when(expand ~ tidyr::unnest_longer(data = .,
+                                              col = full_expressions,
+                                              values_to = "full_expression"),
+                ~ .)
 }

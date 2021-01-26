@@ -4,7 +4,11 @@
 \alias{abbreviations}
 \title{Commonly used abbreviations in \R code}
 \usage{
-abbreviations()
+abbreviations(expand = FALSE)
+}
+\arguments{
+\item{expand}{Whether to expand the full expression column and return the data in long format. If \code{FALSE}, a "nested" list column \code{full_expressions} will be
+returned, meaning the values in column \code{abbreviation} will be unique.}
 }
 \value{
 A \link[tibble:tbl_df-class]{tibble}.
@@ -12,10 +16,4 @@ A \link[tibble:tbl_df-class]{tibble}.
 \description{
 This simply returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference,
 for example, to check availability when considering using a new abbreviation in a function or argument name.
-}
-\examples{
-# expand the abbreviations tibble to long format
-tidyr::unnest_longer(data = pkgsnip::abbreviations(),
-                     col = full_expressions,
-                     values_to = "full_expression")
 }

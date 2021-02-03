@@ -1,6 +1,6 @@
 Package: pkgsnip
-Title: Provides Handy (R) Markdown Snippets for Package Authors
-Version: 0.0.9017
+Title: Standardized Labels, Messages and (R) Markdown Snippets for Package Authors
+Version: 0.0.9018
 Authors@R: 
     person(given = "Salim",
            family = "Brüggemann",

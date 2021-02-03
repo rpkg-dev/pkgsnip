@@ -4,7 +4,7 @@
 \name{pkgsnip-package}
 \alias{pkgsnip}
 \alias{pkgsnip-package}
-\title{pkgsnip: Provides Handy (R) Markdown Snippets for Package Authors}
+\title{pkgsnip: Standardized Labels, Messages and (R) Markdown Snippets for Package Authors}
 \description{
 pkgsnip ships ready-to-go (R) Markdown
     snippets and labels intended to be used in roxygen2 documentation or

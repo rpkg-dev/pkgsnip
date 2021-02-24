@@ -471,6 +471,8 @@ abbreviations <- function(expand = FALSE) {
     "dataframe", "df",
     "dependency", "dep",
     "dependencies", "deps",
+    c("development", "developer"), "dev",
+    c("developments", "developers"), "devs",
     "difference", "diff",
     "differences", "diffs",
     "directory", "dir",

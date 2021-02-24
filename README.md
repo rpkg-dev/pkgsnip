@@ -107,6 +107,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | dataframe                  | df           |
 | dependency                 | dep          |
 | dependencies               | deps         |
+| development, developer     | dev          |
+| developments, developers   | devs         |
 | difference                 | diff         |
 | differences                | diffs        |
 | directory                  | dir          |

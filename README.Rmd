@@ -16,7 +16,7 @@ The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmark
 `r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
 
 When inserting snippets that require the name of the calling package like `"installation-notice_dev-version_gitlab.Rmd"`, you should either use
-`pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- desc::desc_get(desc::desc_fields())` to the environment passed to
+`pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- pal::desc_list()` to the environment passed to
 [`devtools::build_rmd()`](https://devtools.r-lib.org/reference/build_rmd.html) or its `...` argument respectively.
 
 You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)'s [`@includeRmd`
@@ -29,7 +29,7 @@ tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-file
 For snippets that require the name of the calling package, just assign `pkg_metadata` (once) before inserting the snippet(s), e.g. like this:
 
 ``` {.rd}
-#' `r "\x60r pkg_metadata <- desc::desc_get(desc::desc_fields())\x60"`
+#' `r "\x60r pkg_metadata <- pal::desc_list()\x60"`
 #'
 #' @includeRmd `r '\x60r pkgsnip::snip_path("installation-notice_dev-version.Rmd")\x60'`
 ```
@@ -129,5 +129,3 @@ pkgsnip::abbreviations() %>% knitr::kable()
 
 ```{r, coding-style-snippet, child = pkgsnip::snip_path("coding-style-notice.Rmd")}
 ```
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------

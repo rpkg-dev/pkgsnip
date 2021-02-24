@@ -5,7 +5,7 @@ editor_options:
       prefix: "inst-n-dev-"
 ---
 
-`r emsg <- "<!––Please use \x60pal::build_readme()\x60 or assign \x60pkg_metadata <- desc::desc_get(desc::desc_fields())\x60 in the \x60envir\x60 fed to \x60devtools::build_readme(...)\x60 to allow access to package metadata!––>"`To
+`r emsg <- "<!––Please use \x60pal::build_readme()\x60 or assign \x60pkg_metadata <- pal::desc_list()\x60 in the \x60envir\x60 fed to \x60devtools::build_readme(...)\x60 to allow access to package metadata!––>"`To
 install the latest development version of `r if (exists("pkg_metadata")) pkg_metadata[["Package"]] else emsg`, run the following in R:
 
 ``` {.r}
@@ -14,6 +14,5 @@ if (!("remotes" %in% rownames(installed.packages()))) {
                    repos = "https://cloud.r-project.org/")
 }
 
-remotes::install_git(url = "`r paste0("', {if (exists("pkg_metadata")) pkg_metadata[["URL"]][1] else emsg}, '.git")`")
-remotes::install_git(url = "`r stringr::str_remove(string = , pattern = "^https?://.+?\\..+?/")`")
+remotes::install_git(url = "`r if (exists("pkg_metadata")) paste0(pkg_metadata[["URL"]][1L], ".git") else emsg`")
 ```

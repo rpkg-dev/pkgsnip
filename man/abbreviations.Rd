@@ -14,6 +14,6 @@ returned, meaning the values in column \code{abbreviation} will be unique.}
 A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference,
-for example, to check availability when considering using a new abbreviation in a function or argument name.
+Returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
+example, to check availability when considering using a new abbreviation in a function or argument name.
 }

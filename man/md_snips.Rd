@@ -10,8 +10,7 @@ md_snips()
 A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df-class]{tibble} listing all Markdown snippets together with their \code{name} which can be provided as \code{\link[=md_snip]{md_snip()}}'s \code{name}
-argument.
+Returns a \link[tibble:tbl_df-class]{tibble} listing all Markdown snippets together with their \code{name} which can be provided as \code{\link[=md_snip]{md_snip()}}'s \code{name} argument.
 }
 \details{
 Currently, Markdown snippets with the following \code{names} are available:\tabular{l}{

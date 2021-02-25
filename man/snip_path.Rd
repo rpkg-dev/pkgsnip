@@ -19,7 +19,7 @@ snip_path(name = ls_file_snips()$name)
 A \link[fs:fs_path]{path}.
 }
 \description{
-This function gives the file path to an R Markdown snippet shipped with this package.
+Returns the file path to an R Markdown snippet shipped with this package.
 }
 \details{
 The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's

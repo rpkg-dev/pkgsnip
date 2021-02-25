@@ -13,8 +13,8 @@ roxy_labels(type = c("any", "param", "return", NA_character_))
 A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df-class]{tibble} listing all parameter labels included in this package, together with their \code{name} which can be provided as
-the \code{name} argument of \code{\link[=param_label]{param_label()}} or \code{\link[=return_label]{return_label()}}.
+Returns a \link[tibble:tbl_df-class]{tibble} listing all parameter labels included in this package, together with their \code{name} which can be provided as the \code{name}
+argument of \code{\link[=param_label]{param_label()}} or \code{\link[=return_label]{return_label()}}.
 }
 \details{
 Currently, parameter labels with the following \code{types} and \code{names} are available:\tabular{lll}{

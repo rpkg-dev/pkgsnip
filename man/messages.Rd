@@ -10,8 +10,8 @@ messages()
 A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-This simply returns a \link[tibble:tbl_df-class]{tibble} listing all \R condition messages included in this package, together with their \code{name} which can be provided
-as \code{\link[=msg]{msg()}}'s \code{name} argument.
+Returns a \link[tibble:tbl_df-class]{tibble} listing all \R condition messages included in this package, together with their \code{name} which can be provided as \code{\link[=msg]{msg()}}'s
+\code{name} argument.
 }
 \details{
 Currently, \R condition messages with the following \code{names} and \code{arguments} are available:\tabular{ll}{

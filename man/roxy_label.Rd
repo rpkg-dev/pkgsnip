@@ -19,7 +19,7 @@ roxy_label(
 A character vector.
 }
 \description{
-These are pre-defined labels intended to be used to document functions using \link[roxygen2:roxygen2-package]{roxygen2}
+Returns a pre-defined label intended to be used to document functions using \link[roxygen2:roxygen2-package]{roxygen2}
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{tags}.
 }
 \details{

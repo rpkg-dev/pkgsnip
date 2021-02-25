@@ -10,7 +10,7 @@ ls_file_snips()
 \code{pkgsnip::return_label("data")}
 }
 \description{
-This function lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.
+Lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.
 }
 \seealso{
 R Markdown file snippet functions

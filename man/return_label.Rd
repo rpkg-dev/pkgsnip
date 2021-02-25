@@ -15,7 +15,7 @@ return_label(name = roxy_labels(type = "return")$name, ...)
 A character vector.
 }
 \description{
-These are pre-defined labels intended to be used to document function return values using \link[roxygen2:roxygen2-package]{roxygen2}'s
+Returns a pre-defined label intended to be used to document function return values using \link[roxygen2:roxygen2-package]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@return}} tag.
 }
 \details{

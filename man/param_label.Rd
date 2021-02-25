@@ -15,7 +15,7 @@ param_label(name = roxy_labels(type = "param")$name, ...)
 A character vector.
 }
 \description{
-These are pre-defined labels intended to be used to document function parameters using \link[roxygen2:roxygen2-package]{roxygen2}'s
+Returns a pre-defined label intended to be used to document function parameters using \link[roxygen2:roxygen2-package]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag.
 }
 \details{

@@ -44,7 +44,7 @@ backtickify_cols <- function(data,
 
 #' List all available R Markdown file snippets
 #' 
-#' This function lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.
+#' Lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.
 #'
 #' @return `pkgsnip::return_label("data")`
 #' @family rmdsnips
@@ -62,7 +62,7 @@ ls_file_snips <- function() {
 
 #' Get R Markdown snippet file path
 #'
-#' This function gives the file path to an R Markdown snippet shipped with this package.
+#' Returns the file path to an R Markdown snippet shipped with this package.
 #'
 #' The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's
 #' [`child` document option](https://yihui.org/knitr/options/#child-documents):
@@ -97,8 +97,7 @@ snip_path <- function(name = ls_file_snips()$name) {
 
 #' Get a table of all Markdown snippets included in this package
 #'
-#' This simply returns a [tibble][tibble::tbl_df] listing all Markdown snippets together with their `name` which can be provided as [md_snip()]'s `name`
-#' argument.
+#' Returns a [tibble][tibble::tbl_df] listing all Markdown snippets together with their `name` which can be provided as [md_snip()]'s `name` argument.
 #'
 #' Currently, Markdown snippets with the following `names` are available:
 #'
@@ -140,8 +139,8 @@ md_snip <- function(name = md_snips()$name) {
 
 #' Get a table of all available roxygen2 tag labels
 #'
-#' This simply returns a [tibble][tibble::tbl_df] listing all parameter labels included in this package, together with their `name` which can be provided as
-#' the `name` argument of [param_label()] or [return_label()].
+#' Returns a [tibble][tibble::tbl_df] listing all parameter labels included in this package, together with their `name` which can be provided as the `name`
+#' argument of [param_label()] or [return_label()].
 #'
 #' Currently, parameter labels with the following `types` and `names` are available:
 #'
@@ -191,7 +190,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
 
 #' Get predefined roxygen2 tag label
 #'
-#' These are pre-defined labels intended to be used to document functions using [roxygen2][roxygen2::roxygen2]
+#' Returns a pre-defined label intended to be used to document functions using [roxygen2][roxygen2::roxygen2]
 #' [tags](https://roxygen2.r-lib.org/articles/rd.html#functions).
 #'
 #' The labels can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
@@ -228,7 +227,7 @@ roxy_label <- function(name = roxy_labels()$name,
 
 #' Get predefined parameter label
 #'
-#' These are pre-defined labels intended to be used to document function parameters using [roxygen2][roxygen2::roxygen2]'s
+#' Returns a pre-defined label intended to be used to document function parameters using [roxygen2][roxygen2::roxygen2]'s
 #' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
 #' The following parameter labels are available to be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
@@ -260,7 +259,7 @@ param_label <- function(name = roxy_labels(type = "param")$name,
 
 #' Get predefined return label
 #'
-#' These are pre-defined labels intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
+#' Returns a pre-defined label intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
 #' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
 #' The following return labels are available to be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
@@ -292,8 +291,8 @@ return_label <- function(name = roxy_labels(type = "return")$name,
 
 #' Get a table of all available \R condition messages
 #'
-#' This simply returns a [tibble][tibble::tbl_df] listing all \R condition messages included in this package, together with their `name` which can be provided
-#' as [msg()]'s `name` argument.
+#' Returns a [tibble][tibble::tbl_df] listing all \R condition messages included in this package, together with their `name` which can be provided as [msg()]'s
+#' `name` argument.
 #'
 #' Currently, \R condition messages with the following `names` and `arguments` are available:
 #'
@@ -341,8 +340,8 @@ msg <- function(name = messages()$name,
 
 #' Commonly used abbreviations in \R code
 #' 
-#' This simply returns a [tibble][tibble::tbl_df] listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference,
-#' for example, to check availability when considering using a new abbreviation in a function or argument name.
+#' Returns a [tibble][tibble::tbl_df] listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
+#' example, to check availability when considering using a new abbreviation in a function or argument name.
 #' 
 #' @param expand Whether to expand the full expression column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will be
 #'   returned, meaning the values in column `abbreviation` will be unique.

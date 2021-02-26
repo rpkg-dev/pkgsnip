@@ -2,9 +2,12 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{return_label}
 \alias{return_label}
+\alias{return_lbl}
 \title{Get predefined return label}
 \usage{
 return_label(name = roxy_labels(type = "return")$name, ...)
+
+return_lbl(name = roxy_labels(type = "return")$name, ...)
 }
 \arguments{
 \item{name}{The label name. See \code{\link[=roxy_labels]{roxy_labels()}} for possible values.}
@@ -19,20 +22,23 @@ Returns a pre-defined label intended to be used to document function return valu
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@return}} tag.
 }
 \details{
-The following return labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code}
-as follows:
-
-\verb{#' @return `r pkgsnip::return_label("data")` }
-\verb{#' @return `r pkgsnip::return_label("date")` }
-\verb{#' @return `r pkgsnip::return_label("dates")` }
-\verb{#' @return `r pkgsnip::return_label("path")` }
-\verb{#' @return `r pkgsnip::return_label("paths")` }
-\verb{#' @return `r pkgsnip::return_label("r_object")` }
-\verb{#' @return `r pkgsnip::return_label("strict_list")` }
-\verb{#' @return `r pkgsnip::return_label("version_nr")` }
-\verb{#' @return `r pkgsnip::return_label("opt_max_cache_lifespan")` }
+A label can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:\if{html}{\out{<div class="r">}}\preformatted{#' @return version_nr `r pkgsnip::return_label("version_nr")`
+}\if{html}{\out{</div>}}
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
+
+Currently, the following return labels are available:\tabular{ll}{
+   \strong{name} \tab \strong{arguments} \cr
+   \code{data} \tab  \cr
+   \code{date} \tab  \cr
+   \code{dates} \tab  \cr
+   \code{path} \tab  \cr
+   \code{paths} \tab  \cr
+   \code{r_object} \tab  \cr
+   \code{strict_list} \tab  \cr
+   \code{version_nr} \tab  \cr
+   \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+}
 }
 \seealso{
 roxygen2 label functions

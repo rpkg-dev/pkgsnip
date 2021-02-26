@@ -2,9 +2,16 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{roxy_label}
 \alias{roxy_label}
+\alias{roxy_lbl}
 \title{Get predefined roxygen2 tag label}
 \usage{
 roxy_label(
+  name = roxy_labels()$name,
+  type = c("any", "param", "return", NA_character_),
+  ...
+)
+
+roxy_lbl(
   name = roxy_labels()$name,
   type = c("any", "param", "return", NA_character_),
   ...

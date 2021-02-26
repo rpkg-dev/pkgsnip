@@ -2,9 +2,12 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{param_label}
 \alias{param_label}
+\alias{param_lbl}
 \title{Get predefined parameter label}
 \usage{
 param_label(name = roxy_labels(type = "param")$name, ...)
+
+param_lbl(name = roxy_labels(type = "param")$name, ...)
 }
 \arguments{
 \item{name}{The label name. See \code{\link[=roxy_labels]{roxy_labels()}} for possible values.}
@@ -19,25 +22,28 @@ Returns a pre-defined label intended to be used to document function parameters 
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag.
 }
 \details{
-The following parameter labels are available to be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code}
-as follows:
-
-\verb{#' @param data `r pkgsnip::param_label("data")` }
-\verb{#' @param date `r pkgsnip::param_label("date")` }
-\verb{#' @param dates `r pkgsnip::param_label("dates")` }
-\verb{#' @param path `r pkgsnip::param_label("path")` }
-\verb{#' @param paths `r pkgsnip::param_label("paths")` }
-\verb{#' @param r_object `r pkgsnip::param_label("r_object")` }
-\verb{#' @param strict_list `r pkgsnip::param_label("strict_list")` }
-\verb{#' @param version_nr `r pkgsnip::param_label("version_nr")` }
-\verb{#' @param opt_max_cache_lifespan `r pkgsnip::param_label("opt_max_cache_lifespan")` }
-\verb{#' @param dyn_dots_support `r pkgsnip::param_label("dyn_dots_support")` }
-\verb{#' @param start_date `r pkgsnip::param_label("start_date")` }
-\verb{#' @param end_date `r pkgsnip::param_label("end_date")` }
-\verb{#' @param use_cache `r pkgsnip::param_label("use_cache")` }
-\verb{#' @param cache_lifespan `r pkgsnip::param_label("cache_lifespan")` }
+A label can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:\if{html}{\out{<div class="r">}}\preformatted{#' @param start_date `r pkgsnip::param_label("start_date")`
+}\if{html}{\out{</div>}}
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
+
+Currently, the following parameter labels are available:\tabular{ll}{
+   \strong{name} \tab \strong{arguments} \cr
+   \code{data} \tab  \cr
+   \code{date} \tab  \cr
+   \code{dates} \tab  \cr
+   \code{path} \tab  \cr
+   \code{paths} \tab  \cr
+   \code{r_object} \tab  \cr
+   \code{strict_list} \tab  \cr
+   \code{version_nr} \tab  \cr
+   \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{dyn_dots_support} \tab  \cr
+   \code{start_date} \tab  \cr
+   \code{end_date} \tab  \cr
+   \code{use_cache} \tab  \cr
+   \code{cache_lifespan} \tab  \cr
+}
 }
 \seealso{
 roxygen2 label functions

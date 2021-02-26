@@ -2,9 +2,12 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{roxy_labels}
 \alias{roxy_labels}
+\alias{roxy_lbls}
 \title{Get a table of all available roxygen2 tag labels}
 \usage{
 roxy_labels(type = c("any", "param", "return", NA_character_))
+
+roxy_lbls(type = c("any", "param", "return", NA_character_))
 }
 \arguments{
 \item{type}{The label type to return. A character scalar.}
@@ -17,7 +20,7 @@ Returns a \link[tibble:tbl_df-class]{tibble} listing all parameter labels includ
 argument of \code{\link[=param_label]{param_label()}} or \code{\link[=return_label]{return_label()}}.
 }
 \details{
-Currently, parameter labels with the following \code{types} and \code{names} are available:\tabular{lll}{
+Currently, parameter labels with the following \code{type}s and \code{name}s are available:\tabular{lll}{
    \strong{type} \tab \strong{name} \tab \strong{arguments} \cr
    \code{NA} \tab \code{data} \tab  \cr
    \code{NA} \tab \code{date} \tab  \cr

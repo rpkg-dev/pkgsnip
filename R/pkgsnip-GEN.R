@@ -142,7 +142,7 @@ md_snip <- function(name = md_snips()$name) {
 #' Returns a [tibble][tibble::tbl_df] listing all parameter labels included in this package, together with their `name` which can be provided as the `name`
 #' argument of [param_label()] or [return_label()].
 #'
-#' Currently, parameter labels with the following `types` and `names` are available:
+#' Currently, parameter labels with the following `type`s and `name`s are available:
 #'
 #' ```{r, echo = FALSE}
 #' roxy_labels() %>%
@@ -188,6 +188,10 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
                                 type %in% c(!!type, NA_character_)))
 }
 
+#' @rdname roxy_labels
+#' @export
+roxy_lbls <- roxy_labels
+
 #' Get predefined roxygen2 tag label
 #'
 #' Returns a pre-defined label intended to be used to document functions using [roxygen2][roxygen2::roxygen2]
@@ -225,24 +229,31 @@ roxy_label <- function(name = roxy_labels()$name,
                ... = ...)
 }
 
+#' @rdname roxy_label
+#' @export
+roxy_lbl <- roxy_label
+
 #' Get predefined parameter label
 #'
 #' Returns a pre-defined label intended to be used to document function parameters using [roxygen2][roxygen2::roxygen2]'s
 #' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
-#' The following parameter labels are available to be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
-#' as follows:
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
-#' ```{r, echo = FALSE, results = "asis"}
-#' bt <- "`"
-#' roxy_labels(type = "param") %$%
-#'   name %>%
-#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@param {.x} ", bt, 'r pkgsnip::param_label("{.x}")', bt, " ", bt, bt)) %>%
-#'   c("\n", .) %>%
-#'   pal::cat_lines()
+#' ```r
+#' #' @param start_date `r pkgsnip::param_label("start_date")`
 #' ```
-#'
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
+#'
+#' Currently, the following parameter labels are available:
+#'
+#' ```{r, echo = FALSE}
+#' roxy_labels(type = "param") %>%
+#'   add_args_col() %>%
+#'   dplyr::select(-c(type, label)) %>%
+#'   backtickify_cols() %>%
+#'   pal::pipe_table()
+#' ```
 #' 
 #' @inheritParams roxy_label
 #'
@@ -257,24 +268,31 @@ param_label <- function(name = roxy_labels(type = "param")$name,
              ... = ...)
 }
 
+#' @rdname param_label
+#' @export
+param_lbl <- param_label
+
 #' Get predefined return label
 #'
 #' Returns a pre-defined label intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
 #' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
-#' The following return labels are available to be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1)
-#' as follows:
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
-#' ```{r, echo = FALSE, results = "asis"}
-#' bt <- "`"
-#' roxy_labels(type = "return") %$%
-#'   name %>%
-#'   purrr::map_chr(~ glue::glue(bt, bt, "#' @@return ", bt, 'r pkgsnip::return_label("{.x}")', bt, " ", bt, bt)) %>%
-#'   c("\n", .) %>%
-#'   pal::cat_lines()
+#' ```r
+#' #' @return version_nr `r pkgsnip::return_label("version_nr")`
 #' ```
-#'
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
+#'
+#' Currently, the following return labels are available:
+#'
+#' ```{r, echo = FALSE}
+#' roxy_labels(type = "return") %>%
+#'   add_args_col() %>%
+#'   dplyr::select(-c(type, label)) %>%
+#'   backtickify_cols() %>%
+#'   pal::pipe_table()
+#' ```
 #' 
 #' @inheritParams roxy_label
 #'
@@ -289,10 +307,14 @@ return_label <- function(name = roxy_labels(type = "return")$name,
              ... = ...)
 }
 
+#' @rdname return_label
+#' @export
+return_lbl <- return_label
+
 #' Get a table of all available \R condition messages
 #'
-#' Returns a [tibble][tibble::tbl_df] listing all \R condition messages included in this package, together with their `name` which can be provided as [msg()]'s
-#' `name` argument.
+#' Returns a [tibble][tibble::tbl_df] listing all \R condition messages included in this package, together with their `name` which can be provided as
+#' [message()]'s `name` argument.
 #'
 #' Currently, \R condition messages with the following `names` and `arguments` are available:
 #'
@@ -315,6 +337,10 @@ messages <- function() {
   )
 }
 
+#' @rdname messages
+#' @export
+msgs <- messages
+
 #' Get predefined \R condition message
 #'
 #' @param name The message name. See [messages()] for possible values.
@@ -326,9 +352,9 @@ messages <- function() {
 #' @export
 #'
 #' @examples
-#' pkgsnip::msg(name = "pkg_required",
-#'              pkg = "some_pkg")
-msg <- function(name = messages()$name,
+#' pkgsnip::message(name = "pkg_required",
+#'                  pkg = "some_pkg")
+message <- function(name = messages()$name,
                 ...) {
   
   name <- rlang::arg_match(name)
@@ -337,6 +363,10 @@ msg <- function(name = messages()$name,
              dplyr::filter(.data = messages(),
                            name == !!name)$message)
 }
+
+#' @rdname message
+#' @export
+msg <- message
 
 #' Commonly used abbreviations in \R code
 #' 

@@ -2,16 +2,19 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{messages}
 \alias{messages}
+\alias{msgs}
 \title{Get a table of all available \R condition messages}
 \usage{
 messages()
+
+msgs()
 }
 \value{
 A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
-Returns a \link[tibble:tbl_df-class]{tibble} listing all \R condition messages included in this package, together with their \code{name} which can be provided as \code{\link[=msg]{msg()}}'s
-\code{name} argument.
+Returns a \link[tibble:tbl_df-class]{tibble} listing all \R condition messages included in this package, together with their \code{name} which can be provided as
+\code{\link[=message]{message()}}'s \code{name} argument.
 }
 \details{
 Currently, \R condition messages with the following \code{names} and \code{arguments} are available:\tabular{ll}{
@@ -21,6 +24,6 @@ Currently, \R condition messages with the following \code{names} and \code{argum
 }
 \seealso{
 R message functions
-\code{\link{msg}()}
+\code{\link{message}()}
 }
 \concept{rmsg}

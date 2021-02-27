@@ -371,7 +371,7 @@ msg <- message
 #' Commonly used abbreviations in \R code
 #' 
 #' Returns a [tibble][tibble::tbl_df] listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
-#' example, to check availability when considering using a new abbreviation in a function or argument name.
+#' example, to check availability when considering using some abbreviation in a function or argument name.
 #' 
 #' @param expand Whether to expand the full expression column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will be
 #'   returned, meaning the values in column `abbreviation` will be unique.

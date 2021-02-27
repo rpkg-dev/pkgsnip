@@ -107,11 +107,15 @@ pkgsnip::messages() %>%
 Finally, there's a table included that lists an (opinionated) set of abbreviations commonly used when writing R code. It might come in handy as a reference, for
 example, to check availability when considering using some abbreviation in a function or argument name.
 
-The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows:
+The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows (click to expand):
+
+<details><summary>Abbreviations</summary>
 
 ```{r, echo = FALSE}
 pkgsnip::abbreviations() %>% knitr::kable()
 ```
+
+</details>
 
 ## Installation
 

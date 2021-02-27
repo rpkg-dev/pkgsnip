@@ -81,7 +81,12 @@ Currently, the following R condition messages are included:
 
 Finally, there’s a table included that lists an (opinionated) set of abbreviations commonly used when writing R code. It might come in handy as a reference, for example, to check availability when considering using some abbreviation in a function or argument name.
 
-The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows:
+The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows (click to expand):
+
+<details>
+<summary>
+Abbreviations
+</summary>
 
 | full_expressions           | abbreviation |
 |:---------------------------|:-------------|
@@ -179,6 +184,7 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | separators                 | seps         |
 | sequence , sequential      | seq          |
 | sequences                  | seqs         |
+| specification, specify     | spec         |
 | string                     | str          |
 | strings                    | strs         |
 | temporary                  | tmp          |
@@ -188,6 +194,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 | variables                  | vx           |
 | vector                     | vctr         |
 | vectors                    | vctrs        |
+
+</details>
 
 ## Installation
 

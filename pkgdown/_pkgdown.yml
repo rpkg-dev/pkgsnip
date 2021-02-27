@@ -1,0 +1,6 @@
+development:
+  mode: auto
+template:
+  params:
+    bootswatch: yeti
+url: https://r.salim.space/pkgsnip

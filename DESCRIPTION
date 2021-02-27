@@ -1,5 +1,6 @@
 Package: pkgsnip
-Title: Standardized Labels, Messages and (R) Markdown Snippets for Package Authors
+Title: Standardized Labels, Messages and (R) Markdown Snippets
+    for Package Authors
 Version: 0.0.9019
 Authors@R: 
     person(given = "Salim",
@@ -14,7 +15,8 @@ Description: pkgsnip ships ready-to-go (R) Markdown
     code. All of them are designed to reduce unnecessary repetition and
     standardize R-package documentation wherever possible.
 License: AGPL (>= 3)
-URL: https://gitlab.com/salim_b/r/pkgs/pkgsnip
+URL: https://r.salim.space/pkgsnip,
+    https://gitlab.com/salim_b/r/pkgs/pkgsnip
 BugReports: https://gitlab.com/salim_b/r/pkgs/pkgsnip/issues
 Imports: 
     dplyr (>= 1.0.0),

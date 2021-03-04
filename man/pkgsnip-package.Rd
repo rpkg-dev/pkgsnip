@@ -4,7 +4,8 @@
 \name{pkgsnip-package}
 \alias{pkgsnip}
 \alias{pkgsnip-package}
-\title{pkgsnip: Standardized Labels, Messages and (R) Markdown Snippets for Package Authors}
+\title{pkgsnip: Standardized Labels, Messages and (R) Markdown Snippets
+    for Package Authors}
 \description{
 pkgsnip ships ready-to-go (R) Markdown
     snippets and labels intended to be used in roxygen2 documentation or
@@ -16,6 +17,7 @@ pkgsnip ships ready-to-go (R) Markdown
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://rpkg.dev/pkgsnip}
   \item \url{https://gitlab.com/salim_b/r/pkgs/pkgsnip}
   \item Report bugs at \url{https://gitlab.com/salim_b/r/pkgs/pkgsnip/issues}
 }

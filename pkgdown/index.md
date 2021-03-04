@@ -48,10 +48,10 @@ For snippets that require the name of the calling package, just assign
 
 Currently, the following R Markdown file snippets are included:
 
--   [`coding-style-notice.Rmd`](inst/snippets/coding-style-notice.Rmd)
--   [`installation-notice_dev-version.Rmd`](inst/snippets/installation-notice_dev-version.Rmd)
--   [`installation-notice_dev-version_gitlab.Rmd`](inst/snippets/installation-notice_dev-version_gitlab.Rmd)
--   [`rmd-package-notice.Rmd`](inst/snippets/rmd-package-notice.Rmd)
+-   [`coding-style-notice.Rmd`](https://gitlab.com/salim_b/r/pkgs/pkgsnip/-/tree/master/inst/snippets/coding-style-notice.Rmd)
+-   [`installation-notice_dev-version.Rmd`](https://gitlab.com/salim_b/r/pkgs/pkgsnip/-/tree/master/inst/snippets/installation-notice_dev-version.Rmd)
+-   [`installation-notice_dev-version_gitlab.Rmd`](https://gitlab.com/salim_b/r/pkgs/pkgsnip/-/tree/master/inst/snippets/installation-notice_dev-version_gitlab.Rmd)
+-   [`rmd-package-notice.Rmd`](https://gitlab.com/salim_b/r/pkgs/pkgsnip/-/tree/master/inst/snippets/rmd-package-notice.Rmd)
 
 ### roxygen2 tag labels
 

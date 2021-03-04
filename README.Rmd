@@ -46,7 +46,10 @@ fs::path_package("snippets/",
   fs::dir_ls(recurse = TRUE,
              type = "file") %>%
   fs::path_file() %>%
-  paste0("- [`", ., "`](inst/snippets/", ., ")") %>%
+  paste0("- [`", ., "`](",
+         stringr::str_subset(string = desc::desc_get_urls(),
+                             pattern = "https://git(lab|hub)"),
+         "/-/tree/master/inst/snippets/", ., ")") %>%
   pal::cat_lines()
 ```
 

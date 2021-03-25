@@ -16,6 +16,7 @@ Returns a \link[tibble:tbl_df-class]{tibble} listing all Markdown snippets toget
 Currently, Markdown snippets with the following \code{names} are available:\tabular{l}{
    \strong{name} \cr
    \code{rstudio_addin_hint} \cr
+   \code{pkgdown_notice} \cr
 }
 }
 \seealso{

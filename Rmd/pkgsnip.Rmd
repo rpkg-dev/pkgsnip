@@ -173,7 +173,8 @@ md_snips <- function() {
   tibble::tribble(
     ~name, ~snippet,
     "rstudio_addin_hint", paste0("This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/) allowing RStudio users ",
-                                 "to assign a custom shortcut to it.")
+                                 "to assign a custom shortcut to it."),
+    "pkgdown_notice", "The documentation of this package is found [here]({pkgdown::as_pkgdown()$meta$url})."
   )
 }
 ```

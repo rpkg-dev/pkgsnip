@@ -5,6 +5,7 @@ utils::globalVariables(names = c(".",
                                  "label",
                                  "name",
                                  "path",
+                                 "snippet",
                                  "type"))
 
 pkg <- utils::packageName()
@@ -103,7 +104,7 @@ snip_path <- function(name = ls_file_snips()$name) {
 #'
 #' ```{r, echo = FALSE}
 #' md_snips() %>%
-#'   dplyr::select(-label) %>%
+#'   dplyr::select(-snippet) %>%
 #'   backtickify_cols() %>%
 #'   pal::pipe_table()
 #' ```
@@ -114,7 +115,7 @@ snip_path <- function(name = ls_file_snips()$name) {
 md_snips <- function() {
   
   tibble::tribble(
-    ~name, ~label,
+    ~name, ~snippet,
     "rstudio_addin_hint", paste0("This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/) allowing RStudio users ",
                                  "to assign a custom shortcut to it.")
   )
@@ -123,18 +124,23 @@ md_snips <- function() {
 #' Get predefined Markdown snippet
 #'
 #' @param name The snippet name.
+#' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see [md_snips()] for an overview.
+#'   If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
 #'
 #' @return A character scalar.
 #' @family mdsnips
 #' @export
-md_snip <- function(name = md_snips()$name) {
+md_snip <- function(name = md_snips()$name,
+                    ...) {
   
   name <- rlang::arg_match(name)
+  env = parent.frame()
   
-  dplyr::filter(.data = md_snips(),
-                name == !!name)$label
-  
-  
+  md_snips() %>%
+    dplyr::filter(name == !!name) %$%
+    snippet %>%
+    glue::glue(.envir = env,
+               ... = ...)
 }
 
 #' Get a table of all available roxygen2 tag labels
@@ -208,6 +214,7 @@ roxy_lbls <- roxy_labels
 #' 
 #' @param name The label name. See [roxy_labels()] for possible values.
 #' @param ... Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see [roxy_labels()] for an overview.
+#'   If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
 #'
 #' @return A character vector.
 #' @keywords internal
@@ -218,6 +225,7 @@ roxy_label <- function(name = roxy_labels()$name,
                        ...) {
   
   name <- rlang::arg_match(name)
+  env = parent.frame()
   
   roxy_labels(type = type) %>%
     dplyr::filter(name == !!name) %>%
@@ -225,7 +233,7 @@ roxy_label <- function(name = roxy_labels()$name,
     dplyr::arrange(type) %$%
     label %>%
     dplyr::first() %>%
-    glue::glue(.envir = NULL,
+    glue::glue(.envir = env,
                ... = ...)
 }
 
@@ -345,7 +353,7 @@ msgs <- messages
 #'
 #' @param name The message name. See [messages()] for possible values.
 #' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [messages()] for an
-#'   overview.
+#'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
 #'
 #' @return A character scalar.
 #' @family rmsg
@@ -355,11 +363,13 @@ msgs <- messages
 #' pkgsnip::message(name = "pkg_required",
 #'                  pkg = "some_pkg")
 message <- function(name = messages()$name,
-                ...) {
+                    ...) {
   
   name <- rlang::arg_match(name)
+  env = parent.frame()
   
-  glue::glue(... = ...,
+  glue::glue(.envir = env,
+             ... = ...,
              dplyr::filter(.data = messages(),
                            name == !!name)$message)
 }

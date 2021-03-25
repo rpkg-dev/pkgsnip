@@ -4,10 +4,13 @@
 \alias{md_snip}
 \title{Get predefined Markdown snippet}
 \usage{
-md_snip(name = md_snips()$name)
+md_snip(name = md_snips()$name, ...)
 }
 \arguments{
 \item{name}{The snippet name.}
+
+\item{...}{Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see \code{\link[=md_snips]{md_snips()}} for an overview.
+If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
 }
 \value{
 A character scalar.

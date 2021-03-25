@@ -13,7 +13,7 @@ msg(name = messages()$name, ...)
 \item{name}{The message name. See \code{\link[=messages]{messages()}} for possible values.}
 
 \item{...}{Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see \code{\link[=messages]{messages()}} for an
-overview.}
+overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
 }
 \value{
 A character scalar.

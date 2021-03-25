@@ -1,4 +1,4 @@
-test_that("All roxygen2 tag labels are unique", {
+test_that("All roxygen2 tag label names are unique", {
 
   # all names of NA-type labels must be unique
   expect_false(roxy_labels() %>%
@@ -20,6 +20,16 @@ test_that("All roxygen2 tag labels are unique", {
                  name %>%
                  duplicated() %>%
                  any())
+})
+
+test_that("All Markdown snippet names are unique", {
+
+  expect_false(any(duplicated(md_snips()$name)))
+})
+
+test_that("All R condition message names are unique", {
+
+  expect_false(any(duplicated(msgs()$name)))
 })
 
 test_that("All common abbreviations are unique", {

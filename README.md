@@ -2,6 +2,10 @@
 
 pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages and a table of abbreviations commonly used in R code. All of them are designed to reduce unnecessary repetition and standardize R-package documentation wherever possible.
 
+## Documentation
+
+The documentation of this package is found [here](https://rpkg.dev/pkgsnip).
+
 ## Details
 
 ### R Markdown file snippets

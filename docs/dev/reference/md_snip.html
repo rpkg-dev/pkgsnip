@@ -83,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgsnip</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.0.9019</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.0.9020</span>
       </span>
     </div>
 
@@ -122,7 +122,7 @@
     <p>Get predefined Markdown snippet</p>
     </div>
 
-    <pre class="usage"><span class='fu'>md_snip</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='md_snips.html'>md_snips</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>md_snip</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='md_snips.html'>md_snips</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,6 +130,11 @@
     <tr>
       <th>name</th>
       <td><p>The snippet name.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see <code><a href='md_snips.html'>md_snips()</a></code> for an overview.
+If a required argument is not explicitly provided, it is searched for in the <a href='https://rdrr.io/r/base/sys.parent.html'>parent frames</a>.</p></td>
     </tr>
     </table>
 

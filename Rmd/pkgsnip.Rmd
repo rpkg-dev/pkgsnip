@@ -245,6 +245,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "path", "A [path][fs::fs_path].",
     NA, "paths", "A vector of [paths][fs::fs_path].",
     NA, "r_object", "An \\R object.",
+    NA, "response", "A [response object][httr::response].",
     NA, "strict_list", "A [strict list][xfun::strict_list()].",
     NA, "version_nr", "A [numeric version][numeric_version()].",
     NA, "opt_max_cache_lifespan", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",

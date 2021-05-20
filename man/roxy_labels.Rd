@@ -28,6 +28,7 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{NA} \tab \code{path} \tab  \cr
    \code{NA} \tab \code{paths} \tab  \cr
    \code{NA} \tab \code{r_object} \tab  \cr
+   \code{NA} \tab \code{response} \tab  \cr
    \code{NA} \tab \code{strict_list} \tab  \cr
    \code{NA} \tab \code{version_nr} \tab  \cr
    \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr

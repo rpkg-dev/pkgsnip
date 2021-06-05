@@ -15,13 +15,13 @@ When inserting snippets that require the name of the calling package like `"inst
 
 You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)'s [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 
-``` {.rd}
+``` rd
 #' @includeRmd `r pkgsnip::snip_path("rmd-package-notice.Rmd")`
 ```
 
 For snippets that require the name of the calling package, just assign `pkg_metadata` (once) before inserting the snippet(s), e.g. like this:
 
-``` {.rd}
+``` rd
 #' `r pkg_metadata <- pal::desc_list()`
 #'
 #' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version.Rmd")`
@@ -42,7 +42,7 @@ The [roxygen2](https://roxygen2.r-lib.org/) tag labels are specifically meant fo
 
 Insert them in your functions using inline R code, e.g. as follows
 
-``` {.r}
+``` r
 #' @param use_cache `r pkgsnip::param_label("use_cache")`
 #' @param cache_lifespan `r pkgsnip::param_label("cache_lifespan")`
 #' @return `r pkgsnip::return_label("data")`
@@ -50,7 +50,7 @@ Insert them in your functions using inline R code, e.g. as follows
 
 which will result in
 
-``` {.r}
+``` r
 #' @param use_cache Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.
 #' @param cache_lifespan The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.
 #' @return A [tibble][tibble::tbl_df].
@@ -62,7 +62,7 @@ These are meant to be used as message texts for base R's [`message()`](https://r
 
 A message can be retrieved using `pkgsnip::msg()`. For some of the messages, arguments need to be provided so they can be tailored to their specific purpose. For example, the `pkg_required` message requires the `pkg` argument:
 
-``` {.r}
+``` r
 pkgsnip::msg(name = "pkg_required",
              pkg = "some_pkg")
 ```
@@ -135,7 +135,7 @@ Abbreviations
   filesystem                   fs
   function                     fn
   functions                    fns
-  generation, generate         gen
+  generate, generation         gen
   generations                  gens
   identifier                   id
   identifiers                  ids
@@ -143,7 +143,7 @@ Abbreviations
   index                        i
   indices/indexes              ix
   information                  info
-  initialization, initialize   init
+  initialize, initialization   init
   integer                      int
   integers                     ints
   label                        lbl
@@ -180,11 +180,11 @@ Abbreviations
   relative                     rel
   remove                       rm
   roxygen2                     roxy
-  separator                    sep
+  separate, separator          sep
   separators                   seps
-  sequence , sequential        seq
+  sequential, sequence         seq
   sequences                    seqs
-  specification, specify       spec
+  specify, specification       spec
   string                       str
   strings                      strs
   temporary                    tmp
@@ -201,7 +201,7 @@ Abbreviations
 
 To install the latest development version of pkgsnip, run the following in R:
 
-``` {.r}
+``` r
 if (!("remotes" %in% rownames(installed.packages()))) {
   install.packages(pkgs = "remotes",
                    repos = "https://cloud.r-project.org/")
@@ -232,7 +232,7 @@ This package borrows a lot of the [Tidyverse](https://www.tidyverse.org/) design
 
 As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in the [lintr configuration file](https://github.com/jimhester/lintr#project-configuration) [`.lintr`](.lintr), so lintr can be used right away to check for formatting issues:
 
-``` {.r}
+``` r
 pkgpurl::lint_rmd()
 ```
 

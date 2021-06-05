@@ -121,7 +121,12 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 <details><summary>Abbreviations</summary>
 
 ```{r, echo = FALSE}
-pkgsnip::abbreviations() %>% knitr::kable()
+pkgsnip::abbreviations() %>%
+  dplyr::mutate(dplyr::across(.cols = where(is.list),
+                              .fns = purrr::map_chr,
+                              .f = paste0,
+                              collapse = ", ")) %>%
+  knitr::kable()
 ```
 
 </details>

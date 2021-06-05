@@ -139,7 +139,7 @@ Abbreviations
 | filesystem                 | fs           |
 | function                   | fn           |
 | functions                  | fns          |
-| generation, generate       | gen          |
+| generate, generation       | gen          |
 | generations                | gens         |
 | identifier                 | id           |
 | identifiers                | ids          |
@@ -147,7 +147,7 @@ Abbreviations
 | index                      | i            |
 | indices/indexes            | ix           |
 | information                | info         |
-| initialization, initialize | init         |
+| initialize, initialization | init         |
 | integer                    | int          |
 | integers                   | ints         |
 | label                      | lbl          |
@@ -184,11 +184,11 @@ Abbreviations
 | relative                   | rel          |
 | remove                     | rm           |
 | roxygen2                   | roxy         |
-| separator                  | sep          |
+| separate, separator        | sep          |
 | separators                 | seps         |
-| sequence , sequential      | seq          |
+| sequential, sequence       | seq          |
 | sequences                  | seqs         |
-| specification, specify     | spec         |
+| specify, specification     | spec         |
 | string                     | str          |
 | strings                    | strs         |
 | temporary                  | tmp          |

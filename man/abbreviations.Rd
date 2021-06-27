@@ -2,9 +2,12 @@
 % Please edit documentation in R/pkgsnip-GEN.R
 \name{abbreviations}
 \alias{abbreviations}
+\alias{abbrs}
 \title{Commonly used abbreviations in \R code}
 \usage{
 abbreviations(expand = FALSE)
+
+abbrs(expand = FALSE)
 }
 \arguments{
 \item{expand}{Whether to expand the full expression column and return the data in long format. If \code{FALSE}, a "nested" list column \code{full_expressions} will be

@@ -1,8 +1,8 @@
-pandoc: '2.13'
+pandoc: 2.14.0.3
 pkgdown: 1.6.1.9000
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-05-20T23:29Z
+last_built: 2021-06-27T10:21Z
 urls:
   reference: https://rpkg.dev/pkgsnip/reference
   article: https://rpkg.dev/pkgsnip/articles

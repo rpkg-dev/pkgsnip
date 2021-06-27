@@ -404,6 +404,8 @@ abbreviations <- function(expand = FALSE) {
   
   tibble::tribble(
     ~full_expressions, ~abbreviation,
+    "abbreviation", "abbr",
+    "abbreviations", "abbrs",
     "absolute", "abs",
     "argument", "arg",
     "arguments", "args",
@@ -514,3 +516,7 @@ abbreviations <- function(expand = FALSE) {
                                               values_to = "full_expression"),
                 ~ .)
 }
+
+#' @rdname abbreviations
+#' @export
+abbrs <- abbreviations

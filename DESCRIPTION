@@ -1,6 +1,6 @@
 Package: pkgsnip
-Title: Standardized Labels, Messages and (R) Markdown Snippets
-    for Package Authors
+Title: Standardized Labels, Messages and (R) Markdown Snippets for Package
+    Authors
 Version: 0.0.9020
 Authors@R: 
     person(given = "Salim",
@@ -8,15 +8,14 @@ Authors@R:
            role = c("aut", "cre"),
            email = "salim-b@pm.me",
            comment = c(ORCID = "0000-0002-5329-5987"))
-Description: pkgsnip ships ready-to-go (R) Markdown
-    snippets and labels intended to be used in roxygen2 documentation or
-    as knitr child documents. Also included are some predefined R
-    condition messages and a table of abbreviations commonly used in R
-    code. All of them are designed to reduce unnecessary repetition and
-    standardize R-package documentation wherever possible.
+Description: pkgsnip ships ready-to-go (R) Markdown snippets and labels
+    intended to be used in roxygen2 documentation or as knitr child
+    documents. Also included are some predefined R condition messages and
+    a table of abbreviations commonly used in R code. All of them are
+    designed to reduce unnecessary repetition and standardize R-package
+    documentation wherever possible.
 License: AGPL (>= 3)
-URL: https://rpkg.dev/pkgsnip,
-    https://gitlab.com/salim_b/r/pkgs/pkgsnip
+URL: https://rpkg.dev/pkgsnip, https://gitlab.com/salim_b/r/pkgs/pkgsnip
 BugReports: https://gitlab.com/salim_b/r/pkgs/pkgsnip/issues
 Imports: 
     dplyr (>= 1.0.0),

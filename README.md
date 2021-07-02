@@ -94,6 +94,8 @@ Abbreviations
 
 | full_expressions           | abbreviation |
 |:---------------------------|:-------------|
+| abbreviation               | abbr         |
+| abbreviations              | abbrs        |
 | absolute                   | abs          |
 | argument                   | arg          |
 | arguments                  | args         |

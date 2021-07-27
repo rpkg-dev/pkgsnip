@@ -497,6 +497,8 @@ abbreviations <- function(expand = FALSE) {
     "arguments", "args",
     "attribute", "attr",
     "attributes", "attrs",
+    c("authenticate", "authentication"), "auth",
+    "authentications", "auths",
     "bibliography", "bib",
     "character", "chr",
     "characters", "chrs",

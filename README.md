@@ -92,114 +92,116 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 Abbreviations
 </summary>
 
-| full_expressions           | abbreviation |
-|:---------------------------|:-------------|
-| abbreviation               | abbr         |
-| abbreviations              | abbrs        |
-| absolute                   | abs          |
-| argument                   | arg          |
-| arguments                  | args         |
-| attribute                  | attr         |
-| attributes                 | attrs        |
-| bibliography               | bib          |
-| character                  | chr          |
-| characters                 | chrs         |
-| column                     | col          |
-| columns                    | cols         |
-| command                    | cmd          |
-| commands                   | cmds         |
-| combination                | combo        |
-| combinations               | combos       |
-| condition                  | cnd          |
-| conditions                 | cnds         |
-| configuration              | config       |
-| configurations             | configs      |
-| database                   | db           |
-| dataframe                  | df           |
-| dependency                 | dep          |
-| dependencies               | deps         |
-| development, developer     | dev          |
-| developments, developers   | devs         |
-| difference                 | diff         |
-| differences                | diffs        |
-| directory                  | dir          |
-| directories                | dirs         |
-| distribution               | distro       |
-| distributions              | distros      |
-| document                   | doc          |
-| documents                  | docs         |
-| double                     | dbl          |
-| doubles                    | dbls         |
-| element                    | el           |
-| environment                | env          |
-| environments               | envs         |
-| exclude                    | excl         |
-| expression                 | expr         |
-| expressions                | exprs        |
-| factor                     | fct          |
-| factors                    | fcts         |
-| filesystem                 | fs           |
-| function                   | fn           |
-| functions                  | fns          |
-| generate, generation       | gen          |
-| generations                | gens         |
-| identifier                 | id           |
-| identifiers                | ids          |
-| include                    | incl         |
-| index                      | i            |
-| indices/indexes            | ix           |
-| information                | info         |
-| initialize, initialization | init         |
-| integer                    | int          |
-| integers                   | ints         |
-| label                      | lbl          |
-| labels                     | lbls         |
-| language                   | lang         |
-| languages                  | langs        |
-| level                      | lvl          |
-| levels                     | lvls         |
-| list                       | ls           |
-| logical                    | lgl          |
-| logicals                   | lgls         |
-| Markdown                   | md           |
-| message                    | msg          |
-| messages                   | msgs         |
-| modification               | mod          |
-| modifications              | mods         |
-| number                     | nr           |
-| numbers                    | nrs          |
-| number of                  | n            |
-| numeric                    | num          |
-| numerics                   | nums         |
-| object                     | obj          |
-| objects                    | objs         |
-| option                     | opt          |
-| options                    | opts         |
-| package                    | pkg          |
-| packages                   | pkgs         |
-| parameter                  | param        |
-| parameters                 | params       |
-| R Markdown                 | rmd          |
-| reference                  | ref          |
-| references                 | refs         |
-| regular expression(s)      | regex        |
-| relative                   | rel          |
-| remove                     | rm           |
-| roxygen2                   | roxy         |
-| separate, separator        | sep          |
-| separators                 | seps         |
-| sequential, sequence       | seq          |
-| sequences                  | seqs         |
-| specify, specification     | spec         |
-| string                     | str          |
-| strings                    | strs         |
-| temporary                  | tmp          |
-| value                      | val          |
-| values                     | vals         |
-| variable                   | v            |
-| variables                  | vx           |
-| vector                     | vctr         |
-| vectors                    | vctrs        |
+| full_expressions             | abbreviation |
+|:-----------------------------|:-------------|
+| abbreviation                 | abbr         |
+| abbreviations                | abbrs        |
+| absolute                     | abs          |
+| argument                     | arg          |
+| arguments                    | args         |
+| attribute                    | attr         |
+| attributes                   | attrs        |
+| authenticate, authentication | auth         |
+| authentications              | auths        |
+| bibliography                 | bib          |
+| character                    | chr          |
+| characters                   | chrs         |
+| column                       | col          |
+| columns                      | cols         |
+| command                      | cmd          |
+| commands                     | cmds         |
+| combination                  | combo        |
+| combinations                 | combos       |
+| condition                    | cnd          |
+| conditions                   | cnds         |
+| configuration                | config       |
+| configurations               | configs      |
+| database                     | db           |
+| dataframe                    | df           |
+| dependency                   | dep          |
+| dependencies                 | deps         |
+| development, developer       | dev          |
+| developments, developers     | devs         |
+| difference                   | diff         |
+| differences                  | diffs        |
+| directory                    | dir          |
+| directories                  | dirs         |
+| distribution                 | distro       |
+| distributions                | distros      |
+| document                     | doc          |
+| documents                    | docs         |
+| double                       | dbl          |
+| doubles                      | dbls         |
+| element                      | el           |
+| environment                  | env          |
+| environments                 | envs         |
+| exclude                      | excl         |
+| expression                   | expr         |
+| expressions                  | exprs        |
+| factor                       | fct          |
+| factors                      | fcts         |
+| filesystem                   | fs           |
+| function                     | fn           |
+| functions                    | fns          |
+| generate, generation         | gen          |
+| generations                  | gens         |
+| identifier                   | id           |
+| identifiers                  | ids          |
+| include                      | incl         |
+| index                        | i            |
+| indices/indexes              | ix           |
+| information                  | info         |
+| initialize, initialization   | init         |
+| integer                      | int          |
+| integers                     | ints         |
+| label                        | lbl          |
+| labels                       | lbls         |
+| language                     | lang         |
+| languages                    | langs        |
+| level                        | lvl          |
+| levels                       | lvls         |
+| list                         | ls           |
+| logical                      | lgl          |
+| logicals                     | lgls         |
+| Markdown                     | md           |
+| message                      | msg          |
+| messages                     | msgs         |
+| modification                 | mod          |
+| modifications                | mods         |
+| number                       | nr           |
+| numbers                      | nrs          |
+| number of                    | n            |
+| numeric                      | num          |
+| numerics                     | nums         |
+| object                       | obj          |
+| objects                      | objs         |
+| option                       | opt          |
+| options                      | opts         |
+| package                      | pkg          |
+| packages                     | pkgs         |
+| parameter                    | param        |
+| parameters                   | params       |
+| R Markdown                   | rmd          |
+| reference                    | ref          |
+| references                   | refs         |
+| regular expression(s)        | regex        |
+| relative                     | rel          |
+| remove                       | rm           |
+| roxygen2                     | roxy         |
+| separate, separator          | sep          |
+| separators                   | seps         |
+| sequential, sequence         | seq          |
+| sequences                    | seqs         |
+| specify, specification       | spec         |
+| string                       | str          |
+| strings                      | strs         |
+| temporary                    | tmp          |
+| value                        | val          |
+| values                       | vals         |
+| variable                     | v            |
+| variables                    | vx           |
+| vector                       | vctr         |
+| vectors                      | vctrs        |
 
 </details>
 

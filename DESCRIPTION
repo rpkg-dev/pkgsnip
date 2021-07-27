@@ -1,7 +1,7 @@
 Package: pkgsnip
 Title: Standardized Labels, Messages and (R) Markdown Snippets for Package
     Authors
-Version: 0.0.9020
+Version: 0.0.9021
 Authors@R: 
     person(given = "Salim",
            family = "Brüggemann",

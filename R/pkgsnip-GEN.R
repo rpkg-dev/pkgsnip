@@ -193,6 +193,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "opt_max_cache_lifespan", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
                                          "lifespan set by the [option][base::options()] `{pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` if ",
                                          "unset)."),
+    "param", "cli_markup_support", "Supports cli's [inline markup][cli::inline-markup].",
     "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
     "param", "start_date", "The begin of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "end_date", "The end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",

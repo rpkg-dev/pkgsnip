@@ -39,7 +39,7 @@ Currently, the following return labels are available:\tabular{ll}{
    \code{response} \tab  \cr
    \code{strict_list} \tab  \cr
    \code{version_nr} \tab  \cr
-   \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr
 }
 }
 \seealso{

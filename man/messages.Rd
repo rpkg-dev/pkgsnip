@@ -19,7 +19,7 @@ Returns a \link[tibble:tbl_df-class]{tibble} listing all \R condition messages i
 \details{
 Currently, \R condition messages with the following \code{names} and \code{arguments} are available:\tabular{ll}{
    \strong{name} \tab \strong{arguments} \cr
-   \code{pkg_required} \tab \code{pkg} \cr
+   \code{pkg_required} \tab \code{this_pkg} \cr
 }
 }
 \seealso{

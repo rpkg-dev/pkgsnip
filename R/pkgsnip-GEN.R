@@ -19,7 +19,7 @@ utils::globalVariables(names = c(".",
                                  "snippet",
                                  "type"))
 
-pkg <- utils::packageName()
+this_pkg <- utils::packageName()
 
 add_args_col <- function(data) {
   
@@ -64,7 +64,7 @@ backtickify_cols <- function(data,
 ls_file_snips <- function() {
   
   fs::path_package("snippets/",
-                   package = pkg) %>%
+                   package = this_pkg) %>%
     fs::dir_ls(recurse = TRUE,
                type = "file") %>%
     tibble::tibble(path = .) %>%
@@ -103,7 +103,7 @@ snip_path <- function(name = ls_file_snips()$name) {
   
   rlang::arg_match(name) %>%
     paste0("snippets/", .) %>%
-    fs::path_package(package = pkg) %>%
+    fs::path_package(package = this_pkg) %>%
     fs::path_real()
 }
 
@@ -191,7 +191,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "strict_list", "A [strict list][xfun::strict_list()].",
     NA, "version_nr", "A [numeric version][numeric_version()].",
     NA, "opt_max_cache_lifespan", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
-                                         "lifespan set by the [option][base::options()] `{pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` if ",
+                                         "lifespan set by the [option][base::options()] `{this_pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` if ",
                                          "unset)."),
     "param", "cli_markup_support", "Supports cli's [inline markup][cli::inline-markup].",
     "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
@@ -355,7 +355,7 @@ messages <- function() {
   
   tibble::tribble(
     ~name, ~message,
-    "pkg_required", "To be able to use this function, the package '{pkg}' is required but it is not installed. Please install it and then try again."
+    "pkg_required", "To be able to use this function, the package '{this_pkg}' is required but it is not installed. Please install it and then try again."
   )
 }
 

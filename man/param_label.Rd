@@ -39,7 +39,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{response} \tab  \cr
    \code{strict_list} \tab  \cr
    \code{version_nr} \tab  \cr
-   \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr
    \code{cli_markup_support} \tab  \cr
    \code{dyn_dots_support} \tab  \cr
    \code{start_date} \tab  \cr

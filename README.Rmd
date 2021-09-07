@@ -98,7 +98,7 @@ Which results in the following message text:
 
 ```{r, echo = FALSE, comment = ""}
 pkgsnip::msg(name = "pkg_required",
-             pkg = "some_pkg")
+             this_pkg = "some_pkg")
 ```
 
 Currently, the following R condition messages are included:

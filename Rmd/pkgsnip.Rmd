@@ -26,7 +26,7 @@ this_pkg <- utils::packageName()
 
 ## Functions
 
-### Add argument column extracted from another column
+### `add_args_col`
 
 ```{r}
 add_args_col <- function(data) {
@@ -55,7 +55,7 @@ add_args_col <- function(data) {
 }
 ```
 
-### Wrap values of specified columns in backticks
+### `backtickify_cols`
 
 ```{r}
 backtickify_cols <- function(data,
@@ -71,7 +71,7 @@ backtickify_cols <- function(data,
 
 For now, only R Markdown file snippets are included. But this can easily be extended to other file formats in the future.
 
-## List all available R Markdown file snippets
+## `ls_file_snips`
 
 ```{r}
 #' List all available R Markdown file snippets
@@ -93,7 +93,7 @@ ls_file_snips <- function() {
 }
 ```
 
-## Get R Markdown snippet file path
+## `snip_path`
 
 TODO:
 
@@ -149,7 +149,7 @@ snip_path <- function(name = ls_file_snips()$name) {
 
 # Markdown snippets
 
-## Get a table of all Markdown snippets included in this package
+## `md_snips`
 
 ```{r}
 #' Get a table of all Markdown snippets included in this package
@@ -179,7 +179,7 @@ md_snips <- function() {
 }
 ```
 
-## Get predefined Markdown snippet
+## `md_snip`
 
 ```{r}
 #' Get predefined Markdown snippet
@@ -207,7 +207,7 @@ md_snip <- function(name = md_snips()$name,
 
 # roxygen2 labels
 
-## Get a table of all available roxygen2 tag labels
+## `roxy_labels`
 
 **Note:** The current `type` classification of the labels is subpar and it might be a good idea to overhaul it (e.g. use a list column to be able to assign
 multiple types per label).
@@ -271,7 +271,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
 roxy_lbls <- roxy_labels
 ```
 
-## Get predefined roxygen2 tag label
+## `roxy_label`
 
 ```{r}
 #' Get predefined roxygen2 tag label
@@ -318,7 +318,7 @@ roxy_label <- function(name = roxy_labels()$name,
 roxy_lbl <- roxy_label
 ```
 
-## Get predefined parameter label
+## `param_label`
 
 ```{r}
 #' Get predefined parameter label
@@ -361,7 +361,7 @@ param_label <- function(name = roxy_labels(type = "param")$name,
 param_lbl <- param_label
 ```
 
-## Get predefined return label
+## `return_label`
 
 ```{r}
 #' Get predefined return label
@@ -406,7 +406,7 @@ return_lbl <- return_label
 
 # R condition messages
 
-## Get a table of all available R condition messages
+## `messages`
 
 ```{r}
 #' Get a table of all available \R condition messages
@@ -440,7 +440,7 @@ messages <- function() {
 msgs <- messages
 ```
 
-## Get predefined R condition message
+## `message`
 
 ```{r}
 #' Get predefined \R condition message
@@ -475,7 +475,7 @@ msg <- message
 
 # Common abbreviations
 
-## Get a table of commonly used abbreviations in R code
+## `abbreviations`
 
 ```{r}
 #' Commonly used abbreviations in \R code

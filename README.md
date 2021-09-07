@@ -77,9 +77,9 @@ Which results in the following message text:
 
 Currently, the following R condition messages are included:
 
-| **name**       | **message**                                                                                                                     | **arguments** |
-|:---------------|:--------------------------------------------------------------------------------------------------------------------------------|:--------------|
-| `pkg_required` | To be able to use this function, the package ‘{pkg}’ is required but it is not installed. Please install it and then try again. | `pkg`         |
+| **name**       | **message**                                                                                                                          | **arguments** |
+|:---------------|:-------------------------------------------------------------------------------------------------------------------------------------|:--------------|
+| `pkg_required` | To be able to use this function, the package ‘{this_pkg}’ is required but it is not installed. Please install it and then try again. | `this_pkg`    |
 
 ### Common abbreviations
 
@@ -104,6 +104,7 @@ Abbreviations
 | authenticate, authentication | auth         |
 | authentications              | auths        |
 | bibliography                 | bib          |
+| bibliographies               | bibs         |
 | character                    | chr          |
 | characters                   | chrs         |
 | column                       | col          |
@@ -118,6 +119,9 @@ Abbreviations
 | configurations               | configs      |
 | database                     | db           |
 | dataframe                    | df           |
+| dataframes                   | dfs          |
+| dataframe column             | dfc          |
+| dataframe row                | dfr          |
 | dependency                   | dep          |
 | dependencies                 | deps         |
 | development, developer       | dev          |
@@ -133,6 +137,7 @@ Abbreviations
 | double                       | dbl          |
 | doubles                      | dbls         |
 | element                      | el           |
+| elements                     | els          |
 | environment                  | env          |
 | environments                 | envs         |
 | exclude                      | excl         |
@@ -141,6 +146,8 @@ Abbreviations
 | factor                       | fct          |
 | factors                      | fcts         |
 | filesystem                   | fs           |
+| formula                      | fm           |
+| formulas, formulae           | fms          |
 | function                     | fn           |
 | functions                    | fns          |
 | generate, generation         | gen          |
@@ -193,6 +200,7 @@ Abbreviations
 | sequential, sequence         | seq          |
 | sequences                    | seqs         |
 | specify, specification       | spec         |
+| specifications               | specs        |
 | string                       | str          |
 | strings                      | strs         |
 | temporary                    | tmp          |

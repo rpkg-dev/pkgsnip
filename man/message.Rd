@@ -23,7 +23,7 @@ Get predefined \R condition message
 }
 \examples{
 pkgsnip::message(name = "pkg_required",
-                 pkg = "some_pkg")
+                 this_pkg = "some_pkg")
 }
 \seealso{
 R message functions

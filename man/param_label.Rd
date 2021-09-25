@@ -42,6 +42,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr
    \code{cli_markup_support} \tab  \cr
    \code{dyn_dots_support} \tab  \cr
+   \code{eol} \tab  \cr
    \code{start_date} \tab  \cr
    \code{end_date} \tab  \cr
    \code{use_cache} \tab  \cr

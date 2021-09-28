@@ -201,6 +201,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
                            "carriage return (CR) character (`\"\\r\"`). The standard on classic Mac OS and some other antiquated systems.\n- `\"LFCR\"` for ",
                            "the line feed + carriage return (LF+CR) character sequence (`\"\\n\\r\"`). The standard on RISC OS and some other exotic ",
                            "systems."),
+    "param", "quiet", "Whether or not to suppress printing status output from internal processing.",
     "param", "start_date", "The begin of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "end_date", "The end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.",

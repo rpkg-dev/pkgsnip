@@ -35,6 +35,7 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{param} \tab \code{cli_markup_support} \tab  \cr
    \code{param} \tab \code{dyn_dots_support} \tab  \cr
    \code{param} \tab \code{eol} \tab  \cr
+   \code{param} \tab \code{quiet} \tab  \cr
    \code{param} \tab \code{start_date} \tab  \cr
    \code{param} \tab \code{end_date} \tab  \cr
    \code{param} \tab \code{use_cache} \tab  \cr

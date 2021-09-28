@@ -43,6 +43,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{cli_markup_support} \tab  \cr
    \code{dyn_dots_support} \tab  \cr
    \code{eol} \tab  \cr
+   \code{quiet} \tab  \cr
    \code{start_date} \tab  \cr
    \code{end_date} \tab  \cr
    \code{use_cache} \tab  \cr

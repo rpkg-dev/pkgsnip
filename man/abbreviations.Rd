@@ -10,8 +10,8 @@ abbreviations(expand = FALSE)
 abbrs(expand = FALSE)
 }
 \arguments{
-\item{expand}{Whether to expand the full expression column and return the data in long format. If \code{FALSE}, a "nested" list column \code{full_expressions} will be
-returned, meaning the values in column \code{abbreviation} will be unique.}
+\item{expand}{Whether to expand the \code{full_expression} column and return the data in long format. If \code{FALSE}, a "nested" list column \code{full_expressions} will
+be returned, meaning the values in column \code{abbreviation} will be unique.}
 }
 \value{
 A \link[tibble:tbl_df-class]{tibble}.

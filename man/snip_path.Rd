@@ -12,7 +12,7 @@ snip_path(name = ls_file_snips()$name)
 \item \code{"coding-style-notice.Rmd"}
 \item \code{"installation-notice_dev-version.Rmd"}
 \item \code{"installation-notice_dev-version_gitlab.Rmd"}
-\item \code{"rmd-package-notice.Rmd"})`
+\item \code{"rmd-package-notice.Rmd"}
 }}
 }
 \value{

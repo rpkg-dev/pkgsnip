@@ -35,9 +35,10 @@ Currently, the following return labels are available:\tabular{ll}{
    \code{dates} \tab  \cr
    \code{path} \tab  \cr
    \code{paths} \tab  \cr
-   \code{r_object} \tab  \cr
+   \code{r_obj} \tab  \cr
    \code{response} \tab  \cr
    \code{strict_list} \tab  \cr
+   \code{tabular_data} \tab  \cr
    \code{version_nr} \tab  \cr
    \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr
 }

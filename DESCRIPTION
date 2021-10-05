@@ -1,12 +1,9 @@
 Package: pkgsnip
 Title: Standardized Labels, Messages and (R) Markdown Snippets for Package
     Authors
-Version: 0.0.9025
+Version: 0.0.9026
 Authors@R: 
-    person(given = "Salim",
-           family = "Brüggemann",
-           role = c("aut", "cre"),
-           email = "salim-b@pm.me",
+    person("Salim", "Brüggemann", , "salim-b@pm.me", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5329-5987"))
 Description: pkgsnip ships ready-to-go (R) Markdown snippets and labels
     intended to be used in roxygen2 documentation or as knitr child
@@ -28,7 +25,7 @@ Imports:
     utils (>= 4.0.1)
 Suggests: 
     desc (>= 1.2.0),
-    pal,
+    pal (>= 0.0.9071),
     stringr (>= 1.4.0),
     testthat (>= 3.0.0),
     tidyr (>= 1.1.2)

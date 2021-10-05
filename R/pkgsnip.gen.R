@@ -91,7 +91,7 @@ ls_file_snips <- function() {
 #' ```
 #'
 #' @param name The name of a snippet. Possible values include:
-#'   00`r paste0('- ``"', ls_file_snips()$name, '"``')`
+#' `r paste0('- ``"', ls_file_snips()$name, '"``')`
 #'
 #' @return `r pkgsnip::return_label("path")`
 #' @family rmdsnips
@@ -186,9 +186,10 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "dates", "A vector of [dates][base::Date].",
     NA, "path", "A [path][fs::fs_path].",
     NA, "paths", "A vector of [paths][fs::fs_path].",
-    NA, "r_object", "An \\R object.",
+    NA, "r_obj", "An \\R object.",
     NA, "response", "A [response object][httr::response].",
     NA, "strict_list", "A [strict list][xfun::strict_list()].",
+    NA, "tabular_data", "A tabular data object like a [data frame][base::data.frame] or [tibble][tibble::tbl_df].",
     NA, "version_nr", "A [numeric version][numeric_version()].",
     NA, "opt_max_cache_lifespan", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
                                          "lifespan set by the [option][base::options()] `{this_pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` ",

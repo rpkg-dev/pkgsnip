@@ -108,8 +108,6 @@ TODO:
     But setting `knitr::opts_knit$set(root.dir = getwd())` in the parent `README.Rmd` does not change anything (and `devtools::build_rmd()` still outputs nada).
     Neither did using a relative child path, i.e. `child = fs::path_rel(pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd"))`.
 
--   Update the `@param name` doc as soon as [\#1112](https://github.com/r-lib/roxygen2/issues/1112) is fixed!
-
 ```{r}
 #' Get R Markdown snippet file path
 #'
@@ -130,7 +128,7 @@ TODO:
 #' ```
 #'
 #' @param name The name of a snippet. Possible values include:
-#'   00`r paste0('- ``"', ls_file_snips()$name, '"``')`
+#' `r paste0('- ``"', ls_file_snips()$name, '"``')`
 #'
 #' @return `r pkgsnip::return_label("path")`
 #' @family rmdsnips
@@ -209,8 +207,14 @@ md_snip <- function(name = md_snips()$name,
 
 ## `roxy_labels`
 
-**Note:** The current `type` classification of the labels is subpar and it might be a good idea to overhaul it (e.g. use a list column to be able to assign
-multiple types per label).
+TODO:
+
+-   Consider renaming the `data` label to `tibble`.
+
+NOTES:
+
+-   The current `type` classification of the labels is subpar and it might be a good idea to overhaul it (e.g. use a list column to be able to assign multiple
+    types per label).
 
 ```{r}
 #' Get a table of all available roxygen2 tag labels
@@ -244,9 +248,10 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "dates", "A vector of [dates][base::Date].",
     NA, "path", "A [path][fs::fs_path].",
     NA, "paths", "A vector of [paths][fs::fs_path].",
-    NA, "r_object", "An \\R object.",
+    NA, "r_obj", "An \\R object.",
     NA, "response", "A [response object][httr::response].",
     NA, "strict_list", "A [strict list][xfun::strict_list()].",
+    NA, "tabular_data", "A tabular data object like a [data frame][base::data.frame] or [tibble][tibble::tbl_df].",
     NA, "version_nr", "A [numeric version][numeric_version()].",
     NA, "opt_max_cache_lifespan", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
                                          "lifespan set by the [option][base::options()] `{this_pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` ",

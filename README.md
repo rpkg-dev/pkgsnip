@@ -92,124 +92,125 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 Abbreviations
 </summary>
 
-| full_expressions             | abbreviation |
-|:-----------------------------|:-------------|
-| abbreviation                 | abbr         |
-| abbreviations                | abbrs        |
-| absolute                     | abs          |
-| argument                     | arg          |
-| arguments                    | args         |
-| attribute                    | attr         |
-| attributes                   | attrs        |
-| authenticate, authentication | auth         |
-| authentications              | auths        |
-| bibliography                 | bib          |
-| bibliographies               | bibs         |
-| character                    | chr          |
-| characters                   | chrs         |
-| column                       | col          |
-| columns                      | cols         |
-| command                      | cmd          |
-| commands                     | cmds         |
-| combination                  | combo        |
-| combinations                 | combos       |
-| condition                    | cnd          |
-| conditions                   | cnds         |
-| configuration                | config       |
-| configurations               | configs      |
-| database                     | db           |
-| dataframe                    | df           |
-| dataframes                   | dfs          |
-| dataframe column             | dfc          |
-| dataframe row                | dfr          |
-| dependency                   | dep          |
-| dependencies                 | deps         |
-| development, developer       | dev          |
-| developments, developers     | devs         |
-| difference                   | diff         |
-| differences                  | diffs        |
-| directory                    | dir          |
-| directories                  | dirs         |
-| distribution                 | distro       |
-| distributions                | distros      |
-| document                     | doc          |
-| documents                    | docs         |
-| double                       | dbl          |
-| doubles                      | dbls         |
-| element                      | el           |
-| elements                     | els          |
-| environment                  | env          |
-| environments                 | envs         |
-| exclude                      | excl         |
-| expression                   | expr         |
-| expressions                  | exprs        |
-| factor                       | fct          |
-| factors                      | fcts         |
-| filesystem                   | fs           |
-| formula                      | fm           |
-| formulas, formulae           | fms          |
-| function                     | fn           |
-| functions                    | fns          |
-| generate, generation         | gen          |
-| generations                  | gens         |
-| identifier                   | id           |
-| identifiers                  | ids          |
-| include                      | incl         |
-| index                        | i            |
-| indices/indexes              | ix           |
-| information                  | info         |
-| initialize, initialization   | init         |
-| integer                      | int          |
-| integers                     | ints         |
-| label                        | lbl          |
-| labels                       | lbls         |
-| language                     | lang         |
-| languages                    | langs        |
-| level                        | lvl          |
-| levels                       | lvls         |
-| list                         | ls           |
-| logical                      | lgl          |
-| logicals                     | lgls         |
-| Markdown                     | md           |
-| message                      | msg          |
-| messages                     | msgs         |
-| modification                 | mod          |
-| modifications                | mods         |
-| number                       | nr           |
-| numbers                      | nrs          |
-| number of                    | n            |
-| numeric                      | num          |
-| numerics                     | nums         |
-| object                       | obj          |
-| objects                      | objs         |
-| option                       | opt          |
-| options                      | opts         |
-| package                      | pkg          |
-| packages                     | pkgs         |
-| parameter                    | param        |
-| parameters                   | params       |
-| R Markdown                   | rmd          |
-| reference                    | ref          |
-| references                   | refs         |
-| regular expression(s)        | regex        |
-| relative                     | rel          |
-| remove                       | rm           |
-| roxygen2                     | roxy         |
-| separate, separator          | sep          |
-| separators                   | seps         |
-| sequential, sequence         | seq          |
-| sequences                    | seqs         |
-| specify, specification       | spec         |
-| specifications               | specs        |
-| string                       | str          |
-| strings                      | strs         |
-| temporary                    | tmp          |
-| value                        | val          |
-| values                       | vals         |
-| variable                     | v            |
-| variables                    | vx           |
-| vector                       | vctr         |
-| vectors                      | vctrs        |
+| full_expressions                | abbreviation |
+|:--------------------------------|:-------------|
+| abbreviate, abbreviation        | abbr         |
+| abbreviations                   | abbrs        |
+| absolute                        | abs          |
+| argument                        | arg          |
+| arguments                       | args         |
+| attribute                       | attr         |
+| attributes                      | attrs        |
+| authenticate, authentication    | auth         |
+| authentications                 | auths        |
+| bibliography                    | bib          |
+| bibliographies                  | bibs         |
+| character                       | chr          |
+| characters                      | chrs         |
+| column                          | col          |
+| columns                         | cols         |
+| command                         | cmd          |
+| commands                        | cmds         |
+| combination                     | combo        |
+| combinations                    | combos       |
+| condition                       | cnd          |
+| conditions                      | cnds         |
+| configure, configuration        | config       |
+| configurations                  | configs      |
+| database                        | db           |
+| dataframe                       | df           |
+| dataframes                      | dfs          |
+| dataframe column                | dfc          |
+| dataframe row                   | dfr          |
+| depend, dependency              | dep          |
+| dependencies                    | deps         |
+| develop, development, developer | dev          |
+| developments, developers        | devs         |
+| differentiate, difference       | diff         |
+| differences                     | diffs        |
+| directory                       | dir          |
+| directories                     | dirs         |
+| distribution                    | distro       |
+| distributions                   | distros      |
+| document                        | doc          |
+| documents                       | docs         |
+| double                          | dbl          |
+| doubles                         | dbls         |
+| element                         | el           |
+| elements                        | els          |
+| environment                     | env          |
+| environments                    | envs         |
+| exclude, exclusion              | excl         |
+| expression                      | expr         |
+| expressions                     | exprs        |
+| factor                          | fct          |
+| factors                         | fcts         |
+| filesystem                      | fs           |
+| formula                         | fm           |
+| formulas, formulae              | fms          |
+| function                        | fn           |
+| functions                       | fns          |
+| generate, generation            | gen          |
+| generations                     | gens         |
+| identify, identifier            | id           |
+| identifiers                     | ids          |
+| include, inclusion              | incl         |
+| index                           | i            |
+| indices/indexes                 | ix           |
+| information                     | info         |
+| initialize, initialization      | init         |
+| integer                         | int          |
+| integers                        | ints         |
+| label                           | lbl          |
+| labels                          | lbls         |
+| language                        | lang         |
+| languages                       | langs        |
+| level                           | lvl          |
+| levels                          | lvls         |
+| list                            | ls           |
+| logical                         | lgl          |
+| logicals                        | lgls         |
+| Markdown                        | md           |
+| message                         | msg          |
+| messages                        | msgs         |
+| modify, modification            | mod          |
+| modifications                   | mods         |
+| number                          | nr           |
+| numbers                         | nrs          |
+| number of                       | n            |
+| numeric                         | num          |
+| numerics                        | nums         |
+| object                          | obj          |
+| objects                         | objs         |
+| option                          | opt          |
+| options                         | opts         |
+| package                         | pkg          |
+| packages                        | pkgs         |
+| parameterize, parameter         | param        |
+| parameters                      | params       |
+| R Markdown                      | rmd          |
+| refer, reference                | ref          |
+| references                      | refs         |
+| regular expression(s)           | regex        |
+| relative                        | rel          |
+| remove                          | rm           |
+| roxygen2                        | roxy         |
+| separate, separator             | sep          |
+| separators                      | seps         |
+| sequential, sequence            | seq          |
+| sequences                       | seqs         |
+| specify, specification          | spec         |
+| specifications                  | specs        |
+| string                          | str          |
+| strings                         | strs         |
+| temporary                       | tmp          |
+| value                           | val          |
+| values                          | vals         |
+| variable                        | v            |
+| variables                       | vx           |
+| vectorize, vector               | vctr         |
+| vectors                         | vctrs        |
+| working directory               | wd           |
 
 </details>
 
@@ -232,7 +233,7 @@ remotes::install_gitlab(repo = "salim_b/r/pkgs/pkgsnip")
 
 This package’s source code is written in the [R Markdown](https://rmarkdown.rstudio.com/) file format to facilitate practices commonly referred to as [*literate programming*](https://en.wikipedia.org/wiki/Literate_programming). It allows the actual code to be freely mixed with explanatory and supplementary information in expressive Markdown format instead of having to rely on [`#` comments](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Comments) only.
 
-All the `-GEN.R` suffixed R source code found under [`R/`](R/) is generated from the respective R Markdown counterparts under [`Rmd/`](Rmd/) using [`pkgpurl::purl_rmd()`](https://gitlab.com/salim_b/r/pkgs/pkgpurl/)[^1]. Always make changes only to the `.Rmd` files – never the `.R` files – and then run `pkgpurl::purl_rmd()` to regenerate the R source files.
+All the `.gen.R` suffixed R source code found under [`R/`](R/) is generated from the respective R Markdown counterparts under [`Rmd/`](Rmd/) using [`pkgpurl::purl_rmd()`](https://rpkg.dev/pkgpurl/reference/purl_rmd.html)[^1]. Always make changes only to the `.Rmd` files – never the `.R` files – and then run `pkgpurl::purl_rmd()` to regenerate the R source files.
 
 ### Coding style
 

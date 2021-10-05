@@ -20,3 +20,6 @@ A \link[tibble:tbl_df-class]{tibble}.
 Returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
 example, to check availability when considering using some abbreviation in a function or argument name.
 }
+\examples{
+pkgsnip::abbrs(expand = TRUE) |> print(n = Inf)
+}

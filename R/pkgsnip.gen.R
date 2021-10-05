@@ -409,11 +409,14 @@ msg <- message
 #'   be returned, meaning the values in column `abbreviation` will be unique.
 #' @return `r pkgsnip::return_label("data")`
 #' @export
+#'
+#' @examples
+#' pkgsnip::abbrs(expand = TRUE) |> print(n = Inf)
 abbreviations <- function(expand = FALSE) {
   
   tibble::tribble(
     ~full_expressions, ~abbreviation,
-    "abbreviation", "abbr",
+    c("abbreviate", "abbreviation"), "abbr",
     "abbreviations", "abbrs",
     "absolute", "abs",
     "argument", "arg",
@@ -434,18 +437,18 @@ abbreviations <- function(expand = FALSE) {
     "combinations", "combos",
     "condition", "cnd",
     "conditions", "cnds",
-    "configuration", "config",
+    c("configure", "configuration"), "config",
     "configurations", "configs",
     "database", "db",
     "dataframe", "df",
     "dataframes", "dfs",
     "dataframe column", "dfc",
     "dataframe row", "dfr",
-    "dependency", "dep",
+    c("depend", "dependency"), "dep",
     "dependencies", "deps",
-    c("development", "developer"), "dev",
+    c("develop", "development", "developer"), "dev",
     c("developments", "developers"), "devs",
-    "difference", "diff",
+    c("differentiate", "difference"), "diff",
     "differences", "diffs",
     "directory", "dir",
     "directories", "dirs",
@@ -459,7 +462,7 @@ abbreviations <- function(expand = FALSE) {
     "elements", "els",
     "environment", "env",
     "environments", "envs",
-    "exclude", "excl",
+    c("exclude", "exclusion"), "excl",
     "expression", "expr",
     "expressions", "exprs",
     "factor", "fct",
@@ -471,9 +474,9 @@ abbreviations <- function(expand = FALSE) {
     "functions", "fns",
     c("generate", "generation"), "gen",
     "generations", "gens",
-    "identifier", "id",
+    c("identify", "identifier"), "id",
     "identifiers", "ids",
-    "include", "incl",
+    c("include", "inclusion"), "incl",
     "index", "i",
     "indices/indexes", "ix",
     "information", "info",
@@ -492,7 +495,7 @@ abbreviations <- function(expand = FALSE) {
     "Markdown", "md",
     "message", "msg",
     "messages", "msgs",
-    "modification", "mod",
+    c("modify", "modification"), "mod",
     "modifications", "mods",
     "number", "nr",
     "numbers", "nrs",
@@ -505,10 +508,10 @@ abbreviations <- function(expand = FALSE) {
     "options", "opts",
     "package", "pkg",
     "packages", "pkgs",
-    "parameter", "param",
+    c("parameterize", "parameter"), "param",
     "parameters", "params",
     "R Markdown", "rmd",
-    "reference", "ref",
+    c("refer", "reference"), "ref",
     "references", "refs",
     "regular expression(s)", "regex",
     "relative", "rel",
@@ -527,8 +530,9 @@ abbreviations <- function(expand = FALSE) {
     "values", "vals",
     "variable", "v",
     "variables", "vx",
-    "vector", "vctr",
-    "vectors", "vctrs"
+    c("vectorize", "vector"), "vctr",
+    "vectors", "vctrs",
+    "working directory", "wd"
   ) %>%
     purrr::when(expand ~ tidyr::unnest_longer(data = .,
                                               col = full_expressions,

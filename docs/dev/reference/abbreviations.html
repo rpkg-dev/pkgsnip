@@ -142,148 +142,150 @@ be returned, meaning the values in column <code>abbreviation</code> will be uniq
     <p>A <a href='https://tibble.tidyverse.org/reference/tbl_df-class.html'>tibble</a>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>pkgsnip</span><span class='fu'>::</span><span class='fu'>abbrs</span><span class='op'>(</span>expand <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> |&gt; <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='cn'>Inf</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 138 × 2</span>
-#&gt;     full_expression       abbreviation
-#&gt;     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                 <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       
-#&gt; <span style='color: #BCBCBC;'>  1</span> abbreviate            abbr        
-#&gt; <span style='color: #BCBCBC;'>  2</span> abbreviation          abbr        
-#&gt; <span style='color: #BCBCBC;'>  3</span> abbreviations         abbrs       
-#&gt; <span style='color: #BCBCBC;'>  4</span> absolute              abs         
-#&gt; <span style='color: #BCBCBC;'>  5</span> argument              arg         
-#&gt; <span style='color: #BCBCBC;'>  6</span> arguments             args        
-#&gt; <span style='color: #BCBCBC;'>  7</span> attribute             attr        
-#&gt; <span style='color: #BCBCBC;'>  8</span> attributes            attrs       
-#&gt; <span style='color: #BCBCBC;'>  9</span> authenticate          auth        
-#&gt; <span style='color: #BCBCBC;'> 10</span> authentication        auth        
-#&gt; <span style='color: #BCBCBC;'> 11</span> authentications       auths       
-#&gt; <span style='color: #BCBCBC;'> 12</span> bibliography          bib         
-#&gt; <span style='color: #BCBCBC;'> 13</span> bibliographies        bibs        
-#&gt; <span style='color: #BCBCBC;'> 14</span> character             chr         
-#&gt; <span style='color: #BCBCBC;'> 15</span> characters            chrs        
-#&gt; <span style='color: #BCBCBC;'> 16</span> column                col         
-#&gt; <span style='color: #BCBCBC;'> 17</span> columns               cols        
-#&gt; <span style='color: #BCBCBC;'> 18</span> command               cmd         
-#&gt; <span style='color: #BCBCBC;'> 19</span> commands              cmds        
-#&gt; <span style='color: #BCBCBC;'> 20</span> combination           combo       
-#&gt; <span style='color: #BCBCBC;'> 21</span> combinations          combos      
-#&gt; <span style='color: #BCBCBC;'> 22</span> condition             cnd         
-#&gt; <span style='color: #BCBCBC;'> 23</span> conditions            cnds        
-#&gt; <span style='color: #BCBCBC;'> 24</span> configure             config      
-#&gt; <span style='color: #BCBCBC;'> 25</span> configuration         config      
-#&gt; <span style='color: #BCBCBC;'> 26</span> configurations        configs     
-#&gt; <span style='color: #BCBCBC;'> 27</span> database              db          
-#&gt; <span style='color: #BCBCBC;'> 28</span> dataframe             df          
-#&gt; <span style='color: #BCBCBC;'> 29</span> dataframes            dfs         
-#&gt; <span style='color: #BCBCBC;'> 30</span> dataframe column      dfc         
-#&gt; <span style='color: #BCBCBC;'> 31</span> dataframe row         dfr         
-#&gt; <span style='color: #BCBCBC;'> 32</span> depend                dep         
-#&gt; <span style='color: #BCBCBC;'> 33</span> dependency            dep         
-#&gt; <span style='color: #BCBCBC;'> 34</span> dependencies          deps        
-#&gt; <span style='color: #BCBCBC;'> 35</span> develop               dev         
-#&gt; <span style='color: #BCBCBC;'> 36</span> development           dev         
-#&gt; <span style='color: #BCBCBC;'> 37</span> developer             dev         
-#&gt; <span style='color: #BCBCBC;'> 38</span> developments          devs        
-#&gt; <span style='color: #BCBCBC;'> 39</span> developers            devs        
-#&gt; <span style='color: #BCBCBC;'> 40</span> differentiate         diff        
-#&gt; <span style='color: #BCBCBC;'> 41</span> difference            diff        
-#&gt; <span style='color: #BCBCBC;'> 42</span> differences           diffs       
-#&gt; <span style='color: #BCBCBC;'> 43</span> directory             dir         
-#&gt; <span style='color: #BCBCBC;'> 44</span> directories           dirs        
-#&gt; <span style='color: #BCBCBC;'> 45</span> distribution          distro      
-#&gt; <span style='color: #BCBCBC;'> 46</span> distributions         distros     
-#&gt; <span style='color: #BCBCBC;'> 47</span> document              doc         
-#&gt; <span style='color: #BCBCBC;'> 48</span> documents             docs        
-#&gt; <span style='color: #BCBCBC;'> 49</span> double                dbl         
-#&gt; <span style='color: #BCBCBC;'> 50</span> doubles               dbls        
-#&gt; <span style='color: #BCBCBC;'> 51</span> element               el          
-#&gt; <span style='color: #BCBCBC;'> 52</span> elements              els         
-#&gt; <span style='color: #BCBCBC;'> 53</span> environment           env         
-#&gt; <span style='color: #BCBCBC;'> 54</span> environments          envs        
-#&gt; <span style='color: #BCBCBC;'> 55</span> exclude               excl        
-#&gt; <span style='color: #BCBCBC;'> 56</span> exclusion             excl        
-#&gt; <span style='color: #BCBCBC;'> 57</span> expression            expr        
-#&gt; <span style='color: #BCBCBC;'> 58</span> expressions           exprs       
-#&gt; <span style='color: #BCBCBC;'> 59</span> factor                fct         
-#&gt; <span style='color: #BCBCBC;'> 60</span> factors               fcts        
-#&gt; <span style='color: #BCBCBC;'> 61</span> filesystem            fs          
-#&gt; <span style='color: #BCBCBC;'> 62</span> formula               fm          
-#&gt; <span style='color: #BCBCBC;'> 63</span> formulas              fms         
-#&gt; <span style='color: #BCBCBC;'> 64</span> formulae              fms         
-#&gt; <span style='color: #BCBCBC;'> 65</span> function              fn          
-#&gt; <span style='color: #BCBCBC;'> 66</span> functions             fns         
-#&gt; <span style='color: #BCBCBC;'> 67</span> generate              gen         
-#&gt; <span style='color: #BCBCBC;'> 68</span> generation            gen         
-#&gt; <span style='color: #BCBCBC;'> 69</span> generations           gens        
-#&gt; <span style='color: #BCBCBC;'> 70</span> identify              id          
-#&gt; <span style='color: #BCBCBC;'> 71</span> identifier            id          
-#&gt; <span style='color: #BCBCBC;'> 72</span> identifiers           ids         
-#&gt; <span style='color: #BCBCBC;'> 73</span> include               incl        
-#&gt; <span style='color: #BCBCBC;'> 74</span> inclusion             incl        
-#&gt; <span style='color: #BCBCBC;'> 75</span> index                 i           
-#&gt; <span style='color: #BCBCBC;'> 76</span> indices/indexes       ix          
-#&gt; <span style='color: #BCBCBC;'> 77</span> information           info        
-#&gt; <span style='color: #BCBCBC;'> 78</span> initialize            init        
-#&gt; <span style='color: #BCBCBC;'> 79</span> initialization        init        
-#&gt; <span style='color: #BCBCBC;'> 80</span> integer               int         
-#&gt; <span style='color: #BCBCBC;'> 81</span> integers              ints        
-#&gt; <span style='color: #BCBCBC;'> 82</span> label                 lbl         
-#&gt; <span style='color: #BCBCBC;'> 83</span> labels                lbls        
-#&gt; <span style='color: #BCBCBC;'> 84</span> language              lang        
-#&gt; <span style='color: #BCBCBC;'> 85</span> languages             langs       
-#&gt; <span style='color: #BCBCBC;'> 86</span> level                 lvl         
-#&gt; <span style='color: #BCBCBC;'> 87</span> levels                lvls        
-#&gt; <span style='color: #BCBCBC;'> 88</span> list                  ls          
-#&gt; <span style='color: #BCBCBC;'> 89</span> logical               lgl         
-#&gt; <span style='color: #BCBCBC;'> 90</span> logicals              lgls        
-#&gt; <span style='color: #BCBCBC;'> 91</span> Markdown              md          
-#&gt; <span style='color: #BCBCBC;'> 92</span> message               msg         
-#&gt; <span style='color: #BCBCBC;'> 93</span> messages              msgs        
-#&gt; <span style='color: #BCBCBC;'> 94</span> modify                mod         
-#&gt; <span style='color: #BCBCBC;'> 95</span> modification          mod         
-#&gt; <span style='color: #BCBCBC;'> 96</span> modifications         mods        
-#&gt; <span style='color: #BCBCBC;'> 97</span> number                nr          
-#&gt; <span style='color: #BCBCBC;'> 98</span> numbers               nrs         
-#&gt; <span style='color: #BCBCBC;'> 99</span> number of             n           
-#&gt; <span style='color: #BCBCBC;'>100</span> numeric               num         
-#&gt; <span style='color: #BCBCBC;'>101</span> numerics              nums        
-#&gt; <span style='color: #BCBCBC;'>102</span> object                obj         
-#&gt; <span style='color: #BCBCBC;'>103</span> objects               objs        
-#&gt; <span style='color: #BCBCBC;'>104</span> option                opt         
-#&gt; <span style='color: #BCBCBC;'>105</span> options               opts        
-#&gt; <span style='color: #BCBCBC;'>106</span> package               pkg         
-#&gt; <span style='color: #BCBCBC;'>107</span> packages              pkgs        
-#&gt; <span style='color: #BCBCBC;'>108</span> parameterize          param       
-#&gt; <span style='color: #BCBCBC;'>109</span> parameter             param       
-#&gt; <span style='color: #BCBCBC;'>110</span> parameters            params      
-#&gt; <span style='color: #BCBCBC;'>111</span> R Markdown            rmd         
-#&gt; <span style='color: #BCBCBC;'>112</span> refer                 ref         
-#&gt; <span style='color: #BCBCBC;'>113</span> reference             ref         
-#&gt; <span style='color: #BCBCBC;'>114</span> references            refs        
-#&gt; <span style='color: #BCBCBC;'>115</span> regular expression(s) regex       
-#&gt; <span style='color: #BCBCBC;'>116</span> relative              rel         
-#&gt; <span style='color: #BCBCBC;'>117</span> remove                rm          
-#&gt; <span style='color: #BCBCBC;'>118</span> roxygen2              roxy        
-#&gt; <span style='color: #BCBCBC;'>119</span> separate              sep         
-#&gt; <span style='color: #BCBCBC;'>120</span> separator             sep         
-#&gt; <span style='color: #BCBCBC;'>121</span> separators            seps        
-#&gt; <span style='color: #BCBCBC;'>122</span> sequential            seq         
-#&gt; <span style='color: #BCBCBC;'>123</span> sequence              seq         
-#&gt; <span style='color: #BCBCBC;'>124</span> sequences             seqs        
-#&gt; <span style='color: #BCBCBC;'>125</span> specify               spec        
-#&gt; <span style='color: #BCBCBC;'>126</span> specification         spec        
-#&gt; <span style='color: #BCBCBC;'>127</span> specifications        specs       
-#&gt; <span style='color: #BCBCBC;'>128</span> string                str         
-#&gt; <span style='color: #BCBCBC;'>129</span> strings               strs        
-#&gt; <span style='color: #BCBCBC;'>130</span> temporary             tmp         
-#&gt; <span style='color: #BCBCBC;'>131</span> value                 val         
-#&gt; <span style='color: #BCBCBC;'>132</span> values                vals        
-#&gt; <span style='color: #BCBCBC;'>133</span> variable              v           
-#&gt; <span style='color: #BCBCBC;'>134</span> variables             vx          
-#&gt; <span style='color: #BCBCBC;'>135</span> vectorize             vctr        
-#&gt; <span style='color: #BCBCBC;'>136</span> vector                vctr        
-#&gt; <span style='color: #BCBCBC;'>137</span> vectors               vctrs       
-#&gt; <span style='color: #BCBCBC;'>138</span> working directory     wd          </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>pkgsnip</span><span class='fu'>::</span><span class='fu'>abbrs</span><span class='op'>(</span>expand <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> |&gt; <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='cn'>Inf</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 139 × 2</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     full_expression       abbreviation</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                 <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  1</span> abbreviate            abbr        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  2</span> abbreviation          abbr        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  3</span> abbreviations         abbrs       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  4</span> absolute              abs         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  5</span> argument              arg         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  6</span> arguments             args        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  7</span> attribute             attr        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  8</span> attributes            attrs       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>  9</span> authenticate          auth        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 10</span> authentication        auth        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 11</span> authentications       auths       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 12</span> bibliography          bib         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 13</span> bibliographies        bibs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 14</span> character             chr         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 15</span> characters            chrs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 16</span> column                col         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 17</span> columns               cols        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 18</span> command               cmd         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 19</span> commands              cmds        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 20</span> combination           combo       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 21</span> combinations          combos      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 22</span> condition             cnd         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 23</span> conditions            cnds        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 24</span> configure             config      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 25</span> configuration         config      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 26</span> configurations        configs     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 27</span> database              db          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 28</span> dataframe             df          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 29</span> dataframes            dfs         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 30</span> dataframe column      dfc         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 31</span> dataframe row         dfr         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 32</span> depend                dep         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 33</span> dependency            dep         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 34</span> dependencies          deps        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 35</span> develop               dev         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 36</span> development           dev         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 37</span> developer             dev         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 38</span> developments          devs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 39</span> developers            devs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 40</span> differentiate         diff        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 41</span> difference            diff        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 42</span> differences           diffs       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 43</span> directory             dir         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 44</span> directories           dirs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 45</span> distribution          distro      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 46</span> distributions         distros     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 47</span> document              doc         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 48</span> documents             docs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 49</span> double                dbl         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 50</span> doubles               dbls        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 51</span> element               el          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 52</span> elements              els         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 53</span> environment           env         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 54</span> environments          envs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 55</span> exclude               excl        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 56</span> exclusion             excl        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 57</span> expression            expr        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 58</span> expressions           exprs       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 59</span> factor                fct         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 60</span> factors               fcts        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 61</span> filesystem            fs          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 62</span> formula               fm          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 63</span> formulas              fms         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 64</span> formulae              fms         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 65</span> function              fn          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 66</span> functions             fns         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 67</span> generate              gen         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 68</span> generation            gen         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 69</span> generations           gens        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 70</span> identify              id          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 71</span> identifier            id          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 72</span> identifiers           ids         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 73</span> include               incl        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 74</span> inclusion             incl        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 75</span> index                 i           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 76</span> indices/indexes       ix          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 77</span> information           info        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 78</span> initialize            init        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 79</span> initialization        init        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 80</span> integer               int         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 81</span> integers              ints        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 82</span> label                 lbl         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 83</span> labels                lbls        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 84</span> language              lang        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 85</span> languages             langs       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 86</span> level                 lvl         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 87</span> levels                lvls        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 88</span> list                  ls          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 89</span> logical               lgl         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 90</span> logicals              lgls        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 91</span> management            mgmt        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 92</span> Markdown              md          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 93</span> message               msg         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 94</span> messages              msgs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 95</span> modify                mod         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 96</span> modification          mod         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 97</span> modifications         mods        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 98</span> number                nr          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 99</span> numbers               nrs         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>100</span> number of             n           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>101</span> numeric               num         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>102</span> numerics              nums        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>103</span> object                obj         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>104</span> objects               objs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>105</span> option                opt         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>106</span> options               opts        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>107</span> package               pkg         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>108</span> packages              pkgs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>109</span> parameterize          param       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>110</span> parameter             param       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>111</span> parameters            params      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>112</span> R Markdown            rmd         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>113</span> refer                 ref         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>114</span> reference             ref         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>115</span> references            refs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>116</span> regular expression(s) regex       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>117</span> relative              rel         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>118</span> remove                rm          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>119</span> roxygen2              roxy        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>120</span> separate              sep         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>121</span> separator             sep         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>122</span> separators            seps        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>123</span> sequential            seq         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>124</span> sequence              seq         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>125</span> sequences             seqs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>126</span> specify               spec        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>127</span> specification         spec        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>128</span> specifications        specs       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>129</span> string                str         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>130</span> strings               strs        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>131</span> temporary             tmp         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>132</span> value                 val         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>133</span> values                vals        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>134</span> variable              v           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>135</span> variables             vx          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>136</span> vectorize             vctr        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>137</span> vector                vctr        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>138</span> vectors               vctrs       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>139</span> working directory     wd          </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -166,6 +166,7 @@ Abbreviations
   list                              ls
   logical                           lgl
   logicals                          lgls
+  management                        mgmt
   Markdown                          md
   message                           msg
   messages                          msgs

@@ -185,6 +185,8 @@ Abbreviations
   packages                          pkgs
   parameterize, parameter           param
   parameters                        params
+  prototype                         ptype
+  prototypes                        ptypes
   R Markdown                        rmd
   refer, reference                  ref
   references                        refs

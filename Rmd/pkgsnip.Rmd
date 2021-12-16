@@ -601,6 +601,8 @@ abbreviations <- function(expand = FALSE) {
     "packages", "pkgs",
     c("parameterize", "parameter"), "param",
     "parameters", "params",
+    "prototype", "ptype",
+    "prototypes", "ptypes",
     "R Markdown", "rmd",
     c("refer", "reference"), "ref",
     "references", "refs",

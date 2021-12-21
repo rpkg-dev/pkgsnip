@@ -49,7 +49,7 @@ add_args_col <- function(data) {
                                            pattern = "(?<=\\{)[^\\}]+?(?=\\})") %>%
                   purrr::map_chr(~ pal::prose_ls(.x,
                                                  wrap = "`",
-                                                 last_separator = ", ") %>%
+                                                 last_sep = ", ") %>%
                                    purrr::when(length(.) == 0L ~ "",
                                                ~ .)))
 }

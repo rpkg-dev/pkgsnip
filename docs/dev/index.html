@@ -126,6 +126,7 @@
 <p>Which results in the following message text:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>To be able to use this <span class="cf">function</span>, the package <span class="st">'some_pkg'</span> is required but it is not installed. Please install it and then try again.</span></code></pre></div>
 <p>Currently, the following R condition messages are included:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning in pal::prose_ls(.x, wrap = "`", last_sep = ", "): partial argument match of 'last_sep' to 'last_separator'</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left"><strong>name</strong></th>
@@ -640,7 +641,7 @@ Abbreviations
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the latest development version of pkgsnip, run the following in R:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="op">(</span><span class="st">"remotes"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"remotes"</span>,
                    repos <span class="op">=</span> <span class="st">"https://cloud.r-project.org/"</span><span class="op">)</span>
@@ -668,7 +669,7 @@ Abbreviations
 <li><p>R source code is <em>not</em> split over several files as <a href="https://style.tidyverse.org/package-files.html" class="external-link">suggested by the TSG</a> but instead is (as far as possible) kept in the single file <a href="Rmd/pkgsnip.Rmd"><code>Rmd/pkgsnip.Rmd</code></a> which is well-structured thanks to its <a href="#r-markdown-format">Markdown support</a>.</p></li>
 </ul>
 <p>As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in the <a href="https://github.com/jimhester/lintr#project-configuration" class="external-link">lintr configuration file</a> <a href=".lintr"><code>.lintr</code></a>, so lintr can be used right away to check for formatting issues:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">pkgpurl</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pkgpurl/man/lint_rmd.html" class="external-link">lint_rmd</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 </div>

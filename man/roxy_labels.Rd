@@ -25,6 +25,8 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{NA} \tab \code{data} \tab  \cr
    \code{NA} \tab \code{date} \tab  \cr
    \code{NA} \tab \code{dates} \tab  \cr
+   \code{NA} \tab \code{datetime} \tab  \cr
+   \code{NA} \tab \code{datetimes} \tab  \cr
    \code{NA} \tab \code{path} \tab  \cr
    \code{NA} \tab \code{paths} \tab  \cr
    \code{NA} \tab \code{r_obj} \tab  \cr

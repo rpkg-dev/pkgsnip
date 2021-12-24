@@ -33,6 +33,8 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{data} \tab  \cr
    \code{date} \tab  \cr
    \code{dates} \tab  \cr
+   \code{datetime} \tab  \cr
+   \code{datetimes} \tab  \cr
    \code{path} \tab  \cr
    \code{paths} \tab  \cr
    \code{r_obj} \tab  \cr

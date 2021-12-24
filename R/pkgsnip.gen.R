@@ -184,6 +184,8 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "data", "A [tibble][tibble::tbl_df].",
     NA, "date", "A [date][base::Date].",
     NA, "dates", "A vector of [dates][base::Date].",
+    NA, "datetime", "A [datetime][base::DateTimeClasses].",
+    NA, "datetimes", "A vector of [datetimes][base::DateTimeClasses].",
     NA, "path", "A [path][fs::fs_path].",
     NA, "paths", "A vector of [paths][fs::fs_path].",
     NA, "r_obj", "An \\R object.",

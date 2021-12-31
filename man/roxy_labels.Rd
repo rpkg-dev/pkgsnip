@@ -32,6 +32,7 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{NA} \tab \code{r_obj} \tab  \cr
    \code{NA} \tab \code{response} \tab  \cr
    \code{NA} \tab \code{strict_list} \tab  \cr
+   \code{NA} \tab \code{symbol} \tab  \cr
    \code{NA} \tab \code{tabular_data} \tab  \cr
    \code{NA} \tab \code{version_nr} \tab  \cr
    \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr

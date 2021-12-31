@@ -202,6 +202,8 @@ Abbreviations
   specifications                    specs
   string                            str
   strings                           strs
+  symbolize, symbol                 sym
+  symbols                           syms
   temporary                         tmp
   value                             val
   values                            vals

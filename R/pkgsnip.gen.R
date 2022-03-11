@@ -2,7 +2,7 @@
 # See `README.md#r-markdown-format` for more information on the literate programming approach used applying the R Markdown format.
 
 # pkgsnip: Standardized Labels, Messages and (R) Markdown Snippets for Package Authors
-# Copyright (C) 2021 Salim Brüggemann
+# Copyright (C) 2022 Salim Brüggemann
 # 
 # This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free
 # Software Foundation, either version 3 of the License, or any later version.
@@ -127,8 +127,10 @@ md_snips <- function() {
   
   tibble::tribble(
     ~name, ~snippet,
-    "rstudio_addin_hint", paste0("This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/) allowing RStudio users ",
-                                 "to assign a custom shortcut to it."),
+    "rstudio_addin_hint", paste0("This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users ",
+                                 "to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-",
+                                 "RStudio-IDE) to it or to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command",
+                                 "-palette--shortcuts)."),
     "pkgdown_notice", "The documentation of this package is found [here]({pkgdown::as_pkgdown()$meta$url})."
   )
 }

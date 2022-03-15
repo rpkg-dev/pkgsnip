@@ -543,6 +543,8 @@ abbreviations <- function(expand = FALSE) {
     "dependencies", "deps",
     c("develop", "development", "developer"), "dev",
     c("developments", "developers"), "devs",
+    "dict", "dictionary",
+    "dicts", "dictionaries",
     c("differentiate", "difference"), "diff",
     "differences", "diffs",
     "directory", "dir",

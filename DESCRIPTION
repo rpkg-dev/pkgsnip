@@ -1,7 +1,7 @@
 Package: pkgsnip
 Title: Standardized Labels, Messages and (R) Markdown Snippets for Package
     Authors
-Version: 0.0.9028
+Version: 0.0.9029
 Authors@R: 
     person("Salim", "Brüggemann", , "salim-b@pm.me", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5329-5987"))
@@ -14,7 +14,10 @@ Description: pkgsnip ships ready-to-go (R) Markdown snippets and labels
 License: AGPL (>= 3)
 URL: https://rpkg.dev/pkgsnip, https://gitlab.com/salim_b/r/pkgs/pkgsnip
 BugReports: https://gitlab.com/salim_b/r/pkgs/pkgsnip/issues
+Depends: 
+    R (>= 4.1)
 Imports: 
+    checkmate (>= 2.0.0),
     dplyr (>= 1.0.0),
     fs (>= 1.4.1),
     glue (>= 1.4.1),
@@ -24,11 +27,13 @@ Imports:
     tibble (>= 3.0.1),
     utils (>= 4.0.1)
 Suggests: 
+    knitr,
     desc (>= 1.2.0),
-    pal (>= 0.0.9077),
+    pal (>= 0.0.9080),
     stringr (>= 1.4.0),
     testthat (>= 3.0.0),
-    tidyr (>= 1.1.2)
+    tidyr (>= 1.1.2),
+    rmarkdown
 Remotes:
     gitlab::salim_b/r/pkgs/pal
 Config/testthat/edition: 3
@@ -36,3 +41,4 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+VignetteBuilder: knitr

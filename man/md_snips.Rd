@@ -17,6 +17,7 @@ Currently, Markdown snippets with the following \code{names} are available:\tabu
    \strong{name} \cr
    \code{rstudio_addin_hint} \cr
    \code{pkgdown_notice} \cr
+   \code{usage_notice} \cr
 }
 }
 \seealso{

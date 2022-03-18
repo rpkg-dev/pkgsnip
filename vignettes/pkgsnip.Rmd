@@ -1,0 +1,138 @@
+---
+title: "Introduction to pkgsnip"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to pkgsnip}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+In the following, an overview is given of what's included in this package.
+
+## R Markdown file snippets
+
+The (R) Markdown file snippets can be used anywhere [(R) Markdown](https://rmarkdown.rstudio.com/) input is supported. For example, you can use them as input to
+[knitr](https://yihui.org/knitr/)'s [`child` document option](https://yihui.org/knitr/options/#child-documents):
+
+`r paste0("\x60\x60\x60\x60\n\x60\x60\x60", '{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}\n', "\x60\x60\x60\n\x60\x60\x60\x60")`
+
+When inserting snippets that require the name of the calling package like `"installation-notice_dev-version_gitlab.Rmd"`, you should either use
+`pal::build_readme()` to build the `.Rmd` file or manually assign `pkg_metadata <- pal::desc_list()` to the environment passed to
+[`devtools::build_rmd()`](https://devtools.r-lib.org/reference/build_rmd.html) or its `...` argument respectively.
+
+You can also use the snippets in [roxygen2](https://roxygen2.r-lib.org/)'s [`@includeRmd`
+tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
+
+``` rd
+#' @includeRmd `r '\x60r pkgsnip::snip_path("rmd-package-notice.Rmd")\x60'`
+```
+
+For snippets that require the name of the calling package, just assign `pkg_metadata` (once) before inserting the snippet(s), e.g. like this:
+
+``` rd
+#' `r "\x60r pkg_metadata <- pal::desc_list()\x60"`
+#'
+#' @includeRmd `r '\x60r pkgsnip::snip_path("installation-notice_dev-version.Rmd")\x60'`
+```
+
+### Available snippets
+
+Currently, the following R Markdown file snippets are included:
+
+```{r, echo = FALSE, results = "asis"}
+library(magrittr)
+
+fs::path_package("snippets/",
+                 package = pal::desc_value(key = "Package")) %>%
+  fs::dir_ls(recurse = TRUE,
+             type = "file") %>%
+  fs::path_file() %>%
+  paste0("- [`", ., "`](",
+         stringr::str_subset(string = desc::desc_get_urls(),
+                             pattern = "https://git(lab|hub)"),
+         "/-/tree/master/inst/snippets/", ., ")") %>%
+  pal::cat_lines()
+```
+
+## roxygen2 tag labels
+
+The [roxygen2](https://roxygen2.r-lib.org/) tag labels are specifically meant for [`@`-tag](https://roxygen2.r-lib.org/articles/rd.html)-based documentation
+using [dynamic R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1).
+
+Insert them in your functions using inline R code, e.g. as follows
+
+``` r
+`r paste0("#' @param use_cache \U0060r pkgsnip::param_label(\"use_cache\")\U0060")`
+`r paste0("#' @param cache_lifespan \U0060r pkgsnip::param_label(\"cache_lifespan\")\U0060")`
+`r paste0("#' @return \U0060r pkgsnip::return_label(\"data\")\U0060")`
+```
+
+which will result in
+
+``` r
+#' @param use_cache `r pkgsnip::param_label("use_cache")`
+#' @param cache_lifespan `r pkgsnip::param_label("cache_lifespan")`
+#' @return `r pkgsnip::return_label("data")`
+```
+
+## R condition messages
+
+These are meant to be used as message texts for base R's [`message()`](https://rdrr.io/r/base/message.html), [`warning()`](https://rdrr.io/r/base/warning.html)
+and [`stop()`](https://rdrr.io/r/base/stop.html) functions or [`rlang::inform()`, `rlang::warn()` and
+`rlang::abort()`](https://rlang.r-lib.org/reference/abort.html) from the tidyverse respectively.
+
+A message can be retrieved using `pkgsnip::msg()`. For some of the messages, arguments need to be provided so they can be tailored to their specific purpose.
+For example, the `pkg_required` message requires the `pkg` argument:
+
+``` r
+pkgsnip::msg(name = "pkg_required",
+             pkg = "some_pkg")
+```
+
+Which results in the following message text:
+
+```{r, echo = FALSE, comment = ""}
+pkgsnip::msg(name = "pkg_required",
+             this_pkg = "some_pkg")
+```
+
+Currently, the following R condition messages are included:
+
+```{r, echo = FALSE}
+pkgsnip::messages() %>%
+  dplyr::mutate(dplyr::across(name,
+                              ~ paste0("`", .x, "`"))) %>%
+  pkgsnip:::add_args_col() %>%
+  pal::pipe_table()
+```
+
+## Common abbreviations
+
+Finally, there's a table included that lists an (opinionated) set of abbreviations commonly used when writing R code. It might come in handy as a reference, for
+example, to check availability when considering using some abbreviation in a function or argument name.
+
+The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows (click to expand):
+
+```{asis}
+<details><summary>Abbreviations</summary>
+```
+
+```{r, echo = FALSE}
+pkgsnip::abbreviations() %>%
+  dplyr::mutate(dplyr::across(.cols = where(is.list),
+                              .fns = purrr::map_chr,
+                              .f = paste0,
+                              collapse = ", ")) %>%
+  knitr::kable()
+```
+
+```{asis}
+</details>
+```

@@ -67,11 +67,13 @@ backtickify_cols <- function(data,
 }
 ```
 
-# R Markdown file snippets
+# EXPORTED
+
+## R Markdown file snippets
 
 For now, only R Markdown file snippets are included. But this can easily be extended to other file formats in the future.
 
-## `ls_file_snips`
+### `ls_file_snips`
 
 ```{r}
 #' List all available R Markdown file snippets
@@ -93,7 +95,7 @@ ls_file_snips <- function() {
 }
 ```
 
-## `snip_path`
+### `snip_path`
 
 TODO:
 
@@ -145,9 +147,9 @@ snip_path <- function(name = ls_file_snips()$name) {
 }
 ```
 
-# Markdown snippets
+## Markdown snippets
 
-## `md_snips`
+### `md_snips`
 
 ```{r}
 #' Get a table of all Markdown snippets included in this package
@@ -174,12 +176,16 @@ md_snips <- function() {
                                  "to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-",
                                  "RStudio-IDE) to it or to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command",
                                  "-palette--shortcuts)."),
-    "pkgdown_notice", "The documentation of this package is found [here]({pkgdown::as_pkgdown()$meta$url})."
+    "pkgdown_notice", "The documentation of this package is found [here]({pkgdown::as_pkgdown()$meta$url}).",
+    "usage_notice", paste0("{ this_pkg <- desc::desc_get_field('Package'); base_url <- pkgdown::as_pkgdown()$meta$url; ",
+                           "if (fs::file_exists(fs::path('vignettes', this_pkg, ext = 'Rmd'))) paste0('An introduction to this package is given [here](', ",
+                           "fs::path(base_url, 'articles', this_pkg, ext = 'html'), '). ') else '' }",
+                           "The (function) reference is found [here]({fs::path(base_url, 'reference')}).")
   )
 }
 ```
 
-## `md_snip`
+### `md_snip`
 
 ```{r}
 #' Get predefined Markdown snippet
@@ -205,9 +211,9 @@ md_snip <- function(name = md_snips()$name,
 }
 ```
 
-# roxygen2 labels
+## roxygen2 labels
 
-## `roxy_labels`
+### `roxy_labels`
 
 TODO:
 
@@ -288,7 +294,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
 roxy_lbls <- roxy_labels
 ```
 
-## `roxy_label`
+### `roxy_label`
 
 ```{r}
 #' Get predefined roxygen2 tag label
@@ -335,7 +341,7 @@ roxy_label <- function(name = roxy_labels()$name,
 roxy_lbl <- roxy_label
 ```
 
-## `param_label`
+### `param_label`
 
 ```{r}
 #' Get predefined parameter label
@@ -378,7 +384,7 @@ param_label <- function(name = roxy_labels(type = "param")$name,
 param_lbl <- param_label
 ```
 
-## `return_label`
+### `return_label`
 
 ```{r}
 #' Get predefined return label
@@ -421,9 +427,9 @@ return_label <- function(name = roxy_labels(type = "return")$name,
 return_lbl <- return_label
 ```
 
-# R condition messages
+## R condition messages
 
-## `messages`
+### `messages`
 
 ```{r}
 #' Get a table of all available \R condition messages
@@ -457,7 +463,7 @@ messages <- function() {
 msgs <- messages
 ```
 
-## `message`
+### `message`
 
 ```{r}
 #' Get predefined \R condition message
@@ -490,9 +496,9 @@ message <- function(name = messages()$name,
 msg <- message
 ```
 
-# Common abbreviations
+## Common abbreviations
 
-## `abbreviations`
+### `abbreviations`
 
 ```{r}
 #' Commonly used abbreviations in \R code
@@ -509,133 +515,9 @@ msg <- message
 #' pkgsnip::abbrs(expand = TRUE) |> print(n = Inf)
 abbreviations <- function(expand = FALSE) {
   
-  tibble::tribble(
-    ~full_expressions, ~abbreviation,
-    c("abbreviate", "abbreviation"), "abbr",
-    "abbreviations", "abbrs",
-    "absolute", "abs",
-    "argument", "arg",
-    "arguments", "args",
-    "attribute", "attr",
-    "attributes", "attrs",
-    c("authenticate", "authentication"), "auth",
-    "authentications", "auths",
-    "bibliography", "bib",
-    "bibliographies", "bibs",
-    "character", "chr",
-    "characters", "chrs",
-    "column", "col",
-    "columns", "cols",
-    "command", "cmd",
-    "commands", "cmds",
-    "combination", "combo",
-    "combinations", "combos",
-    "condition", "cnd",
-    "conditions", "cnds",
-    c("configure", "configuration"), "config",
-    "configurations", "configs",
-    "database", "db",
-    "dataframe", "df",
-    "dataframes", "dfs",
-    "dataframe column", "dfc",
-    "dataframe row", "dfr",
-    c("depend", "dependency"), "dep",
-    "dependencies", "deps",
-    c("develop", "development", "developer"), "dev",
-    c("developments", "developers"), "devs",
-    "dict", "dictionary",
-    "dicts", "dictionaries",
-    c("differentiate", "difference"), "diff",
-    "differences", "diffs",
-    "directory", "dir",
-    "directories", "dirs",
-    "distribution", "distro",
-    "distributions", "distros",
-    "document", "doc",
-    "documents", "docs",
-    "double", "dbl",
-    "doubles", "dbls",
-    "element", "el",
-    "elements", "els",
-    "environment", "env",
-    "environments", "envs",
-    c("exclude", "exclusion"), "excl",
-    "expression", "expr",
-    "expressions", "exprs",
-    "factor", "fct",
-    "factors", "fcts",
-    "filesystem", "fs",
-    "formula", "fm",
-    c("formulas", "formulae"), "fms",
-    "function", "fn",
-    "functions", "fns",
-    c("generate", "generation"), "gen",
-    "generations", "gens",
-    c("identify", "identifier"), "id",
-    "identifiers", "ids",
-    c("include", "inclusion"), "incl",
-    "index", "i",
-    "indices/indexes", "ix",
-    "information", "info",
-    c("initialize", "initialization"), "init",
-    "integer", "int",
-    "integers", "ints",
-    "label", "lbl",
-    "labels", "lbls",
-    "language", "lang",
-    "languages", "langs",
-    "level", "lvl",
-    "levels", "lvls",
-    "list", "ls",
-    "logical", "lgl",
-    "logicals", "lgls",
-    "management", "mgmt",
-    "Markdown", "md",
-    "message", "msg",
-    "messages", "msgs",
-    c("modify", "modification"), "mod",
-    "modifications", "mods",
-    "number", "nr",
-    "numbers", "nrs",
-    "number of", "n",
-    "numeric", "num",
-    "numerics", "nums",
-    "object", "obj",
-    "objects", "objs",
-    "option", "opt",
-    "options", "opts",
-    "package", "pkg",
-    "packages", "pkgs",
-    c("parameterize", "parameter"), "param",
-    "parameters", "params",
-    "prototype", "ptype",
-    "prototypes", "ptypes",
-    "R Markdown", "rmd",
-    c("refer", "reference"), "ref",
-    "references", "refs",
-    "regular expression(s)", "regex",
-    "relative", "rel",
-    "remove", "rm",
-    "roxygen2", "roxy",
-    c("separate", "separator"), "sep",
-    "separators", "seps",
-    c("sequential", "sequence"), "seq",
-    "sequences", "seqs",
-    c("specify", "specification"), "spec",
-    "specifications", "specs",
-    "string", "str",
-    "strings", "strs",
-    c("symbolize", "symbol"), "sym",
-    "symbols", "syms",
-    "temporary", "tmp",
-    "value", "val",
-    "values", "vals",
-    "variable", "v",
-    "variables", "vx",
-    c("vectorize", "vector"), "vctr",
-    "vectors", "vctrs",
-    "working directory", "wd"
-  ) %>%
+  checkmate::assert_flag(expand)
+  
+  data_abbreviations %>%
     purrr::when(expand ~ tidyr::unnest_longer(data = .,
                                               col = full_expressions,
                                               values_to = "full_expression"),

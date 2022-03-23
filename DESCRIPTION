@@ -1,7 +1,7 @@
 Package: pkgsnip
 Title: Standardized Labels, Messages and (R) Markdown Snippets for Package
     Authors
-Version: 0.0.9029
+Version: 0.0.9030
 Authors@R: 
     person("Salim", "Brüggemann", , "salim-b@pm.me", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5329-5987"))

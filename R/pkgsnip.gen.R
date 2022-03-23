@@ -134,8 +134,8 @@ md_snips <- function() {
     "pkgdown_notice", "The documentation of this package is found [here]({pkgdown::as_pkgdown()$meta$url}).",
     "usage_notice", paste0("{ this_pkg <- desc::desc_get_field('Package'); base_url <- pkgdown::as_pkgdown()$meta$url; ",
                            "if (fs::file_exists(fs::path('vignettes', this_pkg, ext = 'Rmd'))) paste0('An introduction to this package is given [here](', ",
-                           "fs::path(base_url, 'articles', this_pkg, ext = 'html'), '). ') else '' }",
-                           "The (function) reference is found [here]({fs::path(base_url, 'reference')}).")
+                           "paste0(base_url, '/articles/', this_pkg, '.html'), '). ') else '' }",
+                           "The (function) reference is found [here]({paste0(base_url, '/reference')}).")
   )
 }
 

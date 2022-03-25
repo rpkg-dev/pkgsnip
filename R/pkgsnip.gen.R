@@ -194,6 +194,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "datetimes", "A vector of [datetimes][base::DateTimeClasses].",
     NA, "path", "A [path][fs::fs_path].",
     NA, "paths", "A vector of [paths][fs::fs_path].",
+    NA, "plotly_obj", "A [plotly object][plotly::plot_ly].",
     NA, "r_obj", "An \\R object.",
     NA, "response", "A [response object][httr::response].",
     NA, "strict_list", "A [strict list][xfun::strict_list()].",

@@ -37,6 +37,7 @@ Currently, the following return labels are available:\tabular{ll}{
    \code{datetimes} \tab  \cr
    \code{path} \tab  \cr
    \code{paths} \tab  \cr
+   \code{plotly_obj} \tab  \cr
    \code{r_obj} \tab  \cr
    \code{response} \tab  \cr
    \code{strict_list} \tab  \cr

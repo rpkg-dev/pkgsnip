@@ -29,6 +29,7 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{NA} \tab \code{datetimes} \tab  \cr
    \code{NA} \tab \code{path} \tab  \cr
    \code{NA} \tab \code{paths} \tab  \cr
+   \code{NA} \tab \code{plotly_obj} \tab  \cr
    \code{NA} \tab \code{r_obj} \tab  \cr
    \code{NA} \tab \code{response} \tab  \cr
    \code{NA} \tab \code{strict_list} \tab  \cr

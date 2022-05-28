@@ -91,7 +91,7 @@ ls_file_snips <- function() {
 #' ```
 #'
 #' @param name The name of a snippet. Possible values include:
-#' `r paste0('- ``"', ls_file_snips()$name, '"``')`
+#' `r pal::as_md_val_list(ls_file_snips()$name)`
 #'
 #' @return `r pkgsnip::return_label("path")`
 #' @family rmdsnips

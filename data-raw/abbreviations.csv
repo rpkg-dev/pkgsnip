@@ -116,6 +116,7 @@ parameter,param
 parameters,params
 prototype,ptype
 prototypes,ptypes
+Quarto Markdown,qmd
 R Markdown,rmd
 refer,ref
 reference,ref

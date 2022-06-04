@@ -64,6 +64,8 @@ expression,expr
 expressions,exprs
 factor,fct
 factors,fcts
+figure,fig
+figures,figs
 filesystem,fs
 formula,fm
 formulas,fms
@@ -143,6 +145,8 @@ strings,strs
 symbolize,sym
 symbol,sym
 symbols,syms
+table,tbl
+tables,tbls
 temporary,tmp
 value,val
 values,vals

@@ -206,6 +206,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
                                          "if unset)."),
     "param", "cli_markup_support", "Supports cli's [inline markup][cli::inline-markup].",
     "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
+    "param", "tidy_select_support", "[Tidy selections][dplyr::dplyr_tidy_select] are supported.",
     "param", "eol", paste0("End of line (EOL) control character sequence. One of\n- `\"LF\"` for the line feed (LF) character (`\"\\n\"`). The standard on ",
                            "Unix and Unix-like systems (Linux, macOS, *BSD, etc.) and the **default**.\n- `\"CRLF\"` for the carriage return + line feed ",
                            "(CR+LF) character sequence (`\"\\r\\n\"`). The standard on Microsoft Windows, DOS and some other systems.\n- `\"CR\"` for the ",

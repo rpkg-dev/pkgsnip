@@ -39,6 +39,7 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr
    \code{param} \tab \code{cli_markup_support} \tab  \cr
    \code{param} \tab \code{dyn_dots_support} \tab  \cr
+   \code{param} \tab \code{tidy_select_support} \tab  \cr
    \code{param} \tab \code{eol} \tab  \cr
    \code{param} \tab \code{quiet} \tab  \cr
    \code{param} \tab \code{start_date} \tab  \cr

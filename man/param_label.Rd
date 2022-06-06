@@ -37,6 +37,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{dates} \tab  \cr
    \code{datetime} \tab  \cr
    \code{datetimes} \tab  \cr
+   \code{gt_obj} \tab  \cr
    \code{path} \tab  \cr
    \code{paths} \tab  \cr
    \code{plotly_obj} \tab  \cr

@@ -3,7 +3,7 @@ pkgdown: 1.6.1.9000
 pkgdown_sha: ~
 articles:
   pkgsnip: pkgsnip.html
-last_built: 2022-06-06T15:48Z
+last_built: 2022-06-06T21:57Z
 urls:
   reference: https://rpkg.dev/pkgsnip/reference
   article: https://rpkg.dev/pkgsnip/articles

@@ -70,6 +70,9 @@ filesystem,fs
 formula,fm
 formulas,fms
 formulae,fms
+frequent,freq
+frequency,freq
+frequencies,freqs
 function,fn
 functions,fns
 generate,gen
@@ -130,11 +133,11 @@ referenda,rfrnds
 regular expression(s),regex
 relative,rel
 remove,rm
+removal,rm
 roxygen2,roxy
 separate,sep
 separator,sep
 separators,seps
-sequential,seq
 sequence,seq
 sequences,seqs
 specify,spec

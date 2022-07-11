@@ -126,9 +126,9 @@
 <a href='https://roxygen2.r-lib.org/articles/rd.html#functions'><code>@param</code></a> tag.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>param_label</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='roxy_labels.html'>roxy_labels</a></span><span class='op'>(</span>type <span class='op'>=</span> <span class='st'>"param"</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='fu'>param_lbl</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='roxy_labels.html'>roxy_labels</a></span><span class='op'>(</span>type <span class='op'>=</span> <span class='st'>"param"</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span><span class='fu'>param_label</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='roxy_labels.html'>roxy_labels</a></span><span class='op'>(</span>type <span class='op'>=</span> <span class='st'>"param"</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>param_lbl</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='roxy_labels.html'>roxy_labels</a></span><span class='op'>(</span>type <span class='op'>=</span> <span class='st'>"param"</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span></span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -150,8 +150,7 @@ If a required argument is not explicitly provided, it is searched for in the <a 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>A label can be inserted using <a href='https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1'>inline <span style="R">R</span> code</a> as follows:</p>
-<p><div class="sourceCode r"></p><pre><span class='co'>#' @param start_date `r pkgsnip::param_label("start_date")`</span>
-</pre><p></div></p>
+<p><div class="sourceCode r"></p><pre><span><span class='co'>#' @param start_date `r pkgsnip::param_label("start_date")`</span></span></pre><p></div></p>
 <p>Note that the above only works in <a href='https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/'>roxygen2 7.1.0+</a>.</p>
 <p>Currently, the following parameter labels are available:</p><table class='table'>
 <tr><td><strong>name</strong></td><td><strong>arguments</strong></td></tr>

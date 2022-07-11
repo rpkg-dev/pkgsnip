@@ -18,7 +18,12 @@ A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
 Returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
-example, to check availability when considering using some abbreviation in a function or argument name.
+example, to check availability/consistency when considering using some abbreviation in a function or argument name.
+}
+\details{
+The main focus is on verbs and nouns. Adjectives and adverbs are only listed in column \code{full_expression} when there's not already a verb or noun with the
+same root word listed for a particular \code{abbreviation}. That means that e.g. the abbreviation "seq" could also stand for the full expression "sequential",
+despite the fact that it is not explicitly listed but merely the verb/noun "sequence" is.
 }
 \examples{
 pkgsnip::abbrs(expand = TRUE) |> print(n = Inf)

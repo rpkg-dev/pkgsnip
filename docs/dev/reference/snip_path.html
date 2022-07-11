@@ -125,7 +125,7 @@
     <p>Returns the file path to an R Markdown snippet shipped with this package.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>snip_path</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='ls_file_snips.html'>ls_file_snips</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span><span class='op'>)</span></pre>
+    <pre class="usage"><span><span class='fu'>snip_path</span><span class='op'>(</span>name <span class='op'>=</span> <span class='fu'><a href='ls_file_snips.html'>ls_file_snips</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span><span class='op'>)</span></span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,16 +152,15 @@
 ```
 </pre><p></div></p>
 <p>Or you can use them in roxygen2's <a href='https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files'><code>@includeRmd</code> tag</a>:</p>
-<p><div class="sourceCode r"></p><pre><span class='co'>#' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")`</span>
-</pre><p></div></p>
+<p><div class="sourceCode r"></p><pre><span><span class='co'>#' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")`</span></span></pre><p></div></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>R Markdown file snippet functions
 <code><a href='ls_file_snips.html'>ls_file_snips</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='r-in'><span class='fu'>pkgsnip</span><span class='fu'>::</span><span class='fu'>snip_path</span><span class='op'>(</span><span class='st'>"coding-style-notice.Rmd"</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #00BB00;'>/tmp/RtmpkyO90n/temp_libpath2ae69695fc1f0/pkgsnip/snippets/coding-style-notice.Rmd</span></span>
+    <pre class="examples"><span class='r-in'><span><span class='fu'>pkgsnip</span><span class='fu'>::</span><span class='fu'>snip_path</span><span class='op'>(</span><span class='st'>"coding-style-notice.Rmd"</span><span class='op'>)</span></span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #00BB00;'>/tmp/RtmpEoIPhF/temp_libpath593d9150114d5/pkgsnip/snippets/coding-style-notice.Rmd</span></span>
 </pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -415,7 +415,11 @@ msg <- message
 #' Commonly used abbreviations in \R code
 #' 
 #' Returns a [tibble][tibble::tbl_df] listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
-#' example, to check availability when considering using some abbreviation in a function or argument name.
+#' example, to check availability/consistency when considering using some abbreviation in a function or argument name.
+#'
+#' The main focus is on verbs and nouns. Adjectives and adverbs are only listed in column `full_expression` when there's not already a verb or noun with the
+#' same root word listed for a particular `abbreviation`. That means that e.g. the abbreviation "seq" could also stand for the full expression "sequential",
+#' despite the fact that it is not explicitly listed but merely the verb/noun "sequence" is.
 #' 
 #' @param expand Whether to expand the `full_expression` column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will
 #'   be returned, meaning the values in column `abbreviation` will be unique.

@@ -252,6 +252,7 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
   tibble::tribble(
     ~type, ~name, ~label,
     NA, "data", "A [tibble][tibble::tbl_df].",
+    NA, "data_cols", "A [tibble][tibble::tbl_df] with the columns {pal::prose_ls(cols, wrap = '`')}.",
     NA, "date", "A [date][base::Date].",
     NA, "dates", "A vector of [dates][base::Date].",
     NA, "datetime", "A [datetime][base::DateTimeClasses].",

@@ -33,6 +33,7 @@ Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/r
 Currently, the following parameter labels are available:\tabular{ll}{
    \strong{name} \tab \strong{arguments} \cr
    \code{data} \tab  \cr
+   \code{data_cols} \tab \verb{pal::prose_ls(cols, wrap = '}')` \cr
    \code{date} \tab  \cr
    \code{dates} \tab  \cr
    \code{datetime} \tab  \cr

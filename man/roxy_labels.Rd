@@ -23,6 +23,7 @@ argument of \code{\link[=param_label]{param_label()}} or \code{\link[=return_lab
 Currently, parameter labels with the following \code{type}s and \code{name}s are available:\tabular{lll}{
    \strong{type} \tab \strong{name} \tab \strong{arguments} \cr
    \code{NA} \tab \code{data} \tab  \cr
+   \code{NA} \tab \code{data_cols} \tab \verb{pal::prose_ls(cols, wrap = '}')` \cr
    \code{NA} \tab \code{date} \tab  \cr
    \code{NA} \tab \code{dates} \tab  \cr
    \code{NA} \tab \code{datetime} \tab  \cr

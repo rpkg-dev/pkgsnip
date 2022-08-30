@@ -7,7 +7,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -46,7 +47,9 @@ For snippets that require the name of the calling package, just assign `pkg_meta
 
 Currently, the following R Markdown file snippets are included:
 
-```{r, echo = FALSE, results = "asis"}
+```{r}
+#| echo: false
+#| results: asis
 library(magrittr)
 
 fs::path_package("snippets/",
@@ -98,14 +101,17 @@ pkgsnip::msg(name = "pkg_required",
 
 Which results in the following message text:
 
-```{r, echo = FALSE, comment = ""}
+```{r}
+#| echo: false
+#| comment: ''
 pkgsnip::msg(name = "pkg_required",
              this_pkg = "some_pkg")
 ```
 
 Currently, the following R condition messages are included:
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 pkgsnip::messages() %>%
   dplyr::mutate(dplyr::across(name,
                               ~ paste0("`", .x, "`"))) %>%
@@ -124,7 +130,8 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 <details><summary>Abbreviations</summary>
 ```
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 pkgsnip::abbreviations() %>%
   dplyr::mutate(dplyr::across(.cols = where(is.list),
                               .fns = purrr::map_chr,

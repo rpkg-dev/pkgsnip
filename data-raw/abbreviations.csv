@@ -156,8 +156,8 @@ templates,tpls
 temporary,tmp
 value,val
 values,vals
-variable,v
-variables,vx
+variable,var
+variables,vars
 vectorize,vctr
 vector,vctr
 vectors,vctrs

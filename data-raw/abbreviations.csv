@@ -120,9 +120,14 @@ packages,pkgs
 parameterize,param
 parameter,param
 parameters,params
+proceed,prcd
+procedure, prcd
+procedures,prcds
 prototype,ptype
 prototypes,ptypes
 Quarto Markdown,qmd
+questionnaire,qstnr
+questionnaires,qstnrs
 R Markdown,rmd
 refer,ref
 reference,ref
@@ -145,6 +150,8 @@ specification,spec
 specifications,specs
 string,str
 strings,strs
+supplemental,suppl
+supplementary,suppl
 symbolize,sym
 symbol,sym
 symbols,syms

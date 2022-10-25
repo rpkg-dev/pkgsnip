@@ -84,7 +84,8 @@ identifiers,ids
 include,incl
 inclusion,incl
 index,i
-indices/indexes,ix
+indexes,ix
+indices,ix
 information,info
 initialize,init
 initialization,init
@@ -135,7 +136,8 @@ references,refs
 referendum,rfrnd
 referendums,rfrnds
 referenda,rfrnds
-regular expression(s),regex
+regular expression,regex
+regular expressions,regex
 relative,rel
 remove,rm
 removal,rm

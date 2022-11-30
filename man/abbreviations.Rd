@@ -23,8 +23,8 @@ example, to check availability/consistency when considering using some abbreviat
 \details{
 To avoid the list getting excessively long and redundant, \strong{the main focus is on verbs and nouns}. Adjectives and adverbs are only listed in column
 \code{full_expression} when there's not already a verb or noun with the same root word listed for a particular \code{abbreviation}. That means that e.g. the
-abbreviation "seq" could also stand for the full expression "sequential", despite the fact that it is not explicitly listed but merely the verb/noun
-"sequence" is.
+abbreviation "seq" could also stand for the full expressions "sequential" or "sequentially", despite the fact that it is not explicitly listed but merely the
+verb/noun "sequence" is.
 }
 \examples{
 pkgsnip::abbrs(expand = TRUE) |> print(n = Inf)

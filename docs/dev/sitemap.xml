@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://rpkg.dev/pkgsnip/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://rpkg.dev/pkgsnip/TODO.html</loc>
+  </url>
+  <url>
+    <loc>https://rpkg.dev/pkgsnip/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://rpkg.dev/pkgsnip/articles/pkgsnip.html</loc>
+  </url>
+  <url>
+    <loc>https://rpkg.dev/pkgsnip/authors.html</loc>
+  </url>
+  <url>
     <loc>https://rpkg.dev/pkgsnip/index.html</loc>
   </url>
   <url>
     <loc>https://rpkg.dev/pkgsnip/reference/abbreviations.html</loc>
+  </url>
+  <url>
+    <loc>https://rpkg.dev/pkgsnip/reference/index.html</loc>
   </url>
   <url>
     <loc>https://rpkg.dev/pkgsnip/reference/ls_file_snips.html</loc>
@@ -38,8 +56,5 @@
   </url>
   <url>
     <loc>https://rpkg.dev/pkgsnip/reference/snip_path.html</loc>
-  </url>
-  <url>
-    <loc>https://rpkg.dev/pkgsnip/articles/pkgsnip.html</loc>
   </url>
 </urlset>

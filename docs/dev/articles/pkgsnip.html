@@ -6,19 +6,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Introduction to pkgsnip • pkgsnip</title>
-<!-- jquery --><script src="../jquery.min.js"></script><!-- Bootstrap --><link rel="stylesheet" href="../yeti.min.css">
-<script src="../bootstrap.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="../font-awesome/css/all.min.css">
-<link rel="stylesheet" href="../font-awesome/css/v4-shims.min.css">
-<!-- clipboard.js --><script src="../clipboard.min.js"></script><!-- headroom.js --><script src="../headroom.min.js"></script><script src="../jQuery.headroom.min.js"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to pkgsnip">
-<meta name="description" content="pkgsnip">
 <meta property="og:description" content="pkgsnip">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@2BSalim">
 <meta name="twitter:site" content="@2BSalim">
 <meta name="robots" content="noindex">
-<!--[if lt IE 9]>
+<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
@@ -74,7 +73,7 @@
       <h1 data-toc-skip>Introduction to pkgsnip</h1>
             
       
-      <small class="dont-index">Source: <a href="https://gitlab.com/salim_b/r/pkgs/pkgsnip/blob/master/vignettes/pkgsnip.Rmd" class="external-link"><code>vignettes/pkgsnip.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://gitlab.com/salim_b/r/pkgs/pkgsnip/blob/HEAD/vignettes/pkgsnip.Rmd" class="external-link"><code>vignettes/pkgsnip.Rmd</code></a></small>
       <div class="hidden name"><code>pkgsnip.Rmd</code></div>
 
     </div>
@@ -83,9 +82,9 @@
     
 <p>In the following, an overview is given of what’s included in this
 package.</p>
-<div id="r-markdown-file-snippets" class="section level2">
-<h2 class="hasAnchor">
-<a href="#r-markdown-file-snippets" class="anchor"></a>R Markdown file snippets</h2>
+<div class="section level2">
+<h2 id="r-markdown-file-snippets">R Markdown file snippets<a class="anchor" aria-label="anchor" href="#r-markdown-file-snippets"></a>
+</h2>
 <p>The (R) Markdown file snippets can be used anywhere <a href="https://rmarkdown.rstudio.com/" class="external-link">(R) Markdown</a> input is
 supported. For example, you can use them as input to <a href="https://yihui.org/knitr/" class="external-link">knitr</a>’s <a href="https://yihui.org/knitr/options/#child-documents" class="external-link"><code>child</code>
 document option</a>:</p>
@@ -100,16 +99,16 @@ passed to <a href="https://devtools.r-lib.org/reference/build_rmd.html" class="e
 or its <code>...</code> argument respectively.</p>
 <p>You can also use the snippets in <a href="https://roxygen2.r-lib.org/" class="external-link">roxygen2</a>’s <a href="https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files" class="external-link"><code>@includeRmd</code>
 tag</a>:</p>
-<pre class="rd"><code>#' @includeRmd `r pkgsnip::snip_path("rmd-package-notice.Rmd")`</code></pre>
+<pre class="rd"><code><span><span class="co">#' @includeRmd `r pkgsnip::snip_path("rmd-package-notice.Rmd")`</span></span></code></pre>
 <p>For snippets that require the name of the calling package, just
 assign <code>pkg_metadata</code> (once) before inserting the snippet(s),
 e.g. like this:</p>
-<pre class="rd"><code>#' `r pkg_metadata &lt;- pal::desc_list()`
-#'
-#' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version.Rmd")`</code></pre>
-<div id="available-snippets" class="section level3">
-<h3 class="hasAnchor">
-<a href="#available-snippets" class="anchor"></a>Available snippets</h3>
+<pre class="rd"><code><span><span class="co">#' `r pkg_metadata &lt;- pal::desc_list()`</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version.Rmd")`</span></span></code></pre>
+<div class="section level3">
+<h3 id="available-snippets">Available snippets<a class="anchor" aria-label="anchor" href="#available-snippets"></a>
+</h3>
 <p>Currently, the following R Markdown file snippets are included:</p>
 <ul>
 <li><a href="https://gitlab.com/salim_b/r/pkgs/pkgsnip/-/tree/master/inst/snippets/coding-style-notice.Rmd" class="external-link"><code>coding-style-notice.Rmd</code></a></li>
@@ -119,9 +118,9 @@ e.g. like this:</p>
 </ul>
 </div>
 </div>
-<div id="roxygen2-tag-labels" class="section level2">
-<h2 class="hasAnchor">
-<a href="#roxygen2-tag-labels" class="anchor"></a>roxygen2 tag labels</h2>
+<div class="section level2">
+<h2 id="roxygen2-tag-labels">roxygen2 tag labels<a class="anchor" aria-label="anchor" href="#roxygen2-tag-labels"></a>
+</h2>
 <p>The <a href="https://roxygen2.r-lib.org/" class="external-link">roxygen2</a> tag labels are
 specifically meant for <a href="https://roxygen2.r-lib.org/articles/rd.html" class="external-link"><code>@</code>-tag</a>-based
 documentation using <a href="https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1" class="external-link">dynamic
@@ -138,9 +137,9 @@ follows</p>
 <span><span class="co">#' @param cache_lifespan The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.</span></span>
 <span><span class="co">#' @return A [tibble][tibble::tbl_df].</span></span></code></pre></div>
 </div>
-<div id="r-condition-messages" class="section level2">
-<h2 class="hasAnchor">
-<a href="#r-condition-messages" class="anchor"></a>R condition messages</h2>
+<div class="section level2">
+<h2 id="r-condition-messages">R condition messages<a class="anchor" aria-label="anchor" href="#r-condition-messages"></a>
+</h2>
 <p>These are meant to be used as message texts for base R’s <a href="https://rdrr.io/r/base/message.html" class="external-link"><code>message()</code></a>,
 <a href="https://rdrr.io/r/base/warning.html" class="external-link"><code>warning()</code></a>
 and <a href="https://rdrr.io/r/base/stop.html" class="external-link"><code>stop()</code></a>
@@ -178,9 +177,9 @@ then try again.</td>
 </tr></tbody>
 </table>
 </div>
-<div id="common-abbreviations" class="section level2">
-<h2 class="hasAnchor">
-<a href="#common-abbreviations" class="anchor"></a>Common abbreviations</h2>
+<div class="section level2">
+<h2 id="common-abbreviations">Common abbreviations<a class="anchor" aria-label="anchor" href="#common-abbreviations"></a>
+</h2>
 <p>Finally, there’s a table included that lists an (opinionated) set of
 abbreviations commonly used when writing R code. It might come in handy
 as a reference, for example, to check availability when considering
@@ -319,6 +318,14 @@ Abbreviations
 <tr class="odd">
 <td align="left">dataframe row</td>
 <td align="left">dfr</td>
+</tr>
+<tr class="even">
+<td align="left">define, definition</td>
+<td align="left">def</td>
+</tr>
+<tr class="odd">
+<td align="left">definitions</td>
+<td align="left">defs</td>
 </tr>
 <tr class="even">
 <td align="left">depend, dependency</td>
@@ -798,7 +805,7 @@ Abbreviations
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a>1.6.1.9000.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -806,8 +813,8 @@ Abbreviations
 
   
 
+
   
 
-<script data-goatcounter="https://rpkg-dev.goatcounter.com/count" async src="../goatcounter.min.js"></script>
-</body>
+  </body>
 </html>

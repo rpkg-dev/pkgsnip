@@ -4,6 +4,10 @@ development:
   mode: auto
 template:
   bootstrap: 5
+  bslib:
+    link-color: "#246abf"
+    link-decoration: "none"
+    link-hover-decoration: "underline"
   includes:
     after_body: |
       <script data-goatcounter="https://rpkg-dev.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -11,8 +15,6 @@ template:
     twitter:
       card: summary
       creator: '@2BSalim'
-  params:
-    mathjax: no
 url: https://rpkg.dev/pkgsnip
 reference:
 - title: R Markdown file snippets

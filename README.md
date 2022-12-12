@@ -6,7 +6,9 @@ pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used i
 
 ## Documentation
 
-The documentation of this package is found [here](https://rpkg.dev/pkgsnip).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fd8e894e-9f52-43b4-8f9b-a03d670269e5/deploy-status)](https://app.netlify.com/sites/pkgsnip-rpkg-dev/deploys)
+
+The documentation of this package is found [here](https://pkgsnip.rpkg.dev).
 
 ## Installation
 

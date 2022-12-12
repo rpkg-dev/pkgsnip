@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/LICENSE.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/TODO.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/TODO.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/articles/index.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/articles/pkgsnip.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/articles/pkgsnip.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/authors.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/authors.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/index.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/index.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/abbreviations.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/abbreviations.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/index.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/ls_file_snips.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/ls_file_snips.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/md_snip.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/md_snip.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/md_snips.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/md_snips.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/message.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/message.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/messages.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/messages.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/param_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/param_label.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/pkgsnip-package.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/pkgsnip-package.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/return_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/return_label.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/roxy_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_label.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/roxy_labels.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_labels.html</loc>
   </url>
   <url>
-    <loc>https://rpkg.dev/pkgsnip/dev/reference/snip_path.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/snip_path.html</loc>
   </url>
 </urlset>

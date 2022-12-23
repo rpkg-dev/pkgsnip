@@ -30,10 +30,10 @@ add_args_col <- function(data) {
     match(from_cols) %>%
     magrittr::extract(!is.na(.)) %>%
     {from_cols[.]} %>% # nolint
-    purrr::when(length(.) == 0L ~ rlang::abort("No `from_col` could be determined!"),
-                length(.) > 1L ~ rlang::abort("Multiple `from_col` candidates found:", pal::prose_ls(.,
-                                                                                                     wrap = "`")),
-                ~ .)
+    pal::when(length(.) == 0L ~ rlang::abort("No `from_col` could be determined!"),
+              length(.) > 1L ~ rlang::abort("Multiple `from_col` candidates found:", pal::prose_ls(.,
+                                                                                                   wrap = "`")),
+              ~ .)
   
   dplyr::mutate(.data = data,
                 arguments =
@@ -42,8 +42,8 @@ add_args_col <- function(data) {
                   purrr::map_chr(~ pal::prose_ls(.x,
                                                  wrap = "`",
                                                  last_sep = ", ") %>%
-                                   purrr::when(length(.) == 0L ~ "",
-                                               ~ .)))
+                                   pal::when(length(.) == 0L ~ "",
+                                             ~ .)))
 }
 
 backtickify_cols <- function(data,
@@ -221,11 +221,11 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     "param", "cache_lifespan", paste0("The duration after which cached results are refreshed (i.e. newly fetched). A valid ",
                                       "[lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.")
   ) %>%
-    purrr::when(type == "any" ~ .,
-                is.na(type) ~ dplyr::filter(.data = .,
-                                            is.na(type)),
-                ~ dplyr::filter(.data = .,
-                                type %in% c(!!type, NA_character_)))
+    pal::when(type == "any" ~ .,
+              is.na(type) ~ dplyr::filter(.data = .,
+                                          is.na(type)),
+              ~ dplyr::filter(.data = .,
+                              type %in% c(!!type, NA_character_)))
 }
 
 #' @rdname roxy_labels
@@ -433,11 +433,12 @@ abbreviations <- function(expand = FALSE) {
   
   checkmate::assert_flag(expand)
   
-  data_abbreviations %>%
-    purrr::when(expand ~ tidyr::unnest_longer(data = .,
-                                              col = full_expressions,
-                                              values_to = "full_expression"),
-                ~ .)
+  if (expand) {
+    data_abbreviations %<>% tidyr::unnest_longer(col = full_expressions,
+                                                 values_to = "full_expression")
+  }
+  
+  data_abbreviations
 }
 
 #' @rdname abbreviations

@@ -2,7 +2,7 @@
 editor_options:
   markdown:
     references:
-      prefix: "code-style-n-"
+      prefix: "coding-style-n-"
 ---
 
 `r emsg <- "<!––Please use \x60pal::build_readme()\x60 or assign \x60pkg_metadata <- pal::desc_list()\x60 in the \x60envir\x60 fed to \x60devtools::build_readme(...)\x60 to allow access to package metadata!––>"`This
@@ -13,9 +13,29 @@ with the following exceptions:
 -   Line width is limited to **160 characters**, double the [limit proposed by the TSG](https://style.tidyverse.org/syntax.html#long-lines) (80 characters is
     ridiculously little given today's high-resolution wide screen monitors).
 
--   Usage of [magrittr's compound assignment pipe-operator `%<>%`](https://magrittr.tidyverse.org/reference/compound.html) is desirable[^code-style-n-1].
+    Furthermore, the preferred style for breaking long lines differs. Instead of wrapping directly after an expression's opening bracket as [suggested by the
+    TSG](https://style.tidyverse.org/syntax.html#long-lines), we prefer two fewer line breaks and indent subsequent lines within the expression by its opening
+    bracket:
 
--   Usage of [R's right-hand assignment operator `->`](https://rdrr.io/r/base/assignOps.html) is not allowed[^code-style-n-2].
+    ``` r
+    # TSG proposes this
+    do_something_very_complicated(
+      something = "that",
+      requires = many,
+      arguments = "some of which may be long"
+    )
+
+    # we prefer this
+    do_something_very_complicated(something = "that",
+                                  requires = many,
+                                  arguments = "some of which may be long")
+    ```
+
+    This yields to less vertical and more horizontal spread of the code and better readability in pipes.
+
+-   Usage of [magrittr's compound assignment pipe-operator `%<>%`](https://magrittr.tidyverse.org/reference/compound.html) is desirable[^coding-style-n--1].
+
+-   Usage of [R's right-hand assignment operator `->`](https://rdrr.io/r/base/assignOps.html) is not allowed[^coding-style-n--2].
 
 -   R source code is *not* split over several files as [suggested by the TSG](https://style.tidyverse.org/package-files.html) but instead is (as far as
     possible) kept in the single file
@@ -25,16 +45,16 @@ with the following exceptions:
 As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in the [lintr configuration
 file](https://github.com/jimhester/lintr#project-configuration) [`.lintr`](.lintr), so lintr can be used right away to check for formatting issues:
 
-``` {.r}
+``` r
 pkgpurl::lint_rmd()
 ```
 
-[^code-style-n-1]: The TSG [explicitly instructs to avoid this operator](https://style.tidyverse.org/pipes.html#assignment-2) -- presumably because it's
+[^coding-style-n--1]: The TSG [explicitly instructs to avoid this operator](https://style.tidyverse.org/pipes.html#assignment-2) -- presumably because it's
     relatively unknown and therefore might be confused with the forward pipe operator `%>%` when skimming code only briefly. I don't consider this to be an
     actual issue since there aren't many sensible usage patterns of `%>%` at the beginning of a pipe sequence inside a function -- I can only think of creating
     side effects and relying on [R's implicit return of the last evaluated expression](https://rdrr.io/r/base/function.html). Therefore -- and because I really
     like the `%<>%` operator -- it's usage is welcome.
 
-[^code-style-n-2]: The TSG [explicitly accepts `->` for assignments at the end of a pipe sequence](https://style.tidyverse.org/pipes.html#assignment-2) while
+[^coding-style-n--2]: The TSG [explicitly accepts `->` for assignments at the end of a pipe sequence](https://style.tidyverse.org/pipes.html#assignment-2) while
     Google's R Style Guide [considers this bad practice](https://google.github.io/styleguide/Rguide.html#right-hand-assignment) because it "makes it harder to
     see in code where an object is defined". I second the latter.

@@ -28,6 +28,7 @@ conditions,cnds
 configure,config
 configuration,config
 configurations,configs
+current,cur
 database,db
 dataframe,df
 dataframes,dfs

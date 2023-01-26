@@ -29,6 +29,7 @@ linters: linters_with_defaults(absolute_path_linter          = absolute_path_lin
                                pipe_call_linter              = pipe_call_linter(),
                                redundant_ifelse_linter       = redundant_ifelse_linter(),
                                regex_subset_linter           = regex_subset_linter(),
+                               single_quotes_linter          = NULL,
                                string_boundary_linter        = string_boundary_linter(),
                                system_file_linter            = system_file_linter(),
                                todo_comment_linter           = todo_comment_linter(),

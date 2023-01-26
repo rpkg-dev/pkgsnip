@@ -151,7 +151,7 @@ md_snip <- function(name = md_snips()$name,
                     ...) {
   
   name <- rlang::arg_match(name)
-  env = parent.frame()
+  env <- parent.frame()
   
   md_snips() %>%
     dplyr::filter(name == !!name) %$%
@@ -259,7 +259,7 @@ roxy_label <- function(name = roxy_labels()$name,
                        ...) {
   
   name <- rlang::arg_match(name)
-  env = parent.frame()
+  env <- parent.frame()
   
   roxy_labels(type = type) %>%
     dplyr::filter(name == !!name) %>%
@@ -400,7 +400,7 @@ message <- function(name = messages()$name,
                     ...) {
   
   name <- rlang::arg_match(name)
-  env = parent.frame()
+  env <- parent.frame()
   
   glue::glue(.envir = env,
              ... = ...,

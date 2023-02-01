@@ -187,7 +187,18 @@ using some abbreviation in a function or argument name.</p>
 (click to expand):</p>
 <details><summary>
 Abbreviations
-</summary><table class="table">
+</summary><pre><code><span><span class="co">#&gt; Warning: There was 1 warning in `dplyr::mutate()`.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> In argument: `dplyr::across(...)`.</span></span>
+<span><span class="co">#&gt; Caused by warning:</span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> The `...` argument of `across()` is deprecated as of dplyr 1.1.0.</span></span>
+<span><span class="co">#&gt; Supply arguments directly to `.fns` through an anonymous function instead.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   # Previously</span></span>
+<span><span class="co">#&gt;   across(a:b, mean, na.rm = TRUE)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   # Now</span></span>
+<span><span class="co">#&gt;   across(a:b, \(x) mean(x, na.rm = TRUE))</span></span></code></pre>
+<table class="table">
 <thead><tr class="header">
 <th align="left">full_expressions</th>
 <th align="left">abbreviation</th>
@@ -526,168 +537,176 @@ Abbreviations
 <td align="left">langs</td>
 </tr>
 <tr class="even">
+<td align="left">left-hand side</td>
+<td align="left">lhs</td>
+</tr>
+<tr class="odd">
 <td align="left">level</td>
 <td align="left">lvl</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">levels</td>
 <td align="left">lvls</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">list</td>
 <td align="left">ls</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">logical</td>
 <td align="left">lgl</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">logicals</td>
 <td align="left">lgls</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">management</td>
 <td align="left">mgmt</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Markdown</td>
 <td align="left">md</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">message</td>
 <td align="left">msg</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">messages</td>
 <td align="left">msgs</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">modify, modification</td>
 <td align="left">mod</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">modifications</td>
 <td align="left">mods</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">number</td>
 <td align="left">nr</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">numbers</td>
 <td align="left">nrs</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">number of</td>
 <td align="left">n</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">numeric</td>
 <td align="left">num</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">numerics</td>
 <td align="left">nums</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">object</td>
 <td align="left">obj</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">objects</td>
 <td align="left">objs</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">option</td>
 <td align="left">opt</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">options</td>
 <td align="left">opts</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">package</td>
 <td align="left">pkg</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">packages</td>
 <td align="left">pkgs</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">parameterize, parameter</td>
 <td align="left">param</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">parameters</td>
 <td align="left">params</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">proceed, procedure</td>
 <td align="left">prcd</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">procedures</td>
 <td align="left">prcds</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">prototype</td>
 <td align="left">ptype</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">prototypes</td>
 <td align="left">ptypes</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Quarto Markdown</td>
 <td align="left">qmd</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">questionnaire</td>
 <td align="left">qstnr</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">questionnaires</td>
 <td align="left">qstnrs</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">R Markdown</td>
 <td align="left">rmd</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">refer, reference</td>
 <td align="left">ref</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">references</td>
 <td align="left">refs</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">referendum</td>
 <td align="left">rfrnd</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">referendums, referenda</td>
 <td align="left">rfrnds</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">regular expression, regular expressions</td>
 <td align="left">regex</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">relative</td>
 <td align="left">rel</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">remove, removal</td>
 <td align="left">rm</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">repo</td>
 <td align="left">repository</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">repos</td>
 <td align="left">repositories</td>
+</tr>
+<tr class="even">
+<td align="left">right-hand side</td>
+<td align="left">rhs</td>
 </tr>
 <tr class="odd">
 <td align="left">roxygen2</td>

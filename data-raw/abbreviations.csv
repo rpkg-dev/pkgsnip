@@ -99,6 +99,7 @@ label,lbl
 labels,lbls
 language,lang
 languages,langs
+left-hand side,lhs
 level,lvl
 levels,lvls
 list,ls
@@ -147,6 +148,7 @@ remove,rm
 removal,rm
 repo,repository
 repos,repositories
+right-hand side,rhs
 roxygen2,roxy
 separate,sep
 separator,sep

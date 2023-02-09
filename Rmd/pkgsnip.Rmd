@@ -11,6 +11,7 @@ cf. <https://github.com/tidyverse/magrittr/issues/29#issuecomment-74313262>
 
 ```{r}
 utils::globalVariables(names = c(".",
+                                 "full_expressions",
                                  "label",
                                  "name",
                                  "path",
@@ -218,8 +219,6 @@ TODO:
 
 -   Consider renaming the `data` label to `tibble`.
 
-NOTES:
-
 -   The current `type` classification of the labels is subpar and it might be a good idea to overhaul it (e.g. use a list column to be able to assign multiple
     types per label).
 
@@ -244,7 +243,7 @@ NOTES:
 #' @return `r pkgsnip::return_label("data")`
 #' @family roxygen2label
 #' @export
-roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
+roxy_labels <- function(type = c("any", "description", "param", "return", "title", NA_character_)) {
   
   type <- rlang::arg_match(type)
   
@@ -267,8 +266,10 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     NA, "tabular_data", "A tabular data object like a [data frame][base::data.frame] or [tibble][tibble::tbl_df].",
     NA, "version_nr", "A [numeric version][numeric_version()].",
     NA, "opt_max_cache_lifespan", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
-                                         "lifespan set by the [option][base::options()] `{this_pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` ",
+                                         "lifespan set by the [option][base::options()] `{pkg}.max_cache_lifespan` (defaults to `{max_cache_lifespan}` ",
                                          "if unset)."),
+    "description", "pkg_config", paste0("A [tibble][tibble::tbl_df] with metadata of all possible {pkg} package configuration options. See ",
+                                        "[pal::pkg_config_val()] for more information."),
     "param", "cli_markup_support", "Supports cli's [inline markup][cli::inline-markup].",
     "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
     "param", "tidy_select_support", "[Tidy selections][dplyr::dplyr_tidy_select] are supported.",
@@ -283,7 +284,8 @@ roxy_labels <- function(type = c("any", "param", "return", NA_character_)) {
     "param", "end_date", "The end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
     "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.",
     "param", "cache_lifespan", paste0("The duration after which cached results are refreshed (i.e. newly fetched). A valid ",
-                                      "[lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.")
+                                      "[lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`."),
+    "title", "pkg_config", "{pkg} package configuration metadata"
   ) %>%
     pal::when(type == "any" ~ .,
               is.na(type) ~ dplyr::filter(.data = .,
@@ -323,7 +325,7 @@ roxy_lbls <- roxy_labels
 #' @family roxygen2label
 #' @export
 roxy_label <- function(name = roxy_labels()$name,
-                       type = c("any", "param", "return", NA_character_),
+                       type = c("any", "description", "param", "return", "title", NA_character_),
                        ...) {
   
   name <- rlang::arg_match(name)
@@ -344,18 +346,61 @@ roxy_label <- function(name = roxy_labels()$name,
 roxy_lbl <- roxy_label
 ```
 
+### `description_label`
+
+```{r}
+#' Get predefined `@description` label
+#'
+#' Returns a pre-defined label intended to be used as a function's description using [roxygen2][roxygen2::roxygen2]'s
+#' [`@description`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
+#'
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#'
+#' ```r
+#' #' @description `r pkgsnip::description_label("LABEL_NAME")`
+#' ```
+#' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
+#'
+#' Currently, the following `@description` labels are available:
+#'
+#' ```{r, echo = FALSE}
+#' roxy_labels(type = "description") %>%
+#'   add_args_col() %>%
+#'   dplyr::select(-c(type, label)) %>%
+#'   backtickify_cols() %>%
+#'   pal::pipe_table()
+#' ```
+#' 
+#' @inheritParams roxy_label
+#'
+#' @inherit roxy_label return
+#' @family roxygen2label
+#' @export
+description_label <- function(name = roxy_labels(type = "description")$name,
+                              ...) {
+  
+  roxy_label(name = rlang::arg_match(name),
+             type = "description",
+             ... = ...)
+}
+
+#' @rdname description_label
+#' @export
+description_lbl <- description_label
+```
+
 ### `param_label`
 
 ```{r}
-#' Get predefined parameter label
+#' Get predefined `@param` label
 #'
-#' Returns a pre-defined label intended to be used to document function parameters using [roxygen2][roxygen2::roxygen2]'s
+#' Returns a pre-defined label intended to be used to document a function parameter using [roxygen2][roxygen2::roxygen2]'s
 #' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
-#' #' @param start_date `r pkgsnip::param_label("start_date")`
+#' #' @param PARAM_NAME `r pkgsnip::param_label("LABEL_NAME")`
 #' ```
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #'
@@ -390,7 +435,7 @@ param_lbl <- param_label
 ### `return_label`
 
 ```{r}
-#' Get predefined return label
+#' Get predefined `@return` label
 #'
 #' Returns a pre-defined label intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
 #' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
@@ -398,7 +443,7 @@ param_lbl <- param_label
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
-#' #' @return version_nr `r pkgsnip::return_label("version_nr")`
+#' #' @return `r pkgsnip::return_label("LABEL_NAME")`
 #' ```
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #'
@@ -428,6 +473,49 @@ return_label <- function(name = roxy_labels(type = "return")$name,
 #' @rdname return_label
 #' @export
 return_lbl <- return_label
+```
+
+### `title_label`
+
+```{r}
+#' Get predefined `@title` label
+#'
+#' Returns a pre-defined label intended to be used to document a function's title using [roxygen2][roxygen2::roxygen2]'s
+#' [`@title`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
+#'
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#'
+#' ```r
+#' #' @title `r pkgsnip::title_label("LABEL_NAME")`
+#' ```
+#' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
+#'
+#' Currently, the following `@title` labels are available:
+#'
+#' ```{r, echo = FALSE}
+#' roxy_labels(type = "title") %>%
+#'   add_args_col() %>%
+#'   dplyr::select(-c(type, label)) %>%
+#'   backtickify_cols() %>%
+#'   pal::pipe_table()
+#' ```
+#' 
+#' @inheritParams roxy_label
+#'
+#' @inherit roxy_label return
+#' @family roxygen2label
+#' @export
+title_label <- function(name = roxy_labels(type = "title")$name,
+                        ...) {
+  
+  roxy_label(name = rlang::arg_match(name),
+             type = "title",
+             ... = ...)
+}
+
+#' @rdname title_label
+#' @export
+title_lbl <- title_label
 ```
 
 ## R condition messages

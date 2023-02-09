@@ -7,13 +7,13 @@
 \usage{
 roxy_label(
   name = roxy_labels()$name,
-  type = c("any", "param", "return", NA_character_),
+  type = c("any", "description", "param", "return", "title", NA_character_),
   ...
 )
 
 roxy_lbl(
   name = roxy_labels()$name,
-  type = c("any", "param", "return", NA_character_),
+  type = c("any", "description", "param", "return", "title", NA_character_),
   ...
 )
 }
@@ -41,9 +41,11 @@ Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/r
 }
 \seealso{
 roxygen2 label functions
+\code{\link{description_label}()},
 \code{\link{param_label}()},
 \code{\link{return_label}()},
-\code{\link{roxy_labels}()}
+\code{\link{roxy_labels}()},
+\code{\link{title_label}()}
 }
 \concept{roxygen2label}
 \keyword{internal}

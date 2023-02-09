@@ -3,7 +3,7 @@
 \name{param_label}
 \alias{param_label}
 \alias{param_lbl}
-\title{Get predefined parameter label}
+\title{Get predefined \verb{@param} label}
 \usage{
 param_label(name = roxy_labels(type = "param")$name, ...)
 
@@ -19,13 +19,13 @@ If a required argument is not explicitly provided, it is searched for in the \li
 A character vector.
 }
 \description{
-Returns a pre-defined label intended to be used to document function parameters using \link[roxygen2:roxygen2-package]{roxygen2}'s
+Returns a pre-defined label intended to be used to document a function parameter using \link[roxygen2:roxygen2-package]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag.
 }
 \details{
 A label can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @param start_date `r pkgsnip::param_label("start_date")`
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @param PARAM_NAME `r pkgsnip::param_label("LABEL_NAME")`
 }\if{html}{\out{</div>}}
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
@@ -48,7 +48,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{symbol} \tab  \cr
    \code{tabular_data} \tab  \cr
    \code{version_nr} \tab  \cr
-   \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr
+   \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
    \code{cli_markup_support} \tab  \cr
    \code{dyn_dots_support} \tab  \cr
    \code{tidy_select_support} \tab  \cr
@@ -62,8 +62,10 @@ Currently, the following parameter labels are available:\tabular{ll}{
 }
 \seealso{
 roxygen2 label functions
+\code{\link{description_label}()},
 \code{\link{return_label}()},
 \code{\link{roxy_labels}()},
-\code{\link{roxy_label}()}
+\code{\link{roxy_label}()},
+\code{\link{title_label}()}
 }
 \concept{roxygen2label}

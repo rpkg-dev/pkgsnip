@@ -29,8 +29,10 @@ reference:
 - contents:
   - roxy_labels
   - roxy_label
+  - description_label
   - param_label
   - return_label
+  - title_label
 - title: R condition messages
 - contents:
   - messages

@@ -5,9 +5,13 @@
 \alias{roxy_lbls}
 \title{Get a table of all available roxygen2 tag labels}
 \usage{
-roxy_labels(type = c("any", "param", "return", NA_character_))
+roxy_labels(
+  type = c("any", "description", "param", "return", "title", NA_character_)
+)
 
-roxy_lbls(type = c("any", "param", "return", NA_character_))
+roxy_lbls(
+  type = c("any", "description", "param", "return", "title", NA_character_)
+)
 }
 \arguments{
 \item{type}{The label type to return. A character scalar.}
@@ -38,7 +42,8 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{NA} \tab \code{symbol} \tab  \cr
    \code{NA} \tab \code{tabular_data} \tab  \cr
    \code{NA} \tab \code{version_nr} \tab  \cr
-   \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{this_pkg}, \code{max_cache_lifespan} \cr
+   \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{description} \tab \code{pkg_config} \tab \code{pkg} \cr
    \code{param} \tab \code{cli_markup_support} \tab  \cr
    \code{param} \tab \code{dyn_dots_support} \tab  \cr
    \code{param} \tab \code{tidy_select_support} \tab  \cr
@@ -48,12 +53,15 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{param} \tab \code{end_date} \tab  \cr
    \code{param} \tab \code{use_cache} \tab  \cr
    \code{param} \tab \code{cache_lifespan} \tab  \cr
+   \code{title} \tab \code{pkg_config} \tab \code{pkg} \cr
 }
 }
 \seealso{
 roxygen2 label functions
+\code{\link{description_label}()},
 \code{\link{param_label}()},
 \code{\link{return_label}()},
-\code{\link{roxy_label}()}
+\code{\link{roxy_label}()},
+\code{\link{title_label}()}
 }
 \concept{roxygen2label}

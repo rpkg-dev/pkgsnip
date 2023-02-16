@@ -132,7 +132,7 @@ follows</p>
 <p>which will result in</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#' @param use_cache Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.</span></span>
-<span><span class="co">#' @param cache_lifespan The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Only relevant if `use_cache = TRUE`.</span></span>
+<span><span class="co">#' @param cache_lifespan The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`.</span></span>
 <span><span class="co">#' @return A [tibble][tibble::tbl_df].</span></span></code></pre></div>
 </div>
 <div class="section level2">

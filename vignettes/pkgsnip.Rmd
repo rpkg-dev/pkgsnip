@@ -73,7 +73,7 @@ Insert them in your functions using inline R code, e.g. as follows
 
 ``` r
 `r paste0("#' @param use_cache \U0060r pkgsnip::param_label(\"use_cache\")\U0060")`
-`r paste0("#' @param cache_lifespan \U0060r pkgsnip::param_label(\"cache_lifespan\")\U0060")`
+`r paste0("#' @param max_cache_age \U0060r pkgsnip::param_label(\"max_cache_age\")\U0060")`
 `r paste0("#' @return \U0060r pkgsnip::return_label(\"data\")\U0060")`
 ```
 
@@ -81,7 +81,7 @@ which will result in
 
 ``` r
 #' @param use_cache `r pkgsnip::param_label("use_cache")`
-#' @param cache_lifespan `r pkgsnip::param_label("cache_lifespan")`
+#' @param max_cache_age `r pkgsnip::param_label("max_cache_age")`
 #' @return `r pkgsnip::return_label("data")`
 ```
 

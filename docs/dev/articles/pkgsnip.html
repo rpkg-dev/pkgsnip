@@ -30,7 +30,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">pkgsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9033</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9034</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +90,7 @@ document option</a>:</p>
 ```</code></pre>
 <p>When inserting snippets that require the name of the calling package
 like <code>"installation-notice_dev-version_gitlab.Rmd"</code>, you
-should either use <code><a href="https://rdrr.io/pkg/pal/man/build_readme.html" class="external-link">pal::build_readme()</a></code> to build the
+should either use <code><a href="https://pal.rpkg.dev/reference/build_readme.html" class="external-link">pal::build_readme()</a></code> to build the
 <code>.Rmd</code> file or manually assign
 <code>pkg_metadata &lt;- pal::desc_list()</code> to the environment
 passed to <a href="https://devtools.r-lib.org/reference/build_rmd.html" class="external-link"><code>devtools::build_rmd()</code></a>
@@ -127,12 +127,12 @@ R code</a>.</p>
 follows</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#' @param use_cache `r pkgsnip::param_label("use_cache")`</span></span>
-<span><span class="co">#' @param cache_lifespan `r pkgsnip::param_label("cache_lifespan")`</span></span>
+<span><span class="co">#' @param max_cache_age `r pkgsnip::param_label("max_cache_age")`</span></span>
 <span><span class="co">#' @return `r pkgsnip::return_label("data")`</span></span></code></pre></div>
 <p>which will result in</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#' @param use_cache Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `cache_lifespan`.</span></span>
-<span><span class="co">#' @param cache_lifespan The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`.</span></span>
+<code class="sourceCode R"><span><span class="co">#' @param use_cache Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `max_cache_age`.</span></span>
+<span><span class="co">#' @param max_cache_age The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`.</span></span>
 <span><span class="co">#' @return A [tibble][tibble::tbl_df].</span></span></code></pre></div>
 </div>
 <div class="section level2">

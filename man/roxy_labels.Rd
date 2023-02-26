@@ -42,7 +42,7 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{NA} \tab \code{symbol} \tab  \cr
    \code{NA} \tab \code{tabular_data} \tab  \cr
    \code{NA} \tab \code{version_nr} \tab  \cr
-   \code{NA} \tab \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{NA} \tab \code{opt_global_max_cache_age} \tab \code{pkg}, \code{opt_global_max_cache_age} \cr
    \code{description} \tab \code{pkg_config} \tab \code{pkg} \cr
    \code{param} \tab \code{cli_markup_support} \tab  \cr
    \code{param} \tab \code{dyn_dots_support} \tab  \cr
@@ -52,7 +52,7 @@ Currently, parameter labels with the following \code{type}s and \code{name}s are
    \code{param} \tab \code{start_date} \tab  \cr
    \code{param} \tab \code{end_date} \tab  \cr
    \code{param} \tab \code{use_cache} \tab  \cr
-   \code{param} \tab \code{cache_lifespan} \tab  \cr
+   \code{param} \tab \code{max_cache_age} \tab  \cr
    \code{title} \tab \code{pkg_config} \tab \code{pkg} \cr
 }
 }

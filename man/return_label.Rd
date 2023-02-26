@@ -48,7 +48,7 @@ Currently, the following return labels are available:\tabular{ll}{
    \code{symbol} \tab  \cr
    \code{tabular_data} \tab  \cr
    \code{version_nr} \tab  \cr
-   \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{opt_global_max_cache_age} \tab \code{pkg}, \code{opt_global_max_cache_age} \cr
 }
 }
 \seealso{

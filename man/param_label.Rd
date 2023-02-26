@@ -48,7 +48,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{symbol} \tab  \cr
    \code{tabular_data} \tab  \cr
    \code{version_nr} \tab  \cr
-   \code{opt_max_cache_lifespan} \tab \code{pkg}, \code{max_cache_lifespan} \cr
+   \code{opt_global_max_cache_age} \tab \code{pkg}, \code{opt_global_max_cache_age} \cr
    \code{cli_markup_support} \tab  \cr
    \code{dyn_dots_support} \tab  \cr
    \code{tidy_select_support} \tab  \cr
@@ -57,7 +57,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{start_date} \tab  \cr
    \code{end_date} \tab  \cr
    \code{use_cache} \tab  \cr
-   \code{cache_lifespan} \tab  \cr
+   \code{max_cache_age} \tab  \cr
 }
 }
 \seealso{

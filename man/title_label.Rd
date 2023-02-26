@@ -48,7 +48,7 @@ Currently, the following \verb{@title} labels are available:\tabular{ll}{
    \code{symbol} \tab  \cr
    \code{tabular_data} \tab  \cr
    \code{version_nr} \tab  \cr
-   \code{opt_global_max_cache_age} \tab \code{pkg}, \code{opt_global_max_cache_age} \cr
+   \code{opt_global_max_cache_age} \tab \code{pkg}, \code{global_max_cache_age} \cr
    \code{pkg_config} \tab \code{pkg} \cr
 }
 }

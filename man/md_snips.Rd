@@ -15,9 +15,10 @@ Returns a \link[tibble:tbl_df-class]{tibble} listing all Markdown snippets toget
 \details{
 Currently, Markdown snippets with the following \code{names} are available:\tabular{l}{
    \strong{name} \cr
-   \code{rstudio_addin_hint} \cr
+   \code{opt_global_max_cache_age} \cr
    \code{pkg_config} \cr
    \code{pkgdown_notice} \cr
+   \code{rstudio_addin_hint} \cr
    \code{usage_notice} \cr
 }
 }

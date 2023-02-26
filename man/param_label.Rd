@@ -48,7 +48,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{symbol} \tab  \cr
    \code{tabular_data} \tab  \cr
    \code{version_nr} \tab  \cr
-   \code{opt_global_max_cache_age} \tab \code{pkg}, \code{opt_global_max_cache_age} \cr
+   \code{opt_global_max_cache_age} \tab \code{pkg}, \code{global_max_cache_age} \cr
    \code{cli_markup_support} \tab  \cr
    \code{dyn_dots_support} \tab  \cr
    \code{tidy_select_support} \tab  \cr

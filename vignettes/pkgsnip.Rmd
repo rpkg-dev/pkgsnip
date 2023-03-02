@@ -8,11 +8,18 @@ vignette: >
 ---
 
 ```{r}
+#| label: setup
 #| include: false
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(rlang,
+        include.only = c("%|%", "%||%"))
+library(magrittr,
+        include.only = c("%>%", "%<>%", "%T>%", "%!>%", "%$%"))
 ```
 
 In the following, an overview is given of what's included in this package.
@@ -50,7 +57,6 @@ Currently, the following R Markdown file snippets are included:
 ```{r}
 #| echo: false
 #| results: asis
-library(magrittr)
 
 fs::path_package("snippets/",
                  package = pal::desc_value(key = "Package")) %>%

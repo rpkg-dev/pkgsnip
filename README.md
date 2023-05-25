@@ -1,4 +1,4 @@
-# pkgsnip: Standardized Labels, Messages and (R) Markdown Snippets for Package Authors
+# pkgsnip
 
 <a href="https://cran.r-project.org/package=pkgsnip" class="pkgdown-release"><img src="https://r-pkg.org/badges/version/pkgsnip" alt="CRAN Status" /></a>
 

@@ -2,7 +2,7 @@
 output: pal::gitlab_document
 ---
 
-# `r paste0(pal::desc_value(key = "Package"), ": ", pal::desc_value(key = "Title"))`
+# `r pal::desc_value(key = "Package")`
 
 `r paste0('[![CRAN Status](https://r-pkg.org/badges/version/', pal::desc_value(key = "Package"), ')](https://cran.r-project.org/package=', pal::desc_value(key = "Package"), '){.pkgdown-release}')`
 

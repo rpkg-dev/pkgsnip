@@ -130,6 +130,8 @@ parameterize,param
 parameter,param
 parameters,params
 position,pos
+predicate,pred
+predicates,preds
 proceed,prcd
 procedure, prcd
 procedures,prcds

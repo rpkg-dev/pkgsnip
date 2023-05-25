@@ -118,10 +118,10 @@ Currently, the following R condition messages are included:
 
 ```{r}
 #| echo: false
-pkgsnip::messages() %>%
+pkgsnip::msgs() |>
   dplyr::mutate(dplyr::across(name,
-                              ~ paste0("`", .x, "`"))) %>%
-  pkgsnip:::add_args_col() %>%
+                              \(x) paste0("`", x, "`"))) |>
+  pkgsnip:::add_args_col() |>
   pal::pipe_table()
 ```
 
@@ -138,11 +138,11 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 
 ```{r}
 #| echo: false
-pkgsnip::abbreviations() %>%
-  dplyr::mutate(dplyr::across(.cols = where(is.list),
-                              .fns = purrr::map_chr,
-                              .f = paste0,
-                              collapse = ", ")) %>%
+pkgsnip::abbreviations() |>
+  dplyr::mutate(dplyr::across(where(is.list),
+                              \(x) purrr::map_chr(x,
+                                                  paste0,
+                                                  collapse = ", "))) |>
   knitr::kable()
 ```
 

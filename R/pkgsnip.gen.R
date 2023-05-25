@@ -52,7 +52,7 @@ backtickify_cols <- function(data,
   
   dplyr::mutate(.data = data,
                 dplyr::across({{cols}},
-                              ~ paste0("`", .x, "`")))
+                              \(x) paste0("`", x, "`")))
 }
 
 #' List all available R Markdown file snippets
@@ -443,12 +443,12 @@ title_lbl <- title_label
 #' Get a table of all available \R condition messages
 #'
 #' Returns a [tibble][tibble::tbl_df] listing all \R condition messages included in this package, together with their `name` which can be provided as
-#' [message()]'s `name` argument.
+#' [msg()]'s `name` argument.
 #'
 #' Currently, \R condition messages with the following `names` and `arguments` are available:
 #'
 #' ```{r, echo = FALSE}
-#' messages() %>%
+#' msgs() %>%
 #'   add_args_col() %>%
 #'   dplyr::select(-message) %>%
 #'   backtickify_cols() %>%
@@ -458,7 +458,7 @@ title_lbl <- title_label
 #' @return `r pkgsnip::return_label("data")`
 #' @family rmsg
 #' @export
-messages <- function() {
+msgs <- function() {
   
   tibble::tribble(
     ~name, ~message,
@@ -466,14 +466,10 @@ messages <- function() {
   )
 }
 
-#' @rdname messages
-#' @export
-msgs <- messages
-
 #' Get predefined \R condition message
 #'
-#' @param name The message name. See [messages()] for possible values.
-#' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [messages()] for an
+#' @param name The message name. See [msgs()] for possible values.
+#' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [msgs()] for an
 #'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
 #'
 #' @return A character scalar.
@@ -481,23 +477,19 @@ msgs <- messages
 #' @export
 #'
 #' @examples
-#' pkgsnip::message(name = "pkg_required",
-#'                  this_pkg = "some_pkg")
-message <- function(name = messages()$name,
-                    ...) {
+#' pkgsnip::msg(name = "pkg_required",
+#'              this_pkg = "some_pkg")
+msg <- function(name = msgs()$name,
+                ...) {
   
   name <- rlang::arg_match(name)
   env <- parent.frame()
   
   glue::glue(.envir = env,
              ... = ...,
-             dplyr::filter(.data = messages(),
+             dplyr::filter(.data = msgs(),
                            name == !!name)$message)
 }
-
-#' @rdname message
-#' @export
-msg <- message
 
 #' Commonly used abbreviations in \R code
 #' 

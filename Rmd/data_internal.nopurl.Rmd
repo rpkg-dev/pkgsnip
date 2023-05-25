@@ -25,15 +25,15 @@ NOTES:
 data_abbreviations <-
   readr::read_csv(file = "data-raw/abbreviations.csv",
                   col_types = "cc",
-                  na = "") %>%
-  tibble::rowid_to_column() %>%
-  dplyr::group_by(abbreviation) %>%
+                  na = "") |>
+  tibble::rowid_to_column() |>
+  dplyr::group_by(abbreviation) |>
   dplyr::summarise(full_expressions = list(full_expression),
                    rowids = list(rowid),
-                   .groups = "drop") %>%
+                   .groups = "drop") |>
   dplyr::arrange(purrr::map_int(rowids,
-                                dplyr::first)) %>%
-  dplyr::select(-rowids) %>%
+                                dplyr::first)) |>
+  dplyr::select(-rowids) |>
   dplyr::relocate(full_expressions)
 ```
 

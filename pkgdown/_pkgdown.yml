@@ -35,7 +35,7 @@ reference:
   - title_label
 - title: R condition messages
 - contents:
-  - messages
-  - message
+  - msgs
+  - msg
 - title: Common abbreviations
 - contents: abbreviations

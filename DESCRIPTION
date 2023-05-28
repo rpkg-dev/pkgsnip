@@ -25,15 +25,18 @@ Imports:
     pal (>= 0.0.9093),
     purrr (>= 0.3.4),
     rlang (>= 0.4.6),
-    tibble (>= 3.0.1)
+    tibble (>= 3.0.1),
+    tidyselect (>= 1.2.0)
 Suggests: 
-    knitr,
     desc (>= 1.2.0),
+    knitr,
+    rmarkdown,
     stringr (>= 1.4.0),
     testthat (>= 3.0.0),
     tidyr (>= 1.1.2),
-    rmarkdown,
     utils
+VignetteBuilder: 
+    knitr
 Remotes:
     gitlab::salim_b/r/pkgs/pal
 Config/testthat/edition: 3
@@ -41,4 +44,3 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-VignetteBuilder: knitr

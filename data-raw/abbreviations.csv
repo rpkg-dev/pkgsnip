@@ -132,6 +132,8 @@ parameters,params
 position,pos
 predicate,pred
 predicates,preds
+preparation,prep
+preparations,preps
 proceed,prcd
 procedure, prcd
 procedures,prcds

@@ -13,7 +13,8 @@ editor_options:
 url_r <- "R/"
 url_rmd <- "Rmd/"
 
-pal::assert_pkg("gert")
+rlang::check_installed("gert",
+                       reason = cli::format_inline("by pkgsnip's {.field rmd-package-notice.Rmd} snippet."))
 remotes <- try(gert::git_remote_list())
 
 if (is.data.frame(remotes)) {

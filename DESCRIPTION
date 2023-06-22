@@ -12,8 +12,8 @@ Description: pkgsnip ships ready-to-go (R) Markdown snippets and labels
     designed to reduce unnecessary repetition and standardize R-package
     documentation wherever possible.
 License: AGPL (>= 3)
-URL: https://pkgsnip.rpkg.dev, https://gitlab.com/salim_b/r/pkgs/pkgsnip
-BugReports: https://gitlab.com/salim_b/r/pkgs/pkgsnip/issues
+URL: https://pkgsnip.rpkg.dev, https://gitlab.com/rpkg.dev/pkgsnip
+BugReports: https://gitlab.com/rpkg.dev/pkgsnip/issues
 Depends: 
     R (>= 4.1)
 Imports: 
@@ -38,7 +38,7 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    gitlab::salim_b/r/pkgs/pal
+    gitlab::rpkg.dev/pal
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true

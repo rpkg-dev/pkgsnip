@@ -12,8 +12,8 @@ pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used i
 Useful links:
 \itemize{
   \item \url{https://pkgsnip.rpkg.dev}
-  \item \url{https://gitlab.com/salim_b/r/pkgs/pkgsnip}
-  \item Report bugs at \url{https://gitlab.com/salim_b/r/pkgs/pkgsnip/issues}
+  \item \url{https://gitlab.com/rpkg.dev/pkgsnip}
+  \item Report bugs at \url{https://gitlab.com/rpkg.dev/pkgsnip/issues}
 }
 
 }

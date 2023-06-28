@@ -5,12 +5,12 @@
 \alias{abbrs}
 \title{Commonly used abbreviations in \R code}
 \usage{
-abbreviations(expand = FALSE)
+abbreviations(unnest = FALSE)
 
-abbrs(expand = FALSE)
+abbrs(unnest = FALSE)
 }
 \arguments{
-\item{expand}{Whether to expand the \code{full_expression} column and return the data in long format. If \code{FALSE}, a "nested" list column \code{full_expressions} will
+\item{unnest}{Whether to unnest the \code{full_expression} column and return the data in long format. If \code{FALSE}, a "nested" list column \code{full_expressions} will
 be returned, meaning the values in column \code{abbreviation} will be unique.}
 }
 \value{
@@ -27,5 +27,5 @@ abbreviation "seq" could also stand for the full expressions "sequential" or "se
 verb/noun "sequence" is.
 }
 \examples{
-pkgsnip::abbrs(expand = TRUE) |> print(n = Inf)
+pkgsnip::abbrs(unnest = TRUE) |> print(n = Inf)
 }

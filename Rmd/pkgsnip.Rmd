@@ -599,18 +599,18 @@ msg <- function(name = msgs()$name,
 #' abbreviation "seq" could also stand for the full expressions "sequential" or "sequentially", despite the fact that it is not explicitly listed but merely the
 #' verb/noun "sequence" is.
 #' 
-#' @param expand Whether to expand the `full_expression` column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will
+#' @param unnest Whether to unnest the `full_expression` column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will
 #'   be returned, meaning the values in column `abbreviation` will be unique.
 #' @return `r pkgsnip::return_label("data")`
 #' @export
 #'
 #' @examples
-#' pkgsnip::abbrs(expand = TRUE) |> print(n = Inf)
-abbreviations <- function(expand = FALSE) {
+#' pkgsnip::abbrs(unnest = TRUE) |> print(n = Inf)
+abbreviations <- function(unnest = FALSE) {
   
-  checkmate::assert_flag(expand)
+  checkmate::assert_flag(unnest)
   
-  if (expand) {
+  if (unnest) {
     data_abbreviations %<>% tidyr::unnest_longer(col = full_expressions,
                                                  values_to = "full_expression")
   }

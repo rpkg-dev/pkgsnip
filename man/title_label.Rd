@@ -25,7 +25,7 @@ Returns a pre-defined label intended to be used to document a function's title u
 \details{
 A label can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @title `r pkgsnip::title_label("LABEL_NAME")`
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @title `r pkgsnip::title_lbl("LABEL_NAME")`
 }\if{html}{\out{</div>}}
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.

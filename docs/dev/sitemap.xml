@@ -22,6 +22,12 @@
     <loc>https://pkgsnip.rpkg.dev/dev/reference/abbreviations.html</loc>
   </url>
   <url>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/data_md_snips.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/data_msgs.html</loc>
+  </url>
+  <url>
     <loc>https://pkgsnip.rpkg.dev/dev/reference/description_label.html</loc>
   </url>
   <url>
@@ -34,13 +40,7 @@
     <loc>https://pkgsnip.rpkg.dev/dev/reference/md_snip.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/md_snips.html</loc>
-  </url>
-  <url>
     <loc>https://pkgsnip.rpkg.dev/dev/reference/msg.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/msgs.html</loc>
   </url>
   <url>
     <loc>https://pkgsnip.rpkg.dev/dev/reference/param_label.html</loc>

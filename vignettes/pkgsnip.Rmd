@@ -70,6 +70,10 @@ fs::path_package("snippets/",
   pal::cat_lines()
 ```
 
+## Markdown snippets
+
+*TODO*
+
 ## roxygen2 tag labels
 
 The [roxygen2](https://roxygen2.r-lib.org/) tag labels are specifically meant for [`@`-tag](https://roxygen2.r-lib.org/articles/rd.html)-based documentation
@@ -101,7 +105,7 @@ A message can be retrieved using `pkgsnip::msg()`. For some of the messages, arg
 For example, the `pkg_required` message requires the `pkg` argument:
 
 ``` r
-pkgsnip::msg(name = "pkg_required",
+pkgsnip::msg(id = "pkg_required",
              pkg = "some_pkg")
 ```
 
@@ -110,16 +114,16 @@ Which results in the following message text:
 ```{r}
 #| echo: false
 #| comment: ''
-pkgsnip::msg(name = "pkg_required",
-             this_pkg = "some_pkg")
+pkgsnip::msg(id = "pkg_required",
+             pkg = "some_pkg")
 ```
 
 Currently, the following R condition messages are included:
 
 ```{r}
 #| echo: false
-pkgsnip::msgs() |>
-  dplyr::mutate(dplyr::across(name,
+pkgsnip::data_msgs |>
+  dplyr::mutate(dplyr::across(id,
                               \(x) paste0("`", x, "`"))) |>
   pkgsnip:::add_args_col() |>
   pal::pipe_table()

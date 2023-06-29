@@ -4,13 +4,13 @@
 \alias{msg}
 \title{Get predefined \R condition message}
 \usage{
-msg(name = msgs()$name, ...)
+msg(id = data_msgs$id, ...)
 }
 \arguments{
-\item{name}{The message name. See \code{\link[=msgs]{msgs()}} for possible values.}
+\item{id}{The message identifier. One of \code{"pkg_required"}.}
 
-\item{...}{Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see \code{\link[=msgs]{msgs()}} for an
-overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
+\item{...}{Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see \code{\link{data_msgs}} for
+an overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
 }
 \value{
 A character scalar.
@@ -19,11 +19,11 @@ A character scalar.
 Get predefined \R condition message
 }
 \examples{
-pkgsnip::msg(name = "pkg_required",
-             this_pkg = "some_pkg")
+pkgsnip::msg(id = "pkg_required",
+             pkg = "some_pkg")
 }
 \seealso{
 R message functions
-\code{\link{msgs}()}
+\code{\link{data_msgs}}
 }
 \concept{rmsg}

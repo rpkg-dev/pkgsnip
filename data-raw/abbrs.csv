@@ -160,6 +160,11 @@ remove,rm
 removal,rm
 repository,repo
 repositories,repos
+request,req
+requests,reqs
+respond,resp
+response,resp
+responses,resps
 right-hand side,rhs
 roxygen2,roxy
 separate,sep
@@ -167,6 +172,8 @@ separator,sep
 separators,seps
 sequence,seq
 sequences,seqs
+snippet,snip
+snippets,snips
 source,src
 sources,srcs
 specify,spec
@@ -194,6 +201,7 @@ variables,vars
 vectorize,vctr
 vector,vctr
 vectors,vctrs
+verbatim,verb
 version,vrsn
 versions,vrsns
 working directory,wd

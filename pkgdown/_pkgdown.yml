@@ -23,7 +23,7 @@ reference:
   - snip_path
 - title: Markdown snippets
 - contents:
-  - md_snips
+  - data_md_snips
   - md_snip
 - title: roxygen2 labels
 - contents:
@@ -35,7 +35,7 @@ reference:
   - title_label
 - title: R condition messages
 - contents:
-  - msgs
+  - data_msgs
   - msg
 - title: Common abbreviations
 - contents: abbreviations

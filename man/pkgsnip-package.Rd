@@ -6,7 +6,7 @@
 \alias{pkgsnip-package}
 \title{pkgsnip: Standardized Labels, Messages and (R) Markdown Snippets for Package Authors}
 \description{
-pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages and a table of abbreviations commonly used in R code. All of them are designed to reduce unnecessary repetition and standardize R-package documentation wherever possible.
+pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages and a table of abbreviations commonly used in R code. All of them are designed to reduce unnecessary repetition and standardize R package documentation wherever possible.
 }
 \seealso{
 Useful links:

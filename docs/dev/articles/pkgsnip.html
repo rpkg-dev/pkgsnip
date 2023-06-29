@@ -30,7 +30,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">pkgsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9035</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9036</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,6 +117,11 @@ e.g. like this:</p>
 </div>
 </div>
 <div class="section level2">
+<h2 id="markdown-snippets">Markdown snippets<a class="anchor" aria-label="anchor" href="#markdown-snippets"></a>
+</h2>
+<p><em>TODO</em></p>
+</div>
+<div class="section level2">
 <h2 id="roxygen2-tag-labels">roxygen2 tag labels<a class="anchor" aria-label="anchor" href="#roxygen2-tag-labels"></a>
 </h2>
 <p>The <a href="https://roxygen2.r-lib.org/" class="external-link">roxygen2</a> tag labels are
@@ -150,7 +155,7 @@ tailored to their specific purpose. For example, the
 <code>pkg_required</code> message requires the <code>pkg</code>
 argument:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu"><a href="../reference/msg.html">msg</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"pkg_required"</span>,</span>
+<code class="sourceCode R"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu"><a href="../reference/msg.html">msg</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"pkg_required"</span>,</span>
 <span>             pkg <span class="op">=</span> <span class="st">"some_pkg"</span><span class="op">)</span></span></code></pre></div>
 <p>Which results in the following message text:</p>
 <pre><code>To be able to use this function, the package 'some_pkg' is required but it is not installed. Please install it and then try again.</code></pre>
@@ -158,20 +163,20 @@ argument:</p>
 <table class="table">
 <colgroup>
 <col width="9%">
-<col width="82%">
+<col width="81%">
 <col width="8%">
 </colgroup>
 <thead><tr class="header">
-<th align="left"><strong>name</strong></th>
-<th align="left"><strong>message</strong></th>
+<th align="left"><strong>id</strong></th>
+<th align="left"><strong>value</strong></th>
 <th align="left"><strong>arguments</strong></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="left"><code>pkg_required</code></td>
-<td align="left">To be able to use this function, the package
-‘{this_pkg}’ is required but it is not installed. Please install it and
-then try again.</td>
-<td align="left"><code>this_pkg</code></td>
+<td align="left">To be able to use this function, the package ‘{ pkg }’
+is required but it is not installed. Please install it and then try
+again.</td>
+<td align="left"><code>pkg</code></td>
 </tr></tbody>
 </table>
 </div>
@@ -738,6 +743,22 @@ Abbreviations
 <td align="left">repos</td>
 </tr>
 <tr class="odd">
+<td align="left">request</td>
+<td align="left">req</td>
+</tr>
+<tr class="even">
+<td align="left">requests</td>
+<td align="left">reqs</td>
+</tr>
+<tr class="odd">
+<td align="left">respond, response</td>
+<td align="left">resp</td>
+</tr>
+<tr class="even">
+<td align="left">responses</td>
+<td align="left">resps</td>
+</tr>
+<tr class="odd">
 <td align="left">right-hand side</td>
 <td align="left">rhs</td>
 </tr>
@@ -760,6 +781,14 @@ Abbreviations
 <tr class="even">
 <td align="left">sequences</td>
 <td align="left">seqs</td>
+</tr>
+<tr class="odd">
+<td align="left">snippet</td>
+<td align="left">snip</td>
+</tr>
+<tr class="even">
+<td align="left">snippets</td>
+<td align="left">snips</td>
 </tr>
 <tr class="odd">
 <td align="left">source</td>
@@ -850,14 +879,18 @@ Abbreviations
 <td align="left">vctrs</td>
 </tr>
 <tr class="odd">
+<td align="left">verbatim</td>
+<td align="left">verb</td>
+</tr>
+<tr class="even">
 <td align="left">version</td>
 <td align="left">vrsn</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">versions</td>
 <td align="left">vrsns</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">working directory</td>
 <td align="left">wd</td>
 </tr>

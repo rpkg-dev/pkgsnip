@@ -12,7 +12,7 @@ tags."><meta name="twitter:card" content="summary"><meta name="twitter:creator" 
     
     <a class="navbar-brand me-2" href="../index.html">pkgsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9035</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9036</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,8 +87,8 @@ If a required argument is not explicitly provided, it is searched for in the <a 
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The labels can be inserted using <a href="https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1" class="external-link">inline <span style="R">R</span> code</a> as follows:</p>
-<p></p><div class="sourceCode r"><pre><code><span><span class="co">#' @param start_date `r pkgsnip::roxy_label("start_date", type = "param")`</span></span>
-<span><span class="co">#' @return `r pkgsnip::roxy_label("data", type = "return")`</span></span></code></pre><p></p></div>
+<p></p><div class="sourceCode r"><pre><code><span><span class="co">#' @param start_date `r pkgsnip::roxy_lbl("start_date", type = "param")`</span></span>
+<span><span class="co">#' @return `r pkgsnip::roxy_lbl("data", type = "return")`</span></span></code></pre><p></p></div>
 <p>Note that the above only works in <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/" class="external-link">roxygen2 7.1.0+</a>.</p>
     </div>
     <div class="section level2">

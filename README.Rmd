@@ -20,7 +20,7 @@ knitr::opts_knit$set(root.dir = getwd())
 #| eval: !expr '!isTRUE(getOption("pal.build_readme.is_pkgdown"))'
 #| results: asis
 #| echo: false
-pkgsnip::md_snip(name = "pkgdown_notice") %>%
+pkgsnip::md_snip(id = "pkgdown_notice") %>%
   paste0("## Documentation\n\n",
          "[![Netlify Status](https://api.netlify.com/api/v1/badges/fd8e894e-9f52-43b4-8f9b-a03d670269e5/deploy-status)]",
          "(https://app.netlify.com/sites/pkgsnip-rpkg-dev/deploys)\n\n",
@@ -40,7 +40,7 @@ pkgsnip::md_snip(name = "pkgdown_notice") %>%
 #| eval: !expr isTRUE(getOption("pal.build_readme.is_pkgdown"))
 #| results: asis
 #| echo: false
-pkgsnip::md_snip(name = "usage_notice") %>%
+pkgsnip::md_snip(id = "usage_notice") %>%
   paste0("## Usage\n\n", .) %>%
   pal::cat_lines()
 ```

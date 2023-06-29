@@ -12,7 +12,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">pkgsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9035</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9036</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +79,7 @@ If a required argument is not explicitly provided, it is searched for in the <a 
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>A label can be inserted using <a href="https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1" class="external-link">inline <span style="R">R</span> code</a> as follows:</p>
-<p></p><div class="sourceCode r"><pre><code><span><span class="co">#' @description `r pkgsnip::description_label("LABEL_NAME")`</span></span></code></pre><p></p></div>
+<p></p><div class="sourceCode r"><pre><code><span><span class="co">#' @description `r pkgsnip::description_lbl("LABEL_NAME")`</span></span></code></pre><p></p></div>
 <p>Note that the above only works in <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/" class="external-link">roxygen2 7.1.0+</a>.</p>
 <p>Currently, the following <code>@description</code> labels are available:</p><table class="table table"><tr><td><strong>name</strong></td><td><strong>arguments</strong></td></tr><tr><td><code>data</code></td><td></td></tr><tr><td><code>data_cols</code></td><td><code>pal::prose_ls(cols, wrap = '</code>')`</td></tr><tr><td><code>date</code></td><td></td></tr><tr><td><code>dates</code></td><td></td></tr><tr><td><code>datetime</code></td><td></td></tr><tr><td><code>datetimes</code></td><td></td></tr><tr><td><code>gt_obj</code></td><td></td></tr><tr><td><code>path</code></td><td></td></tr><tr><td><code>paths</code></td><td></td></tr><tr><td><code>plotly_obj</code></td><td></td></tr><tr><td><code>r_obj</code></td><td></td></tr><tr><td><code>response</code></td><td></td></tr><tr><td><code>strict_list</code></td><td></td></tr><tr><td><code>symbol</code></td><td></td></tr><tr><td><code>tabular_data</code></td><td></td></tr><tr><td><code>version_nr</code></td><td></td></tr><tr><td><code>opt_global_max_cache_age</code></td><td><code>pkg</code>, <code>global_max_cache_age</code></td></tr><tr><td><code>pkg_config</code></td><td><code>pkg</code></td></tr></table></div>
     <div class="section level2">

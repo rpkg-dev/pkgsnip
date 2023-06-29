@@ -4,6 +4,18 @@
 
     1.  first release pkg pal
 
-    2.  remove long-form fn aliases (`*_label*()`, `abbreviations()`) -\> ensure all pkgsnip using pkgs are adapted!
+    2.  apply outstanding changes:
 
-    3.  submit!
+        -   remove long-form fn aliases (`*_label*()`, `abbreviations()`)
+        -   check lbls in `roxy_lbls()` for naming improvements and apply them
+            -   `"data"` -\> `"tibble"`
+            -   `"data_cols"` -\> `"tibble_cols"`
+            -   `"response"` -\> `"resp_obj"`
+            -   `"symbol"` -\> `"sym"`
+            -   `"tabular_data"` -\> `"tbl_data"`
+            -   `"version_nr"` -\> `"num_vrsn"`
+        -   rename param / colname `name` to `id` in all relevant places
+
+        ensure all pkgs using pkgsnip are adapted to these changes!
+
+    3.  submit to CRAN!

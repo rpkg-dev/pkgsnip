@@ -17,20 +17,20 @@ utils::globalVariables(names = c(".",
                                  "label",
                                  "name",
                                  "path",
-                                 "snippet",
-                                 "type"))
+                                 "type",
+                                 "value"))
 
 this_pkg <- utils::packageName()
 
 add_args_col <- function(data) {
   
-  from_cols <- c("label", "message")
+  from_cols <- c("label", "value")
   
   from_col <-
-    colnames(data) %>%
+    colnames(data) |>
     match(from_cols) %>%
     magrittr::extract(!is.na(.)) %>%
-    {from_cols[.]} %>% # nolint
+    {from_cols[.]} |> # nolint
     pal::when(length(.) == 0L ~ rlang::abort("No `from_col` could be determined!"),
               length(.) > 1L ~ rlang::abort("Multiple `from_col` candidates found:", pal::prose_ls(.,
                                                                                                    wrap = "`")),
@@ -39,12 +39,10 @@ add_args_col <- function(data) {
   dplyr::mutate(.data = data,
                 arguments =
                   stringr::str_extract_all(string = !!rlang::sym(from_col),
-                                           pattern = "(?<=\\{)[^\\}]+?(?=\\})") %>%
-                  purrr::map_chr(~ pal::prose_ls(.x,
-                                                 wrap = "`",
-                                                 last_sep = ", ") %>%
-                                   pal::when(length(.) == 0L ~ "",
-                                             ~ .)))
+                                           pattern = "(?<=\\{)[^\\}]+?(?=\\})") |>
+                  purrr::map_chr(\(x) if (length(x) == 0L) "" else pal::prose_ls(x,
+                                                                                 wrap = "`",
+                                                                                 last_sep = ", ")))
 }
 
 backtickify_cols <- function(data,
@@ -65,10 +63,10 @@ backtickify_cols <- function(data,
 ls_file_snips <- function() {
   
   fs::path_package("snippets/",
-                   package = this_pkg) %>%
+                   package = this_pkg) |>
     fs::dir_ls(recurse = TRUE,
-               type = "file") %>%
-    tibble::tibble(path = .) %>%
+               type = "file") |>
+    tibble::tibble(path = _) |>
     dplyr::mutate(name = fs::path_file(path),
                   .before = 1L)
 }
@@ -94,7 +92,7 @@ ls_file_snips <- function() {
 #' @param name The name of a snippet. Possible values include:
 #' `r pal::as_md_val_list(ls_file_snips()$name)`
 #'
-#' @return `r pkgsnip::return_label("path")`
+#' @return `r return_lbl("path")`
 #' @family rmdsnips
 #' @export
 #'
@@ -103,65 +101,59 @@ ls_file_snips <- function() {
 snip_path <- function(name = ls_file_snips()$name) {
   
   rlang::arg_match(name) %>%
-    paste0("snippets/", .) %>%
-    fs::path_package(package = this_pkg) %>%
+    paste0("snippets/", .) |>
+    fs::path_package(package = this_pkg) |>
     fs::path_real()
 }
 
-#' Get a table of all Markdown snippets included in this package
+#' Markdown snippets
 #'
-#' Returns a [tibble][tibble::tbl_df] listing all Markdown snippets together with their `name` which can be provided as [md_snip()]'s `name` argument.
+#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `id`. The latter can be fed to [md_snip()].
 #'
-#' Currently, Markdown snippets with the following `names` are available:
+#' Currently, Markdown snippets with the following `id`s are available:
 #'
 #' ```{r, echo = FALSE}
-#' md_snips() %>%
-#'   dplyr::select(-snippet) %>%
-#'   backtickify_cols() %>%
+#' data_md_snips |>
+#'   dplyr::select(-value) |>
+#'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
 #'
-#' @return `r pkgsnip::return_label("data")`
+#' @format `r return_lbl("data_cols", cols = colnames(data_md_snips))`
 #' @family mdsnips
 #' @export
-md_snips <- function() {
-  
-  tibble::tribble(
-    ~name, ~snippet,
-    "opt_global_max_cache_age", paste0("Maximal timespan to preserve the package's [pkgpins](https://pkgpins.rpkg.dev/) cache. Cache entries older than this ",
-                                       "will be deleted upon package loading."),
-    "pkg_config", paste0("Some of { pkg }'s functionality is controlled via package-specific global configuration which can either be set via [R ",
-                         "options](https://rdrr.io/r/base/options.html) or [environment variables](https://en.wikipedia.org/wiki/Environment_variable) (the ",
-                         "former take precedence). This configuration includes:"),
-    "pkgdown_notice", "The documentation of this package is found [here]({pkgdown::as_pkgdown()$meta$url}).",
-    "rstudio_addin_hint", paste0("This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users ",
-                                 "to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-",
-                                 "RStudio-IDE) to it or to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command",
-                                 "-palette--shortcuts)."),
-    "usage_notice", paste0("{ this_pkg <- desc::desc_get_field('Package'); if (fs::file_exists(fs::path('vignettes', this_pkg, ext = 'Rmd'))) paste0(",
-                           "'An introduction to this package is given [here](', ", "paste0('articles/', this_pkg, '.html'), '). ') else '' }",
-                           "The (function) reference is found [here](reference).")
-  )
-}
+#'
+#' @examples
+#' pkgsnip::data_md_snips
+"data_md_snips"
 
 #' Get predefined Markdown snippet
 #'
-#' @param name The snippet name.
-#' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see [md_snips()] for an overview.
-#'   If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
+#' @param id The snippet identifier. One of `r pal::prose_ls_fn_param(param = "id", fn = md_snip)`.
+#' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see
+#'   [`data_md_snips`][data_md_snips] for an overview. If a required argument is not explicitly provided, it is searched for in the [parent
+#'   frames][parent.frame].
 #'
 #' @return A character scalar.
 #' @family mdsnips
 #' @export
-md_snip <- function(name = md_snips()$name,
+#'
+#' @examples
+#' pkgsnip::md_snip(id = "rstudio_addin_hint") |> cat()
+#'
+#' # certain snips require additional args
+#' pkgsnip::md_snip(id = "pkg_config",
+#'                  pkg = "foo") |>
+#'   cat()
+md_snip <- function(id = data_md_snips$id,
                     ...) {
   
-  name <- rlang::arg_match(name)
+  id <- rlang::arg_match(id)
   env <- parent.frame()
   
-  md_snips() %>%
-    dplyr::filter(name == !!name) %$%
-    snippet %>%
+  data_md_snips |>
+    dplyr::filter(id == !!id) %$%
+    value |>
     glue::glue(.envir = env,
                ... = ...)
 }
@@ -183,53 +175,14 @@ md_snip <- function(name = md_snips()$name,
 #'
 #' @param type The label type to return. A character scalar.
 #'
-#' @return `r pkgsnip::return_label("data")`
+#' @return `r return_lbl("data")`
 #' @family roxygen2label
 #' @export
 roxy_labels <- function(type = c("any", "description", "param", "return", "title", NA_character_)) {
   
   type <- rlang::arg_match(type)
   
-  tibble::tribble(
-    ~type, ~name, ~label,
-    NA, "data", "A [tibble][tibble::tbl_df].",
-    NA, "data_cols", "A [tibble][tibble::tbl_df] with the columns {pal::prose_ls(cols, wrap = '`')}.",
-    NA, "date", "A [date][base::Date].",
-    NA, "dates", "A vector of [dates][base::Date].",
-    NA, "datetime", "A [datetime][base::DateTimeClasses].",
-    NA, "datetimes", "A vector of [datetimes][base::DateTimeClasses].",
-    NA, "gt_obj", "A [`gt_tbl`][gt::gt] object.",
-    NA, "path", "A [path][fs::fs_path].",
-    NA, "paths", "A vector of [paths][fs::fs_path].",
-    NA, "plotly_obj", "A [plotly object][plotly::plot_ly].",
-    NA, "r_obj", "An \\R object.",
-    NA, "response", "A [response object][httr::response].",
-    NA, "strict_list", "A [strict list][xfun::strict_list()].",
-    NA, "symbol", "A [symbol][base::name].",
-    NA, "tabular_data", "A tabular data object like a [data frame][base::data.frame] or [tibble][tibble::tbl_df].",
-    NA, "version_nr", "A [numeric version][numeric_version()].",
-    NA, "opt_global_max_cache_age", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
-                                           "timespan set by the \\R [option][base::options()] `{pkg}.global_max_cache_age` (defaults to ",
-                                           "`{global_max_cache_age}` if unset)."),
-    "description", "pkg_config", paste0("A [tibble][tibble::tbl_df] with metadata of all possible {pkg} package configuration options. See ",
-                                        "[pal::pkg_config_val()] for more information."),
-    "param", "cli_markup_support", "Supports cli's [inline markup][cli::inline-markup].",
-    "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
-    "param", "tidy_select_support", "[Tidy selections][dplyr::dplyr_tidy_select] are supported.",
-    "param", "eol", paste0("End of line (EOL) control character sequence. One of\n- `\"LF\"` for the line feed (LF) character (`\"\\n\"`). The standard on ",
-                           "Unix and Unix-like systems (Linux, macOS, *BSD, etc.) and the **default**.\n- `\"CRLF\"` for the carriage return + line feed ",
-                           "(CR+LF) character sequence (`\"\\r\\n\"`). The standard on Microsoft Windows, DOS and some other systems.\n- `\"CR\"` for the ",
-                           "carriage return (CR) character (`\"\\r\"`). The standard on classic Mac OS and some other antiquated systems.\n- `\"LFCR\"` for ",
-                           "the line feed + carriage return (LF+CR) character sequence (`\"\\n\\r\"`). The standard on RISC OS and some other exotic ",
-                           "systems."),
-    "param", "quiet", "Whether or not to suppress printing status output from internal processing.",
-    "param", "start_date", "The begin of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
-    "param", "end_date", "The end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
-    "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `max_cache_age`.",
-    "param", "max_cache_age", paste0("The duration after which cached results are refreshed (i.e. newly fetched). A valid ",
-                                     "[lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`."),
-    "title", "pkg_config", "{pkg} package configuration metadata"
-  ) %>%
+  data_roxy_lbls |>
     pal::when(type == "any" ~ .,
               is.na(type) ~ dplyr::filter(.data = .,
                                           is.na(type)),
@@ -249,8 +202,8 @@ roxy_lbls <- roxy_labels
 #' The labels can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
-#' #' @param start_date `r pkgsnip::roxy_label("start_date", type = "param")`
-#' #' @return `r pkgsnip::roxy_label("data", type = "return")`
+#' #' @param start_date `r pkgsnip::roxy_lbl("start_date", type = "param")`
+#' #' @return `r pkgsnip::roxy_lbl("data", type = "return")`
 #' ```
 #'
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
@@ -270,12 +223,12 @@ roxy_label <- function(name = roxy_labels()$name,
   name <- rlang::arg_match(name)
   env <- parent.frame()
   
-  roxy_labels(type = type) %>%
-    dplyr::filter(name == !!name) %>%
+  roxy_labels(type = type) |>
+    dplyr::filter(name == !!name) |>
     # make sure labels of type `NA` come last
     dplyr::arrange(type) %$%
-    label %>%
-    dplyr::first() %>%
+    label |>
+    dplyr::first() |>
     glue::glue(.envir = env,
                ... = ...)
 }
@@ -292,7 +245,7 @@ roxy_lbl <- roxy_label
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
-#' #' @description `r pkgsnip::description_label("LABEL_NAME")`
+#' #' @description `r pkgsnip::description_lbl("LABEL_NAME")`
 #' ```
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #'
@@ -331,7 +284,7 @@ description_lbl <- description_label
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
-#' #' @param PARAM_NAME `r pkgsnip::param_label("LABEL_NAME")`
+#' #' @param PARAM_NAME `r pkgsnip::param_lbl("LABEL_NAME")`
 #' ```
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #'
@@ -370,7 +323,7 @@ param_lbl <- param_label
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
-#' #' @return `r pkgsnip::return_label("LABEL_NAME")`
+#' #' @return `r pkgsnip::return_lbl("LABEL_NAME")`
 #' ```
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #'
@@ -409,7 +362,7 @@ return_lbl <- return_label
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
 #'
 #' ```r
-#' #' @title `r pkgsnip::title_label("LABEL_NAME")`
+#' #' @title `r pkgsnip::title_lbl("LABEL_NAME")`
 #' ```
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #'
@@ -440,55 +393,48 @@ title_label <- function(name = roxy_labels(type = "title")$name,
 #' @export
 title_lbl <- title_label
 
-#' Get a table of all available \R condition messages
+#' \R condition messages
 #'
-#' Returns a [tibble][tibble::tbl_df] listing all \R condition messages included in this package, together with their `name` which can be provided as
-#' [msg()]'s `name` argument.
+#' A [tibble][tibble::tbl_df] with all \R condition messages included in this package, together with their `id`. The latter can be fed to [msg()].
 #'
-#' Currently, \R condition messages with the following `names` and `arguments` are available:
+#' Currently, \R condition messages with the following `id`s and `arguments` are available:
 #'
 #' ```{r, echo = FALSE}
-#' msgs() %>%
-#'   add_args_col() %>%
-#'   dplyr::select(-message) %>%
-#'   backtickify_cols() %>%
+#' data_msgs |>
+#'   add_args_col() |>
+#'   dplyr::select(-value) |>
+#'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
 #'
-#' @return `r pkgsnip::return_label("data")`
+#' @format `r return_lbl("data_cols", cols = colnames(data_msgs))`
 #' @family rmsg
 #' @export
-msgs <- function() {
-  
-  tibble::tribble(
-    ~name, ~message,
-    "pkg_required", "To be able to use this function, the package '{this_pkg}' is required but it is not installed. Please install it and then try again."
-  )
-}
+"data_msgs"
 
 #' Get predefined \R condition message
 #'
-#' @param name The message name. See [msgs()] for possible values.
-#' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [msgs()] for an
-#'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
+#' @param id The message identifier. One of `r pal::prose_ls_fn_param(param = "id", fn = msg)`.
+#' @param ... Further named arguments used to tailor the message to your needs. Not all messages require additional arguments, see [`data_msgs`][data_msgs] for
+#'   an overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
 #'
 #' @return A character scalar.
 #' @family rmsg
 #' @export
 #'
 #' @examples
-#' pkgsnip::msg(name = "pkg_required",
-#'              this_pkg = "some_pkg")
-msg <- function(name = msgs()$name,
+#' pkgsnip::msg(id = "pkg_required",
+#'              pkg = "some_pkg")
+msg <- function(id = data_msgs$id,
                 ...) {
   
-  name <- rlang::arg_match(name)
+  id <- rlang::arg_match(id)
   env <- parent.frame()
   
   glue::glue(.envir = env,
              ... = ...,
-             dplyr::filter(.data = msgs(),
-                           name == !!name)$message)
+             dplyr::filter(.data = data_msgs,
+                           id == !!id)$value)
 }
 
 #' Commonly used abbreviations in \R code
@@ -503,7 +449,7 @@ msg <- function(name = msgs()$name,
 #' 
 #' @param unnest Whether to unnest the `full_expression` column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will
 #'   be returned, meaning the values in column `abbreviation` will be unique.
-#' @return `r pkgsnip::return_label("data")`
+#' @return `r return_lbl("data")`
 #' @export
 #'
 #' @examples
@@ -513,11 +459,11 @@ abbreviations <- function(unnest = FALSE) {
   checkmate::assert_flag(unnest)
   
   if (unnest) {
-    data_abbreviations %<>% tidyr::unnest_longer(col = full_expressions,
-                                                 values_to = "full_expression")
+    data_abbrs %<>% tidyr::unnest_longer(col = full_expressions,
+                                         values_to = "full_expression")
   }
   
-  data_abbreviations
+  data_abbrs
 }
 
 #' @rdname abbreviations

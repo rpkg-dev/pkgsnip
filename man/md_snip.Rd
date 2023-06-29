@@ -4,13 +4,13 @@
 \alias{md_snip}
 \title{Get predefined Markdown snippet}
 \usage{
-md_snip(name = md_snips()$name, ...)
+md_snip(id = data_md_snips$id, ...)
 }
 \arguments{
-\item{name}{The snippet name.}
+\item{id}{The snippet identifier. One of \code{"opt_global_max_cache_age"},\code{"pkg_config"},\code{"pkgdown_notice"},\code{"rstudio_addin_hint"} or \code{"usage_notice"}.}
 
-\item{...}{Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see \code{\link[=md_snips]{md_snips()}} for an overview.
-If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
+\item{...}{Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see
+\code{\link{data_md_snips}} for an overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
 }
 \value{
 A character scalar.
@@ -18,8 +18,16 @@ A character scalar.
 \description{
 Get predefined Markdown snippet
 }
+\examples{
+pkgsnip::md_snip(id = "rstudio_addin_hint") |> cat()
+
+# certain snips require additional args
+pkgsnip::md_snip(id = "pkg_config",
+                 pkg = "foo") |>
+  cat()
+}
 \seealso{
 Markdown snippet functions
-\code{\link{md_snips}()}
+\code{\link{data_md_snips}}
 }
 \concept{mdsnips}

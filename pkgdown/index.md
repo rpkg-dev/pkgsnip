@@ -2,7 +2,7 @@
 
 [![CRAN Status](https://r-pkg.org/badges/version/pkgsnip)](https://cran.r-project.org/package=pkgsnip){.pkgdown-release}
 
-pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages and a table of abbreviations commonly used in R code. All of them are designed to reduce unnecessary repetition and standardize R-package documentation wherever possible.
+pkgsnip ships ready-to-go (R) Markdown snippets and labels intended to be used in roxygen2 documentation or as knitr child documents. Also included are some predefined R condition messages and a table of abbreviations commonly used in R code. All of them are designed to reduce unnecessary repetition and standardize R package documentation wherever possible.
 
 ## Installation
 
@@ -19,7 +19,7 @@ remotes::install_gitlab(repo = "rpkg.dev/pkgsnip")
 
 ## Usage
 
-An introduction to this package is given [here](articles/pkgsnip.html). The (function) reference is found [here](reference).
+The (function) reference is found [here](reference).
 
 ## Development
 

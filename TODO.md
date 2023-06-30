@@ -13,7 +13,7 @@
             -   `"symbol"` -\> `"sym"`
             -   `"tabular_data"` -\> `"tbl_data"`
             -   `"version_nr"` -\> `"num_vrsn"`
-        -   add logical param `as_sentence` to lbls which defaults to `TRUE`; if `FALSE`, result begins lower-case and omits final punctuation
+        -   implement `roxy_labels()` TODOs
         -   remove long-form fn aliases (`*_label*()`, `abbreviations()`)
         -   rename param / colname `name` to `id` in all relevant places
 

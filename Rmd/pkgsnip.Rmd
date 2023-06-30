@@ -214,6 +214,8 @@ md_snip <- function(id = data_md_snips$id,
 
 TODO:
 
+-   add logical param `as_sentence` which defaults to `TRUE`; if `FALSE`, result begins lower-case and omits final punctuation
+
 -   The current `type` classification of the labels is subpar and it might be a good idea to overhaul it (e.g. use a list column to be able to assign multiple
     types per label).
 

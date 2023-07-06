@@ -8,8 +8,8 @@ editor_options:
 ```{r}
 #| include: false
 
-link_r <- paste0("[`R/`](", pal::url_git_remote_tree(), "R/)")
-link_rmd <- paste0("[`Rmd/`](", pal::url_git_remote_tree(), "Rmd/)")
+link_r <- paste0("[`R/`](", pal::git_remote_tree_url(), "R/)")
+link_rmd <- paste0("[`Rmd/`](", pal::git_remote_tree_url(), "Rmd/)")
 ```
 
 This package's source code is written in the [R Markdown](https://rmarkdown.rstudio.com/) file format to facilitate practices commonly referred to as [*literate

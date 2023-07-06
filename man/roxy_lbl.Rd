@@ -27,7 +27,7 @@ Returns a predefined label intended to be used to document functions using \link
 The labels can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @param start_date `r pkgsnip::roxy_lbl("start_date", type = "param")`
-#' @return `r pkgsnip::roxy_lbl("data", type = "return")`
+#' @return `r pkgsnip::roxy_lbl("tibble", type = "return")`
 }\if{html}{\out{</div>}}
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.

@@ -282,7 +282,7 @@ roxy_lbls <- function(type = "default") {
 #'
 #' ```r
 #' #' @param start_date `r pkgsnip::roxy_lbl("start_date", type = "param")`
-#' #' @return `r pkgsnip::roxy_lbl("data", type = "return")`
+#' #' @return `r pkgsnip::roxy_lbl("tibble", type = "return")`
 #' ```
 #'
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).

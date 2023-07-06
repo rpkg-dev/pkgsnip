@@ -5,8 +5,14 @@ editor_options:
       prefix: "coding-style-n-"
 ---
 
-`r emsg <- "<!––Please use \x60pal::build_readme()\x60 or assign \x60pkg_metadata <- pal::desc_list()\x60 in the \x60envir\x60 fed to \x60devtools::build_readme(...)\x60 to allow access to package metadata!––>"`This
-package borrows a lot of the [Tidyverse](https://www.tidyverse.org/) design philosophies. The R code adheres to the principles specified in the [Tidyverse
+```{r}
+#| include: false
+
+emsg <- paste0("<!–– Please use `pal::build_readme()` or assign `pkg_metadata <- pal::desc_list()` in the `envir` fed to `devtools::build_readme(...)` to ",
+               "allow access to package metadata! ––>")
+```
+
+This package borrows a lot of the [Tidyverse](https://www.tidyverse.org/) design philosophies. The R code adheres to the principles specified in the [Tidyverse
 Design Guide](https://principles.tidyverse.org/) wherever possible and is formatted according to the [Tidyverse Style Guide](https://style.tidyverse.org/) (TSG)
 with the following exceptions:
 
@@ -39,8 +45,8 @@ with the following exceptions:
 
 -   R source code is *not* split over several files as [suggested by the TSG](https://style.tidyverse.org/package-files.html) but instead is (as far as
     possible) kept in the single file
-    `r if (exists("pkg_metadata")) paste0("Rmd/", pkg_metadata[["Package"]][1L], ".Rmd") %>% paste0("[\x60", ., "\x60](", ., ")") else emsg` which is
-    well-structured thanks to its [Markdown support](#r-markdown-format).
+    `r if (exists("pkg_metadata")) paste0("Rmd/", pkg_metadata[["Package"]][1L], ".Rmd") %>% paste0("[\x60", ., "\x60](", pal::url_git_remote_tree(), ., ")") else emsg`
+    which is well-structured thanks to its [Markdown support](#r-markdown-format).
 
 As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in the [lintr configuration
 file](https://github.com/jimhester/lintr#project-configuration) [`.lintr`](.lintr), so lintr can be used right away to check for formatting issues:

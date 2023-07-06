@@ -5,8 +5,14 @@ editor_options:
       prefix: "inst-n-dev-gitlab-"
 ---
 
-`r emsg <- "<!––Please use \x60pal::build_readme()\x60 or assign \x60pkg_metadata <- pal::desc_list()\x60 in the \x60envir\x60 fed to \x60devtools::build_readme(...)\x60 to allow access to package metadata!––>"`To
-install the latest development version of `r if (exists("pkg_metadata")) pkg_metadata[["Package"]] else emsg`, run the following in R:
+```{r}
+#| include: false
+
+emsg <- paste0("<!–– Please use `pal::build_readme()` or assign `pkg_metadata <- pal::desc_list()` in the `envir` fed to `devtools::build_readme(...)` to ",
+               "allow access to package metadata! ––>")
+```
+
+To install the latest development version of `r if (exists("pkg_metadata")) pkg_metadata[["Package"]] else emsg`, run the following in R:
 
 ``` r
 if (!("remotes" %in% rownames(installed.packages()))) {

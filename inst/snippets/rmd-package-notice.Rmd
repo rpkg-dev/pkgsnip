@@ -7,33 +7,9 @@ editor_options:
 
 ```{r}
 #| include: false
-#| echo: false
 
-# use `pkg_metadata` to customize URLs if available
-url_r <- "R/"
-url_rmd <- "Rmd/"
-
-rlang::check_installed("gert",
-                       reason = cli::format_inline("by pkgsnip's {.field rmd-package-notice.Rmd} snippet."))
-remotes <- try(gert::git_remote_list())
-
-if (is.data.frame(remotes)) {
-  
-  url_git <-
-    gert::git_remote_info()$url |>
-    pal::when(stringr::str_detect(., "^git@") ~ stringr::str_replace_all(., c("(git@[\\w\\.]{1,}\\.[a-z]{2,}):" = "\\1/",
-                                                                              "^git@" = "https://",
-                                                                              "\\.git$" = "")),
-              ~ .)
-  add_slash_minus <- stringr::str_detect(url_git,
-                                         "gitlab")
-  url_git %<>% paste0("/-"[add_slash_minus], "/tree/", gert::git_branch(), "/")
-  url_r %<>% paste0(url_git, .)
-  url_rmd %<>% paste0(url_git, .)
-}
-
-link_r <- glue::glue("[`R/`]({url_r})")
-link_rmd <- glue::glue("[`Rmd/`]({url_rmd})")
+link_r <- paste0("[`R/`](", pal::url_git_remote_tree(), "R/)")
+link_rmd <- paste0("[`Rmd/`](", pal::url_git_remote_tree(), "Rmd/)")
 ```
 
 This package's source code is written in the [R Markdown](https://rmarkdown.rstudio.com/) file format to facilitate practices commonly referred to as [*literate

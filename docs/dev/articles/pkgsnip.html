@@ -30,7 +30,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">pkgsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9036</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9037</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,54 +131,14 @@ R code</a>.</p>
 <p>Insert them in your functions using inline R code, e.g. as
 follows</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#' @param use_cache `r pkgsnip::param_label("use_cache")`</span></span>
-<span><span class="co">#' @param max_cache_age `r pkgsnip::param_label("max_cache_age")`</span></span>
-<span><span class="co">#' @return `r pkgsnip::return_label("data")`</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">#' @param use_cache `r pkgsnip::param_lbl("use_cache")`</span></span>
+<span><span class="co">#' @param max_cache_age `r pkgsnip::param_lbl("max_cache_age")`</span></span>
+<span><span class="co">#' @return `r pkgsnip::return_lbl("tibble")`</span></span></code></pre></div>
 <p>which will result in</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#' @param use_cache Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `max_cache_age`.</span></span>
-<span><span class="co">#' @param max_cache_age The duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`.</span></span>
+<code class="sourceCode R"><span><span class="co">#' @param use_cache Whether or not to return cached results if possible. If `FALSE`, results are always newly fetched regardless of `max_cache_age`.</span></span>
+<span><span class="co">#' @param max_cache_age Duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`.</span></span>
 <span><span class="co">#' @return A [tibble][tibble::tbl_df].</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="r-condition-messages">R condition messages<a class="anchor" aria-label="anchor" href="#r-condition-messages"></a>
-</h2>
-<p>These are meant to be used as message texts for base R’s <a href="https://rdrr.io/r/base/message.html" class="external-link"><code>message()</code></a>,
-<a href="https://rdrr.io/r/base/warning.html" class="external-link"><code>warning()</code></a>
-and <a href="https://rdrr.io/r/base/stop.html" class="external-link"><code>stop()</code></a>
-functions or <a href="https://rlang.r-lib.org/reference/abort.html" class="external-link"><code>rlang::inform()</code>,
-<code>rlang::warn()</code> and <code>rlang::abort()</code></a> from the
-tidyverse respectively.</p>
-<p>A message can be retrieved using <code><a href="../reference/msg.html">pkgsnip::msg()</a></code>. For
-some of the messages, arguments need to be provided so they can be
-tailored to their specific purpose. For example, the
-<code>pkg_required</code> message requires the <code>pkg</code>
-argument:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu"><a href="../reference/msg.html">msg</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"pkg_required"</span>,</span>
-<span>             pkg <span class="op">=</span> <span class="st">"some_pkg"</span><span class="op">)</span></span></code></pre></div>
-<p>Which results in the following message text:</p>
-<pre><code>To be able to use this function, the package 'some_pkg' is required but it is not installed. Please install it and then try again.</code></pre>
-<p>Currently, the following R condition messages are included:</p>
-<table class="table">
-<colgroup>
-<col width="9%">
-<col width="81%">
-<col width="8%">
-</colgroup>
-<thead><tr class="header">
-<th align="left"><strong>id</strong></th>
-<th align="left"><strong>value</strong></th>
-<th align="left"><strong>arguments</strong></th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="left"><code>pkg_required</code></td>
-<td align="left">To be able to use this function, the package ‘{ pkg }’
-is required but it is not installed. Please install it and then try
-again.</td>
-<td align="left"><code>pkg</code></td>
-</tr></tbody>
-</table>
 </div>
 <div class="section level2">
 <h2 id="common-abbreviations">Common abbreviations<a class="anchor" aria-label="anchor" href="#common-abbreviations"></a>
@@ -187,9 +147,8 @@ again.</td>
 abbreviations commonly used when writing R code. It might come in handy
 as a reference, for example, to check availability when considering
 using some abbreviation in a function or argument name.</p>
-<p>The table can be retrieved by calling
-<code><a href="../reference/abbreviations.html">pkgsnip::abbreviations()</a></code> and currently looks as follows
-(click to expand):</p>
+<p>The table can be retrieved by calling <code><a href="../reference/abbrs.html">pkgsnip::abbrs()</a></code>
+and currently looks as follows (click to expand):</p>
 <details><summary>
 Abbreviations
 </summary><table class="table">

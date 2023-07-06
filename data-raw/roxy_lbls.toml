@@ -1,0 +1,73 @@
+# R condition messages
+
+[cli_markup_support]
+value.default = "supports cli's [inline markup][cli::inline-markup]"
+[date]
+value.default = "a [date][base::Date]"
+[dates]
+value.default = "a vector of [dates][base::Date]"
+[datetime]
+value.default = "a [datetime][base::DateTimeClasses]"
+[datetimes]
+value.default = "a vector of [datetimes][base::DateTimeClasses]"
+[dyn_dots_support]
+value.default = "[dynamic dots][rlang::dyn-dots] are supported"
+[end_date]
+value.default = "end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`"
+[eol]
+value.default = """\
+  end of line (EOL) control character sequence. One of\n- `\"LF\"` for the line feed (LF) character (`\"\\n\"`). The standard on Unix and Unix-like systems \
+  (Linux, macOS, *BSD, etc.) and the **default**.\n- `\"CRLF\"` for the carriage return + line feed (CR+LF) character sequence (`\"\\r\\n\"`). The standard on \
+  Microsoft Windows, DOS and some other systems.\n- `\"CR\"` for the carriage return (CR) character (`\"\\r\"`). The standard on classic Mac OS and some other \
+  antiquated systems.\n- `\"LFCR\"` for the line feed + carriage return (LF+CR) character sequence (`\"\\n\\r\"`). The standard on RISC OS and some other \
+  exotic systems.\
+  """
+[glue_chr]
+value.default = "a [glue][glue::as_glue] character scalar"
+[gt_obj]
+value.default = "a [`gt_tbl`][gt::gt] object"
+[max_cache_age]
+value.default = """\
+  duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache \
+  expiry. Only relevant if `use_cache = TRUE`.\
+  """
+[opt_global_max_cache_age]
+value.default = """\
+  note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum timespan set by the \\R \
+  [option][base::options()] `{pkg}.global_max_cache_age` (defaults to `{global_max_cache_age}` if unset).\
+  """
+[path]
+value.default = "a [path][fs::fs_path]"
+[paths]
+value.default = "a vector of [paths][fs::fs_path]"
+[pkg_config]
+value.default = """\
+  a [tibble][tibble::tbl_df] with metadata of all possible {pkg} package configuration options. See [pal::pkg_config_val()] for more information\
+  """
+value.title = "{pkg} package configuration metadata"
+[plotly_obj]
+value.default = "a [plotly object][plotly::plot_ly]"
+[quiet]
+value.default = "whether or not to suppress printing status output from internal processing"
+[r_obj]
+value.default = "an \\R object"
+[resp_obj]
+value.default = "a [response object][httr::response]"
+[start_date]
+value.default = "begin of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`"
+[strict_list]
+value.default = "a [strict list][xfun::strict_list()]"
+[sym]
+value.default = "a [symbol][base::name]"
+[tbl_data]
+value.default = "a tabular data object like a [data frame][base::data.frame] or [tibble][tibble::tbl_df]"
+[tibble]
+value.default = "a [tibble][tibble::tbl_df]"
+[tibble_cols]
+value.default = "a [tibble][tibble::tbl_df] with the columns { cli::ansi_collapse(pal::as_md_vals(cols)) }"
+[tidy_select_support]
+value.default = "[tidy selections][dplyr::dplyr_tidy_select] are supported"
+[use_cache]
+value.default = "whether or not to return cached results if possible. If `FALSE`, results are always newly fetched regardless of `max_cache_age`"
+[num_vrsn]
+value.default = "a [numeric version][numeric_version()]"

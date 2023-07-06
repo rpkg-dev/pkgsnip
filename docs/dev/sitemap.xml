@@ -19,16 +19,16 @@
     <loc>https://pkgsnip.rpkg.dev/dev/index.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/abbreviations.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/abbrs.html</loc>
   </url>
   <url>
     <loc>https://pkgsnip.rpkg.dev/dev/reference/data_md_snips.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/data_msgs.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/data_roxy_lbls.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/description_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/description_lbl.html</loc>
   </url>
   <url>
     <loc>https://pkgsnip.rpkg.dev/dev/reference/index.html</loc>
@@ -40,27 +40,24 @@
     <loc>https://pkgsnip.rpkg.dev/dev/reference/md_snip.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/msg.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/param_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/param_lbl.html</loc>
   </url>
   <url>
     <loc>https://pkgsnip.rpkg.dev/dev/reference/pkgsnip-package.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/return_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/return_lbl.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_lbl.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_labels.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_lbls.html</loc>
   </url>
   <url>
     <loc>https://pkgsnip.rpkg.dev/dev/reference/snip_path.html</loc>
   </url>
   <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/title_label.html</loc>
+    <loc>https://pkgsnip.rpkg.dev/dev/reference/title_lbl.html</loc>
   </url>
 </urlset>

@@ -1,4 +1,0 @@
-# R condition messages
-
-[pkg_required]
-value = "To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again."

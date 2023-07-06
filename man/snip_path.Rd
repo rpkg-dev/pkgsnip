@@ -4,16 +4,10 @@
 \alias{snip_path}
 \title{Get R Markdown snippet file path}
 \usage{
-snip_path(name = ls_file_snips()$name)
+snip_path(id = ls_file_snips()$id)
 }
 \arguments{
-\item{name}{The name of a snippet. Possible values include:
-\itemize{
-\item \code{"coding-style-notice.Rmd"}
-\item \code{"installation-notice_dev-version.Rmd"}
-\item \code{"installation-notice_dev-version_gitlab.Rmd"}
-\item \code{"rmd-package-notice.Rmd"}
-}}
+\item{id}{Snippet identifier. One of \code{"coding-style-notice.Rmd"}, \code{"installation-notice_dev-version.Rmd"}, \code{"installation-notice_dev-version_gitlab.Rmd"} or \code{"rmd-package-notice.Rmd"}}
 }
 \value{
 A \link[fs:fs_path]{path}.

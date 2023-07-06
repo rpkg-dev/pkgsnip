@@ -27,15 +27,12 @@ reference:
   - md_snip
 - title: roxygen2 labels
 - contents:
-  - roxy_labels
-  - roxy_label
-  - description_label
-  - param_label
-  - return_label
-  - title_label
-- title: R condition messages
-- contents:
-  - data_msgs
-  - msg
+  - data_roxy_lbls
+  - roxy_lbls
+  - roxy_lbl
+  - description_lbl
+  - param_lbl
+  - return_lbl
+  - title_lbl
 - title: Common abbreviations
-- contents: abbreviations
+- contents: abbrs

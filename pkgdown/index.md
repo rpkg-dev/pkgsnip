@@ -19,7 +19,7 @@ remotes::install_gitlab(repo = "rpkg.dev/pkgsnip")
 
 ## Usage
 
-The (function) reference is found [here](reference).
+An introduction to this package is given [here](articles/pkgsnip.html). The (function) reference is found [here](reference).
 
 ## Development
 

@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">pkgsnip</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9036</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.0.9037</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,11 +56,8 @@
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A <a href="https://tibble.tidyverse.org/reference/tbl_df-class.html" class="external-link">tibble</a> with the columns <code>id</code> and <code>value</code>.</p>
+    <p>A <a href="https://tibble.tidyverse.org/reference/tbl_df-class.html" class="external-link">tibble</a> with the columns <code>"id"</code>, and <code>"value"</code>.</p>
     </div>
-    <div class="section level2">
-    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Currently, Markdown snippets with the following <code>id</code>s are available:</p><table class="table table"><tr><td><strong>id</strong></td></tr><tr><td>opt_global_max_cache_age</td></tr><tr><td>pkg_config</td></tr><tr><td>pkgdown_notice</td></tr><tr><td>rstudio_addin_hint</td></tr><tr><td>usage_notice</td></tr><tr><td></td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Markdown snippet functions
@@ -70,14 +67,15 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="va">data_md_snips</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 2</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id                       value                                                                                                                                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> opt_global_max_cache_age Maximal timespan to preserve the package's [pkgpins](https://pkgpins.rpkg.dev/) cache. Cache entries older than this will be deleted…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> pkg_config               Some of { pkg }'s functionality is controlled via package-specific global configuration which can either be set via [R options](http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> pkgdown_notice           The documentation of this package is found [here]({ pkgdown::as_pkgdown()$meta$url }).                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> rstudio_addin_hint       This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> usage_notice             { pkg_intro_vignette &lt;- stringr::str_replace_all(desc::desc_get_field('Package'), '.', '-'); if (fs::file_exists(fs::path('vignettes…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> opt_global_max_cache_age <span style="color: #949494;">"</span>Maximal timespan to preserve the package's [pkgpins](https://pkgpins.rpkg.dev/) cache. Cache entries older than this will be delete…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> pkg_config               <span style="color: #949494;">"</span>Some of { pkg }'s functionality is controlled via package-specific global configuration which can either be set via [R options](htt…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> pkg_required             <span style="color: #949494;">"</span>To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again.<span style="color: #949494;">"</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> pkgdown_notice           <span style="color: #949494;">"</span>The documentation of this package is found [here]({ ''; pkgdown::as_pkgdown()$meta$url }).<span style="color: #949494;">"</span>                                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> rstudio_addin_hint       <span style="color: #949494;">"</span>This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> usage_notice             <span style="color: #949494;">"</span>{ pkg_intro_vignette &lt;- stringr::str_replace_all(desc::desc_get_field('Package'), '\\\\.', '-'); if (fs::file_exists(fs::path('vign…</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

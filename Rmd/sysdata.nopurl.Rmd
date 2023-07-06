@@ -18,6 +18,41 @@ editor_options:
 
 # Define data
 
+## `roxy_tags_lbl`
+
+```{r}
+roxy_tags_lbl <- stringr::str_subset(string = roxygen2::tags_list(built_in = FALSE),
+                                     pattern = pal::fuse_regex(paste0("^",
+                                                                      c("aliases",
+                                                                        "backref",
+                                                                        "describeIn",
+                                                                        "docType",
+                                                                        "encoding",
+                                                                        "family",
+                                                                        "md",
+                                                                        "method",
+                                                                        "name",
+                                                                        "noMd",
+                                                                        "noRd",
+                                                                        "note",
+                                                                        "order",
+                                                                        "rdname",
+                                                                        "returns",
+                                                                        "usage",
+                                                                        "useDynLib"),
+                                                                      "$"),
+                                                               paste0("^",
+                                                                      c("eval",
+                                                                        "example",
+                                                                        "export",
+                                                                        "import",
+                                                                        "include",
+                                                                        "inherit",
+                                                                        "raw",
+                                                                        "template"))),
+                                     negate = TRUE)
+```
+
 ## `data_abbrs`
 
 ```{r}
@@ -47,60 +82,31 @@ data_md_snips <-
   purrr::list_rbind()
 ```
 
-## `data_msgs`
-
-```{r}
-data_msgs <-
-  pal::toml_validate(input = "data-raw/msgs.toml") |>
-  pal::toml_read() |>
-  purrr::imap(\(x, i) tibble::tibble(id = i,
-                                     value = x$value)) |>
-  purrr::list_rbind()
-```
-
 ## `data_roxy_lbls`
 
 ```{r}
-data_roxy_lbls <- tibble::tribble(
-  ~type, ~name, ~label,
-  NA, "data", "A [tibble][tibble::tbl_df].",
-  NA, "data_cols", "A [tibble][tibble::tbl_df] with the columns {pal::prose_ls(cols, wrap = '`')}.",
-  NA, "date", "A [date][base::Date].",
-  NA, "dates", "A vector of [dates][base::Date].",
-  NA, "datetime", "A [datetime][base::DateTimeClasses].",
-  NA, "datetimes", "A vector of [datetimes][base::DateTimeClasses].",
-  NA, "gt_obj", "A [`gt_tbl`][gt::gt] object.",
-  NA, "path", "A [path][fs::fs_path].",
-  NA, "paths", "A vector of [paths][fs::fs_path].",
-  NA, "plotly_obj", "A [plotly object][plotly::plot_ly].",
-  NA, "r_obj", "An \\R object.",
-  NA, "response", "A [response object][httr::response].",
-  NA, "strict_list", "A [strict list][xfun::strict_list()].",
-  NA, "symbol", "A [symbol][base::name].",
-  NA, "tabular_data", "A tabular data object like a [data frame][base::data.frame] or [tibble][tibble::tbl_df].",
-  NA, "version_nr", "A [numeric version][numeric_version()].",
-  NA, "opt_global_max_cache_age", paste0("Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum ",
-                                         "timespan set by the \\R [option][base::options()] `{pkg}.global_max_cache_age` (defaults to ",
-                                         "`{global_max_cache_age}` if unset)."),
-  "description", "pkg_config", paste0("A [tibble][tibble::tbl_df] with metadata of all possible {pkg} package configuration options. See ",
-                                      "[pal::pkg_config_val()] for more information."),
-  "param", "cli_markup_support", "Supports cli's [inline markup][cli::inline-markup].",
-  "param", "dyn_dots_support", "[Dynamic dots][rlang::dyn-dots] are supported.",
-  "param", "tidy_select_support", "[Tidy selections][dplyr::dplyr_tidy_select] are supported.",
-  "param", "eol", paste0("End of line (EOL) control character sequence. One of\n- `\"LF\"` for the line feed (LF) character (`\"\\n\"`). The standard on ",
-                         "Unix and Unix-like systems (Linux, macOS, *BSD, etc.) and the **default**.\n- `\"CRLF\"` for the carriage return + line feed ",
-                         "(CR+LF) character sequence (`\"\\r\\n\"`). The standard on Microsoft Windows, DOS and some other systems.\n- `\"CR\"` for the ",
-                         "carriage return (CR) character (`\"\\r\"`). The standard on classic Mac OS and some other antiquated systems.\n- `\"LFCR\"` for ",
-                         "the line feed + carriage return (LF+CR) character sequence (`\"\\n\\r\"`). The standard on RISC OS and some other exotic ",
-                         "systems."),
-  "param", "quiet", "Whether or not to suppress printing status output from internal processing.",
-  "param", "start_date", "The begin of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
-  "param", "end_date", "The end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`.",
-  "param", "use_cache", "Return cached results if possible. If `FALSE`, results are always newly fetched regardless of `max_cache_age`.",
-  "param", "max_cache_age", paste0("The duration after which cached results are refreshed (i.e. newly fetched). A valid ",
-                                   "[lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`."),
-  "title", "pkg_config", "{pkg} package configuration metadata"
-)
+data_roxy_lbls <- 
+  pal::toml_validate(input = "data-raw/roxy_lbls.toml") |>
+  pal::toml_read() |>
+  purrr::imap(\(x, i) {
+    
+    checkmate::assert_subset(names(x$value),
+                             choices = c("default",
+                                         roxy_tags_lbl),
+                             empty.ok = FALSE)
+    
+    if (!("default" %in% names(x$value))) {
+      cli::cli_abort("No {.field default} value specified for roxy label with {.field id} {.val {i}} in {.file data-raw/roxy_lbls.toml}.")
+    }
+    
+    purrr::map(names(x$value),
+               \(key) tibble::tibble(id = i,
+                                     type = key,
+                                     value = x$value[[key]])) |>
+      purrr::list_rbind()
+  }) |>
+  purrr::list_rbind() |>
+  dplyr::arrange(id, type)
 ```
 
 # Write data
@@ -111,8 +117,8 @@ to package users.
 ```{r}
 usethis::use_data(data_abbrs,
                   data_md_snips,
-                  data_msgs,
                   data_roxy_lbls,
+                  roxy_tags_lbl,
                   internal = TRUE,
                   overwrite = TRUE,
                   compress = "xz",

@@ -82,51 +82,17 @@ using [dynamic R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dy
 Insert them in your functions using inline R code, e.g. as follows
 
 ``` r
-`r paste0("#' @param use_cache \U0060r pkgsnip::param_label(\"use_cache\")\U0060")`
-`r paste0("#' @param max_cache_age \U0060r pkgsnip::param_label(\"max_cache_age\")\U0060")`
-`r paste0("#' @return \U0060r pkgsnip::return_label(\"data\")\U0060")`
+`r paste0("#' @param use_cache \U0060r pkgsnip::param_lbl(\"use_cache\")\U0060")`
+`r paste0("#' @param max_cache_age \U0060r pkgsnip::param_lbl(\"max_cache_age\")\U0060")`
+`r paste0("#' @return \U0060r pkgsnip::return_lbl(\"tibble\")\U0060")`
 ```
 
 which will result in
 
 ``` r
-#' @param use_cache `r pkgsnip::param_label("use_cache")`
-#' @param max_cache_age `r pkgsnip::param_label("max_cache_age")`
-#' @return `r pkgsnip::return_label("data")`
-```
-
-## R condition messages
-
-These are meant to be used as message texts for base R's [`message()`](https://rdrr.io/r/base/message.html), [`warning()`](https://rdrr.io/r/base/warning.html)
-and [`stop()`](https://rdrr.io/r/base/stop.html) functions or [`rlang::inform()`, `rlang::warn()` and
-`rlang::abort()`](https://rlang.r-lib.org/reference/abort.html) from the tidyverse respectively.
-
-A message can be retrieved using `pkgsnip::msg()`. For some of the messages, arguments need to be provided so they can be tailored to their specific purpose.
-For example, the `pkg_required` message requires the `pkg` argument:
-
-``` r
-pkgsnip::msg(id = "pkg_required",
-             pkg = "some_pkg")
-```
-
-Which results in the following message text:
-
-```{r}
-#| echo: false
-#| comment: ''
-pkgsnip::msg(id = "pkg_required",
-             pkg = "some_pkg")
-```
-
-Currently, the following R condition messages are included:
-
-```{r}
-#| echo: false
-pkgsnip::data_msgs |>
-  dplyr::mutate(dplyr::across(id,
-                              \(x) paste0("`", x, "`"))) |>
-  pkgsnip:::add_args_col() |>
-  pal::pipe_table()
+#' @param use_cache `r pkgsnip::param_lbl("use_cache")`
+#' @param max_cache_age `r pkgsnip::param_lbl("max_cache_age")`
+#' @return `r pkgsnip::return_lbl("tibble")`
 ```
 
 ## Common abbreviations
@@ -134,7 +100,7 @@ pkgsnip::data_msgs |>
 Finally, there's a table included that lists an (opinionated) set of abbreviations commonly used when writing R code. It might come in handy as a reference, for
 example, to check availability when considering using some abbreviation in a function or argument name.
 
-The table can be retrieved by calling `pkgsnip::abbreviations()` and currently looks as follows (click to expand):
+The table can be retrieved by calling `pkgsnip::abbrs()` and currently looks as follows (click to expand):
 
 ```{asis}
 <details><summary>Abbreviations</summary>
@@ -142,7 +108,7 @@ The table can be retrieved by calling `pkgsnip::abbreviations()` and currently l
 
 ```{r}
 #| echo: false
-pkgsnip::abbreviations() |>
+pkgsnip::abbrs() |>
   dplyr::mutate(dplyr::across(where(is.list),
                               \(x) purrr::map_chr(x,
                                                   paste0,

@@ -7,7 +7,7 @@
 ls_file_snips()
 }
 \value{
-\code{pkgsnip::return_label("data")}
+A \link[tibble:tbl_df-class]{tibble}.
 }
 \description{
 Lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.

@@ -13,8 +13,8 @@ roxy_lbl(id = roxy_lbls()$id, type = "default", as_sentence = TRUE, ...)
 
 \item{as_sentence}{Whether or not to format the resulting string as a full sentence, i.e. with the first letter capitalized and a period at the end.}
 
-\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an overview.
-If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
+\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an
+overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
 }
 \value{
 A \link[glue:as_glue]{glue} character scalar.
@@ -24,7 +24,7 @@ Returns a predefined label intended to be used to document functions using \link
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{tags}.
 }
 \details{
-The labels can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:
+The labels can be inserted using \href{https://roxygen2.r-lib.org/articles/reuse.html#inline-code}{inline \R code} as follows:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @param start_date `r pkgsnip::roxy_lbl("start_date", type = "param")`
 #' @return `r pkgsnip::roxy_lbl("tibble", type = "return")`

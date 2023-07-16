@@ -4,13 +4,15 @@
 \alias{title_lbl}
 \title{Get predefined \verb{@title} label}
 \usage{
-title_lbl(id = roxy_lbls(type = "title")$id, ...)
+title_lbl(id = roxy_lbls(type = "title")$id, as_sentence = FALSE, ...)
 }
 \arguments{
 \item{id}{Label identifier. See \code{\link[=roxy_lbls]{roxy_lbls()}} for possible values.}
 
-\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an overview.
-If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
+\item{as_sentence}{Whether or not to format the resulting string as a full sentence, i.e. with the first letter capitalized and a period at the end.}
+
+\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an
+overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
 }
 \value{
 A \link[glue:as_glue]{glue} character scalar.
@@ -20,7 +22,7 @@ Returns a predefined label intended to be used to document a function's title us
 \href{https://roxygen2.r-lib.org/reference/tags-rd.html}{\verb{@title}} tag.
 }
 \details{
-A label can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:
+A label can be inserted using \href{https://roxygen2.r-lib.org/articles/reuse.html#inline-code}{inline \R code} as follows:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @title `r pkgsnip::title_lbl("ID")`
 }\if{html}{\out{</div>}}

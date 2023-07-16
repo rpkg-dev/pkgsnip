@@ -119,23 +119,82 @@ e.g. like this:</p>
 <div class="section level2">
 <h2 id="markdown-snippets">Markdown snippets<a class="anchor" aria-label="anchor" href="#markdown-snippets"></a>
 </h2>
-<p><em>TODO</em></p>
+<p>The Markdown snippets basically serve the same purpose as the <em>R
+Markdown file snippets</em> <a href="#r-markdown-file-snippets">above</a>, but are geared towards
+shorter content and their semantics slightly differ. They support <a href="https://glue.tidyverse.org/" class="external-link">glue’s string interpolation</a> via
+curly braces, i.e. embedded R code allows for dynamic content.</p>
+<p>The snippets can be used in roxygen2 documentation via <a href="https://roxygen2.r-lib.org/articles/reuse.html#inline-code" class="external-link">inline
+R code</a> as follows:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' Awesome function title</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' Awesome function description.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' `r pkgsnip::md_snip("rstudio_addin_hint")`</span></span></code></pre></div>
+<p>which will result in</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' Awesome function title</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' Awesome function description.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it or to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="available-snippets-1">Available snippets<a class="anchor" aria-label="anchor" href="#available-snippets-1"></a>
+</h3>
+<p>Currently, the following Markdown snippets are included:</p>
+<table class="table">
+<colgroup>
+<col width="8%">
+<col width="91%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"><strong>id</strong></th>
+<th align="left"><strong>value</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>opt_global_max_cache_age</code></td>
+<td align="left"><code>Maximal timespan to preserve the package's [pkgpins](https://pkgpins.rpkg.dev/) cache. Cache entries older than this will be deleted upon package loading.</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>pkg_config</code></td>
+<td align="left"><code>Some of { pkg }'s functionality is controlled via package-specific global configuration which can either be set via [R options](https://rdrr.io/r/base/options.html) or [environment variables](https://en.wikipedia.org/wiki/Environment_variable) (the former take precedence). This configuration includes:</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>pkg_required</code></td>
+<td align="left"><code>To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again.</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>pkgdown_notice</code></td>
+<td align="left"><code>The documentation of this package is found [here]({ ''; pkgdown::as_pkgdown()$meta$url }).</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>rstudio_addin_hint</code></td>
+<td align="left"><code>This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it or to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>usage_notice</code></td>
+<td align="left"><code>{ pkg_intro_vignette &lt;- stringr::str_replace_all(desc::desc_get_field('Package'), '\\.', '-'); if (fs::file_exists(fs::path('vignettes', pkg_intro_vignette, ext = 'Rmd'))) paste0('An introduction to this package is given [here](articles/', pkg_intro_vignette, '.html). ') else '' }The (function) reference is found [here](reference).</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section level2">
 <h2 id="roxygen2-tag-labels">roxygen2 tag labels<a class="anchor" aria-label="anchor" href="#roxygen2-tag-labels"></a>
 </h2>
 <p>The <a href="https://roxygen2.r-lib.org/" class="external-link">roxygen2</a> tag labels are
 specifically meant for <a href="https://roxygen2.r-lib.org/articles/rd.html" class="external-link"><code>@</code>-tag</a>-based
-documentation using <a href="https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1" class="external-link">dynamic
+documentation using <a href="https://roxygen2.r-lib.org/articles/reuse.html#inline-code" class="external-link">inline
 R code</a>.</p>
 <p>Insert them in your functions using inline R code, e.g. as
 follows</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#' @param use_cache `r pkgsnip::param_lbl("use_cache")`</span></span>
 <span><span class="co">#' @param max_cache_age `r pkgsnip::param_lbl("max_cache_age")`</span></span>
 <span><span class="co">#' @return `r pkgsnip::return_lbl("tibble")`</span></span></code></pre></div>
 <p>which will result in</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#' @param use_cache Whether or not to return cached results if possible. If `FALSE`, results are always newly fetched regardless of `max_cache_age`.</span></span>
 <span><span class="co">#' @param max_cache_age Duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache expiry. Only relevant if `use_cache = TRUE`.</span></span>
 <span><span class="co">#' @return A [tibble][tibble::tbl_df].</span></span></code></pre></div>

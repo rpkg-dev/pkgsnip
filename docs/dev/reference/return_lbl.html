@@ -64,8 +64,7 @@
 
 
 <dt>...</dt>
-<dd><p>Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see <code><a href="roxy_lbls.html">roxy_lbls()</a></code> for an overview.
-If a required argument is not explicitly provided, it is searched for in the <a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">parent frames</a>.</p></dd>
+<dd><p>Further named arguments passed on to <code><a href="roxy_lbl.html">roxy_lbl()</a></code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -76,7 +75,7 @@ If a required argument is not explicitly provided, it is searched for in the <a 
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>A label can be inserted using <a href="https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1" class="external-link">inline <span style="R">R</span> code</a> as follows:</p>
+    <p>A label can be inserted using <a href="https://roxygen2.r-lib.org/articles/reuse.html#inline-code" class="external-link">inline <span style="R">R</span> code</a> as follows:</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="co">#' @return `r pkgsnip::return_lbl("ID")`</span></span></code></pre><p></p></div>
 <p>Note that the above only works in <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/" class="external-link">roxygen2 7.1.0+</a>.</p>
 <p>Currently, the following return labels are available:</p><table class="table table"><tr><td><strong>id</strong></td><td><strong>arguments</strong></td></tr><tr><td><code>cli_markup_support</code></td><td></td></tr><tr><td><code>date</code></td><td></td></tr><tr><td><code>dates</code></td><td></td></tr><tr><td><code>datetime</code></td><td></td></tr><tr><td><code>datetimes</code></td><td></td></tr><tr><td><code>dyn_dots_support</code></td><td></td></tr><tr><td><code>end_date</code></td><td></td></tr><tr><td><code>eol</code></td><td></td></tr><tr><td><code>glue_chr</code></td><td></td></tr><tr><td><code>gt_obj</code></td><td></td></tr><tr><td><code>max_cache_age</code></td><td></td></tr><tr><td><code>num_vrsn</code></td><td></td></tr><tr><td><code>opt_global_max_cache_age</code></td><td><code>pkg</code>, <code>global_max_cache_age</code></td></tr><tr><td><code>path</code></td><td></td></tr><tr><td><code>paths</code></td><td></td></tr><tr><td><code>pkg_config</code></td><td><code>pkg</code></td></tr><tr><td><code>plotly_obj</code></td><td></td></tr><tr><td><code>quiet</code></td><td></td></tr><tr><td><code>r_obj</code></td><td></td></tr><tr><td><code>resp_obj</code></td><td></td></tr><tr><td><code>start_date</code></td><td></td></tr><tr><td><code>strict_list</code></td><td></td></tr><tr><td><code>sym</code></td><td></td></tr><tr><td><code>tbl_data</code></td><td></td></tr><tr><td><code>tibble</code></td><td></td></tr><tr><td><code>tibble_cols</code></td><td><code>cols</code></td></tr><tr><td><code>tidy_select_support</code></td><td></td></tr><tr><td><code>use_cache</code></td><td></td></tr></table></div>

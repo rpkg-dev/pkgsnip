@@ -9,8 +9,7 @@ description_lbl(id = roxy_lbls(type = "description")$id, ...)
 \arguments{
 \item{id}{Label identifier. See \code{\link[=roxy_lbls]{roxy_lbls()}} for possible values.}
 
-\item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an overview.
-If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
+\item{...}{Further named arguments passed on to \code{\link[=roxy_lbl]{roxy_lbl()}}.}
 }
 \value{
 A \link[glue:as_glue]{glue} character scalar.
@@ -20,7 +19,7 @@ Returns a predefined label intended to be used as a function's description using
 \href{https://roxygen2.r-lib.org/reference/tags-rd.html}{\verb{@description}} tag.
 }
 \details{
-A label can be inserted using \href{https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1}{inline \R code} as follows:
+A label can be inserted using \href{https://roxygen2.r-lib.org/articles/reuse.html#inline-code}{inline \R code} as follows:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @description `r pkgsnip::description_lbl("ID")`
 }\if{html}{\out{</div>}}

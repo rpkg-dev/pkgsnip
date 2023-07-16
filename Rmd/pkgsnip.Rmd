@@ -81,8 +81,9 @@ backtickify_cols <- function(data,
                              cols = tidyselect::any_of(c("id", "path"))) {
   
   dplyr::mutate(.data = data,
-                dplyr::across({{cols}},
-                              \(x) paste0("`", x, "`")))
+                dplyr::across({{ cols }},
+                              \(x) purrr::map_chr(x, \(y) pal::md_verb(as.symbol(y),
+                                                                       .backtick = FALSE))))
 }
 ```
 
@@ -159,7 +160,7 @@ snip_path <- function(id = ls_file_snips()$id) {
 ```{r}
 #' Markdown snippets
 #'
-#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `id`. The latter can be fed to [md_snip()].
+#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `id`. The latter can be fed to [pkgsnip::md_snip()].
 #'
 #' @format `r return_lbl("tibble_cols", cols = colnames(data_md_snips))`
 #' @family mdsnips
@@ -189,7 +190,7 @@ snip_path <- function(id = ls_file_snips()$id) {
 #'
 #' @param id The snippet identifier. One of `r pal::prose_ls_fn_param(param = "id", fn = md_snip)`.
 #' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see
-#'   [`data_md_snips`][data_md_snips] for an overview. If a required argument is not explicitly provided, it is searched for in the [parent
+#'   [`data_md_snips`][pkgsnip::data_md_snips] for an overview. If a required argument is not explicitly provided, it is searched for in the [parent
 #'   frames][parent.frame].
 #'
 #' @return A character scalar.
@@ -224,7 +225,7 @@ md_snip <- function(id = data_md_snips$id,
 ```{r}
 #' roxygen2 tag labels
 #'
-#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `id`. The latter can be fed to [md_snip()].
+#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `id`. The latter can be fed to [pkgsnip::md_snip()].
 #'
 #' @format `r return_lbl("tibble_cols", cols = colnames(data_md_snips))`
 #' @family roxylbl
@@ -241,7 +242,7 @@ md_snip <- function(id = data_md_snips$id,
 #' Get a table of all available roxygen2 tag labels
 #'
 #' Returns a [tibble][tibble::tbl_df] listing all parameter labels included in this package, together with their `id` which can be provided as the `id`
-#' argument of [roxy_lbl()], [param_lbl()], [return_lbl()], etc.
+#' argument of [pkgsnip::roxy_lbl()], [pkgsnip::param_lbl()], [pkgsnip::return_lbl()], etc.
 #'
 #' Currently, roxygen2 tag labels are available:
 #'
@@ -278,7 +279,7 @@ roxy_lbls <- function(type = "default") {
 #' Returns a predefined label intended to be used to document functions using [roxygen2][roxygen2::roxygen2]
 #' [tags](https://roxygen2.r-lib.org/articles/rd.html#functions).
 #'
-#' The labels can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#' The labels can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
 #' ```r
 #' #' @param start_date `r pkgsnip::roxy_lbl("start_date", type = "param")`
@@ -287,11 +288,11 @@ roxy_lbls <- function(type = "default") {
 #'
 #' Note that the above only works in [roxygen2 7.1.0+](https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/).
 #' 
-#' @param id Label identifier. See [roxy_lbls()] for possible values.
+#' @param id Label identifier. See [pkgsnip::roxy_lbls()] for possible values.
 #' @param type The label type to return the label value for. One of `r c("default", roxy_tags_lbl) |> pal::as_md_vals() |> cli::ansi_collapse(last = " or ")`.
 #' @param as_sentence Whether or not to format the resulting string as a full sentence, i.e. with the first letter capitalized and a period at the end.
-#' @param ... Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see [roxy_lbls()] for an overview.
-#'   If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
+#' @param ... Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see [pkgsnip::roxy_lbls()] for an
+#'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
 #'
 #' @return `r pkgsnip::return_lbl("glue_chr")`
 #' @keywords internal
@@ -334,7 +335,7 @@ roxy_lbl <- function(id = roxy_lbls()$id,
 #' Returns a predefined label intended to be used as a function's description using [roxygen2][roxygen2::roxygen2]'s
 #' [`@description`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
 #'
-#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
 #' ```r
 #' #' @description `r pkgsnip::description_lbl("ID")`
@@ -351,7 +352,7 @@ roxy_lbl <- function(id = roxy_lbls()$id,
 #'   pal::pipe_table()
 #' ```
 #' 
-#' @inheritParams roxy_lbl
+#' @inheritParams return_lbl
 #'
 #' @inherit roxy_lbl return
 #' @family roxylbl
@@ -375,7 +376,7 @@ description_lbl <- function(id = roxy_lbls(type = "description")$id,
 #' Returns a predefined label intended to be used to document a function parameter using [roxygen2][roxygen2::roxygen2]'s
 #' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
-#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
 #' ```r
 #' #' @param PARAM_NAME `r pkgsnip::param_lbl("ID")`
@@ -392,7 +393,7 @@ description_lbl <- function(id = roxy_lbls(type = "description")$id,
 #'   pal::pipe_table()
 #' ```
 #' 
-#' @inheritParams roxy_lbl
+#' @inheritParams return_lbl
 #'
 #' @inherit roxy_lbl return
 #' @family roxylbl
@@ -416,7 +417,7 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #' Returns a predefined label intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
 #' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
 #'
-#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
 #' ```r
 #' #' @return `r pkgsnip::return_lbl("ID")`
@@ -434,6 +435,7 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #' ```
 #' 
 #' @inheritParams roxy_lbl
+#' @param ... Further named arguments passed on to [pkgsnip::roxy_lbl()].
 #'
 #' @inherit roxy_lbl return
 #' @family roxylbl
@@ -457,7 +459,7 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #' Returns a predefined label intended to be used to document a function's title using [roxygen2][roxygen2::roxygen2]'s
 #' [`@title`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
 #'
-#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/rd-formatting.html#dynamic-r-code-1) as follows:
+#' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
 #' ```r
 #' #' @title `r pkgsnip::title_lbl("ID")`
@@ -480,12 +482,14 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #' @family roxylbl
 #' @export
 title_lbl <- function(id = roxy_lbls(type = "title")$id,
+                      as_sentence = FALSE,
                       ...) {
   
   id <- rlang::arg_match(id)
   
   roxy_lbl(id = id,
            type = "title",
+           as_sentence = as_sentence,
            ... = ...)
 }
 ```

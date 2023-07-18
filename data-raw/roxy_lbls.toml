@@ -22,6 +22,8 @@ value.default = """\
   antiquated systems.\n- `\"LFCR\"` for the line feed + carriage return (LF+CR) character sequence (`\"\\n\\r\"`). The standard on RISC OS and some other \
   exotic systems.\
   """
+[ggplot2_obj]
+value.default = "a [ggplot2][ggplot2::ggplot] object"
 [glue_chr]
 value.default = "a [glue][glue::as_glue] character scalar"
 [gt_obj]

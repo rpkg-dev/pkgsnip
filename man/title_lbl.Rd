@@ -39,6 +39,7 @@ Currently, the following \verb{@title} labels are available:\tabular{ll}{
    \code{dyn_dots_support} \tab  \cr
    \code{end_date} \tab  \cr
    \code{eol} \tab  \cr
+   \code{ggplot2_obj} \tab  \cr
    \code{glue_chr} \tab  \cr
    \code{gt_obj} \tab  \cr
    \code{max_cache_age} \tab  \cr

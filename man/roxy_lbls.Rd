@@ -27,6 +27,7 @@ Currently, roxygen2 tag labels are available:\tabular{lll}{
    \code{dyn_dots_support} \tab default \tab  \cr
    \code{end_date} \tab default \tab  \cr
    \code{eol} \tab default \tab  \cr
+   \code{ggplot2_obj} \tab default \tab  \cr
    \code{glue_chr} \tab default \tab  \cr
    \code{gt_obj} \tab default \tab  \cr
    \code{max_cache_age} \tab default \tab  \cr

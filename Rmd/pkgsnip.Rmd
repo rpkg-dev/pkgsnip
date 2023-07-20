@@ -266,7 +266,7 @@ roxy_lbls <- function(type = "default") {
   data_roxy_lbls |>
     dplyr::filter(type %in% c("default", !!type)) |>
     dplyr::group_by(id) |>
-    dplyr::group_modify(\(d, k) if (nrow(d) == 1L) d else d |> dplyr::filter(type != "default")) |>
+    dplyr::group_modify(\(d, k) if (nrow(d) == 1L) d else d |> dplyr::filter(type != "default")) |> # nolint: pipe_continuation_linter.
     dplyr::ungroup()
 }
 ```

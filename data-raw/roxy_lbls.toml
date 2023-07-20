@@ -55,6 +55,8 @@ value.default = "whether or not to suppress printing status output from internal
 value.default = "an \\R object"
 [resp_obj]
 value.default = "a [response object][httr::response]"
+[show_progress]
+value.default = "whether or not to output progress indication"
 [start_date]
 value.default = "begin of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`"
 [strict_list]

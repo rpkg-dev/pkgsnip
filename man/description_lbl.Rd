@@ -49,6 +49,7 @@ Currently, the following \verb{@description} labels are available:\tabular{ll}{
    \code{quiet} \tab  \cr
    \code{r_obj} \tab  \cr
    \code{resp_obj} \tab  \cr
+   \code{show_progress} \tab  \cr
    \code{start_date} \tab  \cr
    \code{strict_list} \tab  \cr
    \code{sym} \tab  \cr

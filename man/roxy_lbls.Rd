@@ -41,6 +41,7 @@ Currently, roxygen2 tag labels are available:\tabular{lll}{
    \code{quiet} \tab default \tab  \cr
    \code{r_obj} \tab default \tab  \cr
    \code{resp_obj} \tab default \tab  \cr
+   \code{show_progress} \tab default \tab  \cr
    \code{start_date} \tab default \tab  \cr
    \code{strict_list} \tab default \tab  \cr
    \code{sym} \tab default \tab  \cr

@@ -5,7 +5,7 @@
 \alias{data_roxy_lbls}
 \title{roxygen2 tag labels}
 \format{
-A \link[tibble:tbl_df-class]{tibble} with the columns \code{"id"}, and \code{"value"}.
+A \link[tibble:tbl_df-class]{tibble} with the columns \code{id}, and \code{value}.
 }
 \usage{
 data_roxy_lbls

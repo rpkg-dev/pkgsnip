@@ -68,7 +68,7 @@ value.default = "a tabular data object like a [data frame][base::data.frame] or 
 [tibble]
 value.default = "a [tibble][tibble::tbl_df]"
 [tibble_cols]
-value.default = "a [tibble][tibble::tbl_df] with the columns { cli::ansi_collapse(pal::as_md_vals(cols)) }"
+value.default = "a [tibble][tibble::tbl_df] with the { cli::qty(length(cols)) }column{?s} { cli::ansi_collapse(pal::wrap_chr(cols, wrap = '\\x60')) }"
 [tidy_select_support]
 value.default = "[tidy selections][dplyr::dplyr_tidy_select] are supported"
 [use_cache]

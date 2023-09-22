@@ -36,7 +36,7 @@ add_args_col <- function(data) {
   
   data |> dplyr::mutate(arguments =
                           stringr::str_extract_all(string = !!as.symbol(from_col),
-                                                   pattern = "(?<=\\{[ ]{0,999})[^\\}]+?(?=\\})") |>
+                                                   pattern = "(?<=\\{)[^\\}\\?]+?(?=\\})") |>
                           purrr::map_chr(\(x) {
                             
                             if (length(x) == 0L) {
@@ -45,9 +45,10 @@ add_args_col <- function(data) {
                             
                             result <-
                               x |>
+                              stringr::str_trim() |>
                               purrr::map_chr(\(s) {
-                                # rush job, buggy
-                                ## return early if multi-statement expr (`str2lang()` below only works with single statements)
+                                # NOTE: rush job, probably has bugs
+                                ## return early if multi-statement expr since `str2lang()` below only works with single statements
                                 if (stringr::str_detect(as.character(s), ";")) {
                                   return(NA_character_)
                                 }
@@ -56,9 +57,11 @@ add_args_col <- function(data) {
                                   as.list() |>
                                   dplyr::last() |>
                                   as.character() |>
-                                  dplyr::last()
+                                  pal::when(length(.) > 1L ~ .[2L],
+                                            ~ .)
                               }) %>%
                               magrittr::extract(!is.na(.)) |>
+                              unique() |>
                               pal::when(length(.) == 0L ~ "",
                                         ~ pal::wrap_chr(., wrap = "`") |>
                                           cli::ansi_collapse(last = ", "))
@@ -261,8 +264,8 @@ roxy_lbl <- function(id = roxy_lbls()$id,
     roxy_lbls(type = type) |>
     dplyr::filter(id == !!id) %$%
     value |>
-    glue::glue(.envir = env,
-               ... = ...)
+    cli::pluralize(.envir = env,
+                   ... = ...)
   
   if (as_sentence) {
     

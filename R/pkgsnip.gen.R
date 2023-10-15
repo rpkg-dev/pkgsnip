@@ -73,8 +73,9 @@ backtickify_cols <- function(data,
   
   dplyr::mutate(.data = data,
                 dplyr::across({{ cols }},
-                              \(x) purrr::map_chr(x, \(y) pal::md_verb(as.symbol(y),
-                                                                       .backtick = FALSE))))
+                              \(x) purrr::map_chr(x,
+                                                  \(y) pal::md_verb(as.symbol(y),
+                                                                    .backtick = FALSE))))
 }
 
 #' List all available R Markdown file snippets
@@ -123,9 +124,11 @@ ls_file_snips <- function() {
 #' pkgsnip::snip_path("coding-style-notice.Rmd")
 snip_path <- function(id = ls_file_snips()$id) {
   
-  rlang::arg_match(id) %>%
-    paste0("snippets/", .) |>
-    fs::path_package(package = this_pkg) |>
+  id <- rlang::arg_match(id)
+  
+  fs::path_package(package = this_pkg,
+                   "snippets",
+                   id) |>
     fs::path_real()
 }
 

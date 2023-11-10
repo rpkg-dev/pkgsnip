@@ -57,7 +57,7 @@ add_args_col <- function(data) {
                               purrr::map_chr(\(s) {
                                 # NOTE: rush job, probably has bugs
                                 ## return early if multi-statement expr since `str2lang()` below only works with single statements
-                                if (stringr::str_detect(as.character(s), ";")) {
+                                if (stringr::str_detect(as.character(s), stringr::fixed(";"))) {
                                   return(NA_character_)
                                 }
                                 

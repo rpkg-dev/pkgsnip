@@ -48,12 +48,9 @@ with the following exceptions:
     `r if (exists("pkg_metadata")) paste0("Rmd/", pkg_metadata[["Package"]][1L], ".Rmd") %>% paste0("[\x60", ., "\x60](", pal::git_remote_tree_url(), ., ")") else emsg`
     which is well-structured thanks to its [Markdown support](#r-markdown-format).
 
-As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in the [lintr configuration
-file](https://github.com/jimhester/lintr#project-configuration) [`.lintr`](.lintr), so lintr can be used right away to check for formatting issues:
-
-``` r
-pkgpurl::lint_rmd()
-```
+As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in
+[`pkgpurl::default_linters`](https://pkgpurl.rpkg.dev/reference/default_linters), which is (by default) used in
+[`pkgpurl::lint_rmd()`](https://pkgpurl.rpkg.dev/reference/lint_rmd), which in turn is the recommended way to lint this package.
 
 [^coding-style-n--1]: The TSG [explicitly instructs to avoid this operator](https://style.tidyverse.org/pipes.html#assignment-2) -- presumably because it's
     relatively unknown and therefore might be confused with the forward pipe operator `%>%` when skimming code only briefly. I don't consider this to be an

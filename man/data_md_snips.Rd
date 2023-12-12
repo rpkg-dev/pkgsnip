@@ -5,7 +5,7 @@
 \alias{data_md_snips}
 \title{Markdown snippets}
 \format{
-A \link[tibble:tbl_df-class]{tibble} with the columns \code{id}, and \code{value}.
+A \link[tibble:tbl_df-class]{tibble} with the columns \code{id} and \code{value}.
 }
 \usage{
 data_md_snips

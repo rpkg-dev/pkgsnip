@@ -72,7 +72,7 @@ add_args_col <- function(data) {
                               unique() |>
                               pal::when(length(.) == 0L ~ "",
                                         ~ pal::wrap_chr(., wrap = "`") |>
-                                          cli::ansi_collapse(last = ", "))
+                                          cli::ansi_collapse(sep2 = ", ", last = sep2))
                           }))
 }
 ```
@@ -194,7 +194,7 @@ snip_path <- function(id = ls_file_snips()$id) {
 #'   pal::pipe_table()
 #' ```
 #'
-#' @param id The snippet identifier. One of `r pal::prose_ls_fn_param(param = "id", fn = md_snip)`.
+#' @param id Snippet identifier. One of `r pal::fn_param_defaults(param = "id", fn = md_snip) |> pal::wrap_chr("\x60") |> cli::ansi_collapse(last = " or ")`.
 #' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see
 #'   [`data_md_snips`][pkgsnip::data_md_snips] for an overview. If a required argument is not explicitly provided, it is searched for in the [parent
 #'   frames][parent.frame].

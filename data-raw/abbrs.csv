@@ -60,6 +60,9 @@ double,dbl
 doubles,dbls
 element,el
 elements,els
+enumerate,enum
+enumeration,enum
+enumerations,enums
 environment,env
 environments,envs
 evaluate,eval

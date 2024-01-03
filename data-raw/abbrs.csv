@@ -103,6 +103,9 @@ initialize,init
 initialization,init
 integer,int
 integers,ints
+iterate,itr
+iterator,itr
+iterators,itrs
 label,lbl
 labels,lbls
 language,lang

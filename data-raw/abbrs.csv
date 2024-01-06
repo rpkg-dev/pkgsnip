@@ -156,6 +156,8 @@ properties,props
 prototype,ptype
 prototypes,ptypes
 Quarto Markdown,qmd
+question,qstn
+questions,qstns
 questionnaire,qstnr
 questionnaires,qstnrs
 R Markdown,rmd

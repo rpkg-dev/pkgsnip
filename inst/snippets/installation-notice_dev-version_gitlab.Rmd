@@ -6,10 +6,7 @@ editor_options:
 ---
 
 ```{r}
-#| include: false
-
-emsg <- paste0("<!–– Please use `pal::build_readme()` or assign `pkg_metadata <- pal::desc_list()` in the `envir` fed to `devtools::build_readme(...)` to ",
-               "allow access to package metadata! ––>")
+#| child: !expr "pkgsnip::snip_path('common.Rmd')"
 ```
 
 To install the latest development version of `r if (exists("pkg_metadata")) pkg_metadata[["Package"]] else emsg`, run the following in R:

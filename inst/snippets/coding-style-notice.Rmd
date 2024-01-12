@@ -6,10 +6,7 @@ editor_options:
 ---
 
 ```{r}
-#| include: false
-
-emsg <- paste0("<!–– Please use `pal::build_readme()` or assign `pkg_metadata <- pal::desc_list()` in the `envir` fed to `devtools::build_readme(...)` to ",
-               "allow access to package metadata! ––>")
+#| child: !expr "pkgsnip::snip_path('common.Rmd')"
 ```
 
 This package borrows a lot of the [Tidyverse](https://www.tidyverse.org/) design philosophies. The R code adheres to the principles specified in the [Tidyverse
@@ -44,9 +41,7 @@ with the following exceptions:
 -   Usage of [R's right-hand assignment operator `->`](https://rdrr.io/r/base/assignOps.html) is not allowed[^coding-style-n--2].
 
 -   R source code is *not* split over several files as [suggested by the TSG](https://style.tidyverse.org/package-files.html) but instead is (as far as
-    possible) kept in the single file
-    `r if (exists("pkg_metadata")) paste0("Rmd/", pkg_metadata[["Package"]][1L], ".Rmd") %>% paste0("[\x60", ., "\x60](", pal::git_remote_tree_url(), ., ")") else emsg`
-    which is well-structured thanks to its [Markdown support](#r-markdown-format).
+    possible) kept in the single file `r main_rmd` which is well-structured thanks to its [Markdown support](#r-markdown-format).
 
 As far as possible, these deviations from the TSG plus some additional restrictions are formally specified in
 [`pkgpurl::default_linters`](https://pkgpurl.rpkg.dev/reference/default_linters), which is (by default) used in

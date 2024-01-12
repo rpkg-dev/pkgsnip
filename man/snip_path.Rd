@@ -7,7 +7,7 @@
 snip_path(id = ls_file_snips()$id)
 }
 \arguments{
-\item{id}{Snippet identifier. One of \code{"coding-style-notice.Rmd"}, \code{"installation-notice_dev-version.Rmd"}, \code{"installation-notice_dev-version_gitlab.Rmd"} or \code{"rmd-package-notice.Rmd"}}
+\item{id}{Snippet identifier. One of \code{"coding-style-notice.Rmd"}, \code{"common.Rmd"}, \code{"installation-notice_dev-version.Rmd"}, \code{"installation-notice_dev-version_gitlab.Rmd"} or \code{"rmd-package-notice.Rmd"}}
 }
 \value{
 A \link[fs:fs_path]{path}.

@@ -21,8 +21,8 @@ roxygen2 label functions
 \code{\link{description_lbl}()},
 \code{\link{param_lbl}()},
 \code{\link{return_lbl}()},
-\code{\link{roxy_lbls}()},
 \code{\link{roxy_lbl}()},
+\code{\link{roxy_lbls}()},
 \code{\link{title_lbl}()}
 }
 \concept{roxylbl}

@@ -24,6 +24,7 @@ Currently, roxygen2 tag labels are available:\tabular{lll}{
    \code{dates} \tab default \tab  \cr
    \code{datetime} \tab default \tab  \cr
    \code{datetimes} \tab default \tab  \cr
+   \code{dbi_connection} \tab default \tab  \cr
    \code{dyn_dots_support} \tab default \tab  \cr
    \code{end_date} \tab default \tab  \cr
    \code{eol} \tab default \tab  \cr

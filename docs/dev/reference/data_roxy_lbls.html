@@ -64,15 +64,15 @@
 <code><a href="description_lbl.html">description_lbl</a>()</code>,
 <code><a href="param_lbl.html">param_lbl</a>()</code>,
 <code><a href="return_lbl.html">return_lbl</a>()</code>,
-<code><a href="roxy_lbls.html">roxy_lbls</a>()</code>,
 <code><a href="roxy_lbl.html">roxy_lbl</a>()</code>,
+<code><a href="roxy_lbls.html">roxy_lbls</a>()</code>,
 <code><a href="title_lbl.html">title_lbl</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="va">data_roxy_lbls</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 31 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    id                 type    value                                                                                                                             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                                                                             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> cli_markup_support default <span style="color: #949494;">"</span>supports cli's [inline markup][cli::inline-markup]<span style="color: #949494;">"</span>                                                                              </span>
@@ -80,12 +80,12 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> dates              default <span style="color: #949494;">"</span>a vector of [dates][base::Date]<span style="color: #949494;">"</span>                                                                                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> datetime           default <span style="color: #949494;">"</span>a [datetime][base::DateTimeClasses]<span style="color: #949494;">"</span>                                                                                             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> datetimes          default <span style="color: #949494;">"</span>a vector of [datetimes][base::DateTimeClasses]<span style="color: #949494;">"</span>                                                                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> dyn_dots_support   default <span style="color: #949494;">"</span>[dynamic dots][rlang::dyn-dots] are supported<span style="color: #949494;">"</span>                                                                                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> end_date           default <span style="color: #949494;">"</span>end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`<span style="color: #949494;">"</span>                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> eol                default <span style="color: #949494;">"</span>end of line (EOL) control character sequence. One of\n- `\"LF\"` for the line feed (LF) character (`\"\\n\"`). The standard on U…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ggplot2_obj        default <span style="color: #949494;">"</span>a [ggplot2][ggplot2::ggplot] object<span style="color: #949494;">"</span>                                                                                             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> glue_chr           default <span style="color: #949494;">"</span>a [glue][glue::as_glue] character scalar<span style="color: #949494;">"</span>                                                                                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 21 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> dbi_connection     default <span style="color: #949494;">"</span>an S4 object that inherits from [`DBI::DBIConnection`][DBI::DBIConnection-class]<span style="color: #949494;">"</span>                                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> dyn_dots_support   default <span style="color: #949494;">"</span>[dynamic dots][rlang::dyn-dots] are supported<span style="color: #949494;">"</span>                                                                                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> end_date           default <span style="color: #949494;">"</span>end of the period the data covers. A [date][base::Date] or a character scalar in the format `\"YYYY-MM-DD\"`<span style="color: #949494;">"</span>                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> eol                default <span style="color: #949494;">"</span>end of line (EOL) control character sequence. One of\n- `\"LF\"` for the line feed (LF) character (`\"\\n\"`). The standard on U…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ggplot2_obj        default <span style="color: #949494;">"</span>a [ggplot2][ggplot2::ggplot] object<span style="color: #949494;">"</span>                                                                                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more rows</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -33,6 +33,7 @@ Currently, the following \verb{@description} labels are available:\tabular{ll}{
    \code{dates} \tab  \cr
    \code{datetime} \tab  \cr
    \code{datetimes} \tab  \cr
+   \code{dbi_connection} \tab  \cr
    \code{dyn_dots_support} \tab  \cr
    \code{end_date} \tab  \cr
    \code{eol} \tab  \cr

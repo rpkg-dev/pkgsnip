@@ -83,6 +83,7 @@ figure,fig
 figures,figs
 filesystem,fs
 foreign key,fk
+foreign keys,fks
 formula,fm
 formulas,fms
 formulae,fms
@@ -157,6 +158,7 @@ predicates,preds
 preparation,prep
 preparations,preps
 primary key,pk
+primary keys,pks
 proceed,prcd
 procedure, prcd
 procedures,prcds

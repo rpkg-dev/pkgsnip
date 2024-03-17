@@ -153,6 +153,7 @@ parameterize,param
 parameter,param
 parameters,params
 position,pos
+PostgreSQL,pg
 predicate,pred
 predicates,preds
 preparation,prep

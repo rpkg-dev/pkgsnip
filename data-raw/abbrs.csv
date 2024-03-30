@@ -10,6 +10,7 @@ attributes,attrs
 authenticate,auth
 authentication,auth
 authentications,auths
+auxiliary,aux
 background,bg
 bibliography,bib
 bibliographies,bibs
@@ -227,6 +228,7 @@ tables,tbls
 template,tpl
 templates,tpls
 temporary,tmp
+user interface,ui
 value,val
 values,vals
 variable,var

@@ -1,9 +1,9 @@
-pandoc: 3.1.12.3
-pkgdown: 2.0.7.9000
-pkgdown_sha: f465d9ac12d99d4e829b92d28cd88a2b35f57264
+pandoc: 3.1.13
+pkgdown: 2.0.9.9000
+pkgdown_sha: e407acece26815c3c776effba39bffde68382142
 articles:
   pkgsnip: pkgsnip.html
-last_built: 2024-03-30T14:59Z
+last_built: 2024-05-01T18:58Z
 urls:
   reference: https://pkgsnip.rpkg.dev/reference
   article: https://pkgsnip.rpkg.dev/articles

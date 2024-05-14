@@ -6,10 +6,10 @@ editor_options:
 ---
 
 ```{r}
-#| child: !expr "pkgsnip::snip_path('common.Rmd')"
+#| child: !expr "pkgsnip::snip_path('_common.Rmd')"
 ```
 
-To install the latest development version of `r if (exists("pkg_metadata")) pkg_metadata[["Package"]] else emsg`, run the following in R:
+To install the latest development version of `r pkg_name`, run the following in R:
 
 ``` r
 if (!("remotes" %in% rownames(installed.packages()))) {
@@ -17,5 +17,5 @@ if (!("remotes" %in% rownames(installed.packages()))) {
                    repos = "https://cloud.r-project.org/")
 }
 
-remotes::install_gitlab(repo = "`r stringr::str_remove(string = {if (exists("pkg_metadata")) stringr::str_subset(string = pkg_metadata[["URL"]], pattern = "^(https?://)?gitlab\\.com")[1L] else emsg}, pattern = "^https?://gitlab\\.com/")`")
+remotes::install_gitlab(repo = "`r stringr::str_remove(string = {if (exists("pkg_metadata")) stringr::str_subset(string = pkg_metadata[["URL"]], pattern = "^(https?://)?gitlab\\.com")[1L] else error_msg}, pattern = "^https?://gitlab\\.com/")`")
 ```

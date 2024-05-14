@@ -1,0 +1,22 @@
+```{r}
+#| include: false
+
+is_roxygen <- FALSE
+pkg_name <- Sys.getenv("ROXYGEN_PKG")
+error_msg <- paste0("<!–– Please use `pal::build_readme()` or assign `pkg_metadata <- pal::desc_list()` in the `envir` fed to `devtools::build_readme(...)` ",
+                    "to provide access to package metadata! ––>")
+main_rmd <- error_msg
+
+if (pkg_name == "") {
+  pkg_name <- error_msg
+} else {
+  is_roxygen <- TRUE
+  pkg_metadata <- pal::desc_list(file = fs::path_package(package = pkg_name))
+}
+
+if (exists("pkg_metadata")) {
+  pkg_name <- pkg_metadata[["Package"]][1L]
+  main_rmd <- paste0("Rmd/", pkg_name, ".Rmd")
+  main_rmd <- paste0("[\x60", main_rmd, "\x60](", pal::git_remote_tree_url(), main_rmd, ")")
+}
+```

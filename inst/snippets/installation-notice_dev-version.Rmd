@@ -6,10 +6,10 @@ editor_options:
 ---
 
 ```{r}
-#| child: !expr "pkgsnip::snip_path('common.Rmd')"
+#| child: !expr "pkgsnip::snip_path('_common.Rmd')"
 ```
 
-To install the latest development version of `r if (exists("pkg_metadata")) pkg_metadata[["Package"]] else emsg`, run the following in R:
+To install the latest development version of `r pkg_name`, run the following in R:
 
 ``` r
 if (!("remotes" %in% rownames(installed.packages()))) {
@@ -17,5 +17,5 @@ if (!("remotes" %in% rownames(installed.packages()))) {
                    repos = "https://cloud.r-project.org/")
 }
 
-remotes::install_git(url = "`r if (exists("pkg_metadata")) paste0(pkg_metadata[["URL"]][1L], ".git") else emsg`")
+remotes::install_git(url = "`r if (exists("pkg_metadata")) paste0(pkg_metadata[["URL"]][1L], ".git") else error_msg`")
 ```

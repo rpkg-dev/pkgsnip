@@ -6,7 +6,7 @@ editor_options:
 ---
 
 ```{r}
-#| child: !expr "pkgsnip::snip_path('common.Rmd')"
+#| child: !expr "pkgsnip::snip_path('_common.Rmd')"
 ```
 
 This package borrows a lot of the [Tidyverse](https://www.tidyverse.org/) design philosophies. The R code adheres to the principles specified in the [Tidyverse

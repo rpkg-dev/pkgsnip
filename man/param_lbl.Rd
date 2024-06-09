@@ -59,6 +59,7 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{tbl_data} \tab  \cr
    \code{tibble} \tab  \cr
    \code{tibble_cols} \tab \code{cols} \cr
+   \code{tibble_custom} \tab \code{custom} \cr
    \code{tidy_select_support} \tab  \cr
    \code{use_cache} \tab  \cr
 }

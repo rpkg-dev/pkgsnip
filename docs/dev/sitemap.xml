@@ -1,63 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/TODO.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/articles/pkgsnip.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/index.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/abbrs.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/data_md_snips.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/data_roxy_lbls.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/description_lbl.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/ls_file_snips.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/md_snip.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/param_lbl.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/pkgsnip-package.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/return_lbl.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_lbl.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_lbls.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/snip_path.html</loc>
-  </url>
-  <url>
-    <loc>https://pkgsnip.rpkg.dev/dev/reference/title_lbl.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://pkgsnip.rpkg.dev/dev/LICENSE.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/TODO.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/articles/index.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/articles/pkgsnip.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/authors.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/index.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/abbrs.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/data_md_snips.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/data_roxy_lbls.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/description_lbl.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/index.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/ls_file_snips.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/md_snip.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/param_lbl.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/pkgsnip-package.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/return_lbl.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_lbl.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/roxy_lbls.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/snip_path.html</loc></url>
+<url><loc>https://pkgsnip.rpkg.dev/dev/reference/title_lbl.html</loc></url>
 </urlset>
+

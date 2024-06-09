@@ -51,6 +51,7 @@ Currently, roxygen2 tag labels are available:\tabular{lll}{
    \code{tbl_data} \tab default \tab  \cr
    \code{tibble} \tab default \tab  \cr
    \code{tibble_cols} \tab default \tab \code{cols} \cr
+   \code{tibble_custom} \tab default \tab \code{custom} \cr
    \code{tidy_select_support} \tab default \tab  \cr
    \code{use_cache} \tab default \tab  \cr
 }

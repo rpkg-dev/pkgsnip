@@ -81,6 +81,9 @@ environments,envs
 evaluate,eval
 evaluation,eval
 evaluations,evals
+execute,exec
+execution,exec
+executions,execs
 exclude,excl
 exclusion,excl
 expression,expr

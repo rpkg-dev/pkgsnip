@@ -88,6 +88,9 @@ exclude,excl
 exclusion,excl
 expression,expr
 expressions,exprs
+extend,ext
+extension,ext
+extensions,exts
 factor,fct
 factors,fcts
 figure,fig

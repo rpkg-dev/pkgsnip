@@ -29,6 +29,7 @@ Imports:
     tibble (>= 3.0.1),
     tidyselect (>= 1.2.0)
 Suggests: 
+    assertr (>= 3.0.1),
     desc (>= 1.2.0),
     knitr,
     pkgdown.tpl (>= 0.0.9000),
@@ -40,8 +41,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    gitlab::rpkg.dev/pkgdown.tpl,
-    gitlab::rpkg.dev/pal
+    gitlab::rpkg.dev/pal,
+    gitlab::rpkg.dev/pkgdown.tpl
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true

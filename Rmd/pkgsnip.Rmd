@@ -231,7 +231,7 @@ md_snip <- function(id = data_md_snips$id,
 ```{r}
 #' roxygen2 tag labels
 #'
-#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `id`. The latter can be fed to [pkgsnip::md_snip()].
+#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `type` and `id`. The latter can be fed to [pkgsnip::md_snip()].
 #'
 #' @format `r return_lbl("tibble_cols", cols = colnames(data_md_snips))`
 #' @family roxylbl

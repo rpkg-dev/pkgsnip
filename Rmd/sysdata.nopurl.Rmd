@@ -68,7 +68,9 @@ data_abbrs <-
   dplyr::arrange(purrr::map_int(rowids,
                                 dplyr::first)) |>
   dplyr::select(-rowids) |>
-  dplyr::relocate(full_expressions)
+  dplyr::relocate(full_expressions) |>
+  assertr::assert(predicate = assertr::is_uniq,
+                  "abbreviation")
 ```
 
 ## `data_md_snips`
@@ -79,7 +81,9 @@ data_md_snips <-
   pal::toml_read() |>
   purrr::imap(\(x, i) tibble::tibble(id = i,
                                      value = x$value)) |>
-  purrr::list_rbind()
+  purrr::list_rbind() |>
+  assertr::assert(predicate = assertr::is_uniq,
+                  "id")
 ```
 
 ## `data_roxy_lbls`
@@ -107,6 +111,17 @@ data_roxy_lbls <-
   }) |>
   purrr::list_rbind() |>
   dplyr::arrange(id, type)
+
+# assert id-type combos are unique
+duplicated_data_roxy_lbls <-
+  data_roxy_lbls |>
+  dplyr::summarise(n = dplyr::n(),
+                   .by = c("id", "type")) |>
+  dplyr::filter(n > 1L)
+
+if (nrow(duplicated_data_roxy_lbls) > 0L) {
+  cli::cli_abort("{.var id}-{.var type} combos in {.file data-raw/roxy_lbls.toml} are not unique.")
+}
 ```
 
 # Write data

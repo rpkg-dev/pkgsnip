@@ -1,4 +1,4 @@
-# R condition messages
+# roxygen2 labels
 
 [cli_markup_support]
 value.default = "supports cli's [inline markup][cli::inline-markup]"

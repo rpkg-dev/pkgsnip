@@ -1,0 +1,19 @@
+# R object types
+
+[chr]
+value = "[`character({length})`][character]"
+
+[date]
+value = "[`Date`][base::Date]"
+
+[int]
+value = "[`integer({length})`][integer]"
+
+[lgl]
+value = "[`logical({length})`][logical]"
+
+[num]
+value = "[`numeric({length})`][numeric]"
+
+[pg_connection]
+value = "[`PqConnection`][RPostgres::dbGetInfo_PqConnection]"

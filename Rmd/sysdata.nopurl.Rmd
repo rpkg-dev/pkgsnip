@@ -124,6 +124,21 @@ if (nrow(duplicated_data_roxy_lbls) > 0L) {
 }
 ```
 
+## `data_types`
+
+```{r}
+data_types <-
+  pal::toml_validate(input = "data-raw/types.toml") |>
+  pal::toml_read() |>
+  purrr::imap(\(x, i) tibble::tibble(id = i,
+                                     value = x$value)) |>
+  purrr::list_rbind() |>
+  dplyr::mutate(has_length = stringr::str_detect(string = value,
+                                                 pattern = stringr::fixed("{length}"))) |>
+  assertr::assert(predicate = assertr::is_uniq,
+                  "id")
+```
+
 # Write data
 
 Save all the small data objects as a single internal file `R/sysdata.rda`. Note that when documenting them, they must be explicitly `@export`ed to be available
@@ -133,6 +148,7 @@ to package users.
 usethis::use_data(data_abbrs,
                   data_md_snips,
                   data_roxy_lbls,
+                  data_types,
                   roxy_tags_lbl,
                   internal = TRUE,
                   overwrite = TRUE,

@@ -59,10 +59,12 @@ Currently, roxygen2 tag labels are available:\tabular{lll}{
 \seealso{
 roxygen2 label functions
 \code{\link{data_roxy_lbls}},
+\code{\link{data_types}},
 \code{\link{description_lbl}()},
 \code{\link{param_lbl}()},
 \code{\link{return_lbl}()},
 \code{\link{roxy_lbl}()},
-\code{\link{title_lbl}()}
+\code{\link{title_lbl}()},
+\code{\link{type}()}
 }
 \concept{roxylbl}

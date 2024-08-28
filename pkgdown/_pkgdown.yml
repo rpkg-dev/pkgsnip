@@ -19,5 +19,7 @@ reference:
   - param_lbl
   - return_lbl
   - title_lbl
+  - data_types
+  - type
 - title: Common abbreviations
 - contents: abbrs

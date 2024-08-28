@@ -189,7 +189,7 @@ md_snip <- function(id = data_md_snips$id,
 
 #' roxygen2 tag labels
 #'
-#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `id`. The latter can be fed to [pkgsnip::md_snip()].
+#' A [tibble][tibble::tbl_df] with all Markdown snippets together with their `type` and `id`. The latter can be fed to [pkgsnip::md_snip()].
 #'
 #' @format `r return_lbl("tibble_cols", cols = colnames(data_md_snips))`
 #' @family roxylbl
@@ -431,6 +431,59 @@ title_lbl <- function(id = roxy_lbls(type = "title")$id,
            type = "title",
            as_sentence = as_sentence,
            ... = ...)
+}
+
+#' Type hints
+#'
+#' A [tibble][tibble::tbl_df] with all \R object type hints together with their `id`. The latter can be fed to [pkgsnip::type()].
+#'
+#' @format `r return_lbl("tibble_cols", cols = colnames(data_types))`
+#' @family roxylbl
+#' @export
+#'
+#' @examples
+#' pkgsnip::data_types
+"data_types"
+
+#' Get predefined type hint
+#'
+#' Returns a predefined \R object type hint intended to be used to document a function parameter's type.
+#'
+#' @param id Type identifier. One of `r data_types$id |> pal::as_md_vals() |> cli::ansi_collapse(last = " or ")`
+#' @param length Length of the \R object to be documented.
+#' @param add_cr Whether or not to suffix the returned string with an [Rd line break
+#'   (`\cr`)](https://rstudio.github.io/r-manuals/r-exts/Writing-R-documentation-files.html#sectioning).
+#'
+#' @return `r pkgsnip::return_lbl("glue_chr")`
+#' @family roxylbl
+#' @export
+#'
+#' @examples
+#' pkgsnip::type(id = "lgl",
+#'               length = 3L)
+#'
+#' pkgsnip::type(id = "pg_connection")
+type <- function(id = data_types$id,
+                 length = 1L,
+                 add_cr = TRUE) {
+  
+  id <- rlang::arg_match(id)
+  checkmate::assert_int(length)
+  checkmate::assert_flag(add_cr)
+  
+  result <- data_types |> dplyr::filter(id == !!id)
+  
+  if (length > 1L && !result$has_length) {
+    cli::cli_abort("The {.val {id}} type hint does not support a {.arg length} other than {.val {1L}}.")
+  }
+  
+  result <- glue::glue(result$value,
+                       length = length)
+  if (add_cr) {
+    result %<>% paste0("\\cr")
+  }
+  
+  result
 }
 
 #' Commonly used abbreviations in \R code

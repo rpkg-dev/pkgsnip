@@ -16,6 +16,7 @@ back up,kbp
 backup,bkp
 bibliography,bib
 bibliographies,bibs
+certify,cert
 certificate,cert
 certification,cert
 certificates,certs
@@ -170,6 +171,9 @@ operator,op
 operators,ops
 option,opt
 options,opts
+organize,org
+organization,org
+organizations,orgs
 package,pkg
 packages,pkgs
 parameterize,param
@@ -179,12 +183,13 @@ position,pos
 PostgreSQL,pg
 predicate,pred
 predicates,preds
+prepare,prep
 preparation,prep
 preparations,preps
 primary key,pk
 primary keys,pks
 proceed,prcd
-procedure, prcd
+procedure,prcd
 procedures,prcds
 property,prop
 properties,props
@@ -232,6 +237,7 @@ string,str
 strings,strs
 structure,struct
 structures,structs
+supplement,suppl
 supplemental,suppl
 supplementary,suppl
 symbolize,sym

@@ -140,7 +140,8 @@ ls_file_snips <- function() {
 #' #' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")`
 #' ```
 #'
-#' @param id Snippet identifier. One of `r ls_file_snips()$id |> pal::as_md_vals() |> cli::ansi_collapse(last = " or ")`
+#' @param id Snippet identifier. One of
+#'   `r ls_file_snips()$id |> pal::as_md_val_list()`
 #'
 #' @return `r return_lbl("path")`
 #' @family rmdsnips

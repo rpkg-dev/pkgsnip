@@ -27,7 +27,8 @@ value = """\
 
 [usage_notice]
 value = """\
-  { pkg_intro_vignette <- stringr::str_replace_all(desc::desc_get_field('Package'), '\\\\.', '-'); \
+  { \
+    pkg_intro_vignette <- stringr::str_replace_all(desc::desc_get_field('Package'), '\\\\.', '-'); \
     if (fs::file_exists(fs::path('vignettes', pkg_intro_vignette, ext = 'Rmd'))) \
       paste0('An introduction to this package is given [here](articles/', pkg_intro_vignette, '.html). ') \
     else '' \

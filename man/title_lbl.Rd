@@ -45,6 +45,7 @@ Currently, the following \verb{@title} labels are available:\tabular{ll}{
    \code{ggplot2_obj} \tab  \cr
    \code{glue_chr} \tab  \cr
    \code{gt_obj} \tab  \cr
+   \code{http_method} \tab \code{methods} \cr
    \code{max_cache_age} \tab  \cr
    \code{num_vrsn} \tab  \cr
    \code{opt_global_max_cache_age} \tab \code{pkg}, \code{global_max_cache_age} \cr

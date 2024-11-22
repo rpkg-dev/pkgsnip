@@ -34,6 +34,11 @@ value.default = "a [ggplot2][ggplot2::ggplot] object"
 value.default = "a [glue][glue::as_glue] character scalar"
 [gt_obj]
 value.default = "a [`gt_tbl`][gt::gt] object"
+[http_method]
+value.default = """\
+  [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+  One of {get("methods")}.\
+  """
 [max_cache_age]
 value.default = """\
   duration after which cached results are refreshed (i.e. newly fetched). A valid [lubridate duration][lubridate::as.duration]. Use `Inf` to disable cache \

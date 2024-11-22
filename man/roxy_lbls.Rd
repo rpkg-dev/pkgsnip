@@ -33,7 +33,7 @@ Currently, roxygen2 tag labels are available:\tabular{lll}{
    \code{ggplot2_obj} \tab default \tab  \cr
    \code{glue_chr} \tab default \tab  \cr
    \code{gt_obj} \tab default \tab  \cr
-   \code{http_method} \tab default \tab \code{methods} \cr
+   \code{http_method} \tab default \tab \code{one_of} \cr
    \code{max_cache_age} \tab default \tab  \cr
    \code{num_vrsn} \tab default \tab  \cr
    \code{opt_global_max_cache_age} \tab default \tab \code{pkg}, \code{global_max_cache_age} \cr

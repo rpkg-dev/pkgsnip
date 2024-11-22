@@ -37,7 +37,7 @@ value.default = "a [`gt_tbl`][gt::gt] object"
 [http_method]
 value.default = """\
   [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
-  One of {get("methods")}.\
+  One of {one_of}.\
   """
 [max_cache_age]
 value.default = """\

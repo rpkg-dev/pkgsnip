@@ -23,7 +23,7 @@ Returns a predefined \R object type hint intended to be used to document a funct
 pkgsnip::type(id = "lgl",
               length = 3L)
 
-pkgsnip::type(id = "pg_connection")
+pkgsnip::type(id = "pg_conn")
 }
 \seealso{
 roxygen2 label functions

@@ -462,7 +462,7 @@ title_lbl <- function(id = roxy_lbls(type = "title")$id,
 #' pkgsnip::type(id = "lgl",
 #'               length = 3L)
 #'
-#' pkgsnip::type(id = "pg_connection")
+#' pkgsnip::type(id = "pg_conn")
 type <- function(id = data_types$id,
                  length = NULL,
                  add_cr = TRUE) {

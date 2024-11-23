@@ -47,6 +47,7 @@ Currently, the following \verb{@title} labels are available:\tabular{ll}{
    \code{gt_obj} \tab  \cr
    \code{http_method} \tab \code{one_of} \cr
    \code{max_cache_age} \tab  \cr
+   \code{max_tries} \tab  \cr
    \code{num_vrsn} \tab  \cr
    \code{opt_global_max_cache_age} \tab \code{pkg}, \code{global_max_cache_age} \cr
    \code{path} \tab  \cr

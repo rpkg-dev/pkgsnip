@@ -130,11 +130,13 @@ if (nrow(duplicated_data_roxy_lbls) > 0L) {
 data_types <-
   pal::toml_validate(input = "data-raw/types.toml") |>
   pal::toml_read() |>
-  purrr::imap(\(x, i) tibble::tibble(id = i,
-                                     value = x$value)) |>
+  purrr::imap(\(x, i) {
+    tibble::as_tibble_row(x) |>
+      tibble::add_column(id = i, .before = 1L)
+  }) |>
   purrr::list_rbind() |>
-  dplyr::mutate(has_length = stringr::str_detect(string = value,
-                                                 pattern = stringr::fixed("{length}"))) |>
+  dplyr::mutate(is_scalar = stringr::str_detect(string = value,
+                                                pattern = stringr::fixed("{length}"))) |>
   assertr::assert(predicate = assertr::is_uniq,
                   "id")
 ```

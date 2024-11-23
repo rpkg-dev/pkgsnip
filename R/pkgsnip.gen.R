@@ -450,7 +450,7 @@ title_lbl <- function(id = roxy_lbls(type = "title")$id,
 #' Returns a predefined \R object type hint intended to be used to document a function parameter's type.
 #'
 #' @param id Type identifier. One of `r data_types$id |> pal::as_md_vals() |> cli::ansi_collapse(last = " or ")`
-#' @param length Length of the \R object to be documented.
+#' @param length Length of the \R object to be documented. Omitted if `NULL`.
 #' @param add_cr Whether or not to suffix the returned string with an [Rd line break
 #'   (`\cr`)](https://rstudio.github.io/r-manuals/r-exts/Writing-R-documentation-files.html#sectioning).
 #'
@@ -464,21 +464,23 @@ title_lbl <- function(id = roxy_lbls(type = "title")$id,
 #'
 #' pkgsnip::type(id = "pg_connection")
 type <- function(id = data_types$id,
-                 length = 1L,
+                 length = NULL,
                  add_cr = TRUE) {
   
   id <- rlang::arg_match(id)
-  checkmate::assert_int(length)
+  checkmate::assert_int(length,
+                        null.ok = TRUE)
   checkmate::assert_flag(add_cr)
   
   result <- data_types |> dplyr::filter(id == !!id)
   
-  if (length > 1L && !result$has_length) {
-    cli::cli_abort("The {.val {id}} type hint does not support a {.arg length} other than {.val {1L}}.")
+  if (!result$is_scalar && !is.null(length)) {
+    cli::cli_abort("The {.val {id}} type hint does not support the {.arg length} argument.")
   }
   
   result <- glue::glue(result$value,
-                       length = length)
+                       length = length,
+                       .null = "")
   if (add_cr) {
     result %<>% paste0("\\cr")
   }

@@ -6,6 +6,9 @@ value = "[`character({length})`][base::character]"
 [date]
 value = "[`Date`][base::Date]"
 
+[df]
+value = "[`data.frame`][base::data.frame]"
+
 [fct]
 value = "[`factor`][base::factor]"
 

@@ -21,8 +21,14 @@ value = "[`logical({length})`][base::logical]"
 [list]
 value = "[`list()`][base::list]"
 
+[mat]
+value = "[`matrix()`][base::matrix]"
+
 [num]
 value = "[`numeric({length})`][base::numeric]"
 
-[pg_connection]
+[pg_conn]
 value = "[`PqConnection`][RPostgres::dbGetInfo_PqConnection]"
+
+[raw]
+value = "[`raw({length})`][base::raw]"

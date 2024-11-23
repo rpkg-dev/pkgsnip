@@ -36,6 +36,8 @@ conditions,cnds
 configure,config
 configuration,config
 configurations,configs
+connection,conn
+connections,conns
 current,cur
 database,db
 dataframe,df
@@ -150,6 +152,8 @@ logical,lgl
 logicals,lgls
 management,mgmt
 Markdown,md
+matrix,mat
+matrices,mats
 message,msg
 messages,msgs
 modify,mod

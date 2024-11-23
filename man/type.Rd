@@ -7,7 +7,7 @@
 type(id = data_types$id, length = NULL, add_cr = TRUE)
 }
 \arguments{
-\item{id}{Type identifier. One of \code{"chr"}, \code{"date"}, \code{"df"}, \code{"fct"}, \code{"int"}, \code{"lgl"}, \code{"list"}, \code{"num"} or \code{"pg_connection"}}
+\item{id}{Type identifier. One of \code{"chr"}, \code{"date"}, \code{"df"}, \code{"fct"}, \code{"int"}, \code{"lgl"}, \code{"list"}, \code{"mat"}, \code{"num"}, \code{"pg_conn"} or \code{"raw"}}
 
 \item{length}{Length of the \R object to be documented. Omitted if \code{NULL}.}
 

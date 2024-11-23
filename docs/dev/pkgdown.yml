@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   pkgsnip: pkgsnip.html
-last_built: 2024-11-23T14:55Z
+last_built: 2024-11-23T17:29Z
 urls:
   reference: https://pkgsnip.rpkg.dev/reference
   article: https://pkgsnip.rpkg.dev/articles

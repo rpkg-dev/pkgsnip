@@ -4,12 +4,12 @@
 \alias{type}
 \title{Get predefined type hint}
 \usage{
-type(id = data_types$id, length = 1L, add_cr = TRUE)
+type(id = data_types$id, length = NULL, add_cr = TRUE)
 }
 \arguments{
-\item{id}{Type identifier. One of \code{"chr"}, \code{"date"}, \code{"int"}, \code{"lgl"}, \code{"num"} or \code{"pg_connection"}}
+\item{id}{Type identifier. One of \code{"chr"}, \code{"date"}, \code{"fct"}, \code{"int"}, \code{"lgl"}, \code{"list"}, \code{"num"} or \code{"pg_connection"}}
 
-\item{length}{Length of the \R object to be documented.}
+\item{length}{Length of the \R object to be documented. Omitted if \code{NULL}.}
 
 \item{add_cr}{Whether or not to suffix the returned string with an \href{https://rstudio.github.io/r-manuals/r-exts/Writing-R-documentation-files.html#sectioning}{Rd line break (\verb{\\cr})}.}
 }

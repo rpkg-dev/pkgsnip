@@ -5,7 +5,7 @@
 \alias{data_types}
 \title{Type hints}
 \format{
-A \link[tibble:tbl_df-class]{tibble} with the columns \code{id}, \code{value}, and \code{has_length}.
+A \link[tibble:tbl_df-class]{tibble} with the columns \code{id}, \code{value}, and \code{is_scalar}.
 }
 \usage{
 data_types

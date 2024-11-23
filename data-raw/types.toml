@@ -6,11 +6,17 @@ value = "[`character({length})`][base::character]"
 [date]
 value = "[`Date`][base::Date]"
 
+[fct]
+value = "[`factor`][base::factor]"
+
 [int]
 value = "[`integer({length})`][base::integer]"
 
 [lgl]
 value = "[`logical({length})`][base::logical]"
+
+[list]
+value = "[`list()`][base::list]"
 
 [num]
 value = "[`numeric({length})`][base::numeric]"

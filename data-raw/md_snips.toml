@@ -20,7 +20,7 @@ value = "The documentation of this package is found [here]({ ''; pkgdown::as_pkg
 
 [rstudio_addin_hint]
 value = """\
-  This function is also registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a \
+  This function is registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a \
   [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it and to invoke it from the \
   [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).\
   """

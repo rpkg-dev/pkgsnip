@@ -83,7 +83,7 @@ The snippets can be used in roxygen2 documentation via [inline R code](https://r
 #'
 #' Awesome function description.
 #'
-#' `r "\U0060r pkgsnip::md_snip(\"rstudio_addin_hint\")\U0060"`
+#' `r "\U0060r pkgsnip::md_snip(\"rstudio_addin\")\U0060"`
 ```
 
 which will result in
@@ -93,7 +93,7 @@ which will result in
 #'
 #' Awesome function description.
 #'
-#' `r pkgsnip::md_snip("rstudio_addin_hint")`
+#' `r pkgsnip::md_snip("rstudio_addin")`
 ```
 
 ### Available snippets

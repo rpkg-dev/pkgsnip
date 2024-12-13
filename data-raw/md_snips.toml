@@ -15,17 +15,7 @@ value = """\
 [pkg_required]
 value = "To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again."
 
-[pkgdown_notice]
-value = "The documentation of this package is found [here]({ ''; pkgdown::as_pkgdown()$meta$url })."
-
-[rstudio_addin_hint]
-value = """\
-  This function is registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a \
-  [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it and to invoke it from the \
-  [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).\
-  """
-
-[usage_notice]
+[pkg_usage]
 value = """\
   { \
     pkg_intro_vignette <- stringr::str_replace_all(desc::desc_get_field('Package'), '\\\\.', '-'); \
@@ -34,4 +24,14 @@ value = """\
     else '' \
   }\
   The (function) reference is found [here](reference).\
+  """
+
+[pkgdown_site]
+value = "The documentation of this package is found [here]({ ''; pkgdown::as_pkgdown()$meta$url })."
+
+[rstudio_addin]
+value = """\
+  This function is registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a \
+  [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it and to invoke it from the \
+  [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).\
   """

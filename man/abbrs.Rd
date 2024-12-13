@@ -23,6 +23,12 @@ To avoid the list getting excessively long and redundant, \strong{the main focus
 abbreviation "seq" could also stand for the full expressions "sequential" or "sequentially", despite the fact that it is not explicitly listed but merely the
 verb/noun "sequence" is.
 }
+\section{Motivation}{
+To quote \href{https://twitter.com/secretGeek/status/7269997868}{Leon Bambrick}:
+
+\emph{"There are 2 hard problems in computer science: cache invalidation, \strong{naming things}, and off-by-1 errors."}
+}
+
 \examples{
 pkgsnip::abbrs(unnest = TRUE) |> print(n = Inf)
 }

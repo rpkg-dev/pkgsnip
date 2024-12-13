@@ -2,7 +2,7 @@
 editor_options:
   markdown:
     references:
-      prefix: "inst-n-dev-gitlab-"
+      prefix: "pkg-instl-dev-gitlab"
 ---
 
 ```{r}

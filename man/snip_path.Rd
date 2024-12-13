@@ -10,11 +10,12 @@ snip_path(id = ls_file_snips()$id)
 \item{id}{Snippet identifier. One of
 \itemize{
 \item \code{"_common.Rmd"}
-\item \code{"coding-style-notice.Rmd"}
-\item \code{"installation-notice_dev-version.Rmd"}
-\item \code{"installation-notice_dev-version_gitlab.Rmd"}
-\item \code{"pkg-config-notice.Rmd"}
-\item \code{"rmd-package-notice.Rmd"}
+\item \code{"pkg-code-style.Rmd"}
+\item \code{"pkg-config.Rmd"}
+\item \code{"pkg-desc.Rmd"}
+\item \code{"pkg-instl-dev-gitlab.Rmd"}
+\item \code{"pkg-instl-dev.Rmd"}
+\item \code{"pkgpurl.Rmd"}
 }}
 }
 \value{
@@ -37,7 +38,7 @@ Or you can use them in roxygen2's \href{https://roxygen2.r-lib.org/articles/rd.h
 }\if{html}{\out{</div>}}
 }
 \examples{
-pkgsnip::snip_path("coding-style-notice.Rmd")
+pkgsnip::snip_path("pkg-code-style.Rmd")
 }
 \seealso{
 R Markdown file snippet functions

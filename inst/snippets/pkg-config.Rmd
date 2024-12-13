@@ -2,7 +2,7 @@
 editor_options:
   markdown:
     references:
-      prefix: "pkg-config-n-"
+      prefix: "pkg-config"
 ---
 
 ```{r}

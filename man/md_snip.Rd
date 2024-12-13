@@ -7,10 +7,10 @@
 md_snip(id = data_md_snips$id, ...)
 }
 \arguments{
-\item{id}{Snippet identifier. One of \code{"opt_global_max_cache_age"}, \code{"pkg_config"}, \code{"pkg_required"}, \code{"pkgdown_notice"}, \code{"rstudio_addin_hint"} or \code{"usage_notice"}.}
+\item{id}{Snippet identifier. One of \code{"opt_global_max_cache_age"}, \code{"pkg_config"}, \code{"pkg_required"}, \code{"pkg_usage"}, \code{"pkgdown_site"} or \code{"rstudio_addin"}.}
 
-\item{...}{Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see \code{\link{data_md_snips}} for an overview.
-If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
+\item{...}{Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see \code{\link{data_md_snips}} for an
+overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
 }
 \value{
 A character scalar.
@@ -24,13 +24,13 @@ Currently, the following Markdown snippets are available:\tabular{ll}{
    \code{opt_global_max_cache_age} \tab  \cr
    \code{pkg_config} \tab \code{pkg} \cr
    \code{pkg_required} \tab \code{pkg} \cr
-   \code{pkgdown_notice} \tab  \cr
-   \code{rstudio_addin_hint} \tab  \cr
-   \code{usage_notice} \tab  \cr
+   \code{pkg_usage} \tab  \cr
+   \code{pkgdown_site} \tab  \cr
+   \code{rstudio_addin} \tab  \cr
 }
 }
 \examples{
-pkgsnip::md_snip(id = "rstudio_addin_hint") |> cat()
+pkgsnip::md_snip(id = "rstudio_addin") |> cat()
 
 # certain snips require additional args
 pkgsnip::md_snip(id = "pkg_config",

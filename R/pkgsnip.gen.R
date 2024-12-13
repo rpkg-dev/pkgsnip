@@ -122,7 +122,7 @@ ls_file_snips <- function() {
 #' @export
 #'
 #' @examples
-#' pkgsnip::snip_path("coding-style-notice.Rmd")
+#' pkgsnip::snip_path("pkg-code-style.Rmd")
 snip_path <- function(id = ls_file_snips()$id) {
   
   id <- rlang::arg_match(id)
@@ -160,15 +160,15 @@ snip_path <- function(id = ls_file_snips()$id) {
 #' ```
 #'
 #' @param id Snippet identifier. One of `r pal::fn_param_defaults(param = "id", fn = md_snip) |> pal::wrap_chr("\x60") |> cli::ansi_collapse(last = " or ")`.
-#' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see [`data_md_snips`] for an overview.
-#'   If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
+#' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see [`data_md_snips`] for an
+#'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
 #'
 #' @return A character scalar.
 #' @family mdsnips
 #' @export
 #'
 #' @examples
-#' pkgsnip::md_snip(id = "rstudio_addin_hint") |> cat()
+#' pkgsnip::md_snip(id = "rstudio_addin") |> cat()
 #'
 #' # certain snips require additional args
 #' pkgsnip::md_snip(id = "pkg_config",

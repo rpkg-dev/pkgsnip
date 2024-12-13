@@ -101,11 +101,12 @@ e.g. like this:</p>
 <p>Currently, the following R Markdown file snippets are included:</p>
 <ul>
 <li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/_common.Rmd" class="external-link"><code>_common.Rmd</code></a></li>
-<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/coding-style-notice.Rmd" class="external-link"><code>coding-style-notice.Rmd</code></a></li>
-<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/installation-notice_dev-version.Rmd" class="external-link"><code>installation-notice_dev-version.Rmd</code></a></li>
-<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/installation-notice_dev-version_gitlab.Rmd" class="external-link"><code>installation-notice_dev-version_gitlab.Rmd</code></a></li>
-<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/pkg-config-notice.Rmd" class="external-link"><code>pkg-config-notice.Rmd</code></a></li>
-<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/rmd-package-notice.Rmd" class="external-link"><code>rmd-package-notice.Rmd</code></a></li>
+<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/pkg-code-style.Rmd" class="external-link"><code>pkg-code-style.Rmd</code></a></li>
+<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/pkg-config.Rmd" class="external-link"><code>pkg-config.Rmd</code></a></li>
+<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/pkg-desc.Rmd" class="external-link"><code>pkg-desc.Rmd</code></a></li>
+<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/pkg-instl-dev-gitlab.Rmd" class="external-link"><code>pkg-instl-dev-gitlab.Rmd</code></a></li>
+<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/pkg-instl-dev.Rmd" class="external-link"><code>pkg-instl-dev.Rmd</code></a></li>
+<li><a href="https://gitlab.com/rpkg.dev/pkgsnip/-/tree/master/inst/snippets/pkgpurl.Rmd" class="external-link"><code>pkgpurl.Rmd</code></a></li>
 </ul>
 </div>
 </div>
@@ -123,7 +124,7 @@ R code</a> as follows:</p>
 <span><span class="co">#'</span></span>
 <span><span class="co">#' Awesome function description.</span></span>
 <span><span class="co">#'</span></span>
-<span><span class="co">#' `r pkgsnip::md_snip("rstudio_addin_hint")`</span></span></code></pre></div>
+<span><span class="co">#' `r pkgsnip::md_snip("rstudio_addin")`</span></span></code></pre></div>
 <p>which will result in</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#' Awesome function title</span></span>
@@ -158,16 +159,16 @@ R code</a> as follows:</p>
 <td align="left"><code>To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again.</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code>pkgdown_notice</code></td>
-<td align="left"><code>The documentation of this package is found [here]({ ''; pkgdown::as_pkgdown()$meta$url }).</code></td>
+<td align="left"><code>pkg_usage</code></td>
+<td align="left"><code>{ pkg_intro_vignette &lt;- stringr::str_replace_all(desc::desc_get_field('Package'), '\\.', '-'); if (fs::file_exists(fs::path('vignettes', pkg_intro_vignette, ext = 'Rmd'))) paste0('An introduction to this package is given [here](articles/', pkg_intro_vignette, '.html). ') else '' }The (function) reference is found [here](reference).</code></td>
 </tr>
 <tr class="odd">
-<td align="left"><code>rstudio_addin_hint</code></td>
-<td align="left"><code>This function is registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it and to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).</code></td>
+<td align="left"><code>pkgdown_site</code></td>
+<td align="left"><code>The documentation of this package is found [here]({ ''; pkgdown::as_pkgdown()$meta$url }).</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code>usage_notice</code></td>
-<td align="left"><code>{ pkg_intro_vignette &lt;- stringr::str_replace_all(desc::desc_get_field('Package'), '\\.', '-'); if (fs::file_exists(fs::path('vignettes', pkg_intro_vignette, ext = 'Rmd'))) paste0('An introduction to this package is given [here](articles/', pkg_intro_vignette, '.html). ') else '' }The (function) reference is found [here](reference).</code></td>
+<td align="left"><code>rstudio_addin</code></td>
+<td align="left"><code>This function is registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it and to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).</code></td>
 </tr>
 </tbody>
 </table>

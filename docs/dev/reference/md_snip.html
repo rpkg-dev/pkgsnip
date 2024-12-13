@@ -53,12 +53,12 @@
 
 
 <dl><dt id="arg-id">id<a class="anchor" aria-label="anchor" href="#arg-id"></a></dt>
-<dd><p>Snippet identifier. One of <code>"opt_global_max_cache_age"</code>, <code>"pkg_config"</code>, <code>"pkg_required"</code>, <code>"pkgdown_notice"</code>, <code>"rstudio_addin_hint"</code> or <code>"usage_notice"</code>.</p></dd>
+<dd><p>Snippet identifier. One of <code>"opt_global_max_cache_age"</code>, <code>"pkg_config"</code>, <code>"pkg_required"</code>, <code>"pkg_usage"</code>, <code>"pkgdown_site"</code> or <code>"rstudio_addin"</code>.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see <code><a href="data_md_snips.html">data_md_snips</a></code> for an overview.
-If a required argument is not explicitly provided, it is searched for in the <a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">parent frames</a>.</p></dd>
+<dd><p>Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see <code><a href="data_md_snips.html">data_md_snips</a></code> for an
+overview. If a required argument is not explicitly provided, it is searched for in the <a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">parent frames</a>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -67,7 +67,7 @@ If a required argument is not explicitly provided, it is searched for in the <a 
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Currently, the following Markdown snippets are available:</p><table class="table table"><tr><td><strong>id</strong></td><td><strong>arguments</strong></td></tr><tr><td><code>opt_global_max_cache_age</code></td><td></td></tr><tr><td><code>pkg_config</code></td><td><code>pkg</code></td></tr><tr><td><code>pkg_required</code></td><td><code>pkg</code></td></tr><tr><td><code>pkgdown_notice</code></td><td></td></tr><tr><td><code>rstudio_addin_hint</code></td><td></td></tr><tr><td><code>usage_notice</code></td><td></td></tr></table></div>
+    <p>Currently, the following Markdown snippets are available:</p><table class="table table"><tr><td><strong>id</strong></td><td><strong>arguments</strong></td></tr><tr><td><code>opt_global_max_cache_age</code></td><td></td></tr><tr><td><code>pkg_config</code></td><td><code>pkg</code></td></tr><tr><td><code>pkg_required</code></td><td><code>pkg</code></td></tr><tr><td><code>pkg_usage</code></td><td></td></tr><tr><td><code>pkgdown_site</code></td><td></td></tr><tr><td><code>rstudio_addin</code></td><td></td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Markdown snippet functions
@@ -76,7 +76,7 @@ If a required argument is not explicitly provided, it is searched for in the <a 
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu">md_snip</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"rstudio_addin_hint"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu">md_snip</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"rstudio_addin"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> This function is registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a [custom shortcut](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts-in-the-RStudio-IDE) to it and to invoke it from the [command palette](https://www.rstudio.com/blog/rstudio-1-4-a-quick-tour/#command-palette--shortcuts).</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># certain snips require additional args</span></span></span>

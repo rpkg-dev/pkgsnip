@@ -11,9 +11,10 @@ knitr::opts_knit$set(root.dir = getwd())
 
 # `r pal::desc_value(key = "Package")`
 
-`r paste0('[![CRAN Status](https://r-pkg.org/badges/version/', pal::desc_value(key = "Package"), ')](https://cran.r-project.org/package=', pal::desc_value(key = "Package"), '){.pkgdown-release}')`
-
-`r pal::desc_value(key = "Description")`
+```{r}
+#| label: pkg-desc
+#| child: !expr pkgsnip::snip_path("pkg-desc.Rmd")
+```
 
 ```{r}
 #| label: pkg-doc

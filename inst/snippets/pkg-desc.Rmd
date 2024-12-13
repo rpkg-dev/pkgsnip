@@ -1,0 +1,21 @@
+---
+editor_options:
+  markdown:
+    references:
+      prefix: "pkg-desc"
+---
+
+```{r}
+#| child: !expr "pkgsnip::snip_path('_common.Rmd')"
+```
+
+```{r}
+#| results: asis
+#| echo: false
+
+pkg_name <- pal::desc_value(key = "Package")
+
+pal::cat_lines(paste0("[![CRAN Status](https://r-pkg.org/badges/version/", pkg_name, ")](https://cran.r-project.org/package=", pkg_name, "){.pkgdown-release}"),
+               "",
+               pal::desc_value("Description"))
+```

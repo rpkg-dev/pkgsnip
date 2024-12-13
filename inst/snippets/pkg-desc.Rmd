@@ -17,5 +17,8 @@ pkg_name <- pal::desc_value(key = "Package")
 
 pal::cat_lines(paste0("[![CRAN Status](https://r-pkg.org/badges/version/", pkg_name, ")](https://cran.r-project.org/package=", pkg_name, "){.pkgdown-release}"),
                "",
-               pal::desc_value("Description"))
+               # replace URLs in parentheses with Markdown link (the word before the URL becomes the link text)
+               stringr::str_replace_all(string = pal::desc_value("Description"),
+                                        pattern = "(\\w+) \\((https?://.+?)\\)",
+                                        replacement = "[\\1](\\2)"))
 ```

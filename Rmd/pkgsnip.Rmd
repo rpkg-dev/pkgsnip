@@ -581,6 +581,12 @@ type <- function(id = data_types$id,
 #' `full_expression` when there's not already a verb or noun with the same root word listed for a particular `abbreviation`. That means that e.g. the
 #' abbreviation "seq" could also stand for the full expressions "sequential" or "sequentially", despite the fact that it is not explicitly listed but merely the
 #' verb/noun "sequence" is.
+#'
+#' # Motivation
+#'
+#' To quote [Leon Bambrick](https://twitter.com/secretGeek/status/7269997868):
+#' 
+#' *"There are 2 hard problems in computer science: cache invalidation, **naming things**, and off-by-1 errors."*
 #' 
 #' @param unnest Whether to unnest the `full_expression` column and return the data in long format. If `FALSE`, a "nested" list column `full_expressions` will
 #'   be returned, meaning the values in column `abbreviation` will be unique.

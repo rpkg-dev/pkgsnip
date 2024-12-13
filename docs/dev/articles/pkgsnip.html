@@ -77,24 +77,23 @@ package.</p>
 <p>The (R) Markdown file snippets can be used anywhere <a href="https://rmarkdown.rstudio.com/" class="external-link">(R) Markdown</a> input is
 supported. For example, you can use them as input to <a href="https://yihui.org/knitr/" class="external-link">knitr</a>’s <a href="https://yihui.org/knitr/options/#child-documents" class="external-link"><code>child</code>
 document option</a>:</p>
-<pre><code>```{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}
+<pre><code>```{r, child = pkgsnip::snip_path("pkg-instl-dev-gitlab.Rmd")}
 ```</code></pre>
 <p>When inserting snippets that require the name of the calling package
-like <code>"installation-notice_dev-version_gitlab.Rmd"</code>, you
-should either use <code><a href="https://pal.rpkg.dev/reference/build_readme.html" class="external-link">pal::build_readme()</a></code> to build the
-<code>.Rmd</code> file or manually assign
-<code>pkg_metadata &lt;- pal::desc_list()</code> to the environment
-passed to <a href="https://devtools.r-lib.org/reference/build_rmd.html" class="external-link"><code>devtools::build_rmd()</code></a>
+like <code>"pkg-instl-dev-gitlab.Rmd"</code>, you should either use
+<code><a href="https://pal.rpkg.dev/reference/build_readme.html" class="external-link">pal::build_readme()</a></code> to build the <code>.Rmd</code> file or
+manually assign <code>pkg_metadata &lt;- pal::desc_list()</code> to the
+environment passed to <a href="https://devtools.r-lib.org/reference/build_rmd.html" class="external-link"><code>devtools::build_rmd()</code></a>
 or its <code>...</code> argument respectively.</p>
 <p>You can also use the snippets in <a href="https://roxygen2.r-lib.org/" class="external-link">roxygen2</a>’s <a href="https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files" class="external-link"><code>@includeRmd</code>
 tag</a>:</p>
-<pre class="rd"><code><span><span class="co">#' @includeRmd `r pkgsnip::snip_path("rmd-package-notice.Rmd")`</span></span></code></pre>
+<pre class="rd"><code><span><span class="co">#' @includeRmd `r pkgsnip::snip_path("pkgpurl.Rmd")`</span></span></code></pre>
 <p>For snippets that require the name of the calling package, just
 assign <code>pkg_metadata</code> (once) before inserting the snippet(s),
 e.g. like this:</p>
 <pre class="rd"><code><span><span class="co">#' `r pkg_metadata &lt;- pal::desc_list()`</span></span>
 <span><span class="co">#'</span></span>
-<span><span class="co">#' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version.Rmd")`</span></span></code></pre>
+<span><span class="co">#' @includeRmd `r pkgsnip::snip_path("pkg-instl-dev.Rmd")`</span></span></code></pre>
 <div class="section level3">
 <h3 id="available-snippets">Available snippets<a class="anchor" aria-label="anchor" href="#available-snippets"></a>
 </h3>

@@ -104,14 +104,14 @@ ls_file_snips <- function() {
 #' [`child` document option](https://yihui.org/knitr/options/#child-documents):
 #'
 #' ````rmd
-#' ```{r, child = pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")}
+#' ```{r, child = pkgsnip::snip_path("pkg-instl-dev-gitlab.Rmd")}
 #' ```
 #' ````
 #'
 #' Or you can use them in roxygen2's [`@includeRmd` tag](https://roxygen2.r-lib.org/articles/rd.html#including-external--rmd-md-files):
 #'
 #' ```r
-#' #' @includeRmd `r pkgsnip::snip_path("installation-notice_dev-version_gitlab.Rmd")`
+#' #' @includeRmd `r pkgsnip::snip_path("pkg-instl-dev-gitlab.Rmd")`
 #' ```
 #'
 #' @param id Snippet identifier. One of

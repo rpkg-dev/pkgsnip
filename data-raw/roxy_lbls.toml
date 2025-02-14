@@ -45,7 +45,7 @@ value.default = """\
   expiry. Only relevant if `use_cache = TRUE`.\
   """
 [max_tries]
-value.default = "maximum number of attempts to retry in case of an HTTP error"
+value.default = "maximum number of request attempts in case of an HTTP error. An integerish scalar. Retries are performed using exponential backoff and jitter, see [httr2::req_retry()] for details"
 [opt_global_max_cache_age]
 value.default = """\
   note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum timespan set by the \\R \

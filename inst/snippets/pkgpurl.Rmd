@@ -21,5 +21,5 @@ All the `.gen.R` suffixed R source code found under `r link_r` is generated from
 -- and then run `pkgpurl::purl_rmd()` to regenerate the R source files.
 
 [^pkgpurl-1]: The very idea to leverage the R Markdown format to author R packages was originally proposed by Yihui Xie. See his excellent [blog
-    post](https://yihui.name/rlp/) for his point of view on the advantages of literate programming techniques and some practical examples. Note that using
+    post](https://yihui.org/rlp/) for his point of view on the advantages of literate programming techniques and some practical examples. Note that using
     `pkgpurl::purl_rmd()` is a less cumbersome alternative to the Makefile approach outlined by him.

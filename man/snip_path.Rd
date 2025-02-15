@@ -37,9 +37,6 @@ Or you can use them in roxygen2's \href{https://roxygen2.r-lib.org/articles/rd.h
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{#' @includeRmd `r pkgsnip::snip_path("pkg-instl-dev-gitlab.Rmd")`
 }\if{html}{\out{</div>}}
 }
-\examples{
-pkgsnip::snip_path("pkg-code-style.Rmd")
-}
 \seealso{
 R Markdown file snippet functions
 \code{\link{ls_file_snips}()}

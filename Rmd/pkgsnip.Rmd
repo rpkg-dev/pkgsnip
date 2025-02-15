@@ -146,9 +146,6 @@ ls_file_snips <- function() {
 #' @return `r return_lbl("path")`
 #' @family rmdsnips
 #' @export
-#'
-#' @examples
-#' pkgsnip::snip_path("pkg-code-style.Rmd")
 snip_path <- function(id = ls_file_snips()$id) {
   
   id <- rlang::arg_match(id)

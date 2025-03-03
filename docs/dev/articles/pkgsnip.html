@@ -151,11 +151,11 @@ R code</a> as follows:</p>
 </tr>
 <tr class="even">
 <td align="left"><code>pkg_config</code></td>
-<td align="left"><code>Some of { pkg }'s functionality is controlled via package-specific global configuration which can either be set via [R options](https://rdrr.io/r/base/options.html) or [environment variables](https://en.wikipedia.org/wiki/Environment_variable) (the former take precedence). This configuration includes:</code></td>
+<td align="left"><code>Some of { if (exists('pkg')) pkg else utils::packageName() }'s functionality is controlled via package-specific global configuration which can either be set via [R options](https://rdrr.io/r/base/options.html) or [environment variables](https://en.wikipedia.org/wiki/Environment_variable) (the former take precedence). This configuration includes:</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>pkg_required</code></td>
-<td align="left"><code>To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again.</code></td>
+<td align="left"><code>To be able to use this function, the package '{ if (exists('pkg')) pkg else utils::packageName() }' is required but it is not installed. Please install it and then try again.</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>pkg_usage</code></td>
@@ -1095,7 +1095,7 @@ Abbreviations
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
 </div>
 
     </footer>

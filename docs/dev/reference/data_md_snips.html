@@ -65,8 +65,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id                       value                                                                                                                                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                                                                                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> opt_global_max_cache_age <span style="color: #949494;">"</span>Maximal timespan to preserve the package's [pkgpins](https://pkgpins.rpkg.dev/) cache. Cache entries older than this will be delete…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> pkg_config               <span style="color: #949494;">"</span>Some of { pkg }'s functionality is controlled via package-specific global configuration which can either be set via [R options](htt…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> pkg_required             <span style="color: #949494;">"</span>To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again.<span style="color: #949494;">"</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> pkg_config               <span style="color: #949494;">"</span>Some of { if (exists('pkg')) pkg else utils::packageName() }'s functionality is controlled via package-specific global configuratio…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> pkg_required             <span style="color: #949494;">"</span>To be able to use this function, the package '{ if (exists('pkg')) pkg else utils::packageName() }' is required but it is not insta…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> pkg_usage                <span style="color: #949494;">"</span>{ pkg_intro_vignette &lt;- stringr::str_replace_all(desc::desc_get_field('Package'), '\\\\.', '-'); if (fs::file_exists(fs::path('vign…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> pkgdown_site             <span style="color: #949494;">"</span>The documentation of this package is found [here]({ ''; pkgdown::as_pkgdown()$meta$url }).<span style="color: #949494;">"</span>                                         </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> rstudio_addin            <span style="color: #949494;">"</span>This function is registered as an [RStudio add-in](https://rstudio.github.io/rstudioaddins/), allowing RStudio users to assign a [c…</span>
@@ -81,7 +81,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
 </div>
 
     </footer></div>

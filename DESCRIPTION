@@ -3,7 +3,7 @@ Title: Standardized roxygen2 Labels and (R) Markdown Snippets for Package
     Authors
 Version: 0.0.9037
 Authors@R: 
-    person("Salim", "Brüggemann", , "salim-b@pm.me", role = c("aut", "cre"),
+    person("Salim", "Brüggemann", , "salim@rpkg.dev", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5329-5987"))
 Description: pkgsnip ships ready-to-go (R) Markdown snippets and labels
     intended to be used in roxygen2 documentation or as knitr child

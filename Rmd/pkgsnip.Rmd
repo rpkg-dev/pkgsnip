@@ -54,25 +54,28 @@ add_args_col <- function(data) {
                             result <-
                               x |>
                               stringr::str_trim() |>
-                              purrr::map_chr(\(s) {
-                                # NOTE: rush job, probably has bugs
+                              purrr::map_chr(\(el) {
                                 ## return early if multi-statement expr since `str2lang()` below only works with single statements
-                                if (stringr::str_detect(as.character(s), stringr::fixed(";"))) {
+                                if (stringr::str_detect(as.character(el), stringr::fixed(";"))) {
                                   return(NA_character_)
                                 }
                                 
-                                str2lang(s) |>
+                                extract_syms(el) |>
+                                  stringr::str_subset("^\\w+$") |>
+                                  unique() |>
                                   as.list() |>
+                                  # NOTE: rush job
                                   dplyr::last() |>
-                                  as.character() |>
                                   pal::when(length(.) > 1L ~ .[2L],
                                             ~ .)
                               }) %>%
                               magrittr::extract(!is.na(.)) |>
                               unique() |>
                               pal::when(length(.) == 0L ~ "",
-                                        ~ pal::wrap_chr(., wrap = "`") |>
-                                          cli::ansi_collapse(sep2 = ", ", last = sep2))
+                                        ~ pal::wrap_chr(.,
+                                                        wrap = "`") |>
+                                          cli::ansi_collapse(sep2 = ", ",
+                                                             last = sep2))
                           }))
 }
 ```
@@ -88,6 +91,31 @@ backtickify_cols <- function(data,
                               \(x) purrr::map_chr(x,
                                                   \(y) pal::md_verb(as.symbol(y),
                                                                     .backtick = FALSE))))
+}
+```
+
+### `extract_syms`
+
+Recursively extract symbol names from an R code string using `str2lang()`. Hackish.
+
+```{r}
+extract_syms <- function(x) {
+  
+  result <-
+    str2lang(x) |>
+    as.character() |>
+    setdiff(y = ls(name = "package:base")) |>
+    stringr::str_subset("^(\\w+::\\w+(\\(\\))?|\\W+)$",
+                        negate = TRUE)
+  
+  if (length(result) > 1L || stringr::str_detect(result, "\\(.+\\)")) {
+    
+    result %<>%
+      purrr::map(extract_syms) %>%
+      purrr::list_c(ptype = character())
+  }
+  
+  result
 }
 ```
 

@@ -7,13 +7,13 @@ value = """\
 
 [pkg_config]
 value = """\
-  Some of { pkg }'s functionality is controlled via package-specific global configuration which can either be set via \
-  [R options](https://rdrr.io/r/base/options.html) or [environment variables](https://en.wikipedia.org/wiki/Environment_variable) (the former take \
-  precedence). This configuration includes:\
+  Some of { if (exists('pkg')) pkg else utils::packageName() }'s functionality is controlled via package-specific global configuration \
+  which can either be set via [R options](https://rdrr.io/r/base/options.html) or [environment variables](https://en.wikipedia.org/wiki/Environment_variable) \
+  (the former take precedence). This configuration includes:\
   """
 
 [pkg_required]
-value = "To be able to use this function, the package '{ pkg }' is required but it is not installed. Please install it and then try again."
+value = "To be able to use this function, the package '{ if (exists('pkg')) pkg else utils::packageName() }' is required but it is not installed. Please install it and then try again."
 
 [pkg_usage]
 value = """\

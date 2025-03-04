@@ -22,7 +22,7 @@ For now, only R Markdown file snippets are included. But this can easily be exte
 ls_file_snips <- function() {
   
   fs::path_package("snippets/",
-                   package = this_pkg) |>
+                   package = utils::packageName()) |>
     fs::dir_ls(recurse = TRUE,
                type = "file") |>
     tibble::tibble(path = _) |>
@@ -62,7 +62,7 @@ snip_path <- function(id = ls_file_snips()$id) {
   
   id <- rlang::arg_match(id)
   
-  fs::path_package(package = this_pkg,
+  fs::path_package(package = utils::packageName(),
                    "snippets",
                    id) |>
     fs::path_real()

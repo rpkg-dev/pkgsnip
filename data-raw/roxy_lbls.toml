@@ -49,7 +49,7 @@ value.default = "maximum number of request attempts in case of an HTTP error. An
 [opt_global_max_cache_age]
 value.default = """\
   note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum timespan set by the \\R \
-  [option][base::options()] `{pkg}.global_max_cache_age` (defaults to `{global_max_cache_age}` if unset).\
+  [option][base::options()] `{ if (exists('pkg')) pkg else utils::packageName() }.global_max_cache_age` (defaults to `{global_max_cache_age}` if unset).\
   """
 [path]
 value.default = "a [path][fs::fs_path]"
@@ -57,9 +57,9 @@ value.default = "a [path][fs::fs_path]"
 value.default = "a vector of [paths][fs::fs_path]"
 [pkg_config]
 value.default = """\
-  a [tibble][tibble::tbl_df] with metadata of all possible {pkg} package configuration options. See [pal::pkg_config_val()] for more information\
+  a [tibble][tibble::tbl_df] with metadata of all possible { if (exists('pkg')) pkg else utils::packageName() } package configuration options. See [pal::pkg_config_val()] for more information\
   """
-value.title = "{pkg} package configuration metadata"
+value.title = "{ if (exists('pkg')) pkg else utils::packageName() } package configuration metadata"
 [plotly_obj]
 value.default = "a [plotly object][plotly::plot_ly]"
 [quiet]

@@ -3,122 +3,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-# INTERNAL
-
-## Avoid `R CMD check` notes about undefined global objects used in magrittr pipes
-
-cf. <https://github.com/tidyverse/magrittr/issues/29#issuecomment-74313262>
-
-```{r}
-utils::globalVariables(names = c(".",
-                                 "full_expressions",
-                                 "id",
-                                 "path",
-                                 "type",
-                                 "value"))
-```
-
-## Constants
-
-```{r}
-this_pkg <- utils::packageName()
-```
-
-## Functions
-
-### `add_args_col`
-
-```{r}
-add_args_col <- function(data) {
-  
-  from_cols <- "value"
-  
-  from_col <-
-    colnames(data) |>
-    match(from_cols) %>%
-    magrittr::extract(!is.na(.)) %>%
-    {from_cols[.]} |> # nolint
-    pal::when(length(.) == 0L ~ cli::cli_abort("No `from_col` could be determined!"),
-              length(.) > 1L ~ cli::cli_abort("Multiple `from_col` candidates found:", cli::ansi_collapse(pal::as_md_vals(.))),
-              ~ .)
-  
-  data |> dplyr::mutate(arguments =
-                          stringr::str_extract_all(string = !!as.symbol(from_col),
-                                                   pattern = "(?<=\\{)[^\\}\\?]+?(?=\\})") |>
-                          purrr::map_chr(\(x) {
-                            
-                            if (length(x) == 0L) {
-                              return("")
-                            }
-                            
-                            result <-
-                              x |>
-                              stringr::str_trim() |>
-                              purrr::map_chr(\(el) {
-                                ## return early if multi-statement expr since `str2lang()` below only works with single statements
-                                if (stringr::str_detect(as.character(el), stringr::fixed(";"))) {
-                                  return(NA_character_)
-                                }
-                                
-                                extract_syms(el) |>
-                                  stringr::str_subset("^\\w+$") |>
-                                  unique() |>
-                                  as.list() |>
-                                  # NOTE: rush job
-                                  dplyr::last() |>
-                                  pal::when(length(.) > 1L ~ .[2L],
-                                            ~ .)
-                              }) %>%
-                              magrittr::extract(!is.na(.)) |>
-                              unique() |>
-                              pal::when(length(.) == 0L ~ "",
-                                        ~ pal::wrap_chr(.,
-                                                        wrap = "`") |>
-                                          cli::ansi_collapse(sep2 = ", ",
-                                                             last = sep2))
-                          }))
-}
-```
-
-### `backtickify_cols`
-
-```{r}
-backtickify_cols <- function(data,
-                             cols = tidyselect::any_of(c("id", "path"))) {
-  
-  dplyr::mutate(.data = data,
-                dplyr::across({{ cols }},
-                              \(x) purrr::map_chr(x,
-                                                  \(y) pal::md_verb(as.symbol(y),
-                                                                    .backtick = FALSE))))
-}
-```
-
-### `extract_syms`
-
-Recursively extract symbol names from an R code string using `str2lang()`. Hackish.
-
-```{r}
-extract_syms <- function(x) {
-  
-  result <-
-    str2lang(x) |>
-    as.character() |>
-    setdiff(y = ls(name = "package:base")) |>
-    stringr::str_subset("^(\\w+::\\w+(\\(\\))?|\\W+)$",
-                        negate = TRUE)
-  
-  if (length(result) > 1L || stringr::str_detect(result, "\\(.+\\)")) {
-    
-    result %<>%
-      purrr::map(extract_syms) %>%
-      purrr::list_c(ptype = character())
-  }
-  
-  result
-}
-```
-
 # EXPORTED
 
 ## R Markdown file snippets
@@ -630,5 +514,124 @@ abbrs <- function(unnest = FALSE) {
   }
   
   data_abbrs
+}
+```
+
+# INTERNAL
+
+## Avoid `R CMD check` notes about undefined global objects used in magrittr pipes
+
+cf. <https://github.com/tidyverse/magrittr/issues/29#issuecomment-74313262>
+
+```{r}
+utils::globalVariables(names = c(".",
+                                 "full_expressions",
+                                 "id",
+                                 "path",
+                                 "type",
+                                 "value"))
+```
+
+## Constants
+
+### `hint_*`
+
+```{r}
+hint_arg_pkg <- paste0("Note that the `pkg` argument defaults to the name of the package from which this function is called (`NULL` if not run within a ",
+                       "package environment).")
+```
+
+## Functions
+
+### `add_args_col`
+
+```{r}
+add_args_col <- function(data) {
+  
+  from_cols <- "value"
+  
+  from_col <-
+    colnames(data) |>
+    match(from_cols) %>%
+    magrittr::extract(!is.na(.)) %>%
+    {from_cols[.]} |> # nolint
+    pal::when(length(.) == 0L ~ cli::cli_abort("No `from_col` could be determined!"),
+              length(.) > 1L ~ cli::cli_abort("Multiple `from_col` candidates found:", cli::ansi_collapse(pal::as_md_vals(.))),
+              ~ .)
+  
+  data |> dplyr::mutate(arguments =
+                          stringr::str_extract_all(string = !!as.symbol(from_col),
+                                                   pattern = "(?<=\\{)[^\\}\\?]+?(?=\\})") |>
+                          purrr::map_chr(\(x) {
+                            
+                            if (length(x) == 0L) {
+                              return("")
+                            }
+                            
+                            result <-
+                              x |>
+                              stringr::str_trim() |>
+                              purrr::map_chr(\(el) {
+                                ## return early if multi-statement expr since `str2lang()` below only works with single statements
+                                if (stringr::str_detect(as.character(el), stringr::fixed(";"))) {
+                                  return(NA_character_)
+                                }
+                                
+                                extract_syms(el) |>
+                                  stringr::str_subset("^\\w+$") |>
+                                  unique() |>
+                                  as.list() |>
+                                  # NOTE: rush job
+                                  dplyr::last() |>
+                                  pal::when(length(.) > 1L ~ .[2L],
+                                            ~ .)
+                              }) %>%
+                              magrittr::extract(!is.na(.)) |>
+                              unique() |>
+                              pal::when(length(.) == 0L ~ "",
+                                        ~ pal::wrap_chr(.,
+                                                        wrap = "`") |>
+                                          cli::ansi_collapse(sep2 = ", ",
+                                                             last = sep2))
+                          }))
+}
+```
+
+### `backtickify_cols`
+
+```{r}
+backtickify_cols <- function(data,
+                             cols = tidyselect::any_of(c("id", "path"))) {
+  
+  dplyr::mutate(.data = data,
+                dplyr::across({{ cols }},
+                              \(x) purrr::map_chr(x,
+                                                  \(y) pal::md_verb(as.symbol(y),
+                                                                    .backtick = FALSE))))
+}
+```
+
+### `extract_syms`
+
+Recursively extract symbol names from an R code string using `str2lang()`. Hackish.
+
+```{r}
+extract_syms <- function(x) {
+  
+  result <-
+    str2lang(x) |>
+    as.character() |>
+    setdiff(y = ls(name = "package:base")) |>
+    stringr::str_subset("^(\\w+::\\w+(\\(\\))?|\\W+)$",
+                        negate = TRUE)
+  
+  if (length(result) > 1L || stringr::str_detect(result, "\\(.+\\)")) {
+    
+    result %<>%
+      purrr::map(extract_syms) %>%
+      purrr::list_c(ptype = character())
+  }
+  
+  result
 }
 ```

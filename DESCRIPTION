@@ -23,7 +23,7 @@ Imports:
     fs (>= 1.4.1),
     glue (>= 1.4.1),
     magrittr (>= 1.5),
-    pal (>= 0.0.9099),
+    pal (>= 0.0.9102),
     purrr (>= 0.3.4),
     rlang (>= 0.4.6),
     tibble (>= 3.0.1),
@@ -32,7 +32,6 @@ Suggests:
     assertr (>= 3.0.1),
     desc (>= 1.2.0),
     knitr,
-    pkgdown.tpl (>= 0.0.9000),
     rmarkdown,
     stringr (>= 1.4.0),
     testthat (>= 3.0.0),
@@ -41,8 +40,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    gitlab::rpkg.dev/pal,
-    gitlab::rpkg.dev/pkgdown.tpl
+    gitlab::rpkg.dev/pal
+Config/Needs/website: gitlab::rpkg.dev/pkgdown.tpl
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true

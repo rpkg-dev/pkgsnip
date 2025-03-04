@@ -39,6 +39,7 @@ Currently, the following \verb{@description} labels are available:\tabular{ll}{
    \code{dyn_dots_support} \tab  \cr
    \code{end_date} \tab  \cr
    \code{eol} \tab  \cr
+   \code{funky_config} \tab \code{pkg} \cr
    \code{ggplot2_obj} \tab  \cr
    \code{glue_chr} \tab  \cr
    \code{gt_obj} \tab  \cr
@@ -49,7 +50,7 @@ Currently, the following \verb{@description} labels are available:\tabular{ll}{
    \code{opt_global_max_cache_age} \tab \code{pkg}, \code{global_max_cache_age} \cr
    \code{path} \tab  \cr
    \code{paths} \tab  \cr
-   \code{pkg_config} \tab \code{pkg} \cr
+   \code{pkg} \tab  \cr
    \code{plotly_obj} \tab  \cr
    \code{quiet} \tab  \cr
    \code{r_obj} \tab  \cr

@@ -30,6 +30,8 @@ Currently, the following roxygen2 tag labels are available:\tabular{lll}{
    \code{dyn_dots_support} \tab default \tab  \cr
    \code{end_date} \tab default \tab  \cr
    \code{eol} \tab default \tab  \cr
+   \code{funky_config} \tab default \tab \code{pkg} \cr
+   \code{funky_config} \tab title \tab \code{pkg} \cr
    \code{ggplot2_obj} \tab default \tab  \cr
    \code{glue_chr} \tab default \tab  \cr
    \code{gt_obj} \tab default \tab  \cr
@@ -40,8 +42,7 @@ Currently, the following roxygen2 tag labels are available:\tabular{lll}{
    \code{opt_global_max_cache_age} \tab default \tab \code{pkg}, \code{global_max_cache_age} \cr
    \code{path} \tab default \tab  \cr
    \code{paths} \tab default \tab  \cr
-   \code{pkg_config} \tab default \tab \code{pkg} \cr
-   \code{pkg_config} \tab title \tab \code{pkg} \cr
+   \code{pkg} \tab default \tab  \cr
    \code{plotly_obj} \tab default \tab  \cr
    \code{quiet} \tab default \tab  \cr
    \code{r_obj} \tab default \tab  \cr

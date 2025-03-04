@@ -118,7 +118,7 @@ snip_path <- function(id = ls_file_snips()$id) {
 #' pkgsnip::md_snip(id = "rstudio_addin") |> cat()
 #'
 #' # certain snips require additional args
-#' pkgsnip::md_snip(id = "pkg_config",
+#' pkgsnip::md_snip(id = "funky_config",
 #'                  pkg = "foo") |>
 #'   cat()
 md_snip <- function(id = data_md_snips$id,
@@ -406,12 +406,12 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #' pkgsnip::return_lbl(id = "dyn_dots_support")
 #'
 #' # some labels take additional arguments
-#' pkgsnip::return_lbl(id = "pkg_config",
+#' pkgsnip::return_lbl(id = "funky_config",
 #'                     pkg = "foo")
 #'
 #' # note that the `pkg` argument always defaults to the current package
 #' # (none if run from the global environment)
-#' pkgsnip::return_lbl(id = "pkg_config")
+#' pkgsnip::return_lbl(id = "funky_config")
 return_lbl <- function(id = roxy_lbls(type = "return")$id,
                        ...) {
   
@@ -458,12 +458,12 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #'
 #' @examples
 #' # some labels take additional arguments
-#' pkgsnip::title_lbl(id = "pkg_config",
+#' pkgsnip::title_lbl(id = "funky_config",
 #'                    pkg = "foo")
 #'
 #' # note that the `pkg` argument always defaults to the current package
 #' # (none if run from the global environment)
-#' pkgsnip::title_lbl(id = "pkg_config")
+#' pkgsnip::title_lbl(id = "funky_config")
 title_lbl <- function(id = roxy_lbls(type = "title")$id,
                       as_sentence = FALSE,
                       ...) {

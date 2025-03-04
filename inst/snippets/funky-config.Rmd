@@ -9,8 +9,8 @@ editor_options:
 #| child: !expr "pkgsnip::snip_path('_common.Rmd')"
 ```
 
-`r pkgsnip::md_snip(id = "pkg_config", pkg = pkg_name)`
+`r pkgsnip::md_snip(id = "funky_config", pkg = pkg_name)`
 
 ::: table-wide
-`r pal::print_pkg_config(pkg = pkg_name, roxy_to_md = !is_roxygen)`
+`r funky::print_config(pkg = pkg_name, roxy_to_md = !is_roxygen)`
 :::

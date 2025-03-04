@@ -28,6 +28,11 @@ value.default = """\
   antiquated systems.\n- `\"LFCR\"` for the line feed + carriage return (LF+CR) character sequence (`\"\\n\\r\"`). The standard on RISC OS and some other \
   exotic systems.\
   """
+[funky_config]
+value.default = """\
+  a [tibble][tibble::tbl_df] with metadata of all possible { if (exists('pkg')) pkg else utils::packageName() } package configuration options. See [funky::config_val()] for more information\
+  """
+value.title = "{ if (exists('pkg')) pkg else utils::packageName() } package configuration metadata"
 [ggplot2_obj]
 value.default = "a [ggplot2][ggplot2::ggplot] object"
 [glue_chr]
@@ -55,11 +60,8 @@ value.default = """\
 value.default = "a [path][fs::fs_path]"
 [paths]
 value.default = "a vector of [paths][fs::fs_path]"
-[pkg_config]
-value.default = """\
-  a [tibble][tibble::tbl_df] with metadata of all possible { if (exists('pkg')) pkg else utils::packageName() } package configuration options. See [pal::pkg_config_val()] for more information\
-  """
-value.title = "{ if (exists('pkg')) pkg else utils::packageName() } package configuration metadata"
+[pkg]
+value.default = "\\R package name. A character scalar. Defaults to the name of the calling package"
 [plotly_obj]
 value.default = "a [plotly object][plotly::plot_ly]"
 [quiet]

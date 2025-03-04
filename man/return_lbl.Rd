@@ -39,6 +39,7 @@ Currently, the following return labels are available:\tabular{ll}{
    \code{dyn_dots_support} \tab  \cr
    \code{end_date} \tab  \cr
    \code{eol} \tab  \cr
+   \code{funky_config} \tab \code{pkg} \cr
    \code{ggplot2_obj} \tab  \cr
    \code{glue_chr} \tab  \cr
    \code{gt_obj} \tab  \cr
@@ -49,7 +50,7 @@ Currently, the following return labels are available:\tabular{ll}{
    \code{opt_global_max_cache_age} \tab \code{pkg}, \code{global_max_cache_age} \cr
    \code{path} \tab  \cr
    \code{paths} \tab  \cr
-   \code{pkg_config} \tab \code{pkg} \cr
+   \code{pkg} \tab  \cr
    \code{plotly_obj} \tab  \cr
    \code{quiet} \tab  \cr
    \code{r_obj} \tab  \cr
@@ -73,12 +74,12 @@ Note that the \code{pkg} argument defaults to the name of the package from which
 pkgsnip::return_lbl(id = "dyn_dots_support")
 
 # some labels take additional arguments
-pkgsnip::return_lbl(id = "pkg_config",
+pkgsnip::return_lbl(id = "funky_config",
                     pkg = "foo")
 
 # note that the `pkg` argument always defaults to the current package
 # (none if run from the global environment)
-pkgsnip::return_lbl(id = "pkg_config")
+pkgsnip::return_lbl(id = "funky_config")
 }
 \seealso{
 roxygen2 label functions

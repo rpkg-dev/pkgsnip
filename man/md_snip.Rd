@@ -7,7 +7,7 @@
 md_snip(id = data_md_snips$id, ...)
 }
 \arguments{
-\item{id}{Snippet identifier. One of \code{"opt_global_max_cache_age"}, \code{"pkg_config"}, \code{"pkg_required"}, \code{"pkg_usage"}, \code{"pkgdown_site"} or \code{"rstudio_addin"}.}
+\item{id}{Snippet identifier. One of \code{"funky_config"}, \code{"opt_global_max_cache_age"}, \code{"pkg_required"}, \code{"pkg_usage"}, \code{"pkgdown_site"} or \code{"rstudio_addin"}.}
 
 \item{...}{Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see \code{\link{data_md_snips}} for an
 overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
@@ -21,8 +21,8 @@ Returns a predefined Markdown snippet.
 \details{
 Currently, the following Markdown snippets are available:\tabular{ll}{
    \strong{id} \tab \strong{arguments} \cr
+   \code{funky_config} \tab \code{pkg} \cr
    \code{opt_global_max_cache_age} \tab  \cr
-   \code{pkg_config} \tab \code{pkg} \cr
    \code{pkg_required} \tab \code{pkg} \cr
    \code{pkg_usage} \tab  \cr
    \code{pkgdown_site} \tab  \cr
@@ -36,7 +36,7 @@ Note that the \code{pkg} argument defaults to the name of the package from which
 pkgsnip::md_snip(id = "rstudio_addin") |> cat()
 
 # certain snips require additional args
-pkgsnip::md_snip(id = "pkg_config",
+pkgsnip::md_snip(id = "funky_config",
                  pkg = "foo") |>
   cat()
 }

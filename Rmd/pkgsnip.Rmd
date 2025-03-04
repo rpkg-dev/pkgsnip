@@ -161,7 +161,7 @@ md_snip <- function(id = data_md_snips$id,
 #' Returns a [tibble][tibble::tbl_df] listing all parameter labels included in this package, together with their `id` which can be provided as the `id`
 #' argument of [pkgsnip::roxy_lbl()], [pkgsnip::param_lbl()], [pkgsnip::return_lbl()], etc.
 #'
-#' Currently, roxygen2 tag labels are available:
+#' Currently, the following roxygen2 tag labels are available:
 #'
 #' ```{r, echo = FALSE}
 #' data_roxy_lbls |>
@@ -268,7 +268,7 @@ roxy_lbl <- function(id = roxy_lbls()$id,
 #' Get predefined `@description` label
 #'
 #' Returns a predefined label intended to be used as a function's description using [roxygen2][roxygen2::roxygen2]'s
-#' [`@description`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
+#' [`@description`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag. Shorthand for [roxy_lbl(type = "description")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
@@ -324,7 +324,7 @@ description_lbl <- function(id = roxy_lbls(type = "description")$id,
 #' Get predefined `@param` label
 #'
 #' Returns a predefined label intended to be used to document a function parameter using [roxygen2][roxygen2::roxygen2]'s
-#' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
+#' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag. Shorthand for [roxy_lbl(type = "param")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
@@ -374,7 +374,7 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #' Get predefined `@return` label
 #'
 #' Returns a predefined label intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
-#' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
+#' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag. Shorthand for [roxy_lbl(type = "return")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
@@ -429,7 +429,7 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #' Get predefined `@title` label
 #'
 #' Returns a predefined label intended to be used to document a function's title using [roxygen2][roxygen2::roxygen2]'s
-#' [`@title`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
+#' [`@title`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag. Shorthand for [roxy_lbl(type = "title")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'

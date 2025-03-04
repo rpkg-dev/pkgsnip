@@ -4,7 +4,13 @@
 \alias{roxy_lbl}
 \title{Get predefined roxygen2 tag label}
 \usage{
-roxy_lbl(id = roxy_lbls()$id, type = "default", as_sentence = TRUE, ...)
+roxy_lbl(
+  id = roxy_lbls()$id,
+  type = "default",
+  as_sentence = TRUE,
+  env = parent.frame(),
+  ...
+)
 }
 \arguments{
 \item{id}{Label identifier. See \code{\link[=roxy_lbls]{roxy_lbls()}} for possible values.}
@@ -13,8 +19,10 @@ roxy_lbl(id = roxy_lbls()$id, type = "default", as_sentence = TRUE, ...)
 
 \item{as_sentence}{Whether or not to format the resulting string as a full sentence, i.e. with the first letter capitalized and a period at the end.}
 
+\item{env}{Environment in which inline code is to be evaluated, e.g. \code{\link[base:sys.parent]{base::parent.frame()}}, \code{\link[base:environment]{base::new.env()}}, or \code{\link[base:environment]{base::globalenv()}}.}
+
 \item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an
-overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
+overview. If a required argument is not explicitly provided, it is searched for in the \link[base:sys.parent]{parent frames}.}
 }
 \value{
 A \link[glue:as_glue]{glue} character scalar.

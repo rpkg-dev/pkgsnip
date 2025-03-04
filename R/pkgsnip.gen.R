@@ -92,6 +92,7 @@ snip_path <- function(id = ls_file_snips()$id) {
 #'
 #' `r hint_arg_pkg`
 #'
+#' @inheritParams roxy_lbl
 #' @param id Snippet identifier. One of `r pal::fn_param_defaults(param = "id", fn = md_snip) |> pal::wrap_chr("\x60") |> cli::ansi_collapse(last = " or ")`.
 #' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see [`data_md_snips`] for an
 #'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
@@ -108,10 +109,10 @@ snip_path <- function(id = ls_file_snips()$id) {
 #'                  pkg = "foo") |>
 #'   cat()
 md_snip <- function(id = data_md_snips$id,
+                    env = parent.frame(),
                     ...) {
   
   id <- rlang::arg_match(id)
-  env <- parent.frame()
   
   data_md_snips |>
     dplyr::filter(id == !!id) %$%
@@ -185,8 +186,9 @@ roxy_lbls <- function(type = "default") {
 #' @param id Label identifier. See [pkgsnip::roxy_lbls()] for possible values.
 #' @param type The label type to return the label value for. One of `r c("default", roxy_tags_lbl) |> pal::as_md_vals() |> cli::ansi_collapse(last = " or ")`.
 #' @param as_sentence Whether or not to format the resulting string as a full sentence, i.e. with the first letter capitalized and a period at the end.
+#' @param env Environment in which inline code is to be evaluated, e.g. [base::parent.frame()], [base::new.env()], or [base::globalenv()].
 #' @param ... Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see [pkgsnip::roxy_lbls()] for an
-#'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
+#'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][base::parent.frame].
 #'
 #' @return `r pkgsnip::return_lbl("glue_chr")`
 #' @keywords internal
@@ -208,18 +210,21 @@ roxy_lbls <- function(type = "default") {
 roxy_lbl <- function(id = roxy_lbls()$id,
                      type = "default",
                      as_sentence = TRUE,
+                     env = parent.frame(),
                      ...) {
   
   id <- rlang::arg_match(id)
   checkmate::assert_flag(as_sentence)
-  env <- parent.frame()
   
+  # add additional user-supplied to `env`
+  env <- rlang::new_environment(parent = env)
+  rlang::env_bind(.env = env,
+                  !!!list(...))
   result <-
     roxy_lbls(type = type) |>
-    dplyr::filter(id == !!id) %$%
-    value |>
-    cli::pluralize(.envir = env,
-                   ... = ...)
+    dplyr::filter(id == !!id) |>
+    _$value |>
+    cli::format_inline(.envir = env)
   
   if (as_sentence) {
     
@@ -547,7 +552,7 @@ add_args_col <- function(data) {
   
   data |> dplyr::mutate(arguments =
                           stringr::str_extract_all(string = !!as.symbol(from_col),
-                                                   pattern = "(?<=\\{)[^\\}\\?]+?(?=\\})") |>
+                                                   pattern = "(?<=\\{)[^\\{\\?][^\\{]*?(?=\\})") |>
                           purrr::map_chr(\(x) {
                             
                             if (length(x) == 0L) {

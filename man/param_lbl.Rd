@@ -16,7 +16,7 @@ A \link[glue:as_glue]{glue} character scalar.
 }
 \description{
 Returns a predefined label intended to be used to document a function parameter using \link[roxygen2:roxygen2-package]{roxygen2}'s
-\href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag.
+\href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag. Shorthand for \link[=roxy_lbl]{roxy_lbl(type = "param")}.
 }
 \details{
 A label can be inserted using \href{https://roxygen2.r-lib.org/articles/reuse.html#inline-code}{inline \R code} as follows:
@@ -65,6 +65,16 @@ Currently, the following parameter labels are available:\tabular{ll}{
    \code{tidy_select_support} \tab  \cr
    \code{use_cache} \tab  \cr
 }
+
+
+Note that the \code{pkg} argument defaults to the name of the package from which this function is called (\code{NULL} if not run within a package environment).
+}
+\examples{
+pkgsnip::param_lbl(id = "eol")
+
+# some labels take additional arguments
+pkgsnip::param_lbl(id = "http_method",
+                   one_of = c("GET", "POST"))
 }
 \seealso{
 roxygen2 label functions

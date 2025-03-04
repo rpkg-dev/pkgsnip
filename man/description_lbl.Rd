@@ -16,7 +16,7 @@ A \link[glue:as_glue]{glue} character scalar.
 }
 \description{
 Returns a predefined label intended to be used as a function's description using \link[roxygen2:roxygen2-package]{roxygen2}'s
-\href{https://roxygen2.r-lib.org/reference/tags-rd.html}{\verb{@description}} tag.
+\href{https://roxygen2.r-lib.org/reference/tags-rd.html}{\verb{@description}} tag. Shorthand for \link[=roxy_lbl]{roxy_lbl(type = "description")}.
 }
 \details{
 A label can be inserted using \href{https://roxygen2.r-lib.org/articles/reuse.html#inline-code}{inline \R code} as follows:
@@ -65,6 +65,22 @@ Currently, the following \verb{@description} labels are available:\tabular{ll}{
    \code{tidy_select_support} \tab  \cr
    \code{use_cache} \tab  \cr
 }
+
+
+Note that the \code{pkg} argument defaults to the name of the package from which this function is called (\code{NULL} if not run within a package environment).
+}
+\examples{
+pkgsnip::description_lbl(id = "dyn_dots_support")
+
+# some labels take additional arguments
+pkgsnip::description_lbl(id = "opt_global_max_cache_age",
+                         global_max_cache_age = "6h",
+                         pkg = "foo")
+
+# note that the `pkg` argument always defaults to the current package
+# (none if run from the global environment)
+pkgsnip::description_lbl(id = "opt_global_max_cache_age",
+                         global_max_cache_age = "6h")
 }
 \seealso{
 roxygen2 label functions

@@ -96,6 +96,24 @@ overview. If a required argument is not explicitly provided, it is searched for 
 <code><a href="type.html">type</a>()</code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu">roxy_lbl</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cli_markup_support"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Supports cli's [inline markup][cli::inline-markup].</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># some labels take additional arguments</span></span></span>
+<span class="r-in"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu">roxy_lbl</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"opt_global_max_cache_age"</span>,</span></span>
+<span class="r-in"><span>                  global_max_cache_age <span class="op">=</span> <span class="st">"6h"</span>,</span></span>
+<span class="r-in"><span>                  pkg <span class="op">=</span> <span class="st">"foo"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum timespan set by the \R [option][base::options()] `foo.global_max_cache_age` (defaults to `6h` if unset).</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># note that the `pkg` argument always defaults to the current package</span></span></span>
+<span class="r-in"><span><span class="co"># (none if run from the global environment)</span></span></span>
+<span class="r-in"><span><span class="fu">pkgsnip</span><span class="fu">::</span><span class="fu">roxy_lbl</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"opt_global_max_cache_age"</span>,</span></span>
+<span class="r-in"><span>                  global_max_cache_age <span class="op">=</span> <span class="st">"6h"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Note that [on package load][base::ns-hooks], the cache will be cleared from entries exceeding a global maximum timespan set by the \R [option][base::options()] `.global_max_cache_age` (defaults to `6h` if unset).</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

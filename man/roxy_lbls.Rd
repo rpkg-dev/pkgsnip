@@ -17,7 +17,7 @@ Returns a \link[tibble:tbl_df-class]{tibble} listing all parameter labels includ
 argument of \code{\link[=roxy_lbl]{roxy_lbl()}}, \code{\link[=param_lbl]{param_lbl()}}, \code{\link[=return_lbl]{return_lbl()}}, etc.
 }
 \details{
-Currently, roxygen2 tag labels are available:\tabular{lll}{
+Currently, the following roxygen2 tag labels are available:\tabular{lll}{
    \strong{id} \tab \strong{type} \tab \strong{arguments} \cr
    \code{cli_markup_support} \tab default \tab  \cr
    \code{date} \tab default \tab  \cr
@@ -57,6 +57,12 @@ Currently, roxygen2 tag labels are available:\tabular{lll}{
    \code{tidy_select_support} \tab default \tab  \cr
    \code{use_cache} \tab default \tab  \cr
 }
+
+
+Note that the \code{pkg} argument defaults to the name of the package from which this function is called (\code{NULL} if not run within a package environment).
+}
+\examples{
+pkgsnip::roxy_lbls(type = "title")
 }
 \seealso{
 roxygen2 label functions

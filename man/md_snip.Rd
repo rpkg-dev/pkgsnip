@@ -28,6 +28,9 @@ Currently, the following Markdown snippets are available:\tabular{ll}{
    \code{pkgdown_site} \tab  \cr
    \code{rstudio_addin} \tab  \cr
 }
+
+
+Note that the \code{pkg} argument defaults to the name of the package from which this function is called (\code{NULL} if not run within a package environment).
 }
 \examples{
 pkgsnip::md_snip(id = "rstudio_addin") |> cat()

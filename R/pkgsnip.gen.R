@@ -12,94 +12,6 @@
 # 
 # You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-utils::globalVariables(names = c(".",
-                                 "full_expressions",
-                                 "id",
-                                 "path",
-                                 "type",
-                                 "value"))
-
-this_pkg <- utils::packageName()
-
-add_args_col <- function(data) {
-  
-  from_cols <- "value"
-  
-  from_col <-
-    colnames(data) |>
-    match(from_cols) %>%
-    magrittr::extract(!is.na(.)) %>%
-    {from_cols[.]} |> # nolint
-    pal::when(length(.) == 0L ~ cli::cli_abort("No `from_col` could be determined!"),
-              length(.) > 1L ~ cli::cli_abort("Multiple `from_col` candidates found:", cli::ansi_collapse(pal::as_md_vals(.))),
-              ~ .)
-  
-  data |> dplyr::mutate(arguments =
-                          stringr::str_extract_all(string = !!as.symbol(from_col),
-                                                   pattern = "(?<=\\{)[^\\}\\?]+?(?=\\})") |>
-                          purrr::map_chr(\(x) {
-                            
-                            if (length(x) == 0L) {
-                              return("")
-                            }
-                            
-                            result <-
-                              x |>
-                              stringr::str_trim() |>
-                              purrr::map_chr(\(el) {
-                                ## return early if multi-statement expr since `str2lang()` below only works with single statements
-                                if (stringr::str_detect(as.character(el), stringr::fixed(";"))) {
-                                  return(NA_character_)
-                                }
-                                
-                                extract_syms(el) |>
-                                  stringr::str_subset("^\\w+$") |>
-                                  unique() |>
-                                  as.list() |>
-                                  # NOTE: rush job
-                                  dplyr::last() |>
-                                  pal::when(length(.) > 1L ~ .[2L],
-                                            ~ .)
-                              }) %>%
-                              magrittr::extract(!is.na(.)) |>
-                              unique() |>
-                              pal::when(length(.) == 0L ~ "",
-                                        ~ pal::wrap_chr(.,
-                                                        wrap = "`") |>
-                                          cli::ansi_collapse(sep2 = ", ",
-                                                             last = sep2))
-                          }))
-}
-
-backtickify_cols <- function(data,
-                             cols = tidyselect::any_of(c("id", "path"))) {
-  
-  dplyr::mutate(.data = data,
-                dplyr::across({{ cols }},
-                              \(x) purrr::map_chr(x,
-                                                  \(y) pal::md_verb(as.symbol(y),
-                                                                    .backtick = FALSE))))
-}
-
-extract_syms <- function(x) {
-  
-  result <-
-    str2lang(x) |>
-    as.character() |>
-    setdiff(y = ls(name = "package:base")) |>
-    stringr::str_subset("^(\\w+::\\w+(\\(\\))?|\\W+)$",
-                        negate = TRUE)
-  
-  if (length(result) > 1L || stringr::str_detect(result, "\\(.+\\)")) {
-    
-    result %<>%
-      purrr::map(extract_syms) %>%
-      purrr::list_c(ptype = character())
-  }
-  
-  result
-}
-
 #' List all available R Markdown file snippets
 #' 
 #' Lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.
@@ -110,7 +22,7 @@ extract_syms <- function(x) {
 ls_file_snips <- function() {
   
   fs::path_package("snippets/",
-                   package = this_pkg) |>
+                   package = utils::packageName()) |>
     fs::dir_ls(recurse = TRUE,
                type = "file") |>
     tibble::tibble(path = _) |>
@@ -146,7 +58,7 @@ snip_path <- function(id = ls_file_snips()$id) {
   
   id <- rlang::arg_match(id)
   
-  fs::path_package(package = this_pkg,
+  fs::path_package(package = utils::packageName(),
                    "snippets",
                    id) |>
     fs::path_real()
@@ -177,6 +89,8 @@ snip_path <- function(id = ls_file_snips()$id) {
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #'
 #' @param id Snippet identifier. One of `r pal::fn_param_defaults(param = "id", fn = md_snip) |> pal::wrap_chr("\x60") |> cli::ansi_collapse(last = " or ")`.
 #' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see [`data_md_snips`] for an
@@ -223,7 +137,7 @@ md_snip <- function(id = data_md_snips$id,
 #' Returns a [tibble][tibble::tbl_df] listing all parameter labels included in this package, together with their `id` which can be provided as the `id`
 #' argument of [pkgsnip::roxy_lbl()], [pkgsnip::param_lbl()], [pkgsnip::return_lbl()], etc.
 #'
-#' Currently, roxygen2 tag labels are available:
+#' Currently, the following roxygen2 tag labels are available:
 #'
 #' ```{r, echo = FALSE}
 #' data_roxy_lbls |>
@@ -233,11 +147,16 @@ md_snip <- function(id = data_md_snips$id,
 #'   pal::pipe_table()
 #' ```
 #'
+#' `r hint_arg_pkg`
+#'
 #' @param type The label type to return label values for. One of `r c("default", roxy_tags_lbl) |> pal::as_md_vals() |> cli::ansi_collapse(last = " or ")`.
 #'
 #' @return `r return_lbl("tibble")`
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::roxy_lbls(type = "title")
 roxy_lbls <- function(type = "default") {
   
   type <- rlang::arg_match(arg = type,
@@ -273,6 +192,19 @@ roxy_lbls <- function(type = "default") {
 #' @keywords internal
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::roxy_lbl(id = "cli_markup_support")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::roxy_lbl(id = "opt_global_max_cache_age",
+#'                   global_max_cache_age = "6h",
+#'                   pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::roxy_lbl(id = "opt_global_max_cache_age",
+#'                   global_max_cache_age = "6h")
 roxy_lbl <- function(id = roxy_lbls()$id,
                      type = "default",
                      as_sentence = TRUE,
@@ -304,7 +236,7 @@ roxy_lbl <- function(id = roxy_lbls()$id,
 #' Get predefined `@description` label
 #'
 #' Returns a predefined label intended to be used as a function's description using [roxygen2][roxygen2::roxygen2]'s
-#' [`@description`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
+#' [`@description`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag. Shorthand for [roxy_lbl(type = "description")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
@@ -322,12 +254,27 @@ roxy_lbl <- function(id = roxy_lbls()$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams return_lbl
 #'
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::description_lbl(id = "dyn_dots_support")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::description_lbl(id = "opt_global_max_cache_age",
+#'                          global_max_cache_age = "6h",
+#'                          pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::description_lbl(id = "opt_global_max_cache_age",
+#'                          global_max_cache_age = "6h")
 description_lbl <- function(id = roxy_lbls(type = "description")$id,
                             ...) {
   
@@ -341,7 +288,7 @@ description_lbl <- function(id = roxy_lbls(type = "description")$id,
 #' Get predefined `@param` label
 #'
 #' Returns a predefined label intended to be used to document a function parameter using [roxygen2][roxygen2::roxygen2]'s
-#' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
+#' [`@param`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag. Shorthand for [roxy_lbl(type = "param")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
@@ -359,12 +306,21 @@ description_lbl <- function(id = roxy_lbls(type = "description")$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams return_lbl
 #'
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::param_lbl(id = "eol")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::param_lbl(id = "http_method",
+#'                    one_of = c("GET", "POST"))
 param_lbl <- function(id = roxy_lbls(type = "param")$id,
                       ...) {
   
@@ -378,7 +334,7 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #' Get predefined `@return` label
 #'
 #' Returns a predefined label intended to be used to document function return values using [roxygen2][roxygen2::roxygen2]'s
-#' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag.
+#' [`@return`](https://roxygen2.r-lib.org/articles/rd.html#functions) tag. Shorthand for [roxy_lbl(type = "return")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
@@ -396,6 +352,8 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams roxy_lbl
 #' @param ... Further named arguments passed on to [pkgsnip::roxy_lbl()].
@@ -403,6 +361,17 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::return_lbl(id = "dyn_dots_support")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::return_lbl(id = "pkg_config",
+#'                     pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::return_lbl(id = "pkg_config")
 return_lbl <- function(id = roxy_lbls(type = "return")$id,
                        ...) {
   
@@ -416,7 +385,7 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #' Get predefined `@title` label
 #'
 #' Returns a predefined label intended to be used to document a function's title using [roxygen2][roxygen2::roxygen2]'s
-#' [`@title`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag.
+#' [`@title`](https://roxygen2.r-lib.org/reference/tags-rd.html) tag. Shorthand for [roxy_lbl(type = "title")][roxy_lbl].
 #'
 #' A label can be inserted using [inline \R code](https://roxygen2.r-lib.org/articles/reuse.html#inline-code) as follows:
 #'
@@ -434,12 +403,23 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams roxy_lbl
 #'
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' # some labels take additional arguments
+#' pkgsnip::title_lbl(id = "pkg_config",
+#'                    pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::title_lbl(id = "pkg_config")
 title_lbl <- function(id = roxy_lbls(type = "title")$id,
                       as_sentence = FALSE,
                       ...) {
@@ -540,4 +520,93 @@ abbrs <- function(unnest = FALSE) {
   }
   
   data_abbrs
+}
+
+utils::globalVariables(names = c(".",
+                                 "full_expressions",
+                                 "id",
+                                 "path",
+                                 "type",
+                                 "value"))
+
+hint_arg_pkg <- paste0("Note that the `pkg` argument defaults to the name of the package from which this function is called (`NULL` if not run within a ",
+                       "package environment).")
+
+add_args_col <- function(data) {
+  
+  from_cols <- "value"
+  
+  from_col <-
+    colnames(data) |>
+    match(from_cols) %>%
+    magrittr::extract(!is.na(.)) %>%
+    {from_cols[.]} |> # nolint
+    pal::when(length(.) == 0L ~ cli::cli_abort("No `from_col` could be determined!"),
+              length(.) > 1L ~ cli::cli_abort("Multiple `from_col` candidates found:", cli::ansi_collapse(pal::as_md_vals(.))),
+              ~ .)
+  
+  data |> dplyr::mutate(arguments =
+                          stringr::str_extract_all(string = !!as.symbol(from_col),
+                                                   pattern = "(?<=\\{)[^\\}\\?]+?(?=\\})") |>
+                          purrr::map_chr(\(x) {
+                            
+                            if (length(x) == 0L) {
+                              return("")
+                            }
+                            
+                            result <-
+                              x |>
+                              stringr::str_trim() |>
+                              purrr::map_chr(\(el) {
+                                ## return early if multi-statement expr since `str2lang()` below only works with single statements
+                                if (stringr::str_detect(as.character(el), stringr::fixed(";"))) {
+                                  return(NA_character_)
+                                }
+                                
+                                extract_syms(el) |>
+                                  stringr::str_subset("^\\w+$") |>
+                                  unique() |>
+                                  as.list() |>
+                                  # NOTE: rush job
+                                  dplyr::last() |>
+                                  pal::when(length(.) > 1L ~ .[2L],
+                                            ~ .)
+                              }) %>%
+                              magrittr::extract(!is.na(.)) |>
+                              unique() |>
+                              pal::when(length(.) == 0L ~ "",
+                                        ~ pal::wrap_chr(.,
+                                                        wrap = "`") |>
+                                          cli::ansi_collapse(sep2 = ", ",
+                                                             last = sep2))
+                          }))
+}
+
+backtickify_cols <- function(data,
+                             cols = tidyselect::any_of(c("id", "path"))) {
+  
+  dplyr::mutate(.data = data,
+                dplyr::across({{ cols }},
+                              \(x) purrr::map_chr(x,
+                                                  \(y) pal::md_verb(as.symbol(y),
+                                                                    .backtick = FALSE))))
+}
+
+extract_syms <- function(x) {
+  
+  result <-
+    str2lang(x) |>
+    as.character() |>
+    setdiff(y = ls(name = "package:base")) |>
+    stringr::str_subset("^(\\w+::\\w+(\\(\\))?|\\W+)$",
+                        negate = TRUE)
+  
+  if (length(result) > 1L || stringr::str_detect(result, "\\(.+\\)")) {
+    
+    result %<>%
+      purrr::map(extract_syms) %>%
+      purrr::list_c(ptype = character())
+  }
+  
+  result
 }

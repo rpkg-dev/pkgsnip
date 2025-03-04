@@ -32,6 +32,19 @@ The labels can be inserted using \href{https://roxygen2.r-lib.org/articles/reuse
 
 Note that the above only works in \href{https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/}{roxygen2 7.1.0+}.
 }
+\examples{
+pkgsnip::roxy_lbl(id = "cli_markup_support")
+
+# some labels take additional arguments
+pkgsnip::roxy_lbl(id = "opt_global_max_cache_age",
+                  global_max_cache_age = "6h",
+                  pkg = "foo")
+
+# note that the `pkg` argument always defaults to the current package
+# (none if run from the global environment)
+pkgsnip::roxy_lbl(id = "opt_global_max_cache_age",
+                  global_max_cache_age = "6h")
+}
 \seealso{
 roxygen2 label functions
 \code{\link{data_roxy_lbls}},

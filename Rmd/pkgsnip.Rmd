@@ -104,6 +104,8 @@ snip_path <- function(id = ls_file_snips()$id) {
 #'   pal::pipe_table()
 #' ```
 #'
+#' `r hint_arg_pkg`
+#'
 #' @param id Snippet identifier. One of `r pal::fn_param_defaults(param = "id", fn = md_snip) |> pal::wrap_chr("\x60") |> cli::ansi_collapse(last = " or ")`.
 #' @param ... Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see [`data_md_snips`] for an
 #'   overview. If a required argument is not explicitly provided, it is searched for in the [parent frames][parent.frame].
@@ -168,6 +170,8 @@ md_snip <- function(id = data_md_snips$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #'
 #' @param type The label type to return label values for. One of `r c("default", roxy_tags_lbl) |> pal::as_md_vals() |> cli::ansi_collapse(last = " or ")`.
 #'
@@ -266,6 +270,8 @@ roxy_lbl <- function(id = roxy_lbls()$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams return_lbl
 #'
@@ -307,6 +313,8 @@ description_lbl <- function(id = roxy_lbls(type = "description")$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams return_lbl
 #'
@@ -348,6 +356,8 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams roxy_lbl
 #' @param ... Further named arguments passed on to [pkgsnip::roxy_lbl()].
@@ -390,6 +400,8 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #'   backtickify_cols() |>
 #'   pal::pipe_table()
 #' ```
+#'
+#' `r hint_arg_pkg`
 #' 
 #' @inheritParams roxy_lbl
 #'

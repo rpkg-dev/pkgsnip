@@ -558,7 +558,8 @@ add_args_col <- function(data) {
                               x |>
                               stringr::str_trim() |>
                               purrr::map_chr(\(el) {
-                                ## return early if multi-statement expr since `str2lang()` below only works with single statements
+                                ## return early if multi-statement expr since `extract_syms()` (the underlying `str2lang()`, actually) below only works with
+                                ## single statements
                                 if (stringr::str_detect(as.character(el), stringr::fixed(";"))) {
                                   return(NA_character_)
                                 }

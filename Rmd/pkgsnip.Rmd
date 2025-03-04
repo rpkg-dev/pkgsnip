@@ -178,6 +178,9 @@ md_snip <- function(id = data_md_snips$id,
 #' @return `r return_lbl("tibble")`
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::roxy_lbls(type = "title")
 roxy_lbls <- function(type = "default") {
   
   type <- rlang::arg_match(arg = type,
@@ -217,6 +220,19 @@ roxy_lbls <- function(type = "default") {
 #' @keywords internal
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::roxy_lbl(id = "cli_markup_support")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::roxy_lbl(id = "opt_global_max_cache_age",
+#'                   global_max_cache_age = "6h",
+#'                   pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::roxy_lbl(id = "opt_global_max_cache_age",
+#'                   global_max_cache_age = "6h")
 roxy_lbl <- function(id = roxy_lbls()$id,
                      type = "default",
                      as_sentence = TRUE,
@@ -278,6 +294,19 @@ roxy_lbl <- function(id = roxy_lbls()$id,
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::description_lbl(id = "dyn_dots_support")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::description_lbl(id = "opt_global_max_cache_age",
+#'                          global_max_cache_age = "6h",
+#'                          pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::description_lbl(id = "opt_global_max_cache_age",
+#'                          global_max_cache_age = "6h")
 description_lbl <- function(id = roxy_lbls(type = "description")$id,
                             ...) {
   
@@ -321,6 +350,13 @@ description_lbl <- function(id = roxy_lbls(type = "description")$id,
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::param_lbl(id = "eol")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::param_lbl(id = "http_method",
+#'                    one_of = c("GET", "POST"))
 param_lbl <- function(id = roxy_lbls(type = "param")$id,
                       ...) {
   
@@ -365,6 +401,17 @@ param_lbl <- function(id = roxy_lbls(type = "param")$id,
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' pkgsnip::return_lbl(id = "dyn_dots_support")
+#'
+#' # some labels take additional arguments
+#' pkgsnip::return_lbl(id = "pkg_config",
+#'                     pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::return_lbl(id = "pkg_config")
 return_lbl <- function(id = roxy_lbls(type = "return")$id,
                        ...) {
   
@@ -408,6 +455,15 @@ return_lbl <- function(id = roxy_lbls(type = "return")$id,
 #' @inherit roxy_lbl return
 #' @family roxylbl
 #' @export
+#'
+#' @examples
+#' # some labels take additional arguments
+#' pkgsnip::title_lbl(id = "pkg_config",
+#'                    pkg = "foo")
+#'
+#' # note that the `pkg` argument always defaults to the current package
+#' # (none if run from the global environment)
+#' pkgsnip::title_lbl(id = "pkg_config")
 title_lbl <- function(id = roxy_lbls(type = "title")$id,
                       as_sentence = FALSE,
                       ...) {

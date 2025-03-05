@@ -30,9 +30,9 @@ value.default = """\
   """
 [funky_config]
 value.default = """\
-  a [tibble][tibble::tbl_df] with metadata of all possible { if (exists('pkg')) pkg else utils::packageName() } package configuration options. See [funky::config_val()] for more information\
+  a [tibble][tibble::tbl_df] with data about all possible { if (exists('pkg')) pkg else utils::packageName() } package configuration options. See [funky::config_val()] for more information\
   """
-value.title = "{ if (exists('pkg')) pkg else utils::packageName() } package configuration metadata"
+value.title = "{ if (exists('pkg')) pkg else utils::packageName() } package configuration data"
 [ggplot2_obj]
 value.default = "a [ggplot2][ggplot2::ggplot] object"
 [glue_chr]

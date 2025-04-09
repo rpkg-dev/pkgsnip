@@ -9,7 +9,7 @@ output: pal::gitlab_document
 knitr::opts_knit$set(root.dir = getwd())
 ```
 
-# `r pal::desc_value(key = "Package")`
+# `r pal::desc_get_field_safe(key = "Package")`
 
 ```{r}
 #| label: pkg-desc

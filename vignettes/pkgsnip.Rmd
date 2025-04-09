@@ -59,14 +59,14 @@ Currently, the following R Markdown file snippets are included:
 #| results: asis
 
 fs::path_package("snippets/",
-                 package = pal::desc_value(key = "Package")) %>%
+                 package = pal::desc_get_field_safe(key = "Package")) |>
   fs::dir_ls(recurse = TRUE,
-             type = "file") %>%
+             type = "file") |>
   fs::path_file() %>%
   paste0("- [`", ., "`](",
          stringr::str_subset(string = desc::desc_get_urls(),
                              pattern = "https://git(lab|hub)"),
-         "/-/tree/master/inst/snippets/", ., ")") %>%
+         "/-/tree/master/inst/snippets/", ., ")") |>
   pal::cat_lines()
 ```
 

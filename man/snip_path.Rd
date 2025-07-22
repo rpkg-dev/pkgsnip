@@ -12,6 +12,7 @@ snip_path(id = ls_file_snips()$id)
 \item \code{"_common.Rmd"}
 \item \code{"funky-config.Rmd"}
 \item \code{"pkg-code-style.Rmd"}
+\item \code{"pkg-deepwiki.Rmd"}
 \item \code{"pkg-desc.Rmd"}
 \item \code{"pkg-instl-dev-gitlab.Rmd"}
 \item \code{"pkg-instl-dev.Rmd"}

@@ -13,8 +13,6 @@ editor_options:
 #| results: asis
 #| echo: false
 
-pkg_name <- pal::desc_get_field_safe(key = "Package")
-
 pal::cat_lines(paste0("[![CRAN Status](https://r-pkg.org/badges/version/", pkg_name, ")](https://cran.r-project.org/package=", pkg_name, "){.pkgdown-release}"),
                "",
                # replace URLs in parentheses with Markdown link (the word before the URL becomes the link text)

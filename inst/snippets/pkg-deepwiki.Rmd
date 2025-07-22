@@ -1,0 +1,31 @@
+---
+editor_options:
+  markdown:
+    references:
+      prefix: "pkg-deepwiki"
+---
+
+```{r}
+#| child: !expr "pkgsnip::snip_path('_common.Rmd')"
+```
+
+```{r}
+#| results: asis
+#| echo: false
+
+url_parsed <- curl::curl_parse_url(url = pal::desc_url_git(file = fs::path_package(package = pkg_name)))
+path_parsed <- stringr::str_split_1(string = url_parsed$path,
+                                    pattern = "/")
+# normalize path (GH orgs cannot have dots)
+path_parsed[2L] <- stringr::str_replace_all(string = path_parsed[2L],
+                                            pattern = stringr::fixed("."),
+                                            replacement = "-")
+url_parsed$path <- paste0(path_parsed,
+                          collapse = "/")
+
+url_parsed |>
+  curl::curl_modify_url(host = "deepwiki.com") |>
+  glue::glue(url = _,
+             "[![Ask DeepWiki](https://deepwiki.com/badge.svg)]({url})") |>
+  cat()
+```

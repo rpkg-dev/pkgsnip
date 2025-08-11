@@ -25,7 +25,7 @@ remotes::install_gitlab(repo = "rpkg.dev/pkgsnip")
 
 ## Development
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/rpkg-dev/pkgsnip)
+[![Ask DeepWiki](https://rpkg.dev/badge_deepwiki.svg)](https://deepwiki.com/rpkg-dev/pkgsnip)
 
 ### R Markdown format
 

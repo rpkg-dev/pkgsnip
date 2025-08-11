@@ -26,6 +26,6 @@ url_parsed$path <- paste0(path_parsed,
 url_parsed |>
   curl::curl_modify_url(host = "deepwiki.com") |>
   glue::glue(url = _,
-             "[![Ask DeepWiki](https://deepwiki.com/badge.svg)]({url})") |>
+             "[![Ask DeepWiki](https://rpkg.dev/badge_deepwiki.svg)]({url})") |>
   cat()
 ```

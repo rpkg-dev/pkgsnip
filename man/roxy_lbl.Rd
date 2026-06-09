@@ -19,16 +19,16 @@ roxy_lbl(
 
 \item{as_sentence}{Whether or not to format the resulting string as a full sentence, i.e. with the first letter capitalized and a period at the end.}
 
-\item{env}{Environment in which inline code is to be evaluated, e.g. \code{\link[base:sys.parent]{base::parent.frame()}}, \code{\link[base:environment]{base::new.env()}}, or \code{\link[base:environment]{base::globalenv()}}.}
+\item{env}{Environment in which inline code is to be evaluated, e.g. \code{\link[base:parent.frame]{base::parent.frame()}}, \code{\link[base:new.env]{base::new.env()}}, or \code{\link[base:globalenv]{base::globalenv()}}.}
 
 \item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an
-overview. If a required argument is not explicitly provided, it is searched for in the \link[base:sys.parent]{parent frames}.}
+overview. If a required argument is not explicitly provided, it is searched for in the \link[base:parent.frame]{parent frames}.}
 }
 \value{
 A \link[glue:as_glue]{glue} character scalar.
 }
 \description{
-Returns a predefined label intended to be used to document functions using \link[roxygen2:roxygen2-package]{roxygen2}
+Returns a predefined label intended to be used to document functions using \link[roxygen2:roxygen2]{roxygen2}
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{tags}.
 }
 \details{
@@ -54,15 +54,15 @@ pkgsnip::roxy_lbl(id = "opt_global_max_cache_age",
                   global_max_cache_age = "6h")
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
 \code{\link{data_types}},
-\code{\link{description_lbl}()},
-\code{\link{param_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{title_lbl}()},
-\code{\link{type}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=title_lbl]{title_lbl()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}
 \keyword{internal}

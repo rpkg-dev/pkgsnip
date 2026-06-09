@@ -5,27 +5,27 @@
 \alias{data_roxy_lbls}
 \title{roxygen2 tag labels}
 \format{
-A \link[tibble:tbl_df-class]{tibble} with the columns \code{id} and \code{value}.
+A \link[tibble:tbl_df]{tibble} with the columns \code{id} and \code{value}.
 }
 \usage{
 data_roxy_lbls
 }
 \description{
-A \link[tibble:tbl_df-class]{tibble} with all Markdown snippets together with their \code{type} and \code{id}. The latter can be fed to \code{\link[=md_snip]{md_snip()}}.
+A \link[tibble:tbl_df]{tibble} with all Markdown snippets together with their \code{type} and \code{id}. The latter can be fed to \code{\link[=md_snip]{md_snip()}}.
 }
 \examples{
 pkgsnip::data_roxy_lbls
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_types}},
-\code{\link{description_lbl}()},
-\code{\link{param_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{title_lbl}()},
-\code{\link{type}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=title_lbl]{title_lbl()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}
 \keyword{datasets}

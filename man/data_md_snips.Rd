@@ -5,20 +5,20 @@
 \alias{data_md_snips}
 \title{Markdown snippets}
 \format{
-A \link[tibble:tbl_df-class]{tibble} with the columns \code{id} and \code{value}.
+A \link[tibble:tbl_df]{tibble} with the columns \code{id} and \code{value}.
 }
 \usage{
 data_md_snips
 }
 \description{
-A \link[tibble:tbl_df-class]{tibble} with all Markdown snippets together with their \code{id}. The latter can be fed to \code{\link[=md_snip]{md_snip()}}.
+A \link[tibble:tbl_df]{tibble} with all Markdown snippets together with their \code{id}. The latter can be fed to \code{\link[=md_snip]{md_snip()}}.
 }
 \examples{
 pkgsnip::data_md_snips
 }
 \seealso{
-Markdown snippet functions
-\code{\link{md_snip}()}
+Markdown snippet functions:
+\code{\link[=md_snip]{md_snip()}}
 }
 \concept{mdsnips}
 \keyword{datasets}

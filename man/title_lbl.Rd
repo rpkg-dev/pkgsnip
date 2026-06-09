@@ -12,13 +12,13 @@ title_lbl(id = roxy_lbls(type = "title")$id, as_sentence = FALSE, ...)
 \item{as_sentence}{Whether or not to format the resulting string as a full sentence, i.e. with the first letter capitalized and a period at the end.}
 
 \item{...}{Further named arguments used to tailor the label to your needs. Not all labels require additional arguments, see \code{\link[=roxy_lbls]{roxy_lbls()}} for an
-overview. If a required argument is not explicitly provided, it is searched for in the \link[base:sys.parent]{parent frames}.}
+overview. If a required argument is not explicitly provided, it is searched for in the \link[base:parent.frame]{parent frames}.}
 }
 \value{
 A \link[glue:as_glue]{glue} character scalar.
 }
 \description{
-Returns a predefined label intended to be used to document a function's title using \link[roxygen2:roxygen2-package]{roxygen2}'s
+Returns a predefined label intended to be used to document a function's title using \link[roxygen2:roxygen2]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/reference/tags-rd.html}{\verb{@title}} tag. Shorthand for \link[=roxy_lbl]{roxy_lbl(type = "title")}.
 }
 \details{
@@ -83,14 +83,14 @@ pkgsnip::title_lbl(id = "funky_config",
 pkgsnip::title_lbl(id = "funky_config")
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
 \code{\link{data_types}},
-\code{\link{description_lbl}()},
-\code{\link{param_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{type}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}

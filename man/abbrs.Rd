@@ -11,10 +11,10 @@ abbrs(unnest = FALSE)
 be returned, meaning the values in column \code{abbreviation} will be unique.}
 }
 \value{
-A \link[tibble:tbl_df-class]{tibble}.
+A \link[tibble:tbl_df]{tibble}.
 }
 \description{
-Returns a \link[tibble:tbl_df-class]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
+Returns a \link[tibble:tbl_df]{tibble} listing an opinionated set of abbreviations commonly used when writing \R code. It can be used as a reference, for
 example, to check availability/consistency when considering using some abbreviation in a function or argument name.
 }
 \details{

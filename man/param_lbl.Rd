@@ -15,7 +15,7 @@ param_lbl(id = roxy_lbls(type = "param")$id, ...)
 A \link[glue:as_glue]{glue} character scalar.
 }
 \description{
-Returns a predefined label intended to be used to document a function parameter using \link[roxygen2:roxygen2-package]{roxygen2}'s
+Returns a predefined label intended to be used to document a function parameter using \link[roxygen2:roxygen2]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@param}} tag. Shorthand for \link[=roxy_lbl]{roxy_lbl(type = "param")}.
 }
 \details{
@@ -78,14 +78,14 @@ pkgsnip::param_lbl(id = "http_method",
                    one_of = c("GET", "POST"))
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
 \code{\link{data_types}},
-\code{\link{description_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{title_lbl}()},
-\code{\link{type}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=title_lbl]{title_lbl()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}

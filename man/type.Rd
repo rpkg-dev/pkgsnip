@@ -26,14 +26,14 @@ pkgsnip::type(id = "lgl",
 pkgsnip::type(id = "pg_conn")
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
 \code{\link{data_types}},
-\code{\link{description_lbl}()},
-\code{\link{param_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{title_lbl}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=title_lbl]{title_lbl()}}
 }
 \concept{roxylbl}

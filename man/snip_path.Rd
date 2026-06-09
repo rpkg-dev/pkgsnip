@@ -26,8 +26,7 @@ A \link[fs:fs_path]{path}.
 Returns the file path to an R Markdown snippet shipped with this package.
 }
 \details{
-The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's
-\href{https://yihui.org/knitr/options/#child-documents}{\code{child} document option}:
+The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's \href{https://yihui.org/knitr/options/#child-documents}{\code{child} document option}:
 
 \if{html}{\out{<div class="sourceCode rmd">}}\preformatted{```\{r, child = pkgsnip::snip_path("pkg-instl-dev-gitlab.Rmd")\}
 ```
@@ -39,7 +38,7 @@ Or you can use them in roxygen2's \href{https://roxygen2.r-lib.org/articles/rd.h
 }\if{html}{\out{</div>}}
 }
 \seealso{
-R Markdown file snippet functions
-\code{\link{ls_file_snips}()}
+R Markdown file snippet functions:
+\code{\link[=ls_file_snips]{ls_file_snips()}}
 }
 \concept{rmdsnips}

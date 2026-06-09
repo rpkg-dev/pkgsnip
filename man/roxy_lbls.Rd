@@ -10,10 +10,10 @@ roxy_lbls(type = "default")
 \item{type}{The label type to return label values for. One of \code{"default"}, \code{"author"}, \code{"concept"}, \code{"description"}, \code{"details"}, \code{"field"}, \code{"format"}, \code{"keywords"}, \code{"param"}, \code{"references"}, \code{"return"}, \code{"section"}, \code{"seealso"}, \code{"slot"}, \code{"source"} or \code{"title"}.}
 }
 \value{
-A \link[tibble:tbl_df-class]{tibble}.
+A \link[tibble:tbl_df]{tibble}.
 }
 \description{
-Returns a \link[tibble:tbl_df-class]{tibble} listing all parameter labels included in this package, together with their \code{id} which can be provided as the \code{id}
+Returns a \link[tibble:tbl_df]{tibble} listing all parameter labels included in this package, together with their \code{id} which can be provided as the \code{id}
 argument of \code{\link[=roxy_lbl]{roxy_lbl()}}, \code{\link[=param_lbl]{param_lbl()}}, \code{\link[=return_lbl]{return_lbl()}}, etc.
 }
 \details{
@@ -66,14 +66,14 @@ Note that the \code{pkg} argument defaults to the name of the package from which
 pkgsnip::roxy_lbls(type = "title")
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
 \code{\link{data_types}},
-\code{\link{description_lbl}()},
-\code{\link{param_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{title_lbl}()},
-\code{\link{type}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=title_lbl]{title_lbl()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}

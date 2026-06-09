@@ -15,7 +15,7 @@ description_lbl(id = roxy_lbls(type = "description")$id, ...)
 A \link[glue:as_glue]{glue} character scalar.
 }
 \description{
-Returns a predefined label intended to be used as a function's description using \link[roxygen2:roxygen2-package]{roxygen2}'s
+Returns a predefined label intended to be used as a function's description using \link[roxygen2:roxygen2]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/reference/tags-rd.html}{\verb{@description}} tag. Shorthand for \link[=roxy_lbl]{roxy_lbl(type = "description")}.
 }
 \details{
@@ -84,14 +84,14 @@ pkgsnip::description_lbl(id = "opt_global_max_cache_age",
                          global_max_cache_age = "6h")
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
 \code{\link{data_types}},
-\code{\link{param_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{title_lbl}()},
-\code{\link{type}()}
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=title_lbl]{title_lbl()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}

@@ -5,27 +5,27 @@
 \alias{data_types}
 \title{Type hints}
 \format{
-A \link[tibble:tbl_df-class]{tibble} with the columns \code{id}, \code{value}, and \code{is_scalar}.
+A \link[tibble:tbl_df]{tibble} with the columns \code{id}, \code{value}, and \code{is_scalar}.
 }
 \usage{
 data_types
 }
 \description{
-A \link[tibble:tbl_df-class]{tibble} with all \R object type hints together with their \code{id}. The latter can be fed to \code{\link[=type]{type()}}.
+A \link[tibble:tbl_df]{tibble} with all \R object type hints together with their \code{id}. The latter can be fed to \code{\link[=type]{type()}}.
 }
 \examples{
 pkgsnip::data_types
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
-\code{\link{description_lbl}()},
-\code{\link{param_lbl}()},
-\code{\link{return_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{title_lbl}()},
-\code{\link{type}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=return_lbl]{return_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=title_lbl]{title_lbl()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}
 \keyword{datasets}

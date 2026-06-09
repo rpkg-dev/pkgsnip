@@ -15,7 +15,7 @@ return_lbl(id = roxy_lbls(type = "return")$id, ...)
 A \link[glue:as_glue]{glue} character scalar.
 }
 \description{
-Returns a predefined label intended to be used to document function return values using \link[roxygen2:roxygen2-package]{roxygen2}'s
+Returns a predefined label intended to be used to document function return values using \link[roxygen2:roxygen2]{roxygen2}'s
 \href{https://roxygen2.r-lib.org/articles/rd.html#functions}{\verb{@return}} tag. Shorthand for \link[=roxy_lbl]{roxy_lbl(type = "return")}.
 }
 \details{
@@ -82,14 +82,14 @@ pkgsnip::return_lbl(id = "funky_config",
 pkgsnip::return_lbl(id = "funky_config")
 }
 \seealso{
-roxygen2 label functions
+roxygen2 label functions:
 \code{\link{data_roxy_lbls}},
 \code{\link{data_types}},
-\code{\link{description_lbl}()},
-\code{\link{param_lbl}()},
-\code{\link{roxy_lbl}()},
-\code{\link{roxy_lbls}()},
-\code{\link{title_lbl}()},
-\code{\link{type}()}
+\code{\link[=description_lbl]{description_lbl()}},
+\code{\link[=param_lbl]{param_lbl()}},
+\code{\link[=roxy_lbl]{roxy_lbl()}},
+\code{\link[=roxy_lbls]{roxy_lbls()}},
+\code{\link[=title_lbl]{title_lbl()}},
+\code{\link[=type]{type()}}
 }
 \concept{roxylbl}

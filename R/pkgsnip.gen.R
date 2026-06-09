@@ -2,7 +2,7 @@
 # See `README.md#r-markdown-format` for more information on the literate programming approach used applying the R Markdown format.
 
 # pkgsnip: Standardized roxygen2 Labels and (R) Markdown Snippets for Package Authors
-# Copyright (C) 2025 Salim Brüggemann
+# Copyright (C) 2026 Salim Brüggemann
 # 
 # This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free
 # Software Foundation, either version 3 of the License, or any later version.
@@ -34,9 +34,9 @@ ls_file_snips <- function() {
 #'
 #' Returns the file path to an R Markdown snippet shipped with this package.
 #'
-#' The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's
-#' [`child` document option](https://yihui.org/knitr/options/#child-documents):
-#'
+#' The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's [`child` document
+#' option](https://yihui.org/knitr/options/#child-documents):
+#' 
 #' ````rmd
 #' ```{r, child = pkgsnip::snip_path("pkg-instl-dev-gitlab.Rmd")}
 #' ```

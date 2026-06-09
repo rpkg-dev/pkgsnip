@@ -7,13 +7,13 @@
 ls_file_snips()
 }
 \value{
-A \link[tibble:tbl_df-class]{tibble}.
+A \link[tibble:tbl_df]{tibble}.
 }
 \description{
 Lists all of the R Markdown snippets shipped with this package, together with the paths where they're located on the filesystem.
 }
 \seealso{
-R Markdown file snippet functions
-\code{\link{snip_path}()}
+R Markdown file snippet functions:
+\code{\link[=snip_path]{snip_path()}}
 }
 \concept{rmdsnips}

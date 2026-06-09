@@ -9,7 +9,7 @@ md_snip(id = data_md_snips$id, env = parent.frame(), ...)
 \arguments{
 \item{id}{Snippet identifier. One of \code{"funky_config"}, \code{"opt_global_max_cache_age"}, \code{"pkg_required"}, \code{"pkg_usage"}, \code{"pkgdown_site"} or \code{"rstudio_addin"}.}
 
-\item{env}{Environment in which inline code is to be evaluated, e.g. \code{\link[base:sys.parent]{base::parent.frame()}}, \code{\link[base:environment]{base::new.env()}}, or \code{\link[base:environment]{base::globalenv()}}.}
+\item{env}{Environment in which inline code is to be evaluated, e.g. \code{\link[base:parent.frame]{base::parent.frame()}}, \code{\link[base:new.env]{base::new.env()}}, or \code{\link[base:globalenv]{base::globalenv()}}.}
 
 \item{...}{Further named arguments used to tailor the snippet to your needs. Not all snippets require additional arguments, see \code{\link{data_md_snips}} for an
 overview. If a required argument is not explicitly provided, it is searched for in the \link[=parent.frame]{parent frames}.}
@@ -43,7 +43,7 @@ pkgsnip::md_snip(id = "funky_config",
   cat()
 }
 \seealso{
-Markdown snippet functions
+Markdown snippet functions:
 \code{\link{data_md_snips}}
 }
 \concept{mdsnips}

@@ -502,7 +502,7 @@ title_lbl <- function(id = roxy_lbls(type = "title")$id,
 
 NOTES
 
--   Only native R scalars are intended to support the `length` arg (their constructors like `logical()` literally feature a `length` arg).
+- Only native R scalars are intended to support the `length` arg (their constructors like `logical()` literally feature a `length` arg).
 
 ```{r}
 #' Get predefined type hint

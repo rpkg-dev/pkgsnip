@@ -38,9 +38,9 @@ ls_file_snips <- function() {
 #'
 #' Returns the file path to an R Markdown snippet shipped with this package.
 #'
-#' The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's
-#' [`child` document option](https://yihui.org/knitr/options/#child-documents):
-#'
+#' The snippets can be used anywhere R Markdown input is supported. For example, you can use them as input to knitr's [`child` document
+#' option](https://yihui.org/knitr/options/#child-documents):
+#' 
 #' ````rmd
 #' ```{r, child = pkgsnip::snip_path("pkg-instl-dev-gitlab.Rmd")}
 #' ```
